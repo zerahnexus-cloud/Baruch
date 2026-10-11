@@ -926,7 +926,83 @@ footer strong{
     transition-duration:.01ms !important;
   }
 }
+.skills-grid .skill-card {
+  grid-column: 1 / -1;
+}
+ portfolio cards */
 
+.image-project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: #03142b;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.image-project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(3, 20, 43, 0.85),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.project-image .project-number {
+  position: absolute;
+  z-index: 1;
+  left: 20px;
+  bottom: 18px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.image-project-card .project-content {
+  padding: 24px;
+}
+
+.image-project-card .project-content h3 {
+  margin-top: 0;
+}
+
+.image-project-card .project-link {
+  display: inline-block;
+  margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .project-image {
+    height: 210px;
+  }
+
+  .image-project-card .project-content {
+    padding: 20px;
+  }
+}
 </style>
 </head>
 
@@ -965,13 +1041,11 @@ footer strong{
     </h1>
 
     <p class="hero-tagline">
-      Communication. Sustainability. Impact.
+      Strategy. Communication. Action.
     </p>
 
     <p class="hero-description">
-      Communication strategist and water & environmental professional
-      creating digital stories, platforms and initiatives that connect
-      people with ideas that matter.
+      Communication strategist and diverce connectivity expart in water, environment, youth and National development
     </p>
 
   </div>
@@ -1005,8 +1079,8 @@ footer strong{
           I am a
           <strong>communication strategist</strong>
           and
-          <strong>digital storyteller</strong>
-          with a background in water and environmental sustainability.
+          <strong>digital assistant</strong>
+          with a background in water, engineering and environmental sustainability.
         </p>
 
         <br>
@@ -1015,16 +1089,16 @@ footer strong{
           My experience spans technical work, communication,
           digital platforms and community-focused initiatives.
           I use these different perspectives to turn ideas into
-          clear stories, useful platforms and meaningful action.
+          clear documentaries, useful platforms and meaningful action.
         </p>
 
         <br>
 
         <p>
           Through projects such as
-          <strong>EcoHub</strong>
+          <strong>Vision Tommorow</strong>
           and
-          <strong>Mtoto Ni Jamii</strong>,
+          <strong>Zerah-Nexus</strong>,
           I explore the connection between people, technology,
           sustainability and positive social impact.
         </p>
@@ -1073,7 +1147,7 @@ footer strong{
       </span>
 
       <h2 class="section-title">
-        Skills with a purpose.
+        Skill with purpose.
       </h2>
 
       <p class="section-subtitle">
@@ -1083,74 +1157,23 @@ footer strong{
 
     </div>
 
+<div class="skills-grid">
 
-    <div class="skills-grid">
+  <article class="skill-card">
+    <span class="skill-number">01</span>
 
-      <!-- Communication -->
+    <h3>Communication, Digital Innovation & Advocacy</h3>
 
-      <article class="skill-card">
+    <p>
+      Connecting communication, engineering strategy, digital
+      tools with environmental advocacy to shape narratives,
+      engage audiences and inspire meaningful action in climate,
+      water security and community development.
+    </p>
 
-        <span class="skill-number">
-          01
-        </span>
+  </article>
 
-        <h3>
-          Communication Strategy
-        </h3>
-
-        <p>
-          Shaping narratives, campaigns and communication
-          approaches that support awareness, engagement
-          and behavioral change.
-        </p>
-
-      </article>
-
-
-      <!-- Web -->
-
-      <article class="skill-card">
-
-        <span class="skill-number">
-          02
-        </span>
-
-        <h3>
-          Web Design & Storytelling
-        </h3>
-
-        <p>
-          Designing interactive websites and digital
-          experiences that make ideas easier to understand
-          and act upon.
-        </p>
-
-      </article>
-
-
-      <!-- Environment -->
-
-      <article class="skill-card">
-
-        <span class="skill-number">
-          03
-        </span>
-
-        <h3>
-          Environmental Advocacy
-        </h3>
-
-        <p>
-          Supporting climate action, water security,
-          sustainability and youth-focused initiatives
-          through communication and engagement.
-        </p>
-
-      </article>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
@@ -1177,143 +1200,64 @@ footer strong{
         A selection of initiatives exploring water,
         sustainability, youth, community and national identity.
       </p>
+<div class="projects-grid">
 
+  <!-- Water Security Project -->
+  <a href="water-project.html"
+     class="project-card image-project-card">
+
+    <div class="project-image">
+      <img
+        src="imgs/Engineer.png"
+        alt="Clean water flowing, representing water security and sustainable access"
+        loading="lazy"
+      >
+      <span class="project-number">01 / WATER SECURITY</span>
     </div>
 
+    <div class="project-content">
+      <h3>Kenya's Water Future</h3>
 
-    <div class="projects-grid">
+      <p>
+        Building on my experience with Nairobi Water, I expanded into communication, documentation, and sustainability—turning experience into meaningful impact.
+      </p>
 
-
-      <!-- Water Project -->
-
-      <a
-        href="water-project.html"
-        class="project-card"
-      >
-
-        <div class="project-content">
-
-          <span class="project-number">
-            01 / WATER
-          </span>
-
-          <h3>
-            Kenya’s Water Revolution
-          </h3>
-
-          <p>
-            Strategic vision for water security,
-            resilience and sustainable access.
-          </p>
-
-          <span class="project-link">
-            Explore project →
-          </span>
-
-        </div>
-
-      </a>
-
-
-      <!-- Mtoto Ni Jamii -->
-
-      <a
-        href="https://mtotonijamii.github.io/mtotonijamii/"
-        class="project-card"
-      >
-
-        <div class="project-content">
-
-          <span class="project-number">
-            02 / YOUTH
-          </span>
-
-          <h3>
-            Mtoto Ni Jamii
-          </h3>
-
-          <p>
-            Menstrual education and youth mentorship
-            for a purpose-driven generation.
-          </p>
-
-          <span class="project-link">
-            Explore project →
-          </span>
-
-        </div>
-
-      </a>
-
-
-      <!-- EcoHub -->
-
-      <a
-        href="https://ecoclub254-alt.github.io/EcoHub/index.html"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="project-card"
-      >
-
-        <div class="project-content">
-
-          <span class="project-number">
-            03 / SUSTAINABILITY
-          </span>
-
-          <h3>
-            EcoHub
-          </h3>
-
-          <p>
-            Integrating engineering, climate action
-            and innovation for community impact.
-          </p>
-
-          <span class="project-link">
-            Explore project →
-          </span>
-
-        </div>
-
-      </a>
-
-
-      <!-- Kabila Yetu Ni Kenya -->
-
-      <a
-        href="https://kabilayetunikenya.github.io/Kabila-yetu-ni-Kenya/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="project-card"
-      >
-
-        <div class="project-content">
-
-          <span class="project-number">
-            04 / COMMUNITY
-          </span>
-
-          <h3>
-            Kabila Yetu Ni Kenya
-          </h3>
-
-          <p>
-            A peace-driven initiative fostering unity,
-            shared national identity and collective
-            responsibility for Kenya’s future.
-          </p>
-
-          <span class="project-link">
-            Explore project →
-          </span>
-
-        </div>
-
-      </a>
-
-
+      <span class="project-link">Explore project →</span>
     </div>
+
+  </a>
+
+
+  <!-- Vision Tomorrow Ecosystem -->
+  <a href="https://visiontomorrow254.github.io/Zerah-Nexus/"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="project-card image-project-card">
+
+    <div class="project-image">
+      <img
+        src="imgs/Vision Tomorrow.png"
+        alt="Planet Earth and connected technology, representing the Vision Tomorrow ecosystem"
+        loading="lazy"
+      >
+      <span class="project-number">02 / THE ECOSYSTEM</span>
+    </div>
+
+    <div class="project-content">
+      <h3>Vision Tomorrow</h3>
+
+      <p>
+        Connecting national identity, environmental action,
+        child and youth wellbeing, creative industries and
+        digital skills through research, communication and innovation.
+      </p>
+
+      <span class="project-link">Explore the ecosystem →</span>
+    </div>
+
+  </a>
+
+</div>
 
   </div>
 
