@@ -1,204 +1,1388 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Home Furniture</title>
-    <style>
-        .navbar {
-            background-color: #32012F; 
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241039">
+  <meta name="description" content="Explore stylish home furniture, sofas, coffee tables and TV stands. Request custom furniture with a budget that works for you.">
 
-        .navbar-nav .nav-link {
-            color: #fff !important; 
-        }
+  <title>Home Furniture | EcoSolution Hub</title>
 
-        .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-            display: block;
-        }
-        .footer {
-    background-color: #32012F;
-    color: #fff;
-    padding: 50px 0;
-}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-.footer h3 {
-    color: #fff;
-}
+  <style>
+    :root {
+      --navy: #241039;
+      --purple: #6d28d9;
+      --bright: #a855f7;
+      --lavender: #f3e8ff;
+      --light: #faf8fc;
+      --white: #ffffff;
+      --text: #30263b;
+      --muted: #776d82;
+      --border: #eee6f5;
+      --radius: 18px;
+    }
 
-.footer ul {
-    list-style-type: none;
-    padding: 0;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.footer ul li {
-    margin-bottom: 10px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.footer p {
-    margin-bottom: 10px;
-}
+    body {
+      margin: 0;
+      background: var(--light);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+    }
 
-.footer a {
-    color: #fff;
-    text-decoration: none;
-}
+    a {
+      text-decoration: none;
+    }
 
-.footer a:hover {
-    text-decoration: underline;
-}
+    /* NAVIGATION */
+    .navbar {
+      background: var(--navy);
+      padding: 14px 0;
+    }
 
-.footer .col-md {
-    text-align: left; 
-}
-    </style>
+    .navbar-brand img {
+      max-height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 12px 15px !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #d8b4fe !important;
+    }
+
+    .dropdown-menu {
+      border: 0;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 12px 35px #180b2920;
+    }
+
+    .dropdown-item {
+      padding: 10px 14px;
+      border-radius: 7px;
+      font-size: 14px;
+    }
+
+    .dropdown-item:hover {
+      background: var(--lavender);
+      color: var(--purple);
+    }
+
+    .navbar-toggler {
+      border: 1px solid #ffffff60;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 85px 0 75px;
+      background:
+        radial-gradient(circle at 90% 15%, #a855f733, transparent 30%),
+        linear-gradient(125deg, #241039, #492078 70%, #6d28d9);
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      border: 1px solid #ffffff19;
+      border-radius: 50%;
+      right: -100px;
+      bottom: -170px;
+      box-shadow: 0 0 0 45px #ffffff08, 0 0 0 90px #ffffff05;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 50px;
+      background: #ffffff15;
+      border: 1px solid #ffffff30;
+      color: #e9d5ff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5.5vw, 65px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.12;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #d8b4fe;
+    }
+
+    .hero p {
+      color: #e8dff1;
+      font-size: 17px;
+      max-width: 580px;
+      margin-bottom: 30px;
+    }
+
+    .btn-main {
+      background: white;
+      color: var(--navy);
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 0;
+      transition: .25s;
+    }
+
+    .btn-main:hover {
+      color: var(--purple);
+      transform: translateY(-2px);
+    }
+
+    .hero-note {
+      display: inline-block;
+      margin-left: 15px;
+      color: #e8dff1;
+      font-size: 13px;
+    }
+
+    /* BENEFITS */
+    .benefits {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .benefit i {
+      font-size: 21px;
+      color: var(--purple);
+    }
+
+    /* SECTION HEADINGS */
+    .section {
+      padding: 75px 0;
+    }
+
+    .section-label {
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-heading {
+      color: var(--navy);
+      font-size: clamp(28px, 4vw, 39px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 610px;
+      margin: 0 auto;
+    }
+
+    /* FILTER BUTTONS */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 32px 0 35px;
+    }
+
+    .filter-btn {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 10px 19px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      color: white;
+      background: var(--purple);
+      border-color: var(--purple);
+    }
+
+    /* PRODUCT CARDS */
+    .product-card {
+      background: white;
+      border: 1px solid #eee8f3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 100%;
+      box-shadow: 0 5px 22px #24103908;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px #24103913;
+    }
+
+    .product-image {
+      position: relative;
+      height: 245px;
+      overflow: hidden;
+      background: #f0ebf4;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .5s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.06);
+    }
+
+    .product-tag {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      background: #ffffffed;
+      color: var(--purple);
+      border-radius: 30px;
+      padding: 6px 11px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .product-body {
+      padding: 19px;
+    }
+
+    .product-category {
+      color: var(--purple);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .product-body h3 {
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 750;
+      margin-bottom: 8px;
+    }
+
+    .product-body p {
+      color: var(--muted);
+      font-size: 13px;
+      min-height: 42px;
+      margin-bottom: 17px;
+    }
+
+    .product-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--purple);
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .product-link:hover {
+      color: var(--bright);
+    }
+
+    .product-card[hidden] {
+      display: none !important;
+    }
+
+    /* CUSTOM ORDER */
+    .order-section {
+      padding: 80px 0;
+      background: #f0e9f8;
+    }
+
+    .order-intro {
+      padding: 25px 25px 25px 0;
+    }
+
+    .order-intro h2 {
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin: 15px 0;
+    }
+
+    .order-intro p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .order-points {
+      list-style: none;
+      padding: 0;
+      margin-top: 25px;
+    }
+
+    .order-points li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .order-points i {
+      color: var(--purple);
+      font-size: 20px;
+    }
+
+    .order-card {
+      background: white;
+      padding: 32px;
+      border-radius: 22px;
+      box-shadow: 0 15px 50px #24103910;
+    }
+
+    .order-card h3 {
+      color: var(--navy);
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .form-intro {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      min-height: 47px;
+      border: 1px solid #e6ddec;
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 14px;
+      padding: 12px 14px;
+      box-shadow: none !important;
+    }
+
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-control:focus {
+      border-color: var(--bright);
+    }
+
+    .btn-whatsapp {
+      width: 100%;
+      min-height: 52px;
+      border: 0;
+      border-radius: 10px;
+      background: #168c52;
+      color: white;
+      font-weight: 750;
+      transition: .2s;
+    }
+
+    .btn-whatsapp:hover {
+      background: #117342;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .form-footnote {
+      color: var(--muted);
+      font-size: 11px;
+      margin: 13px 0 0;
+      text-align: center;
+    }
+
+    /* CTA STRIP */
+    .cta-strip {
+      background: var(--navy);
+      padding: 45px 0;
+      color: white;
+    }
+
+    .cta-strip h2 {
+      font-size: 27px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .cta-strip p {
+      color: #d6c8e8;
+      margin: 0;
+    }
+
+    .btn-outline-light {
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #190b27;
+      color: #cbbdd9;
+      padding: 55px 0 20px;
+    }
+
+    .footer h4 {
+      color: white;
+      font-size: 16px;
+      font-weight: 750;
+      margin-bottom: 17px;
+    }
+
+    .footer p,
+    .footer a {
+      font-size: 13px;
+      color: #cbbdd9;
+    }
+
+    .footer a:hover {
+      color: white;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-brand {
+      color: white;
+      font-size: 21px;
+      font-weight: 850;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand span {
+      color: #c084fc;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #ffffff19;
+      padding-top: 20px;
+      margin-top: 35px;
+      font-size: 12px;
+      color: #a99ab9;
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #25d366;
+      color: white;
+      font-size: 28px;
+      border-radius: 50%;
+      box-shadow: 0 5px 20px #0002;
+      transition: .2s;
+    }
+
+    .whatsapp-float:hover {
+      color: white;
+      transform: scale(1.07);
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        padding: 65px 0 55px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .hero-note {
+        display: block;
+        margin: 14px 0 0;
+      }
+
+      .section,
+      .order-section {
+        padding: 55px 0;
+      }
+
+      .product-image {
+        height: 220px;
+      }
+
+      .order-intro {
+        padding: 0 0 30px;
+      }
+
+      .order-card {
+        padding: 23px 18px;
+      }
+
+      .benefit {
+        justify-content: flex-start;
+        font-size: 12px;
+      }
+
+      .cta-strip .btn {
+        margin-top: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-lg bg py-3">
+
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a href="index.html" class="navbar-brand">
-            <img src="imgs/ecoeco.png" height="50  rehj6 890-=-65 4e54\o7iuytrweqwe12=086o7i56uytrew    qwh jmkl8io   cv 0" alt="EcoSolution Hub Logo">
+      <a href="index.html" class="navbar-brand" aria-label="EcoSolution Hub home">
+        <img src="imgs/Zerah Nexus logo.png" alt="EcoSolution Hub Logo">
+      </a>
+
+      <button class="navbar-toggler" type="button"
+        data-toggle="collapse" data-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#"
+              data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Construction Engineering
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding &amp; Fabrication</a>
+              <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom &amp; Plumbing</a>
+              <a class="dropdown-item" href="painting-and-interior-design.html">Painting &amp; Interior Design</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#"
+              data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Furniture Place
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="home-furniture.html">Home Furniture</a>
+              <a class="dropdown-item" href="office-furniture.html">Office Furniture</a>
+              <a class="dropdown-item" href="school-furniture.html">School Furniture</a>
+              <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Restaurant Furniture</a>
+              <a class="dropdown-item" href="outdoor-furniture.html">Outdoor Furniture</a>
+              <a class="dropdown-item" href="hospital-supplies.html">Hospital Supplies</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about_us.html">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Home Furniture Collection</span>
+
+        <h1>
+          Your Space.<br>
+          Your Style. <span>Your Furniture.</span>
+        </h1>
+
+        <p>
+          From elegant sofas to statement TV stands, discover furniture
+          that brings your ideas to life. Find a design you love or tell us
+          exactly what you want made.
+        </p>
+
+        <a href="#collection" class="btn btn-main">
+          Explore Collection <i class="bi bi-arrow-down ml-2"></i>
         </a>
-12tyhi        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle light-text" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Construction Engineering
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding and Fabrication</a>
-                        <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom &amp; Plumbing</a>
-                        <a class="dropdown-item" href="painting-and-interior-design.html">Painting &amp; Interior Design</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Furniture Place
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="home-furniture.html">Home Furniture</a>
-                        <a class="dropdown-item" href="office-furniture.html">Office Furniture</a>
-                        <a class="dropdown-item" href="school-furniture.html">School Furniture</a>
-                        <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Restaurant Furniture</a>
-                        <a class="dropdown-item" href="outdoor-furniture.html">Outdoor Furniture</a>
-                        <a class="dropdown-item" href="hospital-supplies.html">Hospital Supplies</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link light-text" href="about_us.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link light-text" href="contact.html">Contact</a>
-                </li>
-            </ul>
+        <span class="hero-note">
+          <i class="bi bi-palette mr-1"></i>
+          Custom requests welcome
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- BENEFITS -->
+  <section class="benefits">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-lg-3">
+          <div class="benefit">
+            <i class="bi bi-house-heart"></i>
+            <span>Made for Your Space</span>
+          </div>
         </div>
-    </div>
-</nav>
-<div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <img src="imgs/ll1.jpeg" height="450" alt="Four seater sofa L shaped">
-      </div>
-      <div class="col">
-        <img src="imgs/ll2.jpeg" height="400" alt="Eight seater sofa L Shaped">
-      </div>
-      <div class="col">
-        <img src="imgs/ll3.jpeg" height="330" alt="Classic couched sofa international">
-      </div>
-    </div>
-  </div>
-<div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <img src="imgs/sos1.jpeg" height="250" alt="Two seater sofa">
-      </div>
-      <div class="col">
-        <img src="imgs/sos2.jpeg" height="180" alt="Six Seater L shaped">
-      </div>
-      <div class="col">
-        <img src="imgs/ll11.jpeg" height="320" alt="L shaped six seater greay">
+        <div class="col-6 col-lg-3">
+          <div class="benefit">
+            <i class="bi bi-palette2"></i>
+            <span>Your Preferred Style</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="benefit">
+            <i class="bi bi-wallet2"></i>
+            <span>Budget Considered</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="benefit">
+            <i class="bi bi-chat-dots"></i>
+            <span>Easy Enquiries</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <img src="imgs/t1.jpeg" height="320" alt="Wood two drawer table">
-      </div>
-      <div class="col">
-        <img src="imgs/t2.jpeg" height="240" alt="Wood table ">
-      </div>
-      <div class="col">
-        <img src="imgs/t3.jpeg" height="220" alt="Living room table with beautiful shelves">
-      </div>
-    </div>
-  </div>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <img src="imgs/tttt.jpeg" height="320" alt="living room wooden table and tv stand">
-      </div>
-      <div class="col">
-        <img src="imgs/lll.jpeg" height="350" alt="office home desk white">
-      </div>
-      <div class="col">
-        <img src="imgs/tv111.jpeg" height="220" alt="metal and wood classic tv stand">
-      </div>
-    </div>
-  </div>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <img src="imgs/Wayfair_com - Online Home Store for Furniture, Decor, Outdoors & More _ Wayfair.jpeg" height="250" alt="beautiful design metal three seater">
-      </div>
-      <div class="col">
-        <img src="imgs/tat1.jpg" height="240" alt="Tv table white elegant">
-      </div>
-      <div class="col">
-        <img src="imgs/tvs3.jpeg" height="300" alt="wood tv table white beautiful">
-      </div>
-    </div>
-  </div>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <img src="imgs/tvs1.jpeg" height="270" alt="Classic greay wood tv table with shelves">
-      </div>
-      <div class="col">
-        <img src="imgs/tvs2.jpeg" height="240" alt="Small tv table white">
-      </div>
-      <div class="col">
-        <img src="imgs/tvstnd3.jpg" height="220" alt="elegant tv table with a drawer and table">
-      </div>
-    </div>
-  </div>
-  <div class="whatsapp-button">
-    <style>
-        .whatsapp-button {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            margin-top: 20px;
-        }
+  </section>
 
-        .whatsapp-button img {
-            margin-right: 8px;
-        }
-    </style>
-    <a href="https://wa.me/742082219" target="_blank">
-        <img src="imgs/wappicon.png" alt="WhatsApp Icon" width="44" height="44">
-        Chat on WhatsApp
-    </a>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  <!-- COLLECTION -->
+  <section class="section" id="collection">
+    <div class="container">
+
+      <div class="text-center">
+        <div class="section-label">Find Your Inspiration</div>
+        <h2 class="section-heading">Explore Our Collection</h2>
+        <p class="section-description">
+          Browse our furniture designs. Found something you like?
+          Select it to start a custom enquiry, or describe your own idea below.
+        </p>
+      </div>
+
+      <div class="filters" aria-label="Filter furniture by category">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All Furniture</button>
+        <button class="filter-btn" data-filter="sofas" aria-pressed="false">Sofas</button>
+        <button class="filter-btn" data-filter="tables" aria-pressed="false">Coffee Tables</button>
+        <button class="filter-btn" data-filter="tv" aria-pressed="false">TV Stands</button>
+        <button class="filter-btn" data-filter="desks" aria-pressed="false">Desks</button>
+      </div>
+
+      <div class="row" id="productGrid">
+
+        <!-- SOFAS -->
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="sofas">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/ll1.jpeg" alt="Four-seater L-shaped sofa" loading="lazy">
+              <span class="product-tag">Sofa Collection</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Living Room</div>
+              <h3>Four-Seater L-Shaped Sofa</h3>
+              <p>A stylish seating option for a comfortable, welcoming living room.</p>
+              <a href="#custom-order" class="product-link" data-product="Four-Seater L-Shaped Sofa">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="sofas">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/ll2.jpeg" alt="Eight-seater L-shaped sofa" loading="lazy">
+              <span class="product-tag">Spacious Seating</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Living Room</div>
+              <h3>Eight-Seater L-Shaped Sofa</h3>
+              <p>Generous seating for larger living rooms and family gatherings.</p>
+              <a href="#custom-order" class="product-link" data-product="Eight-Seater L-Shaped Sofa">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="sofas">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/ll3.jpeg" alt="Classic sofa design" loading="lazy">
+              <span class="product-tag">Classic Design</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Living Room</div>
+              <h3>Classic Sofa Design</h3>
+              <p>A timeless furniture style for an elegant home interior.</p>
+              <a href="#custom-order" class="product-link" data-product="Classic Sofa Design">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="sofas">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/sos1.jpeg" alt="Two-seater sofa" loading="lazy">
+              <span class="product-tag">Compact Comfort</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Living Room</div>
+              <h3>Two-Seater Sofa</h3>
+              <p>A compact seating choice for smaller rooms and cosy spaces.</p>
+              <a href="#custom-order" class="product-link" data-product="Two-Seater Sofa">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="sofas">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/sos2.jpeg" alt="Six-seater L-shaped sofa" loading="lazy">
+              <span class="product-tag">Family Favourite</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Living Room</div>
+              <h3>Six-Seater L-Shaped Sofa</h3>
+              <p>Practical, spacious seating for modern family living.</p>
+              <a href="#custom-order" class="product-link" data-product="Six-Seater L-Shaped Sofa">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="sofas">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/ll11.jpeg" alt="Grey L-shaped six-seater sofa" loading="lazy">
+              <span class="product-tag">Modern Style</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Living Room</div>
+              <h3>Modern Grey L-Shaped Sofa</h3>
+              <p>A contemporary look for a coordinated living room.</p>
+              <a href="#custom-order" class="product-link" data-product="Modern Grey L-Shaped Sofa">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- TABLES -->
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="tables">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/t1.jpeg" alt="Wooden two-drawer coffee table" loading="lazy">
+              <span class="product-tag">Wooden Furniture</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Coffee Tables</div>
+              <h3>Two-Drawer Coffee Table</h3>
+              <p>A practical wooden table with extra storage for everyday essentials.</p>
+              <a href="#custom-order" class="product-link" data-product="Wooden Two-Drawer Coffee Table">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="tables">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/t2.jpeg" alt="Wooden coffee table" loading="lazy">
+              <span class="product-tag">Simple &amp; Elegant</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Coffee Tables</div>
+              <h3>Classic Wooden Table</h3>
+              <p>A versatile design that complements different interior styles.</p>
+              <a href="#custom-order" class="product-link" data-product="Classic Wooden Coffee Table">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="tables">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/t3.jpeg" alt="Living room table with shelves" loading="lazy">
+              <span class="product-tag">Smart Storage</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Coffee Tables</div>
+              <h3>Table with Storage Shelves</h3>
+              <p>Bring useful storage and a clean finish to your living area.</p>
+              <a href="#custom-order" class="product-link" data-product="Coffee Table with Storage Shelves">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- DESKS -->
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="desks">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/lll.jpeg" alt="White home office desk" loading="lazy">
+              <span class="product-tag">Work From Home</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Desks</div>
+              <h3>Modern Home Office Desk</h3>
+              <p>Create a comfortable and organised workspace at home.</p>
+              <a href="#custom-order" class="product-link" data-product="Modern Home Office Desk">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- TV STANDS -->
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="tv">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/tttt.jpeg" alt="Wooden TV stand and living room table" loading="lazy">
+              <span class="product-tag">Living Room</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">TV Stands</div>
+              <h3>Wooden TV Stand</h3>
+              <p>A functional focal point for your entertainment area.</p>
+              <a href="#custom-order" class="product-link" data-product="Wooden TV Stand">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="tv">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/tv111.jpeg" alt="Metal and wood TV stand" loading="lazy">
+              <span class="product-tag">Modern Finish</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">TV Stands</div>
+              <h3>Metal &amp; Wood TV Stand</h3>
+              <p>A modern mix of materials for a distinctive entertainment setup.</p>
+              <a href="#custom-order" class="product-link" data-product="Metal and Wood TV Stand">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="tv">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/tat1.jpg" alt="Elegant white TV table" loading="lazy">
+              <span class="product-tag">Minimal Design</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">TV Stands</div>
+              <h3>Elegant White TV Table</h3>
+              <p>A clean, bright look for a contemporary living room.</p>
+              <a href="#custom-order" class="product-link" data-product="Elegant White TV Table">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="tv">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/tvs3.jpeg" alt="Wood and white TV stand" loading="lazy">
+              <span class="product-tag">Contemporary</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">TV Stands</div>
+              <h3>Wood &amp; White TV Stand</h3>
+              <p>A versatile furniture piece for a polished home interior.</p>
+              <a href="#custom-order" class="product-link" data-product="Wood and White TV Stand">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="tv">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/tvs1.jpeg" alt="Grey wooden TV stand with shelves" loading="lazy">
+              <span class="product-tag">Extra Storage</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">TV Stands</div>
+              <h3>TV Stand with Shelves</h3>
+              <p>Keep your entertainment equipment organised in style.</p>
+              <a href="#custom-order" class="product-link" data-product="Grey Wooden TV Stand with Shelves">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="tv">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/tvs2.jpeg" alt="Small white TV table" loading="lazy">
+              <span class="product-tag">Space Saving</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">TV Stands</div>
+              <h3>Compact White TV Table</h3>
+              <p>A simple space-saving choice for smaller rooms.</p>
+              <a href="#custom-order" class="product-link" data-product="Compact White TV Table">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="tv">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/tvstnd3.jpg" alt="TV stand with drawer and table" loading="lazy">
+              <span class="product-tag">Functional Style</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">TV Stands</div>
+              <h3>Drawer TV Stand</h3>
+              <p>Pair practical storage with a refined entertainment setup.</p>
+              <a href="#custom-order" class="product-link" data-product="TV Stand with Drawer">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="sofas">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/Wayfair_com - Online Home Store for Furniture, Decor, Outdoors & More _ Wayfair.jpeg" alt="Metal-frame three-seater sofa" loading="lazy">
+              <span class="product-tag">Distinctive Design</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Sofas</div>
+              <h3>Contemporary Three-Seater</h3>
+              <p>A distinctive seating style to inspire your next furniture choice.</p>
+              <a href="#custom-order" class="product-link" data-product="Contemporary Three-Seater Sofa">
+                Enquire About This <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-4">
+        <p class="section-description mb-3">
+          Don't see exactly what you're looking for?
+        </p>
+        <a href="#custom-order" class="btn btn-main" style="background:#6d28d9;color:white">
+          Request Custom Furniture <i class="bi bi-arrow-right ml-2"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CUSTOM ORDER FORM -->
+  <section class="order-section" id="custom-order">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-lg-5">
+          <div class="order-intro">
+            <div class="section-label">Made Around You</div>
+            <h2>Tell Us What You Have in Mind.</h2>
+
+            <p>
+              Have a specific design, size, colour or budget?
+              Tell us about your idea and let's discuss the best
+              furniture solution for your space.
+            </p>
+
+            <ul class="order-points">
+              <li><i class="bi bi-check-circle-fill"></i> Describe your preferred design</li>
+              <li><i class="bi bi-check-circle-fill"></i> Tell us your estimated budget</li>
+              <li><i class="bi bi-check-circle-fill"></i> Share dimensions, colours or materials</li>
+              <li><i class="bi bi-check-circle-fill"></i> Send your request directly via WhatsApp</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="order-card">
+            <h3>Request Your Furniture</h3>
+            <p class="form-intro">
+              Complete the details below to prepare your enquiry.
+            </p>
+
+            <form id="furnitureForm">
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="customerName">Your Name *</label>
+                  <input type="text" class="form-control"
+                    id="customerName" name="customerName"
+                    placeholder="Enter your name" autocomplete="name" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="customerPhone">Phone Number *</label>
+                  <input type="tel" class="form-control"
+                    id="customerPhone" name="customerPhone"
+                    placeholder="e.g. 07XX XXX XXX"
+                    autocomplete="tel" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="furnitureType">What furniture do you need? *</label>
+                <select class="form-control" id="furnitureType"
+                  name="furnitureType" required>
+                  <option value="">Choose a category</option>
+                  <option value="Sofa">Sofa</option>
+                  <option value="Coffee Table">Coffee Table</option>
+                  <option value="TV Stand">TV Stand</option>
+                  <option value="Home Office Desk">Home Office Desk</option>
+                  <option value="Complete Living Room Set">Complete Living Room Set</option>
+                  <option value="Other Custom Furniture">Other / Custom Furniture</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="budget">Your Estimated Budget (KES) *</label>
+                <select class="form-control" id="budget" name="budget" required>
+                  <option value="">Select your budget range</option>
+                  <option value="Below KES 10,000">Below KES 10,000</option>
+                  <option value="KES 10,000 – 25,000">KES 10,000 – 25,000</option>
+                  <option value="KES 25,000 – 50,000">KES 25,000 – 50,000</option>
+                  <option value="KES 50,000 – 100,000">KES 50,000 – 100,000</option>
+                  <option value="KES 100,000 – 200,000">KES 100,000 – 200,000</option>
+                  <option value="Above KES 200,000">Above KES 200,000</option>
+                  <option value="Budget to be discussed">I'm not sure yet</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="description">Describe What You Want *</label>
+                <textarea class="form-control" id="description"
+                  name="description" rows="4"
+                  placeholder="Tell us about the design, size, colour, material, quantity or any special requirements..."
+                  required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="delivery">Delivery Location (Optional)</label>
+                <input type="text" class="form-control" id="delivery"
+                  name="delivery" placeholder="e.g. Nairobi, Westlands">
+              </div>
+
+              <button type="submit" class="btn btn-whatsapp">
+                <i class="bi bi-whatsapp mr-2"></i>
+                Send My Request on WhatsApp
+              </button>
+
+              <p class="form-footnote">
+                Your request will open in WhatsApp for you to review and send.
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="cta-strip">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h2>Let's Create Something Beautiful.</h2>
+          <p>Have questions? Contact our team to discuss your furniture ideas.</p>
+        </div>
+        <div class="col-lg-4 text-lg-right">
+          <a href="contact.html" class="btn btn-outline-light">
+            Contact Our Team <i class="bi bi-arrow-up-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-5 mb-4">
+          <div class="footer-brand">Zerah <span>Nexus</span></div>
+          <p>
+            Furniture and practical solutions designed around your
+            space, style and needs.
+          </p>
+        </div>
+
+        <div class="col-md-3 col-6 mb-4">
+          <h4>Furniture</h4>
+          <ul class="footer-links">
+            <li><a href="home-furniture.html">Home Furniture</a></li>
+            <li><a href="office-furniture.html">Office Furniture</a></li>
+            <li><a href="school-furniture.html">School Furniture</a></li>
+            <li><a href="outdoor-furniture.html">Outdoor Furniture</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 col-6 mb-4">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#collection">Our Collection</a></li>
+            <li><a href="#custom-order">Request Custom Furniture</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom d-flex flex-wrap justify-content-between">
+        <span>&copy; <span id="currentYear"></span>  Zerah-Nexus. All rights reserved.</span>
+        <span>Designed for your space.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/742082219"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with us on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // IMPORTANT:
+    // Replace this with your business WhatsApp number in international format.
+    // Kenya example: 2547XXXXXXXX (no +, spaces or hyphens).
+    const WHATSAPP_NUMBER = "742082219";
+
+    // Automatically update the footer year.
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+    // Furniture category filters.
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const productCards = document.querySelectorAll(".product-card-wrap");
+
+    filterButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        const selectedCategory = button.dataset.filter;
+
+        filterButtons.forEach(function(item) {
+          item.classList.remove("active");
+          item.setAttribute("aria-pressed", "false");
+        });
+
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+
+        productCards.forEach(function(card) {
+          const matches =
+            selectedCategory === "all" ||
+            card.dataset.category === selectedCategory;
+
+          card.hidden = !matches;
+        });
+      });
+    });
+
+    // A product card can preselect the relevant furniture category.
+    document.querySelectorAll("[data-product]").forEach(function(link) {
+      link.addEventListener("click", function() {
+        const productName = link.dataset.product;
+        const typeSelect = document.getElementById("furnitureType");
+
+        const category = link.closest(".product-card-wrap").dataset.category;
+
+        const categoryMap = {
+          sofas: "Sofa",
+          tables: "Coffee Table",
+          tv: "TV Stand",
+          desks: "Home Office Desk"
+        };
+
+        typeSelect.value = categoryMap[category] || "Other Custom Furniture";
+
+        document.getElementById("description").value =
+          "I'm interested in: " + productName +
+          ". Please let me know the available options and price.";
+
+        // Allow the browser to navigate to the enquiry form first.
+        setTimeout(function() {
+          document.getElementById("customerName").focus({
+            preventScroll: true
+          });
+        }, 350);
+      });
+    });
+
+    // Prepare a WhatsApp enquiry from the submitted form.
+    document.getElementById("furnitureForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (!this.checkValidity()) {
+        this.reportValidity();
+        return;
+      }
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerPhone").value.trim();
+      const furniture = document.getElementById("furnitureType").value;
+      const budget = document.getElementById("budget").value;
+      const description = document.getElementById("description").value.trim();
+      const delivery = document.getElementById("delivery").value.trim();
+
+      if (!name || !phone || !furniture || !budget || !description) {
+        alert("Please complete all required fields.");
+        return;
+      }
+
+      const message =
+        "Hello EcoSolution Hub! I would like to make a furniture enquiry.\n\n" +
+        "Name: " + name + "\n" +
+        "My Phone: " + phone + "\n" +
+        "Furniture Needed: " + furniture + "\n" +
+        "Estimated Budget: " + budget + "\n" +
+        "Description: " + description + "\n" +
+        "Delivery Location: " + (delivery || "Not specified") + "\n\n" +
+        "Please get back to me with more information. Thank you.";
+
+      const number = WHATSAPP_NUMBER.replace(/\D/g, "");
+
+      if (!number || number.length < 10) {
+        alert("Please configure the business WhatsApp number in the page's JavaScript before using the enquiry form.");
+        return;
+      }
+
+      const whatsappURL =
+        "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
+
+      window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    });
+  </script>
+
 </body>
 </html>

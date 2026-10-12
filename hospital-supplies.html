@@ -1,198 +1,1385 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Supplies</title>
+
+    <title>Hospital Supplies & Medical Furniture | EcoSolution Hub</title>
+    <meta name="description" content="Explore hospital beds, patient-care furniture, medical cabinets, hospital trolleys and privacy screens from EcoSolution Hub. Contact us for supply enquiries.">
 
     <!-- Bootstrap & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <style>
+        :root {
+            --navy: #102b3f;
+            --navy-dark: #091e2d;
+            --teal: #0c9b91;
+            --teal-dark: #087c75;
+            --gold: #f5c451;
+            --light: #f3f7f9;
+            --text: #344654;
+            --muted: #71818c;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 95px;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.7;
+        }
+
+        a {
+            transition: color .25s ease;
+        }
+
         .navbar {
-            background-color: #32012F;
+            background: var(--navy-dark);
+            padding: 10px 0;
+            box-shadow: 0 5px 22px rgba(0, 0, 0, .12);
         }
+
+        .navbar-brand img {
+            width: auto;
+            max-width: 180px;
+            height: 66px;
+            object-fit: contain;
+        }
+
         .navbar-nav .nav-link {
+            color: rgba(255,255,255,.88) !important;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 12px 13px !important;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: #65ddd2 !important;
+        }
+
+        .dropdown-menu {
+            border: 0;
+            border-radius: 10px;
+            padding: 9px;
+            box-shadow: 0 12px 35px rgba(0,0,0,.15);
+        }
+
+        .dropdown-item {
+            padding: 9px 13px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .dropdown-item:hover {
+            background: #e8f7f5;
+            color: var(--teal-dark);
+        }
+
+        .navbar-toggler {
+            border: 1px solid rgba(255,255,255,.45);
+            padding: 7px 10px;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            color: var(--white);
+            background:
+                radial-gradient(circle at 85% 20%, rgba(12,155,145,.30), transparent 30%),
+                linear-gradient(125deg, var(--navy-dark), #153e53 65%, #126b70);
+            padding: 92px 0 84px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 390px;
+            height: 390px;
+            right: -150px;
+            bottom: -245px;
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 50%;
+            box-shadow: 0 0 0 35px rgba(255,255,255,.025),
+                        0 0 0 75px rgba(255,255,255,.025);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,.10);
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 50px;
+            padding: 7px 14px;
+            margin-bottom: 22px;
+            color: #bff4ee;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 760px;
+            margin-bottom: 22px;
+            font-size: clamp(2.4rem, 5vw, 4.35rem);
+            font-weight: 800;
+            letter-spacing: -1.8px;
+            line-height: 1.12;
+        }
+
+        .hero h1 span {
+            color: #68ded2;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: rgba(255,255,255,.78);
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 22px;
+            border: 0;
+            border-radius: 7px;
+            background: var(--teal);
+            color: white !important;
+            font-weight: 700;
+            text-decoration: none !important;
+            transition: .25s ease;
+        }
+
+        .btn-main:hover {
+            background: var(--teal-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light-custom {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border: 1px solid rgba(255,255,255,.45);
+            border-radius: 7px;
             color: #fff !important;
+            font-weight: 700;
+            text-decoration: none !important;
+            transition: .25s ease;
         }
 
-        .section-title {
-            color: #ffcc00;
-            font-weight: bold;
-            text-align: center;
-            margin: 40px 0 20px;
-        }
-        .section-title i {
-            margin-right: 8px;
+        .btn-outline-light-custom:hover {
+            background: #fff;
+            color: var(--navy) !important;
         }
 
-        .card {
-            border: none;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            margin-bottom: 20px;
-        }
-        .card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .card img {
-            height: 220px;
-            object-fit: cover;
-        }
-        .card-body {
-            background: #f8f9fa;
+        .hero-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 32px;
+            color: rgba(255,255,255,.88);
+            font-size: 13px;
+            font-weight: 600;
         }
 
-        .why-us {
-            background: #f1f3f6;
-            padding: 30px;
-            margin: 40px 0;
-            border-radius: 5px;
+        .hero-points i {
+            color: #68ded2;
+            margin-right: 6px;
         }
 
-        .footer {
-            background-color: #32012F;
-            color: #fff;
-            padding: 40px 0;
-            margin-top: 40px;
-        }
-        .footer h3 {
-            color: #ffcc00;
-        }
-        .footer a {
-            color: #fff;
-        }
-        .footer a:hover {
-            text-decoration: underline;
+        /* TRUST STRIP */
+        .trust-strip {
+            background: white;
+            border-bottom: 1px solid #e7edf0;
+            padding: 23px 0;
         }
 
-        .whatsapp-button {
+        .trust-item {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            margin: 20px;
+            gap: 13px;
+            height: 100%;
+            padding: 8px 18px;
         }
-        .whatsapp-button img {
-            margin-right: 8px;
+
+        .trust-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: #e8f7f5;
+            color: var(--teal-dark);
+            font-size: 21px;
+        }
+
+        .trust-item strong {
+            display: block;
+            color: var(--navy);
+            font-size: 14px;
+        }
+
+        .trust-item small {
+            display: block;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* GENERAL SECTIONS */
+        .section {
+            padding: 78px 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--teal-dark);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 13px;
+            color: var(--navy);
+            font-size: clamp(1.8rem, 3vw, 2.65rem);
+            font-weight: 800;
+            letter-spacing: -.7px;
+        }
+
+        .section-heading p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* FILTERS */
+        .filter-wrap {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-bottom: 32px;
+        }
+
+        .filter-btn {
+            padding: 9px 17px;
+            border: 1px solid #dce5e9;
+            border-radius: 50px;
+            background: #fff;
+            color: #526572;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--teal);
+            background: var(--teal);
+            color: white;
+        }
+
+        /* PRODUCT CARDS */
+        .product-card {
+            height: 100%;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #e9eef1;
+            border-radius: 13px;
+            box-shadow: 0 5px 20px rgba(16,43,63,.045);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 35px rgba(16,43,63,.12);
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            height: 245px;
+            background: #edf2f4;
+        }
+
+        .product-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.045);
+        }
+
+        .product-label {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            padding: 6px 10px;
+            border-radius: 5px;
+            background: rgba(9,30,45,.88);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .7px;
+            text-transform: uppercase;
+        }
+
+        .product-body {
+            display: flex;
+            flex-direction: column;
+            padding: 22px;
+            min-height: 208px;
+        }
+
+        .product-body h3 {
+            margin-bottom: 9px;
+            color: var(--navy);
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .product-body p {
+            flex-grow: 1;
+            margin-bottom: 20px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding-top: 15px;
+            border-top: 1px solid #edf1f3;
+        }
+
+        .product-footer span {
+            color: var(--teal-dark);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .enquire-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: 800;
+            text-decoration: none !important;
+        }
+
+        .enquire-link:hover {
+            color: var(--teal-dark);
+        }
+
+        .no-products {
+            display: none;
+            padding: 30px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        /* WHY US */
+        .why-card {
+            height: 100%;
+            padding: 25px;
+            border: 1px solid #e7edf0;
+            border-radius: 12px;
+            background: white;
+            transition: .25s ease;
+        }
+
+        .why-card:hover {
+            border-color: #b9e7e2;
+            transform: translateY(-4px);
+        }
+
+        .why-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            margin-bottom: 19px;
+            border-radius: 13px;
+            background: #e8f7f5;
+            color: var(--teal-dark);
+            font-size: 24px;
+        }
+
+        .why-card h3 {
+            margin-bottom: 9px;
+            color: var(--navy);
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .why-card p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* ENQUIRY */
+        .enquiry-section {
+            padding: 78px 0;
+            background: linear-gradient(130deg, #eaf6f6, #f4f7fa);
+        }
+
+        .enquiry-intro {
+            padding: 15px 20px 15px 0;
+        }
+
+        .enquiry-intro h2 {
+            margin-bottom: 18px;
+            color: var(--navy);
+            font-size: clamp(1.9rem, 3vw, 2.7rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .enquiry-intro p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .enquiry-points {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .enquiry-points li {
+            margin-bottom: 12px;
+            color: var(--navy);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .enquiry-points i {
+            margin-right: 10px;
+            color: var(--teal-dark);
+        }
+
+        .enquiry-form {
+            padding: 30px;
+            border: 1px solid #e7edf0;
+            border-radius: 15px;
+            background: #fff;
+            box-shadow: 0 15px 45px rgba(16,43,63,.08);
+        }
+
+        .enquiry-form h3 {
+            margin-bottom: 6px;
+            color: var(--navy);
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .form-subtitle {
+            margin-bottom: 24px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .form-group label {
+            margin-bottom: 7px;
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .form-control {
+            min-height: 45px;
+            border: 1px solid #dce5e9;
+            border-radius: 7px;
+            color: var(--text);
+            font-size: 14px;
+            box-shadow: none !important;
+        }
+
+        .form-control:focus {
+            border-color: var(--teal);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 13px 18px;
+            border: 0;
+            border-radius: 7px;
+            background: var(--teal);
+            color: #fff;
+            font-weight: 800;
+            transition: .25s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--teal-dark);
+        }
+
+        .form-note {
+            margin-top: 12px;
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 11px;
+            text-align: center;
+        }
+
+        /* FINAL CTA */
+        .cta-band {
+            padding: 42px 0;
+            background: var(--navy);
+            color: white;
+        }
+
+        .cta-band h2 {
+            margin-bottom: 7px;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .cta-band p {
+            margin-bottom: 0;
+            color: rgba(255,255,255,.72);
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 60px 0 20px;
+            background: var(--navy-dark);
+            color: rgba(255,255,255,.7);
+        }
+
+        .footer h3 {
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        .footer-brand {
+            margin-bottom: 14px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .footer-brand span {
+            color: #68ded2;
+        }
+
+        .footer p {
+            font-size: 13px;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer li {
+            margin-bottom: 9px;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,.7);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #68ded2;
+        }
+
+        .footer-contact i {
+            width: 22px;
+            color: #68ded2;
+        }
+
+        .footer-bottom {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.12);
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* FLOATING WHATSAPP */
+        .floating-whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 11px 17px 11px 11px;
+            border: 2px solid white;
+            border-radius: 50px;
+            background: #20bd62;
+            color: white !important;
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none !important;
+            box-shadow: 0 7px 25px rgba(0,0,0,.2);
+            transition: transform .2s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: translateY(-3px);
+        }
+
+        .floating-whatsapp img {
+            width: 29px;
+            height: 29px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                padding: 65px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .hero-points {
+                gap: 12px;
+                flex-direction: column;
+            }
+
+            .section,
+            .enquiry-section {
+                padding: 55px 0;
+            }
+
+            .trust-item {
+                padding: 10px 5px;
+            }
+
+            .product-image {
+                height: 235px;
+            }
+
+            .enquiry-form {
+                padding: 22px;
+            }
+
+            .cta-band .btn-main {
+                margin-top: 20px;
+            }
+
+            .floating-whatsapp {
+                right: 13px;
+                bottom: 13px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg py-3">
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-        <a href="index.html" class="navbar-brand">
-            <img src="imgs/ecoeco.png" height="80" alt="EcoSolution Hub Logo">
+        <a href="index.html" class="navbar-brand" aria-label="EcoSolution Hub home">
+            <img src="imgs/Zerah Nexus logo.png" alt="EcoSolution Hub Logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+
+        <button class="navbar-toggler" type="button"
+                data-toggle="collapse"
+                data-target="#mainNavigation"
+                aria-controls="mainNavigation"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="mainNavigation">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" data-toggle="dropdown">Construction Engineering</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding & Fabrication</a>
-                        <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom & Plumbing</a>
-                        <a class="dropdown-item" href="painting-and-interior-design.html">Painting & Interior Design</a>
+                    <a class="nav-link dropdown-toggle" href="#"
+                       id="constructionDropdown" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Construction Engineering
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="constructionDropdown">
+                        <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding &amp; Fabrication</a>
+                        <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom &amp; Plumbing</a>
+                        <a class="dropdown-item" href="painting-and-interior-design.html">Painting &amp; Interior Design</a>
                         <a class="dropdown-item" href="cabinetry-installation.html">Cabinetry Installation</a>
                     </div>
                 </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">Furniture Place</a>
-                    <div class="dropdown-menu">
+                    <a class="nav-link dropdown-toggle" href="#"
+                       id="furnitureDropdown" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Furniture Place
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="furnitureDropdown">
                         <a class="dropdown-item" href="home-furniture.html">Home Furniture</a>
                         <a class="dropdown-item" href="office-furniture.html">Office Furniture</a>
                         <a class="dropdown-item" href="school-furniture.html">School Furniture</a>
-                        <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Bar & Restaurant Furniture</a>
+                        <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Bar &amp; Restaurant Furniture</a>
                         <a class="dropdown-item" href="outdoor-furniture.html">Outdoor Furniture</a>
                         <a class="dropdown-item" href="hospital-supplies.html">Hospital Supplies</a>
                     </div>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="about_us.html">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about_us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
 
 <!-- HERO -->
-<section class="bg-light p-5 text-center">
-    <h2>Reliable Hospital & Medical Supplies</h2>
-    <p>Delivering quality hospital furniture and medical equipment to ensure better healthcare delivery.</p>
+<header class="hero">
+    <div class="container hero-content">
+        <div class="hero-tag">
+            <i class="bi bi-heart-pulse-fill"></i>
+            Healthcare &amp; Medical Supplies
+        </div>
+
+        <h1>Equipping Healthcare.<br><span>Supporting Better Care.</span></h1>
+
+        <p>
+            Practical hospital furniture and medical storage solutions for
+            hospitals, clinics, care facilities and healthcare professionals.
+        </p>
+
+        <div class="d-flex flex-wrap" style="gap: 12px;">
+            <a href="#products" class="btn-main">
+                Explore Supplies <i class="bi bi-arrow-down-right"></i>
+            </a>
+            <a href="#enquiry" class="btn-outline-light-custom">
+                Request a Quote <i class="bi bi-chat-dots"></i>
+            </a>
+        </div>
+
+        <div class="hero-points">
+            <span><i class="bi bi-check-circle-fill"></i> Practical solutions</span>
+            <span><i class="bi bi-check-circle-fill"></i> Enquiries for bulk orders</span>
+            <span><i class="bi bi-check-circle-fill"></i> Solutions for healthcare facilities</span>
+        </div>
+    </div>
+</header>
+
+<!-- TRUST STRIP -->
+<section class="trust-strip" aria-label="Our service highlights">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="bi bi-hospital"></i></div>
+                    <div>
+                        <strong>Healthcare Facilities</strong>
+                        <small>For hospitals, clinics and care homes</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="bi bi-box-seam"></i></div>
+                    <div>
+                        <strong>Furniture &amp; Storage</strong>
+                        <small>Essential care and organisation equipment</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="bi bi-chat-square-text"></i></div>
+                    <div>
+                        <strong>Personalised Enquiries</strong>
+                        <small>Discuss your supply requirements with us</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- HOSPITAL BEDS -->
-<h3 class="section-title"><i class="bi bi-hospital"></i>Hospital Beds & Patient Care</h3>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4"><div class="card"><img src="imgs/normalHbed.jpeg" class="card-img-top"><div class="card-body"><p>Standard hospital bed designed for durability and patient comfort.</p></div></div></div>
-        <div class="col-md-4"><div class="card"><img src="imgs/Attendant Bed.jpeg" class="card-img-top"><div class="card-body"><p>Attendant bed for caregivers, built for easy handling and support.</p></div></div></div>
-        <div class="col-md-4"><div class="card"><img src="imgs/B02 Normal One Function One-Crank Medical Bed.jpeg" class="card-img-top"><div class="card-body"><p>One-crank medical bed, adjustable for patient care efficiency.</p></div></div></div>
+<!-- PRODUCTS -->
+<section class="section" id="products">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Our Product Range</span>
+            <h2>Hospital Supplies &amp; Medical Furniture</h2>
+            <p>
+                Explore practical equipment for patient care, medical storage
+                and organised healthcare environments.
+            </p>
+        </div>
+
+        <!-- Category filters -->
+        <div class="filter-wrap" role="group" aria-label="Filter products">
+            <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All Products</button>
+            <button type="button" class="filter-btn" data-filter="beds" aria-pressed="false">Hospital Beds</button>
+            <button type="button" class="filter-btn" data-filter="storage" aria-pressed="false">Storage &amp; Trolleys</button>
+            <button type="button" class="filter-btn" data-filter="privacy" aria-pressed="false">Privacy Screens</button>
+        </div>
+
+        <div class="row" id="productGrid">
+
+            <!-- Hospital bed -->
+            <div class="col-md-6 col-lg-4 mb-4 product-item" data-category="beds">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="imgs/normalHbed.jpeg"
+                             alt="Standard hospital bed for patient care"
+                             loading="lazy">
+                        <span class="product-label">Patient Care</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Standard Hospital Bed</h3>
+                        <p>
+                            A practical hospital bed designed for everyday
+                            patient care, comfort and dependable use.
+                        </p>
+                        <div class="product-footer">
+                            <span><i class="bi bi-hospital"></i> Hospital Beds</span>
+                            <a href="#enquiry" class="enquire-link" data-product="Standard Hospital Bed">
+                                Enquire <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Attendant bed -->
+            <div class="col-md-6 col-lg-4 mb-4 product-item" data-category="beds">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="imgs/Attendant Bed.jpeg"
+                             alt="Attendant bed for a patient's caregiver"
+                             loading="lazy">
+                        <span class="product-label">Caregiver Support</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Attendant Bed</h3>
+                        <p>
+                            A dedicated resting option for caregivers and
+                            attendants supporting patients in care facilities.
+                        </p>
+                        <div class="product-footer">
+                            <span><i class="bi bi-person-hearts"></i> Patient Support</span>
+                            <a href="#enquiry" class="enquire-link" data-product="Attendant Bed">
+                                Enquire <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- One crank bed -->
+            <div class="col-md-6 col-lg-4 mb-4 product-item" data-category="beds">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="imgs/B02 Normal One Function One-Crank Medical Bed.jpeg"
+                             alt="One-crank adjustable medical bed"
+                             loading="lazy">
+                        <span class="product-label">Adjustable Care</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>One-Crank Medical Bed</h3>
+                        <p>
+                            An adjustable medical bed with a manual crank
+                            mechanism for selected patient-care needs.
+                        </p>
+                        <div class="product-footer">
+                            <span><i class="bi bi-sliders"></i> Medical Beds</span>
+                            <a href="#enquiry" class="enquire-link" data-product="One-Crank Medical Bed">
+                                Enquire <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Medicine cabinet -->
+            <div class="col-md-6 col-lg-4 mb-4 product-item" data-category="storage">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="imgs/Cabinet Metal medicine cabinet.jpeg"
+                             alt="Metal medicine storage cabinet"
+                             loading="lazy">
+                        <span class="product-label">Medical Storage</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Metal Medicine Cabinet</h3>
+                        <p>
+                            Organise medical supplies and medicine storage
+                            with a dedicated cabinet for healthcare settings.
+                        </p>
+                        <div class="product-footer">
+                            <span><i class="bi bi-lock"></i> Storage Solutions</span>
+                            <a href="#enquiry" class="enquire-link" data-product="Metal Medicine Cabinet">
+                                Enquire <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Trolley -->
+            <div class="col-md-6 col-lg-4 mb-4 product-item" data-category="storage">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="imgs/Htroleystand.jpeg"
+                             alt="Hospital trolley for moving supplies"
+                             loading="lazy">
+                        <span class="product-label">Equipment Mobility</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Hospital Trolley</h3>
+                        <p>
+                            A versatile trolley for organising and moving
+                            supplies around suitable healthcare workspaces.
+                        </p>
+                        <div class="product-footer">
+                            <span><i class="bi bi-cart3"></i> Trolleys</span>
+                            <a href="#enquiry" class="enquire-link" data-product="Hospital Trolley">
+                                Enquire <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Privacy screens -->
+            <div class="col-md-6 col-lg-4 mb-4 product-item" data-category="privacy">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="imgs/Hospital Bed Screens (03).jpeg"
+                             alt="Hospital bed privacy screens"
+                             loading="lazy">
+                        <span class="product-label">Patient Privacy</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Hospital Bed Screens</h3>
+                        <p>
+                            Privacy screens for patient areas, examination
+                            spaces and other settings where visual separation
+                            is needed.
+                        </p>
+                        <div class="product-footer">
+                            <span><i class="bi bi-shield-check"></i> Privacy Solutions</span>
+                            <a href="#enquiry" class="enquire-link" data-product="Hospital Bed Screens">
+                                Enquire <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+
+        <div class="no-products" id="noProducts">
+            No products found in this category.
+        </div>
+
+        <div class="text-center mt-3">
+            <p class="text-muted small mb-3">
+                Looking for something specific? Contact us about your requirements.
+            </p>
+            <a href="#enquiry" class="btn-main">
+                Discuss Your Requirements <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
     </div>
-</div>
+</section>
 
-<!-- MEDICAL STORAGE & TROLLEYS -->
-<h3 class="section-title"><i class="bi bi-box-seam"></i>Medical Cabinets & Trolleys</h3>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4"><div class="card"><img src="imgs/Cabinet Metal medicine cabinet.jpeg" class="card-img-top"><div class="card-body"><p>Metal medicine cabinet for secure and organized drug storage.</p></div></div></div>
-        <div class="col-md-4"><div class="card"><img src="imgs/Htroleystand.jpeg" class="card-img-top"><div class="card-body"><p>Multi-purpose hospital trolley for transporting supplies efficiently.</p></div></div></div>
-        <div class="col-md-4"><div class="card"><img src="imgs/Hospital Bed Screens (03).jpeg" class="card-img-top"><div class="card-body"><p>Privacy screens for patient care and consultation rooms.</p></div></div></div>
+<!-- WHY CHOOSE US -->
+<section class="section section-light">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Why EcoSolution Hub</span>
+            <h2>Practical Solutions for Healthcare</h2>
+            <p>
+                We help healthcare facilities explore equipment options
+                that suit their space, needs and procurement requirements.
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="why-card">
+                    <div class="why-icon"><i class="bi bi-check2-circle"></i></div>
+                    <h3>Quality-Focused</h3>
+                    <p>Discuss product specifications and suitability before placing an order.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="why-card">
+                    <div class="why-icon"><i class="bi bi-building"></i></div>
+                    <h3>Facility Solutions</h3>
+                    <p>Options for hospitals, clinics, care homes and other healthcare environments.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="why-card">
+                    <div class="why-icon"><i class="bi bi-wallet2"></i></div>
+                    <h3>Quote-Based Pricing</h3>
+                    <p>Request a quotation based on your selected products and quantities.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="why-card">
+                    <div class="why-icon"><i class="bi bi-clipboard2-check"></i></div>
+                    <h3>Custom Enquiries</h3>
+                    <p>Tell us what you need, including specifications and preferred quantities.</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center text-muted small mt-2 mb-0">
+            Product certifications, specifications, availability and delivery terms
+            should be confirmed with our team before ordering.
+        </p>
     </div>
-</div>
+</section>
 
-<!-- WHY CHOOSE OUR MEDICAL SUPPLIES -->
-<div class="container why-us">
-    <h3 class="section-title"><i class="bi bi-shield-check"></i>Why Choose Our Hospital Supplies?</h3>
-    <ul>
-        <li><strong>Certified Quality:</strong> We source hospital-grade materials approved for medical use.</li>
-        <li><strong>Durability:</strong> Long-lasting equipment designed for continuous use.</li>
-        <li><strong>Affordable Solutions:</strong> Competitive prices without compromising standards.</li>
-        <li><strong>Custom Orders:</strong> We tailor to hospitals, clinics, and caregiving homes.</li>
-    </ul>
-</div>
+<!-- ENQUIRY FORM -->
+<section class="enquiry-section" id="enquiry">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="enquiry-intro">
+                    <span class="eyebrow">Let's Talk Supplies</span>
+                    <h2>Equip Your Facility with the Right Solutions.</h2>
+                    <p>
+                        Need beds, storage cabinets, trolleys or privacy screens?
+                        Send us your requirements and continue the enquiry through WhatsApp.
+                    </p>
 
-<!-- WHATSAPP -->
-<div class="whatsapp-button">
-    <a href="https://wa.me/742082219" target="_blank">
-        <img src="imgs/wappicon.png" alt="WhatsApp Icon" width="44" height="44"> Chat on WhatsApp
-    </a>
-</div>
+                    <ul class="enquiry-points">
+                        <li><i class="bi bi-check-circle-fill"></i> Enquire about specific products</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Include quantities and specifications</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Discuss bulk supply requirements</li>
+                    </ul>
+
+                    <p class="mb-2">
+                        <i class="bi bi-telephone-fill mr-2" style="color:var(--teal-dark)"></i>
+                        <strong>+254 742 082219</strong>
+                    </p>
+                    <p>
+                        <i class="bi bi-envelope-fill mr-2" style="color:var(--teal-dark)"></i>
+                        zerahnexus@gmail.com
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <form class="enquiry-form" id="hospitalEnquiryForm">
+                    <h3>Request a Quotation</h3>
+                    <p class="form-subtitle">
+                        Fill in the details below to prepare your WhatsApp enquiry.
+                    </p>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="customerName">Your Name *</label>
+                            <input type="text" class="form-control" id="customerName"
+                                   name="customerName" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="customerPhone">Phone Number *</label>
+                            <input type="tel" class="form-control" id="customerPhone"
+                                   name="customerPhone" placeholder="Your contact number" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="facilityType">Facility Type *</label>
+                            <select class="form-control" id="facilityType" name="facilityType" required>
+                                <option value="">Select facility</option>
+                                <option>Hospital</option>
+                                <option>Clinic</option>
+                                <option>Care Home</option>
+                                <option>Medical Centre</option>
+                                <option>NGO / Institution</option>
+                                <option>Individual / Home Care</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="productSelect">Product of Interest *</label>
+                            <select class="form-control" id="productSelect" name="productSelect" required>
+                                <option value="">Select a product</option>
+                                <option>Standard Hospital Bed</option>
+                                <option>Attendant Bed</option>
+                                <option>One-Crank Medical Bed</option>
+                                <option>Metal Medicine Cabinet</option>
+                                <option>Hospital Trolley</option>
+                                <option>Hospital Bed Screens</option>
+                                <option>Multiple Products</option>
+                                <option>Other Medical Supplies</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="quantity">Quantity Required</label>
+                            <input type="number" class="form-control" id="quantity"
+                                   name="quantity" min="1" placeholder="e.g. 5">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="deliveryLocation">Delivery Location</label>
+                            <input type="text" class="form-control" id="deliveryLocation"
+                                   name="deliveryLocation" placeholder="Town / County">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="requirements">Additional Requirements</label>
+                        <textarea class="form-control" id="requirements" name="requirements"
+                                  placeholder="Tell us about preferred specifications, quantities or other needs."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="bi bi-whatsapp mr-2"></i> Send Enquiry on WhatsApp
+                    </button>
+
+                    <p class="form-note">
+                        Your enquiry will open in WhatsApp for you to review and send.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2>Planning a Healthcare Facility?</h2>
+                <p>Talk to us about the hospital furniture and supplies you need.</p>
+            </div>
+            <div class="col-lg-4 text-lg-right">
+                <a href="#enquiry" class="btn-main">
+                    Start an Enquiry <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md">
-                <h3>Supply Solutions</h3>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="footer-brand">Zerah <span>Nexus</span></div>
+                <p>
+                    Practical furniture, supply and construction solutions
+                    for homes, businesses and institutions.
+                </p>
+                <a href="about_us.html">Learn more about us <i class="bi bi-arrow-right"></i></a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h3>Our Solutions</h3>
                 <ul>
                     <li><a href="school-furniture.html">School Furniture</a></li>
                     <li><a href="hospital-supplies.html">Hospital Supplies</a></li>
                     <li><a href="home-furniture.html">Home Furniture</a></li>
                     <li><a href="office-furniture.html">Office Furniture</a></li>
-                    <li><a href="bar-and-restaurant-furniture.html">Bar & Restaurant Furniture</a></li>
+                    <li><a href="bar-and-restaurant-furniture.html">Bar &amp; Restaurant Furniture</a></li>
                     <li><a href="outdoor-furniture.html">Outdoor Furniture</a></li>
+                    <li><a href="precision-welding-and-fabrication.html">Welding &amp; Fabrication</a></li>
                 </ul>
             </div>
-            <div class="col-md">
+
+            <div class="col-lg-4 col-md-12 mb-4 footer-contact">
                 <h3>Contact Information</h3>
-                <p><i class="bi bi-geo-alt-fill"></i> Outering road, Kagundo rd, Nairobi</p>
-                <p><i class="bi bi-envelope-fill"></i> ecohubsolution@gmail.com</p>
-                <p><i class="bi bi-telephone-fill"></i> +254 742082219</p>
+                <p><i class="bi bi-geo-alt-fill"></i> Outering Road, Kagundo Road, Nairobi</p>
+                <p><i class="bi bi-envelope-fill"></i> <a href="mailto:zerahnexus@gmail.com">zerahnexus@gmail.com</a></p>
+                <p><i class="bi bi-telephone-fill"></i> <a href="tel:+254742082219">+254 742 082219</a></p>
+                <p><i class="bi bi-whatsapp"></i> <a href="https://wa.me/254742082219" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a></p>
             </div>
         </div>
-        <div class="text-center mt-3">
-            <p>&copy; 2025 EcoHub Solutions. All rights reserved.</p>
+
+        <div class="footer-bottom">
+            &copy; <span id="currentYear"></span> Zerah-Nexus. All rights reserved.
         </div>
     </div>
 </footer>
 
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/254742082219?text=Hello%20EcoSolution%20Hub%2C%20I%20would%20like%20to%20enquire%20about%20hospital%20supplies."
+   class="floating-whatsapp"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with EcoSolution Hub on WhatsApp">
+    <img src="imgs/wappicon.png" alt="">
+    <span>Chat with us</span>
+</a>
+
+<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Product category filtering
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const productItems = document.querySelectorAll(".product-item");
+    const noProducts = document.getElementById("noProducts");
+
+    filterButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const selectedFilter = this.dataset.filter;
+            let visibleCount = 0;
+
+            filterButtons.forEach(function(item) {
+                item.classList.remove("active");
+                item.setAttribute("aria-pressed", "false");
+            });
+
+            this.classList.add("active");
+            this.setAttribute("aria-pressed", "true");
+
+            productItems.forEach(function(product) {
+                const matches =
+                    selectedFilter === "all" ||
+                    product.dataset.category === selectedFilter;
+
+                product.style.display = matches ? "" : "none";
+
+                if (matches) visibleCount++;
+            });
+
+            noProducts.style.display = visibleCount === 0 ? "block" : "none";
+        });
+    });
+
+    // Product enquiry buttons preselect the product in the form
+    document.querySelectorAll(".enquire-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            const productName = this.dataset.product;
+            const productSelect = document.getElementById("productSelect");
+
+            const matchingOption = Array.from(productSelect.options).find(function(option) {
+                return option.value === productName || option.text === productName;
+            });
+
+            if (matchingOption) {
+                productSelect.value = matchingOption.value;
+            } else {
+                productSelect.value = "Other Medical Supplies";
+                document.getElementById("requirements").value =
+                    "Product of interest: " + productName;
+            }
+        });
+    });
+
+    // Build a WhatsApp message from the enquiry form
+    document.getElementById("hospitalEnquiryForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("customerName").value.trim();
+        const phone = document.getElementById("customerPhone").value.trim();
+        const facility = document.getElementById("facilityType").value;
+        const product = document.getElementById("productSelect").value;
+        const quantity = document.getElementById("quantity").value.trim();
+        const location = document.getElementById("deliveryLocation").value.trim();
+        const requirements = document.getElementById("requirements").value.trim();
+
+        const message = [
+            "Hello EcoSolution Hub, I would like to request a hospital supplies quotation.",
+            "",
+            "Name: " + name,
+            "Phone: " + phone,
+            "Facility type: " + facility,
+            "Product: " + product,
+            "Quantity: " + (quantity || "Not specified"),
+            "Delivery location: " + (location || "Not specified"),
+            "Additional requirements: " + (requirements || "None provided")
+        ].join("\n");
+
+        const whatsappUrl = "https://wa.me/254742082219?text=" + encodeURIComponent(message);
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    });
+
+    // Current year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>

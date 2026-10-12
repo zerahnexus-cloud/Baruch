@@ -1,152 +1,1564 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Home Furniture</title>
+
+    <title>Kitchen Designs & Furniture | EcoSolution Hub</title>
+    <meta name="description" content="Explore kitchen designs and cabinetry inspiration from EcoSolution Hub. Enquire about custom kitchen furniture, finishes, layouts and installation.">
+
+    <!-- Bootstrap & Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <style>
+        :root {
+            --navy: #241039;
+            --purple: #6d28d9;
+            --bright: #a855f7;
+            --lavender: #f3e8ff;
+            --light: #faf8fc;
+            --text: #40364c;
+            --muted: #7b7187;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.7;
+        }
+
+        a {
+            transition: all .25s ease;
+        }
+
+        /* NAVIGATION */
         .navbar {
-            background-color: #32012F; 
+            background: var(--navy);
+            padding: 10px 0;
+            box-shadow: 0 5px 24px rgba(36, 16, 57, .14);
+        }
+
+        .navbar-brand img {
+            height: 70px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
         }
 
         .navbar-nav .nav-link {
-            color: #fff !important; 
+            color: rgba(255,255,255,.9) !important;
+            padding: 12px 13px !important;
+            font-size: 14px;
+            font-weight: 600;
         }
 
-        .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: #d8b4fe !important;
+        }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: 10px;
+            padding: 8px;
+            box-shadow: 0 12px 35px rgba(36,16,57,.17);
+        }
+
+        .dropdown-item {
+            padding: 9px 13px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .dropdown-item:hover {
+            background: var(--lavender);
+            color: var(--purple);
+        }
+
+        .navbar-toggler {
+            border: 1px solid rgba(255,255,255,.45);
+            padding: 7px 10px;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 90px 0 85px;
+            color: white;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(168,85,247,.28), transparent 30%),
+                linear-gradient(125deg, #241039 0%, #392052 58%, #572b80 100%);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            right: -170px;
+            bottom: -270px;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 35px rgba(255,255,255,.025),
+                0 0 0 75px rgba(255,255,255,.025);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 14px;
+            margin-bottom: 22px;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 50px;
+            background: rgba(255,255,255,.09);
+            color: #e9d5ff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin-bottom: 22px;
+            font-size: clamp(2.5rem, 5vw, 4.4rem);
+            font-weight: 800;
+            line-height: 1.12;
+            letter-spacing: -1.7px;
+        }
+
+        .hero h1 span {
+            color: #d8b4fe;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,.8);
+            font-size: 17px;
+        }
+
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 22px;
+            border: 1px solid var(--purple);
+            border-radius: 7px;
+            background: var(--purple);
+            color: white !important;
+            font-size: 14px;
+            font-weight: 800;
+            text-decoration: none !important;
+            transition: .25s ease;
+        }
+
+        .btn-main:hover {
+            border-color: var(--bright);
+            background: var(--bright);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light-custom {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border: 1px solid rgba(255,255,255,.45);
+            border-radius: 7px;
+            color: white !important;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none !important;
+            transition: .25s ease;
+        }
+
+        .btn-outline-light-custom:hover {
+            background: white;
+            color: var(--navy) !important;
+        }
+
+        .hero-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 30px;
+            color: rgba(255,255,255,.85);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .hero-points i {
+            margin-right: 6px;
+            color: #d8b4fe;
+        }
+
+        /* BENEFITS STRIP */
+        .benefits-strip {
+            padding: 22px 0;
+            border-bottom: 1px solid #eee8f5;
+            background: white;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            height: 100%;
+            padding: 8px 15px;
+        }
+
+        .benefit-icon {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: var(--lavender);
+            color: var(--purple);
+            font-size: 21px;
+        }
+
+        .benefit-item strong {
             display: block;
+            color: var(--navy);
+            font-size: 14px;
         }
+
+        .benefit-item small {
+            display: block;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* SECTION STYLING */
+        .section {
+            padding: 78px 0;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--purple);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 13px;
+            color: var(--navy);
+            font-size: clamp(1.8rem, 3vw, 2.65rem);
+            font-weight: 800;
+            letter-spacing: -.7px;
+        }
+
+        .section-heading p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* FILTER BUTTONS */
+        .filter-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 9px;
+            margin-bottom: 32px;
+        }
+
+        .filter-btn {
+            padding: 9px 17px;
+            border: 1px solid #e4d9ef;
+            border-radius: 50px;
+            background: white;
+            color: #665775;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--purple);
+            background: var(--purple);
+            color: white;
+        }
+
+        /* KITCHEN GALLERY CARDS */
+        .design-card {
+            height: 100%;
+            overflow: hidden;
+            border: 1px solid #eee8f5;
+            border-radius: 18px;
+            background: white;
+            box-shadow: 0 5px 22px rgba(36,16,57,.05);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .design-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 38px rgba(36,16,57,.13);
+        }
+
+        .design-image {
+            position: relative;
+            overflow: hidden;
+            height: 260px;
+            background: #f1edf5;
+        }
+
+        .design-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .55s ease;
+        }
+
+        .design-card:hover .design-image img {
+            transform: scale(1.06);
+        }
+
+        .design-number {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            padding: 6px 11px;
+            border: 1px solid rgba(255,255,255,.4);
+            border-radius: 50px;
+            background: rgba(36,16,57,.82);
+            color: white;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .8px;
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 17px;
+            background: linear-gradient(transparent 60%, rgba(36,16,57,.55));
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+
+        .design-card:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .image-overlay span {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .design-body {
+            display: flex;
+            flex-direction: column;
+            min-height: 205px;
+            padding: 21px;
+        }
+
+        .design-category {
+            margin-bottom: 7px;
+            color: var(--purple);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+        }
+
+        .design-body h3 {
+            margin-bottom: 9px;
+            color: var(--navy);
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .design-body p {
+            flex-grow: 1;
+            margin-bottom: 18px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+        .design-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding-top: 14px;
+            border-top: 1px solid #f0ebf5;
+        }
+
+        .design-footer span {
+            color: #786787;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .enquire-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--purple);
+            font-size: 12px;
+            font-weight: 800;
+            text-decoration: none !important;
+        }
+
+        .enquire-link:hover {
+            color: var(--bright);
+        }
+
+        .no-designs {
+            display: none;
+            padding: 25px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        /* CUSTOM KITCHEN SECTION */
+        .custom-feature {
+            overflow: hidden;
+            border-radius: 18px;
+            background: var(--navy);
+            color: white;
+        }
+
+        .custom-feature-content {
+            padding: 45px;
+        }
+
+        .custom-feature h2 {
+            margin-bottom: 15px;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .custom-feature p {
+            color: rgba(255,255,255,.75);
+            font-size: 14px;
+        }
+
+        .custom-feature .feature-label {
+            display: inline-block;
+            margin-bottom: 14px;
+            color: #d8b4fe;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 22px 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            color: rgba(255,255,255,.9);
+            font-size: 13px;
+        }
+
+        .feature-list i {
+            margin-right: 9px;
+            color: #d8b4fe;
+        }
+
+        .custom-feature-art {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            min-height: 320px;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 50% 45%, rgba(168,85,247,.38), transparent 55%),
+                linear-gradient(145deg, #382052, #170b25);
+        }
+
+        .feature-art-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 190px;
+            height: 190px;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 50%;
+            background: rgba(255,255,255,.06);
+            box-shadow: 0 0 0 25px rgba(255,255,255,.025),
+                        0 0 0 55px rgba(255,255,255,.02);
+        }
+
+        .feature-art-circle i {
+            color: #e9d5ff;
+            font-size: 95px;
+        }
+
+        /* ENQUIRY FORM */
+        .enquiry-section {
+            padding: 78px 0;
+            background: linear-gradient(130deg, #f5edfc, #faf8fc);
+        }
+
+        .enquiry-intro {
+            padding: 15px 20px 15px 0;
+        }
+
+        .enquiry-intro h2 {
+            margin-bottom: 18px;
+            color: var(--navy);
+            font-size: clamp(1.9rem, 3vw, 2.7rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .enquiry-intro p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .enquiry-points {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .enquiry-points li {
+            margin-bottom: 12px;
+            color: var(--navy);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .enquiry-points i {
+            margin-right: 10px;
+            color: var(--purple);
+        }
+
+        .enquiry-form {
+            padding: 30px;
+            border: 1px solid #eee5f5;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 15px 45px rgba(36,16,57,.08);
+        }
+
+        .enquiry-form h3 {
+            margin-bottom: 6px;
+            color: var(--navy);
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .form-subtitle {
+            margin-bottom: 24px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .form-group label {
+            margin-bottom: 7px;
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .form-control {
+            min-height: 45px;
+            border: 1px solid #e4dce9;
+            border-radius: 7px;
+            color: var(--text);
+            font-size: 14px;
+            box-shadow: none !important;
+        }
+
+        .form-control:focus {
+            border-color: var(--purple);
+        }
+
+        textarea.form-control {
+            min-height: 105px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 13px 18px;
+            border: 0;
+            border-radius: 7px;
+            background: var(--purple);
+            color: white;
+            font-weight: 800;
+            transition: .25s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--navy);
+        }
+
+        .form-note {
+            margin-top: 12px;
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 11px;
+            text-align: center;
+        }
+
+        /* CTA */
+        .cta-band {
+            padding: 42px 0;
+            background: var(--navy);
+            color: white;
+        }
+
+        .cta-band h2 {
+            margin-bottom: 7px;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .cta-band p {
+            margin-bottom: 0;
+            color: rgba(255,255,255,.72);
+            font-size: 14px;
+        }
+
+        /* FOOTER */
         .footer {
-    background-color: #32012F;
-    color: #fff;
-    padding: 50px 0;
-}
+            padding: 55px 0 20px;
+            background: #190b28;
+            color: rgba(255,255,255,.72);
+        }
 
-.footer h3 {
-    color: #fff;
-}
+        .footer h3 {
+            margin-bottom: 20px;
+            color: white;
+            font-size: 16px;
+            font-weight: 800;
+        }
 
-.footer ul {
-    list-style-type: none;
-    padding: 0;
-}
+        .footer-brand {
+            margin-bottom: 14px;
+            color: white;
+            font-size: 21px;
+            font-weight: 800;
+        }
 
-.footer ul li {
-    margin-bottom: 10px;
-}
+        .footer-brand span {
+            color: #d8b4fe;
+        }
 
-.footer p {
-    margin-bottom: 10px;
-}
+        .footer p {
+            font-size: 13px;
+        }
 
-.footer a {
-    color: #fff;
-    text-decoration: none;
-}
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
 
-.footer a:hover {
-    text-decoration: underline;
-}
+        .footer li {
+            margin-bottom: 9px;
+            font-size: 13px;
+        }
 
-.footer .col-md {
-    text-align: left; 
-}
+        .footer a {
+            color: rgba(255,255,255,.72);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #d8b4fe;
+        }
+
+        .footer-contact i {
+            width: 22px;
+            color: #d8b4fe;
+        }
+
+        .footer-bottom {
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.12);
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* FLOATING WHATSAPP */
+        .floating-whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 11px 17px 11px 11px;
+            border: 2px solid white;
+            border-radius: 50px;
+            background: #20bd62;
+            color: white !important;
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none !important;
+            box-shadow: 0 7px 25px rgba(0,0,0,.2);
+            transition: transform .2s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: translateY(-3px);
+        }
+
+        .floating-whatsapp img {
+            width: 29px;
+            height: 29px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                padding: 62px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .hero-points {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .section,
+            .enquiry-section {
+                padding: 55px 0;
+            }
+
+            .design-image {
+                height: 245px;
+            }
+
+            .custom-feature-content {
+                padding: 28px;
+            }
+
+            .custom-feature-art {
+                min-height: 240px;
+            }
+
+            .enquiry-form {
+                padding: 22px;
+            }
+
+            .cta-band .btn-main {
+                margin-top: 20px;
+            }
+
+            .floating-whatsapp {
+                right: 13px;
+                bottom: 13px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+            }
+        }
     </style>
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-lg bg py-3">
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-        <a href="index.html" class="navbar-brand">
-            <img src="imgs/ecoeco.png" height="100" alt="EcoSolution Hub Logo">
+        <a href="index.html" class="navbar-brand" aria-label="EcoSolution Hub home">
+            <img src="imgs/ecoeco.png" alt="EcoSolution Hub Logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+        <button class="navbar-toggler" type="button"
+                data-toggle="collapse"
+                data-target="#mainNavigation"
+                aria-controls="mainNavigation"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="mainNavigation">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle light-text" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Construction Engineering
+                    <a class="nav-link dropdown-toggle" href="#"
+                       id="constructionDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">
+                        Construction Engineering
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding and Fabrication</a>
+                    <div class="dropdown-menu" aria-labelledby="constructionDropdown">
+                        <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding &amp; Fabrication</a>
                         <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom &amp; Plumbing</a>
                         <a class="dropdown-item" href="painting-and-interior-design.html">Painting &amp; Interior Design</a>
+                        <a class="dropdown-item" href="cabinetry-installation.html">Cabinetry Installation</a>
                     </div>
                 </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#"
+                       id="furnitureDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">
                         Furniture Place
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" aria-labelledby="furnitureDropdown">
                         <a class="dropdown-item" href="home-furniture.html">Home Furniture</a>
                         <a class="dropdown-item" href="office-furniture.html">Office Furniture</a>
                         <a class="dropdown-item" href="school-furniture.html">School Furniture</a>
-                        <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Restaurant Furniture</a>
+                        <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Bar &amp; Restaurant Furniture</a>
                         <a class="dropdown-item" href="outdoor-furniture.html">Outdoor Furniture</a>
                         <a class="dropdown-item" href="hospital-supplies.html">Hospital Supplies</a>
                     </div>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link light-text" href="about_us.html">About Us</a>
+                    <a class="nav-link" href="about_us.html">About Us</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link light-text" href="contact.html">Contact</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <img src="imgs/kitch1.jpeg" height="220" alt="">
-      </div>
-      <div class="col">
-        <img src="imgs/kitch2.jpeg" height="240" alt="">
-      </div>
-      <div class="col">
-        <img src="imgs/kitch3.jpeg" height="220" alt="">
-      </div>
-    </div>
-  </div>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <img src="imgs/kitch4.jpeg" height="220" alt="">
-      </div>
-      <div class="col">
-        <img src="imgs/kitch5.jpeg" height="240" alt="">
-      </div>
-      <div class="col">
-        <img src="imgs/kitch6.jpeg" height="220" alt="">
-      </div>
-    </div>
-  </div>
-  <div class="whatsapp-button">
-    <style>
-        .whatsapp-button {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            margin-top: 20px;
-        }
 
-        .whatsapp-button img {
-            margin-right: 8px;
-        }
-    </style>
-    <a href="https://wa.me/742082219" target="_blank">
-        <img src="imgs/wappicon.png" alt="WhatsApp Icon" width="44" height="44">
-        Chat on WhatsApp
-    </a>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<!-- HERO -->
+<header class="hero">
+    <div class="container hero-content">
+        <div class="hero-tag">
+            <i class="bi bi-house-heart-fill"></i>
+            Home Furniture Collection
+        </div>
+
+        <h1>A Kitchen Designed<br> <span>Around Your Life.</span></h1>
+
+        <p>
+            Discover kitchen inspiration that brings style, function and
+            thoughtful design together. Explore our designs and enquire
+            about a kitchen tailored to your space.
+        </p>
+
+        <div class="d-flex flex-wrap" style="gap:12px;">
+            <a href="#kitchen-designs" class="btn-main">
+                Explore Kitchen Designs <i class="bi bi-arrow-down-right"></i>
+            </a>
+
+            <a href="#custom-order" class="btn-outline-light-custom">
+                Plan Your Kitchen <i class="bi bi-chat-dots"></i>
+            </a>
+        </div>
+
+        <div class="hero-points">
+            <span><i class="bi bi-check-circle-fill"></i> Style that suits your space</span>
+            <span><i class="bi bi-check-circle-fill"></i> Custom design enquiries</span>
+            <span><i class="bi bi-check-circle-fill"></i> Practical kitchen solutions</span>
+        </div>
+    </div>
+</header>
+
+<!-- BENEFITS STRIP -->
+<section class="benefits-strip">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="bi bi-rulers"></i>
+                    </div>
+                    <div>
+                        <strong>Designed for Your Space</strong>
+                        <small>Discuss your preferred layout and dimensions</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="bi bi-palette"></i>
+                    </div>
+                    <div>
+                        <strong>Your Style, Your Choice</strong>
+                        <small>Share your preferred look and finishes</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="bi bi-chat-square-text"></i>
+                    </div>
+                    <div>
+                        <strong>Personalised Enquiries</strong>
+                        <small>Tell us what you have in mind</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KITCHEN DESIGNS -->
+<section class="section" id="kitchen-designs">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">The Kitchen Collection</span>
+            <h2>Find Inspiration for Your Kitchen</h2>
+            <p>
+                Browse our kitchen design gallery, choose a look you love,
+                and let us know what you would like for your own space.
+            </p>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="filter-wrap" role="group" aria-label="Filter kitchen designs">
+            <button type="button" class="filter-btn active"
+                    data-filter="all" aria-pressed="true">
+                All Designs
+            </button>
+            <button type="button" class="filter-btn"
+                    data-filter="design" aria-pressed="false">
+                Kitchen Inspiration
+            </button>
+            <button type="button" class="filter-btn"
+                    data-filter="custom" aria-pressed="false">
+                Custom Kitchen Enquiries
+            </button>
+        </div>
+
+        <div class="row" id="designGrid">
+
+            <!-- DESIGN 01 -->
+            <div class="col-md-6 col-lg-4 mb-4 design-item" data-category="design">
+                <article class="design-card">
+                    <div class="design-image">
+                        <img src="imgs/kitch1.jpeg"
+                             alt="Kitchen design inspiration 1"
+                             loading="lazy">
+                        <span class="design-number">DESIGN 01</span>
+                        <div class="image-overlay">
+                            <span><i class="bi bi-eye"></i> Explore this design</span>
+                        </div>
+                    </div>
+                    <div class="design-body">
+                        <div class="design-category">Kitchen Inspiration</div>
+                        <h3>Kitchen Design 01</h3>
+                        <p>
+                            Explore this kitchen design as inspiration for
+                            your preferred look, layout and kitchen furniture.
+                        </p>
+                        <div class="design-footer">
+                            <span><i class="bi bi-house"></i> Kitchen Collection</span>
+                            <a href="#custom-order" class="enquire-link"
+                               data-product="Kitchen Design 01">
+                                Enquire <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- DESIGN 02 -->
+            <div class="col-md-6 col-lg-4 mb-4 design-item" data-category="design">
+                <article class="design-card">
+                    <div class="design-image">
+                        <img src="imgs/kitch2.jpeg"
+                             alt="Kitchen design inspiration 2"
+                             loading="lazy">
+                        <span class="design-number">DESIGN 02</span>
+                        <div class="image-overlay">
+                            <span><i class="bi bi-eye"></i> Explore this design</span>
+                        </div>
+                    </div>
+                    <div class="design-body">
+                        <div class="design-category">Kitchen Inspiration</div>
+                        <h3>Kitchen Design 02</h3>
+                        <p>
+                            Use this design as a starting point for discussing
+                            a kitchen that suits your home and requirements.
+                        </p>
+                        <div class="design-footer">
+                            <span><i class="bi bi-house"></i> Kitchen Collection</span>
+                            <a href="#custom-order" class="enquire-link"
+                               data-product="Kitchen Design 02">
+                                Enquire <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- DESIGN 03 -->
+            <div class="col-md-6 col-lg-4 mb-4 design-item" data-category="design">
+                <article class="design-card">
+                    <div class="design-image">
+                        <img src="imgs/kitch3.jpeg"
+                             alt="Kitchen design inspiration 3"
+                             loading="lazy">
+                        <span class="design-number">DESIGN 03</span>
+                        <div class="image-overlay">
+                            <span><i class="bi bi-eye"></i> Explore this design</span>
+                        </div>
+                    </div>
+                    <div class="design-body">
+                        <div class="design-category">Kitchen Inspiration</div>
+                        <h3>Kitchen Design 03</h3>
+                        <p>
+                            Discover another look from our gallery and tell us
+                            which features you would like to incorporate.
+                        </p>
+                        <div class="design-footer">
+                            <span><i class="bi bi-house"></i> Kitchen Collection</span>
+                            <a href="#custom-order" class="enquire-link"
+                               data-product="Kitchen Design 03">
+                                Enquire <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- DESIGN 04 -->
+            <div class="col-md-6 col-lg-4 mb-4 design-item" data-category="design">
+                <article class="design-card">
+                    <div class="design-image">
+                        <img src="imgs/kitch4.jpeg"
+                             alt="Kitchen design inspiration 4"
+                             loading="lazy">
+                        <span class="design-number">DESIGN 04</span>
+                        <div class="image-overlay">
+                            <span><i class="bi bi-eye"></i> Explore this design</span>
+                        </div>
+                    </div>
+                    <div class="design-body">
+                        <div class="design-category">Kitchen Inspiration</div>
+                        <h3>Kitchen Design 04</h3>
+                        <p>
+                            Browse this kitchen concept and enquire about
+                            adapting a similar look to your available space.
+                        </p>
+                        <div class="design-footer">
+                            <span><i class="bi bi-house"></i> Kitchen Collection</span>
+                            <a href="#custom-order" class="enquire-link"
+                               data-product="Kitchen Design 04">
+                                Enquire <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- DESIGN 05 -->
+            <div class="col-md-6 col-lg-4 mb-4 design-item" data-category="design">
+                <article class="design-card">
+                    <div class="design-image">
+                        <img src="imgs/kitch5.jpeg"
+                             alt="Kitchen design inspiration 5"
+                             loading="lazy">
+                        <span class="design-number">DESIGN 05</span>
+                        <div class="image-overlay">
+                            <span><i class="bi bi-eye"></i> Explore this design</span>
+                        </div>
+                    </div>
+                    <div class="design-body">
+                        <div class="design-category">Kitchen Inspiration</div>
+                        <h3>Kitchen Design 05</h3>
+                        <p>
+                            Get ideas for your kitchen project and share your
+                            preferred furniture, layout and finishing details.
+                        </p>
+                        <div class="design-footer">
+                            <span><i class="bi bi-house"></i> Kitchen Collection</span>
+                            <a href="#custom-order" class="enquire-link"
+                               data-product="Kitchen Design 05">
+                                Enquire <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- DESIGN 06 -->
+            <div class="col-md-6 col-lg-4 mb-4 design-item" data-category="design">
+                <article class="design-card">
+                    <div class="design-image">
+                        <img src="imgs/kitch6.jpeg"
+                             alt="Kitchen design inspiration 6"
+                             loading="lazy">
+                        <span class="design-number">DESIGN 06</span>
+                        <div class="image-overlay">
+                            <span><i class="bi bi-eye"></i> Explore this design</span>
+                        </div>
+                    </div>
+                    <div class="design-body">
+                        <div class="design-category">Kitchen Inspiration</div>
+                        <h3>Kitchen Design 06</h3>
+                        <p>
+                            Let this design inspire your next kitchen project.
+                            Contact us to discuss your specific requirements.
+                        </p>
+                        <div class="design-footer">
+                            <span><i class="bi bi-house"></i> Kitchen Collection</span>
+                            <a href="#custom-order" class="enquire-link"
+                               data-product="Kitchen Design 06">
+                                Enquire <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+
+        <div class="no-designs" id="noDesigns">
+            No designs found in this category.
+        </div>
+    </div>
+</section>
+
+<!-- CUSTOM KITCHEN FEATURE -->
+<section class="section section-light">
+    <div class="container">
+        <div class="custom-feature">
+            <div class="row no-gutters">
+                <div class="col-lg-7">
+                    <div class="custom-feature-content">
+                        <span class="feature-label">Made for Your Space</span>
+                        <h2>Your Kitchen.<br>Your Vision.</h2>
+                        <p>
+                            Every kitchen has different needs. Tell us about
+                            your space, preferred style and the features you
+                            want to explore.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li><i class="bi bi-check-circle-fill"></i> Kitchen cabinetry and storage enquiries</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Preferred colours, finishes and design details</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Project requirements and budget discussions</li>
+                        </ul>
+
+                        <a href="#custom-order" class="btn-main">
+                            Discuss Your Kitchen <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="custom-feature-art" aria-hidden="true">
+                        <div class="feature-art-circle">
+                            <i class="bi bi-house-gear"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CUSTOM ORDER FORM -->
+<section class="enquiry-section" id="custom-order">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="enquiry-intro">
+                    <span class="eyebrow">Start Your Project</span>
+                    <h2>Let's Create a Kitchen That Works for You.</h2>
+
+                    <p>
+                        Tell us what you have in mind. Share your selected
+                        design, approximate budget and project location to
+                        start a conversation with our team.
+                    </p>
+
+                    <ul class="enquiry-points">
+                        <li><i class="bi bi-check-circle-fill"></i> Select your preferred design</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Share your estimated budget in KES</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Describe your space and requirements</li>
+                    </ul>
+
+                    <p class="mb-2">
+                        <i class="bi bi-whatsapp mr-2" style="color:var(--purple)"></i>
+                        <strong>+254 742 082219</strong>
+                    </p>
+
+                    <p>
+                        <i class="bi bi-envelope-fill mr-2" style="color:var(--purple)"></i>
+                        ecohubsolution@gmail.com
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <form class="enquiry-form" id="kitchenEnquiryForm">
+                    <h3>Custom Kitchen Enquiry</h3>
+                    <p class="form-subtitle">
+                        Complete the form to prepare your WhatsApp enquiry.
+                    </p>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="customerName">Your Name *</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="customerName"
+                                   name="customerName"
+                                   placeholder="Enter your name"
+                                   autocomplete="name"
+                                   required>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="customerPhone">Phone Number *</label>
+                            <input type="tel"
+                                   class="form-control"
+                                   id="customerPhone"
+                                   name="customerPhone"
+                                   placeholder="Your contact number"
+                                   autocomplete="tel"
+                                   required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="kitchenDesign">Preferred Design *</label>
+                            <select class="form-control"
+                                    id="kitchenDesign"
+                                    name="kitchenDesign"
+                                    required>
+                                <option value="">Choose a design</option>
+                                <option>Kitchen Design 01</option>
+                                <option>Kitchen Design 02</option>
+                                <option>Kitchen Design 03</option>
+                                <option>Kitchen Design 04</option>
+                                <option>Kitchen Design 05</option>
+                                <option>Kitchen Design 06</option>
+                                <option>Custom Kitchen Design</option>
+                                <option>Need Design Advice</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="kitchenType">Project Type *</label>
+                            <select class="form-control"
+                                    id="kitchenType"
+                                    name="kitchenType"
+                                    required>
+                                <option value="">Choose project type</option>
+                                <option>New Kitchen</option>
+                                <option>Kitchen Renovation</option>
+                                <option>Cabinetry Replacement</option>
+                                <option>Additional Storage</option>
+                                <option>Other Kitchen Project</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="kitchenBudget">Estimated Budget (KES)</label>
+                            <select class="form-control"
+                                    id="kitchenBudget"
+                                    name="kitchenBudget">
+                                <option value="">Select a budget range</option>
+                                <option>Below KES 100,000</option>
+                                <option>KES 100,000 – 250,000</option>
+                                <option>KES 250,001 – 500,000</option>
+                                <option>KES 500,001 – 1,000,000</option>
+                                <option>Above KES 1,000,000</option>
+                                <option>Not yet decided</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="deliveryLocation">Project Location</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="deliveryLocation"
+                                   name="deliveryLocation"
+                                   placeholder="Town / County"
+                                   autocomplete="address-level2">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kitchenRequirements">Describe Your Kitchen</label>
+                        <textarea class="form-control"
+                                  id="kitchenRequirements"
+                                  name="kitchenRequirements"
+                                  placeholder="Share approximate dimensions, preferred colours, finishes, storage needs or other requirements."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="bi bi-whatsapp mr-2"></i>
+                        Send Enquiry on WhatsApp
+                    </button>
+
+                    <p class="form-note">
+                        Your message will open in WhatsApp for you to review and send.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2>Ready to Plan Your Kitchen?</h2>
+                <p>Choose your favourite design and tell us what you need.</p>
+            </div>
+
+            <div class="col-lg-4 text-lg-right">
+                <a href="#custom-order" class="btn-main">
+                    Start Your Enquiry <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="footer-brand">EcoSolution <span>Hub</span></div>
+                <p>
+                    Furniture, cabinetry and practical design solutions
+                    for homes, businesses and institutions.
+                </p>
+                <a href="about_us.html">
+                    Learn more about us <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h3>Explore Our Solutions</h3>
+                <ul>
+                    <li><a href="home-furniture.html">Home Furniture</a></li>
+                    <li><a href="office-furniture.html">Office Furniture</a></li>
+                    <li><a href="school-furniture.html">School Furniture</a></li>
+                    <li><a href="bar-and-restaurant-furniture.html">Bar &amp; Restaurant Furniture</a></li>
+                    <li><a href="outdoor-furniture.html">Outdoor Furniture</a></li>
+                    <li><a href="hospital-supplies.html">Hospital Supplies</a></li>
+                    <li><a href="cabinetry-installation.html">Cabinetry Installation</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-12 mb-4 footer-contact">
+                <h3>Contact Information</h3>
+                <p><i class="bi bi-geo-alt-fill"></i> Outering Road, Kagundo Road, Nairobi</p>
+                <p>
+                    <i class="bi bi-envelope-fill"></i>
+                    <a href="mailto:ecohubsolution@gmail.com">ecohubsolution@gmail.com</a>
+                </p>
+                <p>
+                    <i class="bi bi-telephone-fill"></i>
+                    <a href="tel:+254742082219">+254 742 082219</a>
+                </p>
+                <p>
+                    <i class="bi bi-whatsapp"></i>
+                    <a href="https://wa.me/254742082219"
+                       target="_blank" rel="noopener noreferrer">
+                        Chat with us on WhatsApp
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; <span id="currentYear"></span> EcoSolution Hub. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/254742082219?text=Hello%20EcoSolution%20Hub%2C%20I%20would%20like%20to%20enquire%20about%20kitchen%20designs."
+   class="floating-whatsapp"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with EcoSolution Hub on WhatsApp">
+    <img src="imgs/wappicon.png" alt="">
+    <span>Chat with us</span>
+</a>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Filter the gallery
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const designItems = document.querySelectorAll(".design-item");
+    const noDesigns = document.getElementById("noDesigns");
+
+    filterButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const selectedFilter = this.dataset.filter;
+            let visibleCount = 0;
+
+            filterButtons.forEach(function(item) {
+                item.classList.remove("active");
+                item.setAttribute("aria-pressed", "false");
+            });
+
+            this.classList.add("active");
+            this.setAttribute("aria-pressed", "true");
+
+            designItems.forEach(function(item) {
+                const matches =
+                    selectedFilter === "all" ||
+                    selectedFilter === "custom" ||
+                    item.dataset.category === selectedFilter;
+
+                item.style.display = matches ? "" : "none";
+
+                if (matches) visibleCount++;
+            });
+
+            noDesigns.style.display = visibleCount === 0 ? "block" : "none";
+
+            // For the custom enquiry filter, take visitors to the enquiry form.
+            if (selectedFilter === "custom") {
+                document.getElementById("custom-order").scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+    // Clicking a design enquiry automatically selects that design.
+    document.querySelectorAll(".enquire-link").forEach(function(link) {
+        link.addEventListener("click", function() {
+            const selectedDesign = this.dataset.product;
+            const designSelect = document.getElementById("kitchenDesign");
+
+            const matchingOption = Array.from(designSelect.options).find(function(option) {
+                return option.value === selectedDesign ||
+                       option.text === selectedDesign;
+            });
+
+            if (matchingOption) {
+                designSelect.value = matchingOption.value;
+            }
+        });
+    });
+
+    // Build a custom kitchen enquiry and open WhatsApp.
+    document.getElementById("kitchenEnquiryForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("customerName").value.trim();
+        const phone = document.getElementById("customerPhone").value.trim();
+        const design = document.getElementById("kitchenDesign").value;
+        const projectType = document.getElementById("kitchenType").value;
+        const budget = document.getElementById("kitchenBudget").value;
+        const location = document.getElementById("deliveryLocation").value.trim();
+        const requirements = document.getElementById("kitchenRequirements").value.trim();
+
+        const message = [
+            "Hello EcoSolution Hub, I would like to enquire about a kitchen project.",
+            "",
+            "Name: " + name,
+            "Phone: " + phone,
+            "Preferred design: " + design,
+            "Project type: " + projectType,
+            "Estimated budget: " + (budget || "Not specified"),
+            "Project location: " + (location || "Not specified"),
+            "Kitchen requirements: " + (requirements || "Not specified")
+        ].join("\n");
+
+        const whatsappUrl =
+            "https://wa.me/254742082219?text=" + encodeURIComponent(message);
+
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    });
+
+    // Automatically update the footer year.
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>

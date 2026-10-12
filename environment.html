@@ -1,283 +1,1243 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Environment - EcoHub Initiative</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <meta name="theme-color" content="#123c2b">
+  <meta name="description" content="Discover EcoHub environmental initiatives for cleaner cities, sustainable communities, recycling, waste management, tree planting and greener urban living.">
+
+  <title>Environment & Sustainability | Zerah Nexus</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <style>
-    /* Theme Colors */
-    .navbar {
-            background-color: #f4f3e6;
-        }
+    /* ==============================
+       GLOBAL DESIGN SYSTEM
+    ============================== */
 
-        .navbar-nav .nav-link {
-            color: #141414 !important;
-        }
-
-        .navbar-nav .nav-item.dropdown .dropdown-menu {
-            background-color: #ebeef5;
-        }
-        
-        .navbar-toggler {
-  border: none;
-}
-
-.navbar-toggler-icon {
-  filter: none;
-  background-image: none;
-  width: 22px;
-  height: 2px;
-  background-color: #0c0a85;
-  position: relative;
-}
-
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 22px;
-  height: 2px;
-  background-color: #0c0a85;
-}
-
-.navbar-toggler-icon::before {
-  top: -6px;
-}
-
-.navbar-toggler-icon::after {
-  top: 6px;
-}
     :root {
-      --main-green: #3a7d44;
-      --light-green: #e6f4ea;
-      --text-dark: #333;
+      --forest: #123c2b;
+      --deep-forest: #09291d;
+      --eco-green: #32864b;
+      --lime: #b7e58a;
+      --cream: #f4f6ed;
+      --text-dark: #25372c;
+      --text-muted: #5a6c60;
+      --white: #ffffff;
     }
 
-  
-    /* Section Title */
-    h2.section-title {
-      color: var(--main-green);
-      font-weight: bold;
+    * {
+      box-sizing: border-box;
     }
 
-    /* Activity Cards */
-    .activity-card {
-      border: none;
-      border-radius: 12px;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 25px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    a {
       transition: all 0.3s ease;
-      background: #fff;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      opacity: 0;
-      transform: translateY(30px);
     }
+
+    /* ==============================
+       NAVIGATION
+    ============================== */
+
+    .navbar {
+      background: #f7f6ee;
+      padding: 12px 0;
+      position: relative;
+      z-index: 1000;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-brand img {
+      width: auto;
+      max-height: 78px;
+      object-fit: contain;
+    }
+
+    .navbar-nav .nav-link {
+      color: #17251d !important;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 12px 18px !important;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: var(--eco-green) !important;
+    }
+
+    .dropdown-menu {
+      border: 1px solid rgba(30, 80, 45, 0.08);
+      border-radius: 12px;
+      padding: 10px;
+      background: #ffffff;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .dropdown-item {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 11px 14px;
+      border-radius: 6px;
+      white-space: normal;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      background: #eaf4e7;
+      color: var(--forest);
+    }
+
+    .navbar-toggler {
+      border: none;
+      outline: none !important;
+      padding: 10px;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: none !important;
+      position: relative;
+      width: 24px;
+      height: 2px;
+      background: var(--forest);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 2px;
+      background: var(--forest);
+    }
+
+    .navbar-toggler-icon::before {
+      top: -7px;
+    }
+
+    .navbar-toggler-icon::after {
+      top: 7px;
+    }
+
+    /* ==============================
+       HERO SECTION
+    ============================== */
+
+    .environment-hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 550px;
+      overflow: hidden;
+      isolation: isolate;
+      color: var(--white);
+
+      background-color: var(--deep-forest);
+      background-image: url(
+        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=85"
+      );
+      background-position: center 48%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .environment-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+
+      background: linear-gradient(
+        90deg,
+        rgba(5, 28, 18, 0.92) 0%,
+        rgba(9, 44, 27, 0.78) 45%,
+        rgba(8, 35, 23, 0.18) 100%
+      );
+    }
+
+    .environment-hero-content {
+      padding-top: 85px;
+      padding-bottom: 100px;
+      animation: heroReveal 1s ease both;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--lime);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero-eyebrow::after {
+      content: "";
+      display: inline-block;
+      width: 45px;
+      height: 2px;
+      background: var(--lime);
+    }
+
+    .environment-hero h1 {
+      margin: 0 0 22px;
+      max-width: 800px;
+      font-size: clamp(2.7rem, 5.5vw, 5rem);
+      line-height: 1.06;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .environment-hero h1 span {
+      color: var(--lime);
+    }
+
+    .hero-description {
+      max-width: 520px;
+      margin-bottom: 32px;
+      color: rgba(255, 255, 255, 0.91);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 26px;
+      border: 1px solid var(--lime);
+      border-radius: 50px;
+      background: var(--lime);
+      color: var(--forest);
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none !important;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-btn:hover,
+    .hero-btn:focus {
+      color: var(--forest);
+      background: #ffffff;
+      border-color: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-bottom-label {
+      position: absolute;
+      right: 5%;
+      bottom: 24px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .hero-bottom-label i {
+      color: var(--lime);
+      margin-right: 8px;
+    }
+
+    /* ==============================
+       ENVIRONMENT ACTIVITIES
+    ============================== */
+
+    .activities-section {
+      position: relative;
+      padding: 85px 0;
+      overflow: hidden;
+
+      background-color: #edf5e9;
+      background-image:
+        linear-gradient(
+          rgba(242, 248, 237, 0.88),
+          rgba(242, 248, 237, 0.93)
+        ),
+        url(
+          "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=80"
+        );
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .section-kicker {
+      display: block;
+      margin-bottom: 13px;
+      color: var(--eco-green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin-bottom: 16px;
+      color: var(--forest);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+    }
+
+    .section-description {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .activity-column {
+      display: flex;
+      margin-bottom: 28px;
+    }
+
+    /* ==============================
+       GLASS EFFECT ACTIVITY CARDS
+    ============================== */
+
+    .activity-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      min-height: 285px;
+      padding: 35px 25px;
+      overflow: hidden;
+
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+
+      background: rgba(255, 255, 255, 0.77);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      box-shadow: 0 12px 35px rgba(24, 63, 39, 0.08);
+
+      opacity: 0;
+      transform: translateY(22px);
+
+      transition:
+        opacity 0.65s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
+    }
+
     .activity-card.show {
       opacity: 1;
       transform: translateY(0);
-      transition: all 0.6s ease-in-out;
     }
+
+    .activity-card.show:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 22px 45px rgba(24, 63, 39, 0.16);
+    }
+
+    .activity-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(
+        90deg,
+        var(--eco-green),
+        var(--lime)
+      );
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .activity-card:hover::before {
+      transform: scaleX(1);
+    }
+
     .activity-icon {
-      font-size: 40px;
-      color: var(--main-green);
-      margin-bottom: 15px;
-    }
-    .activity-card:hover {
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transform: translateY(-5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      width: 78px;
+      height: 78px;
+      margin-bottom: 24px;
+      border-radius: 50%;
+
+      color: #ffffff;
+      background: linear-gradient(
+        135deg,
+        #49a951,
+        #145432
+      );
+
+      font-size: 30px;
+      box-shadow: 0 9px 23px rgba(31, 106, 54, 0.19);
+      transition: transform 0.35s ease;
     }
 
-    /* Call to Action */
-    .call-to-action {
-      background: var(--main-green);
-      color: #fff;
-      padding: 40px 0;
-      text-align: center;
-    }
-    .call-to-action a.btn {
-      background: #fff;
-      color: var(--main-green);
-      border-radius: 25px;
-      padding: 10px 25px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .call-to-action a.btn:hover {
-      background: #285732;
-      color: #fff;
+    .activity-card:hover .activity-icon {
+      transform: scale(1.07) rotate(-4deg);
     }
 
-    /* See Also Section */
+    .activity-card h3 {
+      margin-bottom: 14px;
+      color: var(--forest);
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 800;
+    }
+
+    .activity-card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 1.95;
+    }
+
+    /* ==============================
+       CALL TO ACTION
+    ============================== */
+
+    .environment-cta {
+      position: relative;
+      padding: 75px 0;
+      overflow: hidden;
+      color: #ffffff;
+
+      background-color: var(--deep-forest);
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(5, 38, 25, 0.96) 0%,
+          rgba(8, 52, 32, 0.88) 52%,
+          rgba(7, 40, 25, 0.35) 100%
+        ),
+        url(
+          "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1800&q=85"
+        );
+      background-position: center;
+      background-size: cover;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 25px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      color: var(--lime);
+      font-size: 30px;
+    }
+
+    .cta-title {
+      margin-bottom: 16px;
+      color: #ffffff;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .cta-title span {
+      color: var(--lime);
+    }
+
+    .cta-description {
+      max-width: 620px;
+      margin: 0 auto 27px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 25px;
+      border-radius: 50px;
+      background: #ffffff;
+      color: var(--forest);
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none !important;
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover,
+    .cta-btn:focus {
+      background: var(--lime);
+      color: var(--forest);
+      transform: translateY(-3px);
+    }
+
+    /* ==============================
+       SEE ALSO
+    ============================== */
+
     .see-also {
-      background: var(--light-green);
-      padding: 50px 0;
+      padding: 55px 0;
+      background: #f3f7ee;
       text-align: center;
     }
-    .see-also h4 {
-      color: var(--main-green);
-      font-weight: bold;
-      margin-bottom: 20px;
+
+    .see-also-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      color: var(--forest);
+      font-size: 24px;
+      font-weight: 800;
     }
-    .see-also img {
-      max-width: 180px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 10px;
+
+    .see-also-title::before,
+    .see-also-title::after {
+      content: "";
+      display: inline-block;
+      width: 32px;
+      height: 2px;
+      background: var(--eco-green);
     }
-    .see-also img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+    .ecosystem-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .ecosystem-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 58px;
+      padding: 10px 19px;
+      border: 1px solid rgba(50, 134, 75, 0.15);
+      border-radius: 50px;
+      background: #ffffff;
+      color: var(--forest);
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none !important;
+      box-shadow: 0 5px 20px rgba(20, 60, 35, 0.04);
+      transition: all 0.3s ease;
+    }
+
+    .ecosystem-link i {
+      color: var(--eco-green);
+      font-size: 18px;
+    }
+
+    .ecosystem-link:hover,
+    .ecosystem-link:focus {
+      transform: translateY(-4px);
+      color: var(--forest);
+      border-color: var(--eco-green);
+      box-shadow: 0 10px 24px rgba(20, 60, 35, 0.1);
+    }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+
+    .site-footer {
+      padding: 25px 15px;
+      background: #102b22;
+      color: #d1d5db;
+      text-align: center;
+    }
+
+    .site-footer p {
+      margin: 0;
+      font-size: 11px;
+      letter-spacing: 0.4px;
+    }
+
+    .site-footer strong {
+      color: #ffffff;
+    }
+
+    /* ==============================
+       ANIMATIONS
+    ============================== */
+
+    @keyframes heroReveal {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ==============================
+       RESPONSIVE DESIGN
+    ============================== */
+
+    @media (min-width: 992px) {
+      .navbar-nav .nav-item {
+        margin-left: 7px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .navbar-brand img {
+        max-height: 65px;
+      }
+
+      .navbar-collapse {
+        padding: 12px 0;
+      }
+
+      .dropdown-menu {
+        box-shadow: none;
+      }
+
+      .environment-hero {
+        min-height: 500px;
+      }
+
+      .activity-card {
+        min-height: 290px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .navbar {
+        padding: 8px 0;
+      }
+
+      .navbar-brand img {
+        max-height: 58px;
+        max-width: 210px;
+      }
+
+      .environment-hero {
+        min-height: 490px;
+        background-position: center;
+      }
+
+      .environment-overlay {
+        background: linear-gradient(
+          90deg,
+          rgba(5, 28, 18, 0.91),
+          rgba(5, 28, 18, 0.65)
+        );
+      }
+
+      .environment-hero-content {
+        padding-top: 65px;
+        padding-bottom: 85px;
+      }
+
+      .hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      .environment-hero h1 {
+        font-size: clamp(2.5rem, 10vw, 3.8rem);
+        letter-spacing: -1.5px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .hero-bottom-label {
+        right: 20px;
+        left: 20px;
+        bottom: 20px;
+        font-size: 9px;
+      }
+
+      .activities-section {
+        padding: 60px 0;
+        background-attachment: scroll;
+      }
+
+      .section-heading {
+        margin-bottom: 32px;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .activity-column {
+        margin-bottom: 20px;
+      }
+
+      .activity-card {
+        min-height: 0;
+        padding: 30px 22px;
+      }
+
+      .activity-card h3 {
+        font-size: 15px;
+      }
+
+      .activity-card p {
+        font-size: 12px;
+      }
+
+      .environment-cta {
+        padding: 60px 0;
+        background-position: center;
+      }
+
+      .see-also {
+        padding: 45px 0;
+      }
+
+      .ecosystem-links {
+        gap: 10px;
+      }
+
+      .ecosystem-link {
+        padding: 10px 14px;
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .environment-hero h1 {
+        font-size: 2.35rem;
+      }
+
+      .hero-btn,
+      .cta-btn {
+        padding: 13px 19px;
+        font-size: 11px;
+      }
+
+      .ecosystem-link {
+        width: 100%;
+      }
+    }
+
+    /* Respect reduced-motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .activity-card {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-light py-3">
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <img src="imgs/Zerah Nexus logo.png" height="100" alt="Zerah Nexus Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Services
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                            <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding and Fabrication</a>
-                            <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom &amp; Plumbing</a>
-                            <a class="dropdown-item" href="painting-and-interior-design.html">Painting &amp; Interior Design</a>
-                            <a class="dropdown-item" href="cabinetry-installation.html">Cabinetry Installation</a>
-                            <a class="dropdown-item" href="precision-welding-and-fabrication.html">Sales & Marketing</a>
-                        </div>
-                    </li>
-                    <!-- Shop Dropdown -->
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownShop" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Shop
-  </a>
-  <div class="dropdown-menu" aria-labelledby="navbarDropdownShop">
-    <a class="dropdown-item" href="clothing.html">Clothing & Accessories</a>
-    <a class="dropdown-item" href="electronics.html">Electronics</a>
-    <a class="dropdown-item" href="grocery.html">Grocery & Cereals</a>
-    <a class="dropdown-item" href="tools.html">Tools & Equipment</a>
-    <a class="dropdown-item" href="home-furniture.html">Home Furniture</a>
-    <a class="dropdown-item" href="office-furniture.html">Office Furniture</a>
-    <a class="dropdown-item" href="school-furniture.html">School Furniture</a>
-    <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Bar and Restaurant Furniture</a>
-   <a class="dropdown-item" href="outdoor-furniture.html">Outdoor Furniture</a>
-    <a class="dropdown-item" href="hospital-supplies.html">Hospital Supplies</a>
-    
-    
-    
-  </div>
-</li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <!-- ==============================
+       NAVIGATION
+  ============================== -->
 
-  <!-- Activities Section -->
-  <section class="py-5" style="background: var(--light-green);">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="section-title">What We Do</h2>
-        <p class="text-muted">From clean streets to vibrant parks, we are reimagining urban living sustainably.</p>
-      </div>
 
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="activity-card">
-            <div class="activity-icon"><i class="fas fa-broom"></i></div>
-            <h5>Street & Drainage Cleaning</h5>
-            <p>We keep streets and drainage systems clean, preventing floods and ensuring healthy surroundings.</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="activity-card">
-            <div class="activity-icon"><i class="fas fa-recycle"></i></div>
-            <h5>Recycling & Waste Management</h5>
-            <p>We collect waste, recycle, and transform materials into useful eco-friendly products.</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="activity-card">
-            <div class="activity-icon"><i class="fas fa-tree"></i></div>
-            <h5>Tree Planting & Parks</h5>
-            <p>We plant trees and maintain private & public parks to enhance biodiversity and fresh air.</p>
-          </div>
-        </div>
+      <a href="index.html" class="navbar-brand" aria-label="Zerah Nexus Home">
+        <img src="imgs/Zerah Nexus logo.png"
+             alt="Zerah Nexus Logo">
+      </a>
 
-        <div class="col-md-4 mb-4">
-          <div class="activity-card">
-            <div class="activity-icon"><i class="fas fa-trash-alt"></i></div>
-            <h5>Bins & Clean City Initiative</h5>
-            <p>Strategically placing and maintaining bins to reduce littering in city centers.</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="activity-card">
-            <div class="activity-icon"><i class="fas fa-shield-alt"></i></div>
-            <h5>Street Security</h5>
-            <p>Partnering with local authorities to offer security and make communities safer.</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="activity-card">
-            <div class="activity-icon"><i class="fas fa-city"></i></div>
-            <h5>Gated Communities</h5>
-            <p>Transforming ungated neighborhoods into safe, organized, and gated communities.</p>
-          </div>
-        </div>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse"
+           id="navbarSupportedContent">
+
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               id="navbarDropdownServices"
+               role="button"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false">
+              Services
+            </a>
+
+            <div class="dropdown-menu"
+                 aria-labelledby="navbarDropdownServices">
+
+              <a class="dropdown-item"
+                 href="precision-welding-and-fabrication.html">
+                Precision Welding and Fabrication
+              </a>
+
+              <a class="dropdown-item"
+                 href="bathroom-and-plumbing.html">
+                Bathroom &amp; Plumbing
+              </a>
+
+              <a class="dropdown-item"
+                 href="painting-and-interior-design.html">
+                Painting &amp; Interior Design
+              </a>
+
+              <a class="dropdown-item"
+                 href="cabinetry-installation.html">
+                Cabinetry Installation
+              </a>
+
+              <a class="dropdown-item"
+                 href="precision-welding-and-fabrication.html">
+                Sales &amp; Marketing
+              </a>
+
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               id="navbarDropdownShop"
+               role="button"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false">
+              Shop
+            </a>
+
+            <div class="dropdown-menu"
+                 aria-labelledby="navbarDropdownShop">
+
+              <a class="dropdown-item" href="clothing.html">
+                Clothing &amp; Accessories
+              </a>
+
+              <a class="dropdown-item" href="electronics.html">
+                Electronics
+              </a>
+
+              <a class="dropdown-item" href="grocery.html">
+                Grocery &amp; Cereals
+              </a>
+
+              <a class="dropdown-item" href="tools.html">
+                Tools &amp; Equipment
+              </a>
+
+              <a class="dropdown-item" href="home-furniture.html">
+                Home Furniture
+              </a>
+
+              <a class="dropdown-item" href="office-furniture.html">
+                Office Furniture
+              </a>
+
+              <a class="dropdown-item" href="school-furniture.html">
+                School Furniture
+              </a>
+
+              <a class="dropdown-item"
+                 href="bar-and-restaurant-furniture.html">
+                Bar and Restaurant Furniture
+              </a>
+
+              <a class="dropdown-item" href="outdoor-furniture.html">
+                Outdoor Furniture
+              </a>
+
+              <a class="dropdown-item" href="hospital-supplies.html">
+                Hospital Supplies
+              </a>
+
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">
+              Contact
+            </a>
+          </li>
+
+        </ul>
       </div>
     </div>
-  </section>
+  </nav>
 
-  <footer style="
-  background: rgba(19, 18, 65, 0.85);
-  backdrop-filter: blur(8px);
-  padding: 18px 10px;
-  text-align: center;
-">
-  <p style="
-    margin: 0;
-    font-size: 0.85rem;
-    color: #d1d5db;
-    letter-spacing: 0.3px;
-  ">
-    © 2026 <strong style="color:#ffffff;">EcoHub</strong>. All rights reserved.
-  </p>
-</footer>
 
+  <!-- ==============================
+       ENVIRONMENT HERO
+  ============================== -->
+
+  <header class="environment-hero">
+
+    <div class="environment-overlay"></div>
+
+    <div class="container environment-hero-content">
+
+      <span class="hero-eyebrow">
+        <i class="fas fa-leaf"></i>
+        Environment &amp; Sustainability
+      </span>
+
+      <h1>
+        Cleaner Cities.<br>
+        <span>Greener Futures.</span>
+      </h1>
+
+      <p class="hero-description">
+        Sustainable solutions for healthier communities,
+        cleaner streets, and a greener tomorrow.
+        Together, we can transform the way we live,
+        work, and care for our environment.
+      </p>
+
+      <a href="#environment-activities" class="hero-btn">
+        Explore Our Initiatives
+        <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+
+    </div>
+
+    <div class="hero-bottom-label">
+      <i class="fas fa-globe-africa"></i>
+      Building a sustainable future, together.
+    </div>
+
+  </header>
+
+
+  <!-- ==============================
+       WHAT WE DO
+  ============================== -->
+
+  <main>
+
+    <section class="activities-section"
+             id="environment-activities">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-kicker">
+            Our Environmental Mission
+          </span>
+
+          <h2 class="section-title">
+            What We Do
+          </h2>
+
+          <p class="section-description">
+            From clean streets to vibrant parks, we are
+            reimagining urban living sustainably. Our
+            initiatives promote cleaner surroundings,
+            healthier communities, and responsible
+            environmental management.
+          </p>
+
+        </div>
+
+        <div class="row">
+
+          <!-- Activity 1 -->
+          <div class="col-md-6 col-lg-4 activity-column">
+            <article class="activity-card">
+
+              <div class="activity-icon">
+                <i class="fas fa-broom"></i>
+              </div>
+
+              <h3>Street &amp; Drainage Cleaning</h3>
+
+              <p>
+                We keep streets and drainage systems clean,
+                prevent blockages and flooding, and support
+                healthier, safer surroundings for everyone.
+              </p>
+
+            </article>
+          </div>
+
+          <!-- Activity 2 -->
+          <div class="col-md-6 col-lg-4 activity-column">
+            <article class="activity-card">
+
+              <div class="activity-icon">
+                <i class="fas fa-recycle"></i>
+              </div>
+
+              <h3>Recycling &amp; Waste Management</h3>
+
+              <p>
+                We promote responsible waste collection,
+                recycling, material recovery, and the
+                transformation of waste into useful products.
+              </p>
+
+            </article>
+          </div>
+
+          <!-- Activity 3 -->
+          <div class="col-md-6 col-lg-4 activity-column">
+            <article class="activity-card">
+
+              <div class="activity-icon">
+                <i class="fas fa-tree"></i>
+              </div>
+
+              <h3>Tree Planting &amp; Parks</h3>
+
+              <p>
+                We champion tree planting, green spaces,
+                and park maintenance to support biodiversity,
+                cleaner air, and more beautiful communities.
+              </p>
+
+            </article>
+          </div>
+
+          <!-- Activity 4 -->
+          <div class="col-md-6 col-lg-4 activity-column">
+            <article class="activity-card">
+
+              <div class="activity-icon">
+                <i class="fas fa-trash-alt"></i>
+              </div>
+
+              <h3>Bins &amp; Clean City Initiative</h3>
+
+              <p>
+                We encourage strategic waste-bin placement,
+                better waste disposal habits, and cleaner
+                streets, public spaces, and city centres.
+              </p>
+
+            </article>
+          </div>
+
+          <!-- Activity 5 -->
+          <div class="col-md-6 col-lg-4 activity-column">
+            <article class="activity-card">
+
+              <div class="activity-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+
+              <h3>Community Safety</h3>
+
+              <p>
+                We support collaboration with communities
+                and relevant authorities to promote safer,
+                more organised, and welcoming neighbourhoods.
+              </p>
+
+            </article>
+          </div>
+
+          <!-- Activity 6 -->
+          <div class="col-md-6 col-lg-4 activity-column">
+            <article class="activity-card">
+
+              <div class="activity-icon">
+                <i class="fas fa-city"></i>
+              </div>
+
+              <h3>Gated Communities</h3>
+
+              <p>
+                We envision well-organised neighbourhoods
+                with improved shared spaces, coordinated
+                planning, and community-led safety initiatives.
+              </p>
+
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================
+         CALL TO ACTION
+    ============================== -->
+
+    <section class="environment-cta">
+
+      <div class="container cta-content text-center">
+
+        <div class="cta-icon">
+          <i class="fas fa-seedling"></i>
+        </div>
+
+        <h2 class="cta-title">
+          Together for a<br>
+          <span>Cleaner, Greener Future.</span>
+        </h2>
+
+        <p class="cta-description">
+          A sustainable future begins with collective
+          responsibility. Join us in promoting cleaner
+          surroundings, protecting nature, and creating
+          healthier communities for generations to come.
+        </p>
+
+        <a href="contact.html" class="cta-btn">
+          Get Involved
+          <i class="fas fa-arrow-right"></i>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <p>
+        &copy; 2026 <strong>Zerah-Nexus</strong>.
+        All rights reserved.
+      </p>
+
+    </div>
+  </footer>
+
+
+  <!-- ==============================
+       JAVASCRIPT
+  ============================== -->
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+  <!-- Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 
   <script>
-    // Scroll Animation for Cards
-    const cards = document.querySelectorAll('.activity-card');
-    window.addEventListener('scroll', () => {
-      cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          card.classList.add('show');
-        }
-      });
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const cards = document.querySelectorAll(".activity-card");
+
+      // Show cards when they enter the viewport.
+      if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(function (entries) {
+
+          entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+
+          });
+
+        }, {
+          threshold: 0.12
+        });
+
+        cards.forEach(function (card, index) {
+          card.style.transitionDelay = (index % 3) * 100 + "ms";
+          observer.observe(card);
+        });
+
+      } else {
+
+        // Fallback for older browsers.
+        cards.forEach(function (card) {
+          card.classList.add("show");
+        });
+
+      }
+
     });
   </script>
-  <!-- jQuery (must be first) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-
-<!-- Popper.js -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>

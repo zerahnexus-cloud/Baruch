@@ -1,127 +1,828 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Furniture</title>
+    <meta name="theme-color" content="#241039">
+
+    <title>School Furniture | EcoSolution Hub</title>
+    <meta name="description" content="Explore school desks, lecture chairs, kindergarten furniture, storage solutions and boarding school beds from EcoSolution Hub. Request a quotation today.">
 
     <!-- Bootstrap & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <style>
-        /* Academic Theme */
+        :root {
+            --navy: #241039;
+            --purple: #6d28d9;
+            --bright: #a855f7;
+            --gold: #f5c451;
+            --light: #f7f5fb;
+            --muted: #6b6475;
+            --white: #ffffff;
+            --border: #e9e3f1;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--navy);
+            background: #fff;
+            line-height: 1.65;
+        }
+
+        a {
+            transition: color .2s ease;
+        }
+
         .navbar {
-            background-color: #0056b3; /* Academic blue */
+            background: var(--navy);
+            padding: 10px 0;
+            box-shadow: 0 4px 22px rgba(20, 8, 35, .13);
         }
+
+        .navbar-brand img {
+            max-height: 62px;
+            width: auto;
+            object-fit: contain;
+        }
+
         .navbar-nav .nav-link {
-            color: #fff !important;
+            color: rgba(255,255,255,.9) !important;
+            font-size: .93rem;
+            font-weight: 600;
+            padding: 12px 14px !important;
         }
-        .section-title {
-            color: #ffcc00;
-            font-weight: bold;
-            text-align: center;
-            margin: 40px 0 20px;
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: var(--gold) !important;
         }
-        .section-title i {
+
+        .navbar-toggler {
+            border: 1px solid rgba(255,255,255,.45);
+            padding: 7px 10px;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(20, 8, 35, .15);
+            padding: 10px;
+        }
+
+        .dropdown-item {
+            padding: 9px 13px;
+            border-radius: 7px;
+            font-size: .9rem;
+        }
+
+        .dropdown-item:hover {
+            color: var(--purple);
+            background: #f4edff;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            color: var(--white);
+            padding: 95px 0 85px;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(168,85,247,.25), transparent 30%),
+                linear-gradient(120deg, #241039 0%, #43206b 58%, #6d28d9 100%);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 50%;
+            right: -110px;
+            bottom: -190px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--gold);
+            font-size: .78rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 17px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 27px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .hero h1 {
+            max-width: 700px;
+            font-size: clamp(2.4rem, 5vw, 4.4rem);
+            line-height: 1.08;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 23px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            max-width: 580px;
+            color: rgba(255,255,255,.82);
+            font-size: 1.06rem;
+            margin-bottom: 29px;
+        }
+
+        .hero-image-wrap {
+            position: relative;
+            padding: 10px;
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 22px;
+            box-shadow: 0 25px 60px rgba(0,0,0,.2);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 350px;
+            display: block;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .hero-image-caption {
+            position: absolute;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+            padding: 14px 17px;
+            border-radius: 12px;
+            background: rgba(36,16,57,.88);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .hero-image-caption i {
+            color: var(--gold);
             margin-right: 8px;
         }
 
-        /* Product Cards */
-        .card {
-            border: none;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            margin-bottom: 20px;
-        }
-        .card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .card img {
-            height: 200px;
-            object-fit: cover;
-        }
-        .card-body {
-            background: #f8f9fa;
+        .btn-primary-custom,
+        .btn-outline-custom {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 23px;
+            border-radius: 9px;
+            font-weight: 750;
+            text-decoration: none !important;
+            transition: all .25s ease;
         }
 
-        /* CTA */
-        .btn-quote {
-            background-color: #ffcc00;
-            border: none;
-            color: #000;
-            font-weight: bold;
-        }
-        .btn-quote:hover {
-            background-color: #e6b800;
+        .btn-primary-custom {
+            color: var(--navy);
+            background: var(--gold);
+            border: 1px solid var(--gold);
         }
 
-        /* Video Section */
-        .video-section {
-            background: #fffbe6;
-            padding: 40px 20px;
-            margin-top: 40px;
-            border-radius: 5px;
+        .btn-primary-custom:hover {
+            color: var(--navy);
+            background: #ffda76;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            color: #fff;
+            border: 1px solid rgba(255,255,255,.5);
+            background: transparent;
+        }
+
+        .btn-outline-custom:hover {
+            color: var(--navy);
+            background: #fff;
+        }
+
+        /* Highlights */
+        .highlights {
+            position: relative;
+            z-index: 2;
+            margin-top: -1px;
+            background: var(--light);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 23px 12px;
+        }
+
+        .highlight-icon {
+            flex: 0 0 45px;
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            color: var(--purple);
+            background: #eee4ff;
+            border-radius: 13px;
+            font-size: 1.25rem;
+        }
+
+        .highlight-item strong {
+            display: block;
+            font-size: .96rem;
+        }
+
+        .highlight-item small {
+            color: var(--muted);
+            font-size: .82rem;
+        }
+
+        /* General sections */
+        .section {
+            padding: 78px 0;
+        }
+
+        .section-soft {
+            background: var(--light);
+        }
+
+        .section-heading {
+            max-width: 690px;
+            margin: 0 auto 35px;
             text-align: center;
+        }
+
+        .section-heading .eyebrow {
+            color: var(--purple);
+            margin-bottom: 9px;
+        }
+
+        .section-heading .eyebrow::before {
+            background: var(--purple);
+        }
+
+        .section-heading h2 {
+            font-size: clamp(1.8rem, 3vw, 2.7rem);
+            font-weight: 800;
+            letter-spacing: -.7px;
+            line-height: 1.2;
+            margin-bottom: 13px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        /* Filters */
+        .filter-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 34px;
+        }
+
+        .filter-btn {
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--navy);
+            border-radius: 30px;
+            padding: 9px 17px;
+            font-size: .88rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .2s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            color: #fff;
+            background: var(--purple);
+            border-color: var(--purple);
+        }
+
+        /* Product cards */
+        .product-card {
+            height: calc(100% - 24px);
+            margin-bottom: 24px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 7px 24px rgba(36,16,57,.045);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(36,16,57,.12);
+        }
+
+        .product-image-wrap {
+            position: relative;
+            overflow: hidden;
+            background: #f2eef7;
+        }
+
+        .product-image {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.045);
+        }
+
+        .product-tag {
+            position: absolute;
+            left: 13px;
+            top: 13px;
+            padding: 5px 10px;
+            border-radius: 30px;
+            color: var(--purple);
+            background: rgba(255,255,255,.95);
+            font-size: .72rem;
+            font-weight: 800;
+        }
+
+        .product-body {
+            display: flex;
+            flex-direction: column;
+            padding: 19px;
+            min-height: 165px;
+        }
+
+        .product-body h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .product-body p {
+            color: var(--muted);
+            font-size: .89rem;
+            line-height: 1.55;
+            margin-bottom: 15px;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            margin-top: auto;
+            color: var(--purple);
+            font-size: .88rem;
+            font-weight: 800;
+            text-decoration: none !important;
+        }
+
+        .product-link:hover {
+            color: var(--navy);
+        }
+
+        .no-products {
+            display: none;
+            width: 100%;
+            padding: 25px;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        /* Benefits */
+        .benefit-card {
+            height: 100%;
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: #fff;
+        }
+
+        .benefit-icon {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 18px;
+            border-radius: 13px;
+            color: var(--purple);
+            background: #eee4ff;
+            font-size: 1.4rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .benefit-card p {
+            color: var(--muted);
+            font-size: .91rem;
+            margin-bottom: 0;
+        }
+
+        /* Video */
+        .video-section {
+            padding: 75px 0;
+            color: #fff;
+            background: linear-gradient(120deg, #241039, #43206b);
+        }
+
+        .video-section .section-heading h2 {
+            color: #fff;
+        }
+
+        .video-section .section-heading p {
+            color: rgba(255,255,255,.75);
+        }
+
+        .video-frame {
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            border: 5px solid rgba(255,255,255,.12);
+            border-radius: 17px;
+            background: #140a20;
+            box-shadow: 0 22px 55px rgba(0,0,0,.25);
+        }
+
+        .video-frame iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: 0;
+        }
+
+        /* Enquiry form */
+        .enquiry-section {
+            padding: 80px 0;
+            background:
+                radial-gradient(circle at 0% 100%, rgba(168,85,247,.1), transparent 30%),
+                var(--light);
+        }
+
+        .enquiry-intro {
+            padding: 20px 15px 20px 0;
+        }
+
+        .enquiry-intro h2 {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .enquiry-intro p {
+            color: var(--muted);
+        }
+
+        .enquiry-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-top: 18px;
+            font-weight: 650;
+        }
+
+        .enquiry-point i {
+            color: var(--purple);
+            font-size: 1.2rem;
+        }
+
+        .enquiry-card {
+            padding: 30px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 16px 45px rgba(36,16,57,.08);
+        }
+
+        .enquiry-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .form-subtitle {
+            color: var(--muted);
+            font-size: .9rem;
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            color: var(--navy);
+            font-size: .88rem;
+            font-weight: 750;
+            margin-bottom: 7px;
+        }
+
+        .form-control {
+            min-height: 46px;
+            border: 1px solid #ded6e9;
+            border-radius: 8px;
+            color: var(--navy);
+            font-size: .92rem;
+            box-shadow: none !important;
+        }
+
+        .form-control:focus {
+            border-color: var(--purple);
+            box-shadow: 0 0 0 3px rgba(109,40,217,.1) !important;
+        }
+
+        textarea.form-control {
+            min-height: 115px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px 20px;
+            border: 0;
+            border-radius: 9px;
+            color: #fff;
+            background: var(--purple);
+            font-weight: 800;
+            transition: background .2s ease, transform .2s ease;
+        }
+
+        .btn-submit:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .form-note {
+            color: var(--muted);
+            font-size: .79rem;
+            text-align: center;
+            margin: 13px 0 0;
+        }
+
+        /* Contact banner */
+        .contact-strip {
+            padding: 35px 0;
+            background: #f0e8ff;
+        }
+
+        .contact-strip h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .contact-strip p {
+            color: var(--muted);
+            margin: 0;
         }
 
         /* Footer */
         .footer {
-            background-color: #0056b3;
-            color: #fff;
-            padding: 40px 0;
-            margin-top: 40px;
-        }
-        .footer h3 {
-            color: #ffcc00;
-        }
-        .footer a {
-            color: #fff;
-        }
-        .footer a:hover {
-            text-decoration: underline;
+            padding: 55px 0 20px;
+            color: rgba(255,255,255,.75);
+            background: #1b0c2b;
         }
 
-        /* WhatsApp Button */
-        .whatsapp-button {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            margin: 20px;
+        .footer h3 {
+            color: #fff;
+            font-size: 1.08rem;
+            font-weight: 800;
+            margin-bottom: 18px;
         }
-        .whatsapp-button img {
-            margin-right: 8px;
+
+        .footer p {
+            font-size: .9rem;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer li {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,.75);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--gold);
+        }
+
+        .footer-brand {
+            display: inline-block;
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 900;
+            margin-bottom: 13px;
+        }
+
+        .footer-brand span {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.12);
+            padding-top: 19px;
+            margin-top: 35px;
+            font-size: .83rem;
+            text-align: center;
+        }
+
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            z-index: 1000;
+            right: 22px;
+            bottom: 22px;
+            width: 57px;
+            height: 57px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            color: #fff !important;
+            background: #25d366;
+            box-shadow: 0 7px 22px rgba(0,0,0,.2);
+            font-size: 1.8rem;
+            text-decoration: none !important;
+            transition: transform .2s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: translateY(-4px);
+        }
+
+        @media (max-width: 991px) {
+            .hero {
+                padding: 65px 0;
+            }
+
+            .hero-image-wrap {
+                margin-top: 35px;
+            }
+
+            .hero-image {
+                height: 310px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .enquiry-intro {
+                padding-right: 0;
+                margin-bottom: 25px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero h1 {
+                letter-spacing: -.8px;
+            }
+
+            .hero-actions {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .hero-actions a {
+                width: 100%;
+            }
+
+            .hero-image {
+                height: 260px;
+            }
+
+            .highlight-item {
+                padding: 15px 5px;
+            }
+
+            .product-image {
+                height: 230px;
+            }
+
+            .enquiry-card {
+                padding: 22px 18px;
+            }
+
+            .video-section,
+            .enquiry-section {
+                padding: 55px 0;
+            }
+
+            .contact-strip .btn-primary-custom {
+                margin-top: 20px;
+            }
+
+            .floating-whatsapp {
+                right: 15px;
+                bottom: 15px;
+                width: 52px;
+                height: 52px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg py-3">
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a href="index.html" class="navbar-brand">
-            <img src="imgs/ecoeco.png" height="70" alt="EcoSolution Hub Logo">
+        <a href="index.html" class="navbar-brand" aria-label="EcoSolution Hub home">
+            <img src="imgs/Zerah Nexus logo.png" alt="EcoSolution Hub Logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+
+        <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#mainNavigation"
+                aria-controls="mainNavigation" aria-expanded="false"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="mainNavigation">
             <ul class="navbar-nav ml-auto">
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" data-toggle="dropdown">Construction Engineering</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding & Fabrication</a>
-                        <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom & Plumbing</a>
-                        <a class="dropdown-item" href="painting-and-interior-design.html">Painting & Interior Design</a>
+                    <a class="nav-link dropdown-toggle" href="#"
+                       id="constructionDropdown" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Construction Engineering
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="constructionDropdown">
+                        <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding &amp; Fabrication</a>
+                        <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom &amp; Plumbing</a>
+                        <a class="dropdown-item" href="painting-and-interior-design.html">Painting &amp; Interior Design</a>
                         <a class="dropdown-item" href="cabinetry-installation.html">Cabinetry Installation</a>
                     </div>
                 </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">Furniture Place</a>
-                    <div class="dropdown-menu">
+                    <a class="nav-link dropdown-toggle" href="#"
+                       id="furnitureDropdown" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Furniture Place
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="furnitureDropdown">
                         <a class="dropdown-item" href="home-furniture.html">Home Furniture</a>
                         <a class="dropdown-item" href="office-furniture.html">Office Furniture</a>
                         <a class="dropdown-item" href="school-furniture.html">School Furniture</a>
@@ -130,131 +831,727 @@
                         <a class="dropdown-item" href="hospital-supplies.html">Hospital Supplies</a>
                     </div>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="about_us.html">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about_us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- HERO SECTION -->
-<section class="bg-light p-5">
-    <div class="container text-center text-md-left">
+<!-- HERO -->
+<header class="hero">
+    <div class="container hero-content">
         <div class="row align-items-center">
-            <div class="col-md-7">
-                <h2 class="mb-3">Inspiring Classrooms for the Leaders of Tomorrow</h2>
-                <p>Our school furniture is crafted to boost creativity, comfort, and productivity. From lecture halls to kindergartens, we help you create inspiring learning environments.</p>
+            <div class="col-lg-7">
+                <span class="eyebrow">School Furniture Solutions</span>
+
+                <h1>Better Spaces.<br><span>Brighter Futures.</span></h1>
+
+                <p>
+                    From kindergarten classrooms to university lecture halls,
+                    discover practical furniture solutions designed to support
+                    learning, comfort and organised school environments.
+                </p>
+
+                <div class="hero-actions d-flex flex-wrap" style="gap: 12px;">
+                    <a href="#school-products" class="btn-primary-custom">
+                        Explore Furniture <i class="bi bi-arrow-down"></i>
+                    </a>
+                    <a href="#school-enquiry" class="btn-outline-custom">
+                        Request a Quote <i class="bi bi-chat-dots"></i>
+                    </a>
+                </div>
             </div>
-            <div class="col-md-5 text-center">
-                <img class="img-fluid rounded" src="imgs/uhuru_visits_the_artisans.jpg" alt="President appreciating furniture">
+
+            <div class="col-lg-5">
+                <div class="hero-image-wrap">
+                    <img
+                        class="hero-image"
+                        src="imgs/uhuru_visits_the_artisans.jpg"
+                        alt="Furniture craftsmanship and school furniture production"
+                        fetchpriority="high"
+                    >
+                    <div class="hero-image-caption">
+                        <i class="bi bi-mortarboard-fill"></i>
+                        Furnishing the next generation of learners
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights" aria-label="Our service highlights">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-6 col-lg-3">
+                <div class="highlight-item">
+                    <div class="highlight-icon"><i class="bi bi-shield-check"></i></div>
+                    <div>
+                        <strong>Built for Daily Use</strong>
+                        <small>Practical furniture options</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="highlight-item">
+                    <div class="highlight-icon"><i class="bi bi-people"></i></div>
+                    <div>
+                        <strong>All Learning Levels</strong>
+                        <small>From early years to college</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="highlight-item">
+                    <div class="highlight-icon"><i class="bi bi-box-seam"></i></div>
+                    <div>
+                        <strong>Multiple Solutions</strong>
+                        <small>Furniture for different needs</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="highlight-item">
+                    <div class="highlight-icon"><i class="bi bi-chat-square-text"></i></div>
+                    <div>
+                        <strong>Personalised Quotes</strong>
+                        <small>Based on your requirements</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCT CATALOGUE -->
+<section class="section" id="school-products">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">Explore Our Collection</span>
+            <h2>Furniture for Every Learning Space</h2>
+            <p>
+                Browse our school furniture range and tell us what your
+                institution needs. We can discuss quantities, specifications
+                and pricing with you.
+            </p>
+        </div>
+
+        <!-- Category filters -->
+        <div class="filter-list" role="group" aria-label="Filter furniture by category">
+            <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All Furniture</button>
+            <button class="filter-btn" type="button" data-filter="lecture" aria-pressed="false">Lecture Chairs</button>
+            <button class="filter-btn" type="button" data-filter="kindergarten" aria-pressed="false">Kindergarten</button>
+            <button class="filter-btn" type="button" data-filter="storage" aria-pressed="false">Storage</button>
+            <button class="filter-btn" type="button" data-filter="beds" aria-pressed="false">School Beds</button>
+        </div>
+
+        <div class="row" id="productGrid">
+
+            <!-- LECTURE CHAIRS -->
+            <div class="col-sm-6 col-lg-3 product-item" data-category="lecture">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/h11.jpeg" class="product-image" alt="Lecture chair option one" loading="lazy">
+                        <span class="product-tag">Lecture Chairs</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Lecture Chair</h3>
+                        <p>A practical seating option for classrooms and lecture rooms.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Lecture Chair">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 product-item" data-category="lecture">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/h22.jpeg" class="product-image" alt="Steel frame lecture chair" loading="lazy">
+                        <span class="product-tag">Lecture Chairs</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Steel-Frame Chair</h3>
+                        <p>A chair option with a sturdy-looking frame for educational spaces.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Steel-Frame Lecture Chair">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 product-item" data-category="lecture">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/sss.jpeg" class="product-image" alt="Wooden base cushioned chair" loading="lazy">
+                        <span class="product-tag">Lecture Chairs</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Cushioned Chair</h3>
+                        <p>A seating option for learning and meeting environments.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Cushioned Lecture Chair">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 product-item" data-category="lecture">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/ss1s.jpeg" class="product-image" alt="Stackable chair option" loading="lazy">
+                        <span class="product-tag">Lecture Chairs</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Stackable Chair</h3>
+                        <p>A space-conscious option for flexible learning areas.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Stackable Lecture Chair">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- KINDERGARTEN -->
+            <div class="col-sm-6 col-lg-3 product-item" data-category="kindergarten">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/Humble Crew Tot Tutors Kids Wood Table & 4 Chair .jpeg" class="product-image" alt="Children's wooden table and four chairs" loading="lazy">
+                        <span class="product-tag">Kindergarten</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Children's Table Set</h3>
+                        <p>A child-sized table and seating set for activities and play.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Children's Table and Chair Set">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 product-item" data-category="kindergarten">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/2sitlocker.jpeg" class="product-image" alt="Compact children's storage locker" loading="lazy">
+                        <span class="product-tag">Kindergarten</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Children's Lockers</h3>
+                        <p>Storage for keeping children's belongings organised.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Children's Lockers">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 product-item" data-category="kindergarten">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/kk1.jpeg" class="product-image" alt="Kindergarten furniture option one" loading="lazy">
+                        <span class="product-tag">Kindergarten</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Early Learning Furniture</h3>
+                        <p>Furniture options for creative and interactive classroom activities.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Early Learning Furniture">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 product-item" data-category="kindergarten">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/kk2.jpeg" class="product-image" alt="Kindergarten seating option two" loading="lazy">
+                        <span class="product-tag">Kindergarten</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Children's Chairs</h3>
+                        <p>Seating options for early-years learning spaces.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Children's Chairs">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- STORAGE -->
+            <div class="col-sm-6 col-lg-3 product-item" data-category="storage">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/sh1.jpeg" class="product-image" alt="Metal school storage lockers" loading="lazy">
+                        <span class="product-tag">Storage</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Metal Storage Lockers</h3>
+                        <p>Locker options for storing school supplies and personal items.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Metal Storage Lockers">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 product-item" data-category="storage">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/sh2.jpeg" class="product-image" alt="Wooden school storage cabinet" loading="lazy">
+                        <span class="product-tag">Storage</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Storage Cabinets</h3>
+                        <p>Cabinet solutions for classroom resources and school materials.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="School Storage Cabinets">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 product-item" data-category="storage">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/sh3.jpeg" class="product-image" alt="Open shelf storage unit" loading="lazy">
+                        <span class="product-tag">Storage</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Open Shelving</h3>
+                        <p>Accessible shelving for books, learning materials and supplies.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Open School Shelving">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 product-item" data-category="storage">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/sh4.jpeg" class="product-image" alt="Compact storage solution" loading="lazy">
+                        <span class="product-tag">Storage</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Compact Storage</h3>
+                        <p>Space-saving storage options for learning resources and toys.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Compact School Storage">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- SCHOOL BEDS -->
+            <div class="col-sm-6 col-lg-4 product-item" data-category="beds">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/bed2n.jpeg" class="product-image" alt="Bunk bed option for boarding schools" loading="lazy">
+                        <span class="product-tag">School Beds</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Boarding School Bunk Beds</h3>
+                        <p>A practical bed option for boarding facilities and dormitories.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Boarding School Bunk Beds">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 product-item" data-category="beds">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/bed2coverd.jpeg" class="product-image" alt="Covered school bed option" loading="lazy">
+                        <span class="product-tag">School Beds</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Covered Bed Option</h3>
+                        <p>A covered design option for selected boarding and sleeping spaces.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Covered School Bed">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 product-item" data-category="beds">
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img src="imgs/bed1study.jpeg" class="product-image" alt="Bed with integrated study desk" loading="lazy">
+                        <span class="product-tag">School Beds</span>
+                    </div>
+                    <div class="product-body">
+                        <h3>Bed with Study Desk</h3>
+                        <p>A combined bed and study-space option for compact rooms.</p>
+                        <a href="#school-enquiry" class="product-link" data-product="Bed with Integrated Study Desk">Enquire about this <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="no-products" id="noProducts">
+                No products found in this category.
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section section-soft">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Why EcoSolution Hub</span>
+            <h2>Furniture That Works for Your School</h2>
+            <p>
+                Practical options to help schools furnish classrooms,
+                learning areas and boarding facilities.
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="bi bi-shield-check"></i></div>
+                    <h3>Durability in Mind</h3>
+                    <p>Explore furniture options suited to the everyday demands of educational environments.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="bi bi-person-arms-up"></i></div>
+                    <h3>Comfort &amp; Function</h3>
+                    <p>Choose furniture with the intended users, activities and learning spaces in mind.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="bi bi-grid"></i></div>
+                    <h3>Variety of Options</h3>
+                    <p>Explore seating, children's furniture, storage and boarding-school beds.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="bi bi-chat-square-text"></i></div>
+                    <h3>Request a Quote</h3>
+                    <p>Share your quantities, budget and specifications to start a conversation about your project.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- LECTURE CHAIRS -->
-<h3 class="section-title"><i class="bi bi-book-half"></i>Lecture Chairs</h3>
-<div class="container">
-    <div class="row">
-        <div class="col-md-3"><div class="card"><img src="imgs/h11.jpeg" class="card-img-top"><div class="card-body"><p>Durable ergonomic chair for lectures.</p></div></div></div>
-        <div class="col-md-3"><div class="card"><img src="imgs/h22.jpeg" class="card-img-top"><div class="card-body"><p>Modern steel frame for strength.</p></div></div></div>
-        <div class="col-md-3"><div class="card"><img src="imgs/sss.jpeg" class="card-img-top"><div class="card-body"><p>Wooden base with cushioned seating.</p></div></div></div>
-        <div class="col-md-3"><div class="card"><img src="imgs/ss1s.jpeg" class="card-img-top"><div class="card-body"><p>Stackable design for easy storage.</p></div></div></div>
-    </div>
-</div>
-
-<!-- KINDERGARTEN -->
-<h3 class="section-title"><i class="bi bi-backpack"></i>Kindergarten</h3>
-<div class="container">
-    <div class="row">
-        <div class="col-md-3"><div class="card"><img src="imgs/Humble Crew Tot Tutors Kids Wood Table & 4 Chair .jpeg" class="card-img-top"><div class="card-body"><p>Safe wooden table & chairs for toddlers.</p></div></div></div>
-        <div class="col-md-3"><div class="card"><img src="imgs/2sitlocker.jpeg" class="card-img-top"><div class="card-body"><p>Mini lockers for organized kids’ storage.</p></div></div></div>
-        <div class="col-md-3"><div class="card"><img src="imgs/kk1.jpeg" class="card-img-top"><div class="card-body"><p>Bright desks designed for playful learning.</p></div></div></div>
-        <div class="col-md-3"><div class="card"><img src="imgs/kk2.jpeg" class="card-img-top"><div class="card-body"><p>Colorful plastic chairs for comfort.</p></div></div></div>
-    </div>
-</div>
-
-<!-- STORAGE GALLERY -->
-<h3 class="section-title"><i class="bi bi-box-seam"></i>Storage Solutions</h3>
-<div class="container">
-    <div class="row">
-        <div class="col-md-3"><div class="card"><img src="imgs/sh1.jpeg" class="card-img-top"><div class="card-body"><p>Secure metallic storage lockers for schools.</p></div></div></div>
-        <div class="col-md-3"><div class="card"><img src="imgs/sh2.jpeg" class="card-img-top"><div class="card-body"><p>Wooden cabinet storage for classrooms.</p></div></div></div>
-        <div class="col-md-3"><div class="card"><img src="imgs/sh3.jpeg" class="card-img-top"><div class="card-body"><p>Open shelf storage for quick access.</p></div></div></div>
-        <div class="col-md-3"><div class="card"><img src="imgs/sh4.jpeg" class="card-img-top"><div class="card-body"><p>Compact storage for kindergarten toys.</p></div></div></div>
-    </div>
-</div>
-
-<!-- SCHOOL BEDS -->
-<h3 class="section-title"><i class="bi bi-moon-stars"></i>School Beds</h3>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4"><div class="card"><img src="imgs/bed2n.jpeg" class="card-img-top"><div class="card-body"><p>Strong bunk beds for boarding schools.</p></div></div></div>
-        <div class="col-md-4"><div class="card"><img src="imgs/bed2coverd.jpeg" class="card-img-top"><div class="card-body"><p>Covered beds with mosquito protection.</p></div></div></div>
-        <div class="col-md-4"><div class="card"><img src="imgs/bed1study.jpeg" class="card-img-top"><div class="card-body"><p>Bed with integrated study desk below.</p></div></div></div>
-    </div>
-</div>
-
-<!-- WHY CHOOSE US -->
-<div class="container my-4">
-    <h3 class="section-title"><i class="bi bi-check-circle"></i>Why Choose Our School Furniture?</h3>
-    <ul>
-        <li><strong>Quality Materials:</strong> Built to last with high-grade materials.</li>
-        <li><strong>Comfort:</strong> Ergonomic designs for students & teachers.</li>
-        <li><strong>Variety:</strong> Wide range to fit all classroom needs.</li>
-        <li><strong>Affordability:</strong> Quality products at competitive prices.</li>
-    </ul>
-</div>
-
 <!-- VIDEO -->
-<div class="video-section">
-    <h4><i class="bi bi-play-circle"></i> See Our Work in Action</h4>
-    <div class="mt-3" style="max-width: 80%; border-radius: 12px; overflow: hidden;">
-  <iframe width="100%" height="315" 
-          src="https://www.youtube.com/embed/r-qoUQYgX8Y" 
-          title="President Uhuru Launch Local Desk Project" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-  </iframe>
-</div>
-    <p class="mt-3">At EcoHub Solution, we craft premium school furniture that blends timeless durability with contemporary style to inspire future leaders.</p>
-</div>
+<section class="video-section">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">See Our Work</span>
+            <h2>Craftsmanship in Action</h2>
+            <p>
+                Watch the video to learn more about furniture craftsmanship
+                and local furniture initiatives.
+            </p>
+        </div>
 
-<!-- WHATSAPP -->
-<div class="whatsapp-button">
-    <a href="https://wa.me/742082219" target="_blank">
-        <img src="imgs/wappicon.png" alt="WhatsApp Icon" width="44" height="44"> Chat on WhatsApp
-    </a>
-</div>
+        <div class="video-frame">
+            <iframe
+                src="https://www.youtube.com/embed/r-qoUQYgX8Y"
+                title="President Uhuru Launch Local Desk Project"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ENQUIRY FORM -->
+<section class="enquiry-section" id="school-enquiry">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-5">
+                <div class="enquiry-intro">
+                    <span class="eyebrow">Let's Furnish Your School</span>
+                    <h2>Tell Us What Your Institution Needs.</h2>
+                    <p>
+                        Planning a new classroom, upgrading a school or
+                        furnishing a boarding facility? Send us your
+                        requirements to begin discussing a suitable solution.
+                    </p>
+
+                    <div class="enquiry-point">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Specify furniture types and quantities.</span>
+                    </div>
+
+                    <div class="enquiry-point">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Share your budget and preferred specifications.</span>
+                    </div>
+
+                    <div class="enquiry-point">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Send your enquiry directly to WhatsApp.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="enquiry-card">
+                    <h3>Request a School Furniture Quote</h3>
+                    <p class="form-subtitle">
+                        Fill in the details below. Your enquiry will open in WhatsApp for you to send.
+                    </p>
+
+                    <form id="schoolFurnitureForm">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="customerName">Your Name *</label>
+                                <input type="text" class="form-control" id="customerName"
+                                       name="customerName" placeholder="Enter your full name" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="phoneNumber">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phoneNumber"
+                                       name="phoneNumber" placeholder="e.g. 07XX XXX XXX" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="institution">School / Institution Name</label>
+                            <input type="text" class="form-control" id="institution"
+                                   name="institution" placeholder="Enter your institution's name">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="furnitureType">Furniture Category *</label>
+                                <select class="form-control" id="furnitureType" name="furnitureType" required>
+                                    <option value="">Select a category</option>
+                                    <option value="Lecture Chairs">Lecture Chairs</option>
+                                    <option value="Kindergarten Furniture">Kindergarten Furniture</option>
+                                    <option value="School Storage">School Storage</option>
+                                    <option value="School Beds">School Beds</option>
+                                    <option value="Multiple Categories">Multiple Categories</option>
+                                    <option value="Other School Furniture">Other School Furniture</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="quantity">Estimated Quantity *</label>
+                                <input type="number" class="form-control" id="quantity"
+                                       name="quantity" min="1" step="1"
+                                       placeholder="e.g. 100" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="budget">Estimated Budget (KES)</label>
+                                <input type="number" class="form-control" id="budget"
+                                       name="budget" min="0" step="1"
+                                       placeholder="Enter your budget">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="deliveryLocation">Delivery Location *</label>
+                                <input type="text" class="form-control" id="deliveryLocation"
+                                       name="deliveryLocation" placeholder="Town / County" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="requirements">Additional Requirements</label>
+                            <textarea class="form-control" id="requirements" name="requirements"
+                                      placeholder="Describe the furniture, sizes, materials, colours or other specifications you need."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="bi bi-whatsapp"></i> Send Enquiry on WhatsApp
+                        </button>
+
+                        <p class="form-note">
+                            <i class="bi bi-lock"></i>
+                            Your message is prepared for WhatsApp. It is not sent until you press Send there.
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<section class="contact-strip">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h3>Need furniture for a school project?</h3>
+                <p>Contact EcoSolution Hub to discuss your requirements and request a quotation.</p>
+            </div>
+            <div class="col-lg-4 text-lg-right">
+                <a class="btn-primary-custom"
+                   href="https://wa.me/254742082219?text=Hello%20EcoSolution%20Hub%2C%20I%20would%20like%20to%20enquire%20about%20school%20furniture."
+                   target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-whatsapp"></i> Talk to Our Team
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md">
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href="index.html" class="footer-brand">
+                    Zerah <span>Nexus</span>
+                </a>
+                <p>
+                    Practical furniture and construction solutions
+                    for homes, workplaces and learning environments.
+                </p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="about_us.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="https://daily-matters-matter.blogspot.com/">Blog</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="office-furniture.html">Office Furniture</a></li>
+                    <li><a href="home-furniture.html">Home Furniture</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="col-md">
-                <h3>Contact</h3>
-                <p><i class="bi bi-geo-alt-fill"></i> P.O Box 21075-00100 GPO, Nairobi, Kenya</p>
-                <p><i class="bi bi-envelope-fill"></i> info@ecosolutionhub.com</p>
-                <p><i class="bi bi-telephone-fill"></i> +254 742082219</p>
+
+            <div class="col-lg-4 col-md-12 mb-4">
+                <h3>Contact Us</h3>
+                <p><i class="bi bi-envelope-fill mr-2"></i><a href="mailto:zerahnexus@gmail.com">zerahnexus@gmail.com</a></p>
+                <p><i class="bi bi-telephone-fill mr-2"></i><a href="tel:+254742082219">+254 742 082 219</a></p>
+                <p>
+                    <i class="bi bi-whatsapp mr-2"></i>
+                    <a href="https://wa.me/254742082219" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a>
+                </p>
             </div>
+
         </div>
-        <div class="text-center mt-3">
-            <p>&copy; 2025 EcoHub Solutions. All rights reserved.</p>
+
+        <div class="footer-bottom">
+            &copy; <span id="currentYear"></span> EcoSolution Hub. All rights reserved.
         </div>
     </div>
 </footer>
 
+<!-- Floating WhatsApp -->
+<a class="floating-whatsapp"
+   href="https://wa.me/254742082219?text=Hello%20EcoSolution%20Hub%2C%20I%20would%20like%20to%20enquire%20about%20school%20furniture."
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Chat with EcoSolution Hub on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Product category filtering
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const productItems = document.querySelectorAll(".product-item");
+    const noProducts = document.getElementById("noProducts");
+
+    filterButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const selectedCategory = button.dataset.filter;
+            let visibleCount = 0;
+
+            filterButtons.forEach(function(item) {
+                const isActive = item === button;
+                item.classList.toggle("active", isActive);
+                item.setAttribute("aria-pressed", String(isActive));
+            });
+
+            productItems.forEach(function(item) {
+                const matches =
+                    selectedCategory === "all" ||
+                    item.dataset.category === selectedCategory;
+
+                item.style.display = matches ? "" : "none";
+
+                if (matches) {
+                    visibleCount++;
+                }
+            });
+
+            noProducts.style.display = visibleCount === 0 ? "block" : "none";
+        });
+    });
+
+    // Product enquiry links prefill the form
+    document.querySelectorAll("[data-product]").forEach(function(link) {
+        link.addEventListener("click", function() {
+            const productName = link.dataset.product;
+            const categorySelect = document.getElementById("furnitureType");
+            const requirements = document.getElementById("requirements");
+
+            const categoryMap = {
+                "Lecture Chair": "Lecture Chairs",
+                "Steel-Frame Lecture Chair": "Lecture Chairs",
+                "Cushioned Lecture Chair": "Lecture Chairs",
+                "Stackable Lecture Chair": "Lecture Chairs",
+                "Children's Table and Chair Set": "Kindergarten Furniture",
+                "Children's Lockers": "Kindergarten Furniture",
+                "Early Learning Furniture": "Kindergarten Furniture",
+                "Children's Chairs": "Kindergarten Furniture",
+                "Metal Storage Lockers": "School Storage",
+                "School Storage Cabinets": "School Storage",
+                "Open School Shelving": "School Storage",
+                "Compact School Storage": "School Storage",
+                "Boarding School Bunk Beds": "School Beds",
+                "Covered School Bed": "School Beds",
+                "Bed with Integrated Study Desk": "School Beds"
+            };
+
+            categorySelect.value = categoryMap[productName] || "Other School Furniture";
+            requirements.value = "I am interested in: " + productName + ". Please share available options and pricing.";
+        });
+    });
+
+    // Prepare enquiry and open WhatsApp
+    document.getElementById("schoolFurnitureForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("customerName").value.trim();
+        const phone = document.getElementById("phoneNumber").value.trim();
+        const institution = document.getElementById("institution").value.trim();
+        const category = document.getElementById("furnitureType").value;
+        const quantity = document.getElementById("quantity").value;
+        const budget = document.getElementById("budget").value;
+        const location = document.getElementById("deliveryLocation").value.trim();
+        const requirements = document.getElementById("requirements").value.trim();
+
+        if (!this.reportValidity()) {
+            return;
+        }
+
+        const message = [
+            "Hello EcoSolution Hub!",
+            "",
+            "I would like to enquire about school furniture.",
+            "",
+            "Name: " + name,
+            "Phone: " + phone,
+            "School / Institution: " + (institution || "Not provided"),
+            "Furniture Category: " + category,
+            "Estimated Quantity: " + quantity,
+            "Estimated Budget: " + (budget ? "KES " + Number(budget).toLocaleString("en-KE") : "Not specified"),
+            "Delivery Location: " + location,
+            "Additional Requirements: " + (requirements || "None provided")
+        ].join("\n");
+
+        const whatsappURL =
+            "https://wa.me/254742082219?text=" + encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    });
+
+    // Automatically update the footer year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
-

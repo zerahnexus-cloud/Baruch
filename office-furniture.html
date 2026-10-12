@@ -1,268 +1,1240 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <title>Office Furniture | EcoHub Solution</title>
-    <style>
-        body {
-            background-color: #fdfdfd;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .navbar {
-            background-color: #32012F;
-        }
-        .navbar-nav .nav-link {
-            color: #fff !important;
-        }
-        .navbar-toggler-icon {
-            filter: invert(1);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241039">
+  <meta name="description" content="Explore office chairs, executive desks, reception furniture and office storage. Request a tailored furniture quotation for your workplace.">
 
-        /* Banner */
-        .banner {
-            background: url('imgs/odesk1.jpeg') center/cover no-repeat;
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            background-color: rgba(50,1,47,0.6);
-            background-blend-mode: multiply;
-        }
-        .banner h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-        .banner p {
-            font-size: 1.1rem;
-        }
+  <title>Office Furniture | EcoSolution Hub</title>
 
-        /* Product Cards */
-        .product-card {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            text-align: center;
-            padding-bottom: 10px;
-        }
-        .product-card:hover {
-            transform: translateY(-6px);
-        }
-        .product-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-        .product-card h6 {
-            margin-top: 10px;
-            color: #32012F;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-        /* WhatsApp CTA */
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            background: #28a745;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .cta-btn img {
-            margin-right: 8px;
-        }
-        .cta-btn:hover {
-            background: #218838;
-            color: white;
-        }
+  <style>
+    :root {
+      --navy: #241039;
+      --purple: #6d28d9;
+      --bright: #a855f7;
+      --lavender: #f3e8ff;
+      --light: #faf8fc;
+      --white: #fff;
+      --text: #30263b;
+      --muted: #776d82;
+      --border: #eee6f5;
+      --radius: 18px;
+    }
 
-        .footer {
-            background-color: #32012F;
-            color: #fff;
-            padding: 50px 0;
-        }
-        .footer a {
-            color: #fff;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--light);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; }
+
+    /* NAVIGATION */
+    .navbar {
+      background: var(--navy);
+      padding: 14px 0;
+    }
+
+    .navbar-brand img {
+      max-height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 12px 15px !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #d8b4fe !important;
+    }
+
+    .dropdown-menu {
+      border: 0;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 12px 35px #180b2920;
+    }
+
+    .dropdown-item {
+      padding: 10px 14px;
+      border-radius: 7px;
+      font-size: 14px;
+    }
+
+    .dropdown-item:hover {
+      background: var(--lavender);
+      color: var(--purple);
+    }
+
+    .navbar-toggler { border: 1px solid #ffffff60; }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 85px 0 80px;
+      color: white;
+      background:
+        linear-gradient(90deg, #241039f5 0%, #30144edc 52%, #30144e80 100%),
+        url("imgs/odesk1.jpeg") center 45% / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      right: -100px;
+      bottom: -180px;
+      border: 1px solid #ffffff25;
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px #ffffff08, 0 0 0 90px #ffffff05;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid #ffffff35;
+      border-radius: 50px;
+      background: #ffffff15;
+      color: #e9d5ff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5.5vw, 65px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.12;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span { color: #d8b4fe; }
+
+    .hero p {
+      max-width: 580px;
+      color: #e8dff1;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .btn-main {
+      display: inline-block;
+      padding: 14px 24px;
+      border: 0;
+      border-radius: 10px;
+      background: white;
+      color: var(--navy);
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .btn-main:hover {
+      color: var(--purple);
+      transform: translateY(-2px);
+    }
+
+    .hero-note {
+      display: inline-block;
+      margin-left: 15px;
+      color: #e8dff1;
+      font-size: 13px;
+    }
+
+    /* BENEFITS */
+    .benefits {
+      padding: 20px 0;
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .benefit i {
+      color: var(--purple);
+      font-size: 21px;
+    }
+
+    /* SECTION HEADINGS */
+    .section { padding: 75px 0; }
+
+    .section-label {
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-heading {
+      color: var(--navy);
+      font-size: clamp(28px, 4vw, 39px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    /* FILTERS */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 32px 0 35px;
+    }
+
+    .filter-btn {
+      padding: 10px 19px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: white;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--purple);
+      background: var(--purple);
+      color: white;
+    }
+
+    /* PRODUCT CARDS */
+    .product-card {
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid #eee8f3;
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: 0 5px 22px #24103908;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px #24103913;
+    }
+
+    .product-image {
+      position: relative;
+      height: 245px;
+      overflow: hidden;
+      background: #f0ebf4;
+    }
+
+    .product-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.06);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 6px 11px;
+      border-radius: 30px;
+      background: #ffffffed;
+      color: var(--purple);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .product-body { padding: 19px; }
+
+    .product-category {
+      color: var(--purple);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .product-body h3 {
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 750;
+      margin-bottom: 8px;
+    }
+
+    .product-body p {
+      min-height: 42px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 17px;
+    }
+
+    .product-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .product-link:hover { color: var(--bright); }
+
+    .product-card-wrap[hidden] { display: none !important; }
+
+    /* CUSTOM ENQUIRY */
+    .order-section {
+      padding: 80px 0;
+      background: #f0e9f8;
+    }
+
+    .order-intro { padding: 25px 25px 25px 0; }
+
+    .order-intro h2 {
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin: 15px 0;
+    }
+
+    .order-intro p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .order-points {
+      list-style: none;
+      padding: 0;
+      margin-top: 25px;
+    }
+
+    .order-points li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .order-points i {
+      color: var(--purple);
+      font-size: 20px;
+    }
+
+    .order-card {
+      padding: 32px;
+      border-radius: 22px;
+      background: white;
+      box-shadow: 0 15px 50px #24103910;
+    }
+
+    .order-card h3 {
+      color: var(--navy);
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .form-intro {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .form-group { margin-bottom: 18px; }
+
+    .form-group label {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      min-height: 47px;
+      padding: 12px 14px;
+      border: 1px solid #e6ddec;
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 14px;
+      box-shadow: none !important;
+    }
+
+    textarea.form-control {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .form-control:focus { border-color: var(--bright); }
+
+    .btn-whatsapp {
+      width: 100%;
+      min-height: 52px;
+      border: 0;
+      border-radius: 10px;
+      background: #168c52;
+      color: white;
+      font-weight: 750;
+      transition: .2s;
+    }
+
+    .btn-whatsapp:hover {
+      background: #117342;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .form-footnote {
+      margin: 13px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    /* CONTACT STRIP */
+    .cta-strip {
+      padding: 45px 0;
+      background: var(--navy);
+      color: white;
+    }
+
+    .cta-strip h2 {
+      font-size: 27px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .cta-strip p { color: #d6c8e8; margin: 0; }
+
+    .btn-outline-light {
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 55px 0 20px;
+      background: #190b27;
+      color: #cbbdd9;
+    }
+
+    .footer h4 {
+      color: white;
+      font-size: 16px;
+      font-weight: 750;
+      margin-bottom: 17px;
+    }
+
+    .footer p,
+    .footer a {
+      color: #cbbdd9;
+      font-size: 13px;
+    }
+
+    .footer a:hover { color: white; }
+
+    .footer-links { list-style: none; padding: 0; }
+
+    .footer-links li { margin-bottom: 10px; }
+
+    .footer-brand {
+      margin-bottom: 12px;
+      color: white;
+      font-size: 21px;
+      font-weight: 850;
+    }
+
+    .footer-brand span { color: #c084fc; }
+
+    .footer-bottom {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid #ffffff19;
+      color: #a99ab9;
+      font-size: 12px;
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      font-size: 28px;
+      box-shadow: 0 5px 20px #0002;
+      transition: .2s;
+    }
+
+    .whatsapp-float:hover {
+      color: white;
+      transform: scale(1.07);
+    }
+
+    @media (max-width: 767px) {
+      .hero { padding: 65px 0 55px; }
+
+      .hero h1 { letter-spacing: -1px; }
+
+      .hero-note {
+        display: block;
+        margin: 14px 0 0;
+      }
+
+      .section,
+      .order-section { padding: 55px 0; }
+
+      .product-image { height: 220px; }
+
+      .order-intro { padding: 0 0 30px; }
+
+      .order-card { padding: 23px 18px; }
+
+      .benefit {
+        justify-content: flex-start;
+        font-size: 12px;
+      }
+
+      .cta-strip .btn { margin-top: 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- NAVIGATION -->
-    <nav class="navbar navbar-expand-lg py-3">
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <img src="imgs/ecoeco.png" height="65" alt="EcoSolution Hub Logo">
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a href="index.html" class="navbar-brand" aria-label="EcoSolution Hub home">
+        <img src="imgs/Zerah Nexus logo.png" alt="EcoSolution Hub Logo">
+      </a>
+
+      <button class="navbar-toggler" type="button"
+        data-toggle="collapse" data-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Construction Engineering
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Construction Engineering</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding</a>
-                            <a class="dropdown-item" href="painting-and-interior-design.html">Painting & Interior Design</a>
-                            <a class="dropdown-item" href="cabinetry-installation.html">Cabinetry Installation</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Furniture Place</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="home-furniture.html">Home Furniture</a>
-                            <a class="dropdown-item" href="office-furniture.html">Office Furniture</a>
-                            <a class="dropdown-item" href="school-furniture.html">School Furniture</a>
-                            <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Restaurant Furniture</a>
-                            <a class="dropdown-item" href="outdoor-furniture.html">Outdoor Furniture</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="about_us.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding &amp; Fabrication</a>
+              <a class="dropdown-item" href="painting-and-interior-design.html">Painting &amp; Interior Design</a>
+              <a class="dropdown-item" href="cabinetry-installation.html">Cabinetry Installation</a>
             </div>
-        </div>
-    </nav>
+          </li>
 
-    <!-- BANNER -->
-    <div class="banner">
-        <div>
-            <h1 data-aos="fade-down">Office Furniture</h1>
-            <p data-aos="fade-up">Elegant, Ergonomic & Professional – Perfect for Every Workplace</p>
-        </div>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Furniture Place
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="home-furniture.html">Home Furniture</a>
+              <a class="dropdown-item" href="office-furniture.html">Office Furniture</a>
+              <a class="dropdown-item" href="school-furniture.html">School Furniture</a>
+              <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Restaurant Furniture</a>
+              <a class="dropdown-item" href="outdoor-furniture.html">Outdoor Furniture</a>
+            </div>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="about_us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <!-- PRODUCT GRID -->
-    <section class="py-5">
-        <div class="container">
-            <h3 class="text-center mb-5 text-warning" data-aos="fade-up">Explore Our Corporate Collection</h3>
-            <div class="row">
-                <!-- CHAIRS -->
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="product-card">
-                        <img src="imgs/ochair1.jpeg" alt="LANCIA Low Back Chair">
-                        <h6>LANCIA Low Back Chair</h6>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="product-card">
-                        <img src="imgs/ochair2.jpeg" alt="LANCIA High Back Chair">
-                        <h6>LANCIA High Back Chair</h6>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="product-card">
-                        <img src="imgs/ochair3.jpeg" alt="FLASH High Back Chair">
-                        <h6>FLASH High Back Chair</h6>
-                    </div>
-                </div>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Office Furniture Collection</span>
 
-                <!-- DESKS -->
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="product-card">
-                        <img src="imgs/odesk1.jpeg" alt="Reception Desk">
-                        <h6>Modern Reception Desk</h6>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="product-card">
-                        <img src="imgs/odesk2.jpeg" alt="Executive Desk">
-                        <h6>Executive L-Shaped Desk</h6>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="product-card">
-                        <img src="imgs/odesk3.jpeg" alt="Office Desk">
-                        <h6>Classic Wooden Office Desk</h6>
-                    </div>
-                </div>
+        <h1>
+          Work Better.<br>
+          Look Sharper. <span>Think Bigger.</span>
+        </h1>
 
-                <!-- STORAGE -->
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="product-card">
-                        <img src="imgs/odrawer.jpeg" alt="Office Drawer">
-                        <h6>Compact Office Drawer</h6>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="product-card">
-                        <img src="imgs/Hirsh 15' x 25' 4-Drawer Vertical File Cabinet, Black.jpeg" alt="File Cabinet">
-                        <h6>Vertical File Cabinet</h6>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="product-card">
-                        <img src="imgs/download (10).jpeg" alt="Storage Cabinet">
-                        <h6>Office Storage Cabinet</h6>
-                    </div>
-                </div>
+        <p>
+          From executive desks and ergonomic chairs to reception
+          furniture and smart storage, furnish a workspace that
+          reflects your organisation's standards.
+        </p>
 
-                <!-- WAITING AREA -->
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="product-card">
-                        <img src="imgs/ow.jpeg" alt="Waiting Room Sofa">
-                        <h6>Comfort Waiting Sofa</h6>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="product-card">
-                        <img src="imgs/SOF Cushion Waiting Chair.jpeg" alt="Cushion Waiting Chair">
-                        <h6>Cushion Waiting Chair</h6>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="product-card">
-                        <img src="imgs/Waiting Room Chairs for Medical Office greencleandesigns_com Pediatric.jpeg" alt="Waiting Room Chairs">
-                        <h6>Waiting Room Chairs</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="https://wa.me/254742082219" target="_blank" class="cta-btn mt-4">
-                    <img src="imgs/wappicon.png" width="22" alt="WhatsApp"> Chat with Us for Bulk Orders
-                </a>
-            </div>
+        <a href="#collection" class="btn btn-main">
+          Explore Office Furniture <i class="bi bi-arrow-down ml-2"></i>
+        </a>
+
+        <span class="hero-note">
+          <i class="bi bi-building mr-1"></i>
+          Individual and bulk enquiries welcome
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- BENEFITS -->
+  <section class="benefits">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-lg-3">
+          <div class="benefit">
+            <i class="bi bi-person-workspace"></i>
+            <span>Professional Workspaces</span>
+          </div>
         </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <h3>Contact</h3>
-                    <p><i class="bi bi-geo-alt-fill"></i> Outering Road, Nairobi</p>
-                    <p><i class="bi bi-envelope-fill"></i> ecohubsolution@gmail.com</p>
-                    <p><i class="bi bi-telephone-fill"></i> +254 742082219</p>
-                </div>
-                <div class="col-md">
-                    <h3>Quick Links</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="about_us.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="col-6 col-lg-3">
+          <div class="benefit">
+            <i class="bi bi-columns-gap"></i>
+            <span>Practical Designs</span>
+          </div>
         </div>
-    </footer>
+        <div class="col-6 col-lg-3">
+          <div class="benefit">
+            <i class="bi bi-wallet2"></i>
+            <span>Budget-Conscious Options</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="benefit">
+            <i class="bi bi-box-seam"></i>
+            <span>Bulk Order Enquiries</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>AOS.init();</script>
+  <!-- COLLECTION -->
+  <section class="section" id="collection">
+    <div class="container">
+
+      <div class="text-center">
+        <div class="section-label">Designed for Productivity</div>
+        <h2 class="section-heading">Explore Our Office Collection</h2>
+        <p class="section-description">
+          Find furniture for executive offices, modern workstations,
+          reception areas and organised workplaces. Select an item
+          to enquire or request a tailored quotation.
+        </p>
+      </div>
+
+      <div class="filters" aria-label="Filter furniture by category">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All Furniture</button>
+        <button class="filter-btn" data-filter="chairs" aria-pressed="false">Office Chairs</button>
+        <button class="filter-btn" data-filter="desks" aria-pressed="false">Desks &amp; Reception</button>
+        <button class="filter-btn" data-filter="storage" aria-pressed="false">Storage</button>
+        <button class="filter-btn" data-filter="waiting" aria-pressed="false">Waiting Areas</button>
+      </div>
+
+      <div class="row" id="productGrid">
+
+        <!-- OFFICE CHAIRS -->
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="chairs">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/ochair1.jpeg" alt="LANCIA low-back office chair" loading="lazy">
+              <span class="product-tag">Everyday Office</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Office Chairs</div>
+              <h3>LANCIA Low-Back Chair</h3>
+              <p>A practical seating option for workstations and everyday office use.</p>
+              <a href="#custom-order" class="product-link" data-product="LANCIA Low-Back Chair">
+                Request a Quote <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="chairs">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/ochair2.jpeg" alt="LANCIA high-back office chair" loading="lazy">
+              <span class="product-tag">Executive Seating</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Office Chairs</div>
+              <h3>LANCIA High-Back Chair</h3>
+              <p>A high-back seating choice for executive desks and professional offices.</p>
+              <a href="#custom-order" class="product-link" data-product="LANCIA High-Back Chair">
+                Request a Quote <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="chairs">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/ochair3.jpeg" alt="FLASH high-back office chair" loading="lazy">
+              <span class="product-tag">Professional Style</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Office Chairs</div>
+              <h3>FLASH High-Back Chair</h3>
+              <p>A professional chair option for a well-equipped workplace.</p>
+              <a href="#custom-order" class="product-link" data-product="FLASH High-Back Chair">
+                Request a Quote <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- DESKS AND RECEPTION -->
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="desks">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/odesk1.jpeg" alt="Modern office reception desk" loading="lazy">
+              <span class="product-tag">First Impressions</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Reception Furniture</div>
+              <h3>Modern Reception Desk</h3>
+              <p>Create a welcoming and professional first impression for visitors.</p>
+              <a href="#custom-order" class="product-link" data-product="Modern Reception Desk">
+                Request a Quote <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="desks">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/odesk2.jpeg" alt="Executive L-shaped office desk" loading="lazy">
+              <span class="product-tag">Executive Collection</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Office Desks</div>
+              <h3>Executive L-Shaped Desk</h3>
+              <p>Make room for documents, equipment and an organised working area.</p>
+              <a href="#custom-order" class="product-link" data-product="Executive L-Shaped Desk">
+                Request a Quote <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="desks">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/odesk3.jpeg" alt="Classic wooden office desk" loading="lazy">
+              <span class="product-tag">Timeless Design</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Office Desks</div>
+              <h3>Classic Wooden Office Desk</h3>
+              <p>A versatile desk style for offices, studies and administrative spaces.</p>
+              <a href="#custom-order" class="product-link" data-product="Classic Wooden Office Desk">
+                Request a Quote <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- STORAGE -->
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="storage">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/odrawer.jpeg" alt="Compact office drawer unit" loading="lazy">
+              <span class="product-tag">Smart Organisation</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Office Storage</div>
+              <h3>Compact Office Drawer</h3>
+              <p>Keep stationery, documents and everyday office essentials organised.</p>
+              <a href="#custom-order" class="product-link" data-product="Compact Office Drawer">
+                Request a Quote <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="storage">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/Hirsh 15' x 25' 4-Drawer Vertical File Cabinet, Black.jpeg" alt="Black vertical four-drawer file cabinet" loading="lazy">
+              <span class="product-tag">File Management</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Office Storage</div>
+              <h3>Vertical File Cabinet</h3>
+              <p>A dedicated filing solution for records and office paperwork.</p>
+              <a href="#custom-order" class="product-link" data-product="Vertical Four-Drawer File Cabinet">
+                Request a Quote <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="storage">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/download (10).jpeg" alt="Office storage cabinet" loading="lazy">
+              <span class="product-tag">Organised Workspace</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Office Storage</div>
+              <h3>Office Storage Cabinet</h3>
+              <p>Keep supplies and workplace essentials neatly stored away.</p>
+              <a href="#custom-order" class="product-link" data-product="Office Storage Cabinet">
+                Request a Quote <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- WAITING AREAS -->
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="waiting">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/ow.jpeg" alt="Waiting room sofa" loading="lazy">
+              <span class="product-tag">Guest Comfort</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Waiting Areas</div>
+              <h3>Comfort Waiting Sofa</h3>
+              <p>Create a comfortable place for guests and clients to wait.</p>
+              <a href="#custom-order" class="product-link" data-product="Comfort Waiting Sofa">
+                Request a Quote <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="waiting">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/SOF Cushion Waiting Chair.jpeg" alt="Cushioned waiting room chair" loading="lazy">
+              <span class="product-tag">Comfortable Seating</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Waiting Areas</div>
+              <h3>Cushion Waiting Chair</h3>
+              <p>A seating option for reception rooms and client waiting spaces.</p>
+              <a href="#custom-order" class="product-link" data-product="Cushion Waiting Chair">
+                Request a Quote <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 mb-4 product-card-wrap" data-category="waiting">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imgs/Waiting Room Chairs for Medical Office greencleandesigns_com Pediatric.jpeg" alt="Waiting room chairs for a professional reception area" loading="lazy">
+              <span class="product-tag">Reception Seating</span>
+            </div>
+            <div class="product-body">
+              <div class="product-category">Waiting Areas</div>
+              <h3>Waiting Room Chairs</h3>
+              <p>Arrange comfortable seating for offices, clinics and reception areas.</p>
+              <a href="#custom-order" class="product-link" data-product="Waiting Room Chairs">
+                Request a Quote <i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-4">
+        <p class="section-description mb-3">
+          Furnishing an entire office or sourcing a specific item?
+        </p>
+        <a href="#custom-order" class="btn btn-main" style="background:#6d28d9;color:white">
+          Request a Custom Quotation <i class="bi bi-arrow-right ml-2"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BULK ORDERS / CUSTOM ENQUIRY -->
+  <section class="order-section" id="custom-order">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-lg-5">
+          <div class="order-intro">
+            <div class="section-label">Your Workplace, Your Requirements</div>
+
+            <h2>Let's Furnish Your Next Big Idea.</h2>
+
+            <p>
+              Whether you need one executive desk, a reception makeover
+              or furniture for an entire organisation, tell us what you
+              need and the budget you are working with.
+            </p>
+
+            <ul class="order-points">
+              <li><i class="bi bi-check-circle-fill"></i> Select furniture and quantities</li>
+              <li><i class="bi bi-check-circle-fill"></i> Share your budget in KES</li>
+              <li><i class="bi bi-check-circle-fill"></i> Describe your space and specifications</li>
+              <li><i class="bi bi-check-circle-fill"></i> Enquire about individual or bulk orders</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="order-card">
+            <h3>Request an Office Furniture Quote</h3>
+            <p class="form-intro">
+              Tell us about your requirements to prepare your WhatsApp enquiry.
+            </p>
+
+            <form id="furnitureForm">
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="customerName">Your Name *</label>
+                  <input type="text" class="form-control"
+                    id="customerName" name="customerName"
+                    placeholder="Your full name" autocomplete="name" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="customerPhone">Phone Number *</label>
+                  <input type="tel" class="form-control"
+                    id="customerPhone" name="customerPhone"
+                    placeholder="e.g. 07XX XXX XXX" autocomplete="tel" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="organisation">Company / Organisation (Optional)</label>
+                <input type="text" class="form-control"
+                  id="organisation" name="organisation"
+                  placeholder="Enter your company or organisation">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-7">
+                  <label for="furnitureType">Furniture Required *</label>
+                  <select class="form-control" id="furnitureType"
+                    name="furnitureType" required>
+                    <option value="">Choose furniture</option>
+                    <option value="Office Chair">Office Chair</option>
+                    <option value="Executive Desk">Executive Desk</option>
+                    <option value="Reception Desk">Reception Desk</option>
+                    <option value="Office Storage">Office Storage</option>
+                    <option value="Waiting Area Furniture">Waiting Area Furniture</option>
+                    <option value="Complete Office Setup">Complete Office Setup</option>
+                    <option value="Other Custom Furniture">Other / Custom Furniture</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-5">
+                  <label for="quantity">Quantity *</label>
+                  <input type="number" class="form-control"
+                    id="quantity" name="quantity"
+                    min="1" max="10000" step="1" value="1" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="budget">Estimated Budget (KES) *</label>
+                <select class="form-control" id="budget" name="budget" required>
+                  <option value="">Choose your budget</option>
+                  <option value="Below KES 10,000">Below KES 10,000</option>
+                  <option value="KES 10,000 – 30,000">KES 10,000 – 30,000</option>
+                  <option value="KES 30,000 – 75,000">KES 30,000 – 75,000</option>
+                  <option value="KES 75,000 – 150,000">KES 75,000 – 150,000</option>
+                  <option value="KES 150,000 – 300,000">KES 150,000 – 300,000</option>
+                  <option value="Above KES 300,000">Above KES 300,000</option>
+                  <option value="Budget to be discussed">Not sure yet / Discuss with us</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="description">Describe Your Requirements *</label>
+                <textarea class="form-control" id="description"
+                  name="description" rows="4"
+                  placeholder="Describe the furniture, preferred design, dimensions, colours, materials, number of staff or any special requirements..."
+                  required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="delivery">Delivery Location (Optional)</label>
+                <input type="text" class="form-control"
+                  id="delivery" name="delivery"
+                  placeholder="e.g. Westlands, Nairobi">
+              </div>
+
+              <button type="submit" class="btn btn-whatsapp">
+                <i class="bi bi-whatsapp mr-2"></i>
+                Send My Enquiry on WhatsApp
+              </button>
+
+              <p class="form-footnote">
+                WhatsApp will open with your request ready for you to review and send.
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h2>Planning a Complete Office Setup?</h2>
+          <p>Get in touch to discuss furniture requirements for your workplace.</p>
+        </div>
+        <div class="col-lg-4 text-lg-right">
+          <a href="contact.html" class="btn btn-outline-light">
+            Contact Our Team <i class="bi bi-arrow-up-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-5 mb-4">
+          <div class="footer-brand">Zerah <span>Nexus</span></div>
+          <p>
+            Practical furniture solutions for professional workplaces,
+            designed around your space and requirements.
+          </p>
+          <p><i class="bi bi-geo-alt-fill mr-2"></i> Outering Road, Nairobi</p>
+          <p><i class="bi bi-envelope-fill mr-2"></i> zerahnexus@gmail.com</p>
+          <p><i class="bi bi-telephone-fill mr-2"></i> +254 742 082 219</p>
+        </div>
+
+        <div class="col-md-3 col-6 mb-4">
+          <h4>Furniture</h4>
+          <ul class="footer-links">
+            <li><a href="home-furniture.html">Home Furniture</a></li>
+            <li><a href="office-furniture.html">Office Furniture</a></li>
+            <li><a href="school-furniture.html">School Furniture</a></li>
+            <li><a href="outdoor-furniture.html">Outdoor Furniture</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 col-6 mb-4">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#collection">Our Collection</a></li>
+            <li><a href="#custom-order">Request a Quote</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom d-flex flex-wrap justify-content-between">
+        <span>&copy; <span id="currentYear"></span> Zerah-Nexus. All rights reserved.</span>
+        <span>Designed for better workspaces.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/254742082219"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with us on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Business WhatsApp number in international format.
+    // Kenya: 254 followed by the mobile number, without the leading zero.
+    const WHATSAPP_NUMBER = "254742082219";
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+    // Furniture category filters.
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const productCards = document.querySelectorAll(".product-card-wrap");
+
+    filterButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        const category = button.dataset.filter;
+
+        filterButtons.forEach(function(item) {
+          item.classList.remove("active");
+          item.setAttribute("aria-pressed", "false");
+        });
+
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+
+        productCards.forEach(function(card) {
+          card.hidden =
+            category !== "all" && card.dataset.category !== category;
+        });
+      });
+    });
+
+    // Selecting a product pre-fills the enquiry form.
+    document.querySelectorAll("[data-product]").forEach(function(link) {
+      link.addEventListener("click", function() {
+        const productName = link.dataset.product;
+        const category = link.closest(".product-card-wrap").dataset.category;
+
+        const categoryMap = {
+          chairs: "Office Chair",
+          desks: "Executive Desk",
+          storage: "Office Storage",
+          waiting: "Waiting Area Furniture"
+        };
+
+        document.getElementById("furnitureType").value =
+          categoryMap[category] || "Other Custom Furniture";
+
+        document.getElementById("description").value =
+          "I am interested in: " + productName +
+          ". Please share the available options and quotation.";
+
+        setTimeout(function() {
+          document.getElementById("customerName").focus({
+            preventScroll: true
+          });
+        }, 350);
+      });
+    });
+
+    // Validate the form and prepare a WhatsApp enquiry.
+    document.getElementById("furnitureForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (!this.checkValidity()) {
+        this.reportValidity();
+        return;
+      }
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerPhone").value.trim();
+      const organisation = document.getElementById("organisation").value.trim();
+      const furniture = document.getElementById("furnitureType").value;
+      const quantity = document.getElementById("quantity").value;
+      const budget = document.getElementById("budget").value;
+      const description = document.getElementById("description").value.trim();
+      const delivery = document.getElementById("delivery").value.trim();
+
+      if (!name || !phone || !furniture || !quantity || !budget || !description) {
+        alert("Please complete all required fields.");
+        return;
+      }
+
+      const number = WHATSAPP_NUMBER.replace(/\D/g, "");
+
+      if (number.length < 10) {
+        alert("Please check the business WhatsApp number in the JavaScript.");
+        return;
+      }
+
+      const message =
+        "Hello EcoSolution Hub! I would like an office furniture quotation.\n\n" +
+        "Name: " + name + "\n" +
+        "Phone: " + phone + "\n" +
+        "Company / Organisation: " + (organisation || "Not specified") + "\n" +
+        "Furniture Required: " + furniture + "\n" +
+        "Quantity: " + quantity + "\n" +
+        "Estimated Budget: " + budget + "\n" +
+        "Requirements: " + description + "\n" +
+        "Delivery Location: " + (delivery || "Not specified") + "\n\n" +
+        "Please get back to me with the available options and quotation. Thank you.";
+
+      const whatsappURL =
+        "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
+
+      window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    });
+  </script>
+
 </body>
 </html>

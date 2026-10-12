@@ -1,0 +1,1057 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Advertise With Us</title>
+  <meta name="description" content="EcoHub is building a digital marketplace connecting businesses with customers. Reserve your advertising space and promote your brand.">
+  <meta name="theme-color" content="#102A43">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+  --navy: #1B1035;
+  --deep-blue: #30145E;
+  --blue: #6D28D9;
+  --bright-blue: #A855F7;
+  --sky: #D8B4FE;
+  --ice: #F5F0FF;
+  --white: #FFFFFF;
+  --muted: #D6C8E8;
+  --glass: rgba(255, 255, 255, 0.075);
+  --border: rgba(216, 180, 254, 0.22);
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      background: var(--navy);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--sky);
+      outline-offset: 5px;
+    }
+
+    /* Animated background */
+
+    .background {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(8, 28, 47, 0.91),
+          rgba(15, 53, 84, 0.88) 52%,
+          rgba(9, 29, 53, 0.94)
+        ),
+        url("images/ecobg1.jpg") center / cover no-repeat;
+    }
+
+    .background::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background:
+        radial-gradient(circle at 20% 25%, rgba(43, 151, 232, 0.24), transparent 32%),
+        radial-gradient(circle at 80% 30%, rgba(77, 196, 255, 0.17), transparent 28%),
+        radial-gradient(circle at 55% 85%, rgba(38, 104, 190, 0.25), transparent 35%);
+      animation: ambient 18s ease-in-out infinite alternate;
+    }
+
+    .orb {
+      position: fixed;
+      z-index: -1;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(47, 159, 240, 0.10);
+      filter: blur(70px);
+      pointer-events: none;
+      animation: drift 16s ease-in-out infinite alternate;
+    }
+
+    .orb-one {
+      top: 5%;
+      left: -120px;
+    }
+
+    .orb-two {
+      right: -130px;
+      bottom: 5%;
+      width: 360px;
+      height: 360px;
+      background: rgba(73, 194, 255, 0.11);
+      animation-delay: -7s;
+    }
+
+    /* Top navigation */
+
+    .topbar {
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      animation: fadeDown 0.8s ease both;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+    }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border: 1px solid rgba(155, 219, 255, 0.3);
+      border-radius: 14px;
+      background: linear-gradient(135deg, #3BBAFF, #2468B8);
+      box-shadow: 0 5px 25px rgba(49, 153, 236, 0.28);
+      font-size: 1.4rem;
+    }
+
+    .brand-name span {
+      color: var(--bright-blue);
+    }
+
+    .topbar-label {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 15px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.045);
+      color: #D6E9F7;
+      font-size: 0.82rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #55D6A5;
+      box-shadow: 0 0 12px rgba(85, 214, 165, 0.8);
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    /* Main content */
+
+    .container {
+      width: min(1060px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 42px 0 30px;
+    }
+
+    .hero {
+      text-align: center;
+      animation: fadeUp 1s 0.1s ease both;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 23px;
+      padding: 8px 15px;
+      border: 1px solid rgba(100, 193, 255, 0.28);
+      border-radius: 50px;
+      background: rgba(48, 146, 218, 0.11);
+      color: #A9DFFF;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow .sparkle {
+      font-size: 1rem;
+      animation: sparkle 2.5s ease-in-out infinite;
+    }
+
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.2;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0 auto 22px;
+      font-size: clamp(2.5rem, 6.5vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -3px;
+    }
+
+    .gradient-text {
+      display: inline-block;
+      color: transparent;
+      background: linear-gradient(95deg, #FFFFFF 8%, #A6DEFF 48%, #51B9FF 90%);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #C7D9E8;
+      font-size: clamp(1rem, 2vw, 1.12rem);
+      line-height: 1.9;
+    }
+
+    /* Construction animation */
+
+    .construction-panel {
+      position: relative;
+      width: min(620px, 100%);
+      margin: 36px auto 24px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.055);
+      box-shadow: 0 20px 65px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      animation: fadeUp 1s 0.25s ease both;
+    }
+
+    .construction-panel::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      z-index: -1;
+      border-radius: inherit;
+      background: linear-gradient(
+        135deg,
+        rgba(94, 197, 255, 0.36),
+        transparent 38%,
+        transparent 70%,
+        rgba(81, 144, 255, 0.3)
+      );
+      opacity: 0.65;
+    }
+
+    .construction-panel img {
+      display: block;
+      width: 100%;
+      max-height: 320px;
+      min-height: 180px;
+      object-fit: contain;
+      border-radius: 14px;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .coming-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 26px 0 0;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .coming-label .construction-icon {
+      font-size: 1.3rem;
+    }
+
+    .coming-label .blue-text {
+      color: #85D2FF;
+    }
+
+    .coming-note {
+      margin-top: 8px;
+      color: #AFC4D6;
+      font-size: 0.9rem;
+    }
+
+    /* Small benefit indicators */
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 42px 0 70px;
+      animation: fadeUp 1s 0.35s ease both;
+    }
+
+    .benefit {
+      padding: 19px 12px;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: rgba(255, 255, 255, 0.045);
+      text-align: center;
+      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .benefit:hover {
+      transform: translateY(-5px);
+      border-color: rgba(113, 204, 255, 0.45);
+      background: rgba(64, 149, 219, 0.12);
+    }
+
+    .benefit-icon {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 1.5rem;
+    }
+
+    .benefit strong {
+      display: block;
+      font-size: 0.93rem;
+    }
+
+    .benefit p {
+      margin-top: 4px;
+      color: #AFC4D6;
+      font-size: 0.79rem;
+    }
+
+    /* Advertising section */
+
+    .advertise {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: clamp(28px, 5vw, 55px);
+      border: 1px solid rgba(145, 209, 255, 0.3);
+      border-radius: 28px;
+      background:
+        radial-gradient(ellipse at 0% 0%, rgba(71, 180, 255, 0.18), transparent 45%),
+        radial-gradient(ellipse at 100% 100%, rgba(88, 119, 255, 0.17), transparent 45%),
+        linear-gradient(135deg, rgba(22, 66, 105, 0.95), rgba(16, 43, 77, 0.97));
+      box-shadow: 0 25px 75px rgba(0, 0, 0, 0.25);
+      animation: fadeUp 1s 0.4s ease both;
+    }
+
+    .advertise::before {
+      content: "";
+      position: absolute;
+      top: -110%;
+      left: -60%;
+      z-index: -1;
+      width: 45%;
+      height: 320%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.075),
+        transparent
+      );
+      transform: rotate(25deg);
+      animation: shine 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .advertise-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .ad-tag {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 13px;
+      border: 1px solid rgba(122, 208, 255, 0.35);
+      border-radius: 50px;
+      background: rgba(63, 163, 235, 0.13);
+      color: #B8E4FF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .advertise h2 {
+      max-width: 730px;
+      margin: 0 auto 18px;
+      font-size: clamp(2rem, 4.8vw, 3.3rem);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+    }
+
+    .advertise h2 span {
+      color: #83D1FF;
+    }
+
+    .ad-description {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #D0E1F0;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+      margin: 32px 0;
+      text-align: left;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      padding: 17px 15px;
+      border: 1px solid rgba(207, 233, 255, 0.13);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.055);
+      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-4px);
+      border-color: rgba(131, 209, 255, 0.42);
+      background: rgba(65, 159, 230, 0.12);
+    }
+
+    .feature-icon {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 37px;
+      height: 37px;
+      border-radius: 11px;
+      background: rgba(64, 171, 255, 0.15);
+      font-size: 1.15rem;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: 0.89rem;
+      line-height: 1.5;
+    }
+
+    .feature small {
+      display: block;
+      margin-top: 4px;
+      color: #B6CCDE;
+      font-size: 0.76rem;
+      line-height: 1.6;
+    }
+
+    .early-access {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 22px;
+      color: #A7DEFF;
+      font-size: 0.87rem;
+      font-weight: 600;
+    }
+
+    /* Main contact button */
+
+    .cta-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 7px;
+    }
+
+    .cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 58px;
+      padding: 16px 31px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 50px;
+      background: linear-gradient(100deg, #FFFFFF, #DDF2FF);
+      color: #123D60;
+      font-size: 0.98rem;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow:
+        0 0 0 0 rgba(100, 194, 255, 0.35),
+        0 10px 35px rgba(32, 150, 237, 0.22);
+      animation: buttonPulse 2.8s ease-out infinite;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -80%;
+      width: 45%;
+      height: 200%;
+      background: rgba(75, 173, 245, 0.2);
+      transform: rotate(25deg);
+      transition: left 0.6s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 38px rgba(51, 164, 255, 0.35);
+    }
+
+    .cta:hover::before {
+      left: 140%;
+    }
+
+    .cta span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-arrow {
+      display: inline-block;
+      font-size: 1.3rem;
+      transition: transform 0.3s ease;
+    }
+
+    .cta:hover .cta-arrow {
+      transform: translateX(5px);
+    }
+
+    .cta-note {
+      margin-top: 15px;
+      color: #B8CEE0;
+      font-size: 0.82rem;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 36px 0 15px;
+      color: #9FB6CA;
+      text-align: center;
+      font-size: 0.83rem;
+    }
+
+    .footer-brand {
+      margin-bottom: 5px;
+      color: #E0F1FF;
+      font-weight: 700;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 19px;
+      margin: 12px 0 18px;
+    }
+
+    .footer-links a {
+      color: #B8DDF7;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .footer-links a:hover {
+      color: #FFFFFF;
+    }
+
+    /* Animations */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes ambient {
+      from {
+        transform: translate(-2%, -1%) rotate(0deg);
+      }
+      to {
+        transform: translate(3%, 2%) rotate(7deg);
+      }
+    }
+
+    @keyframes drift {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(45px, -35px);
+      }
+    }
+
+    @keyframes sparkle {
+      0%, 100% {
+        opacity: 0.65;
+        transform: scale(0.95);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.15);
+      }
+    }
+
+    @keyframes blink {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.45;
+      }
+    }
+
+    @keyframes shine {
+      0%, 60% {
+        left: -70%;
+      }
+      85%, 100% {
+        left: 150%;
+      }
+    }
+
+    @keyframes buttonPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(100, 194, 255, 0.3), 0 10px 35px rgba(32, 150, 237, 0.22);
+      }
+      70% {
+        box-shadow: 0 0 0 13px rgba(100, 194, 255, 0), 0 10px 35px rgba(32, 150, 237, 0.22);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(100, 194, 255, 0), 0 10px 35px rgba(32, 150, 237, 0.22);
+      }
+    }
+
+    /* Tablet */
+
+    @media (max-width: 760px) {
+      .container {
+        padding-top: 30px;
+      }
+
+      h1 {
+        letter-spacing: -1.8px;
+      }
+
+      .benefits {
+        margin-bottom: 52px;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .construction-panel img {
+        max-height: 280px;
+      }
+    }
+
+    /* Mobile */
+
+    @media (max-width: 480px) {
+      .topbar {
+        width: calc(100% - 30px);
+        padding: 18px 0;
+      }
+
+      .brand {
+        font-size: 1.2rem;
+      }
+
+      .brand-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+      }
+
+      .topbar-label {
+        gap: 7px;
+        padding: 7px 10px;
+        font-size: 0.69rem;
+      }
+
+      .container {
+        width: calc(100% - 28px);
+        padding-top: 27px;
+      }
+
+      .eyebrow {
+        font-size: 0.68rem;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        font-size: clamp(2.3rem, 11vw, 3.2rem);
+        letter-spacing: -1.6px;
+      }
+
+      .intro {
+        font-size: 0.94rem;
+        line-height: 1.8;
+      }
+
+      .construction-panel {
+        margin-top: 29px;
+        padding: 10px;
+        border-radius: 19px;
+      }
+
+      .construction-panel img {
+        min-height: 150px;
+        max-height: 220px;
+      }
+
+      .coming-label {
+        font-size: 0.87rem;
+        letter-spacing: 1.2px;
+      }
+
+      .coming-note {
+        font-size: 0.82rem;
+      }
+
+      .benefits {
+        gap: 9px;
+        margin: 32px 0 45px;
+      }
+
+      .benefit {
+        padding: 15px 7px;
+        border-radius: 13px;
+      }
+
+      .benefit-icon {
+        font-size: 1.3rem;
+      }
+
+      .benefit strong {
+        font-size: 0.78rem;
+      }
+
+      .benefit p {
+        font-size: 0.7rem;
+      }
+
+      .advertise {
+        padding: 27px 17px;
+        border-radius: 22px;
+      }
+
+      .advertise h2 {
+        font-size: 2rem;
+        letter-spacing: -0.8px;
+      }
+
+      .ad-description {
+        font-size: 0.91rem;
+      }
+
+      .features {
+        gap: 10px;
+        margin: 25px 0;
+      }
+
+      .feature {
+        gap: 9px;
+        padding: 13px 10px;
+        border-radius: 12px;
+      }
+
+      .feature-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+        font-size: 0.95rem;
+      }
+
+      .feature strong {
+        font-size: 0.79rem;
+      }
+
+      .feature small {
+        font-size: 0.7rem;
+      }
+
+      .cta {
+        width: 100%;
+        padding: 15px 16px;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        padding-top: 29px;
+      }
+
+      .footer-links {
+        gap: 13px;
+      }
+    }
+
+    /* Accessibility: respect reduced motion settings */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    .brand-logo {
+  height: 85px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+  </style>
+</head>
+
+<body>
+  <div class="background" aria-hidden="true"></div>
+  <div class="orb orb-one" aria-hidden="true"></div>
+  <div class="orb orb-two" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a href="index.html" class="brand" aria-label="Zerah-Nexus home">
+  <img src="imgs/Zerah Nexus logo.png" alt="Zerah-Nexus" class="brand-logo">
+</a>
+
+    <div class="topbar-label">
+      <span class="status-dot" aria-hidden="true"></span>
+      Something exciting is coming
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-labelledby="main-heading">
+      <div class="eyebrow">
+        <span class="sparkle" aria-hidden="true">✦</span>
+        A new digital experience
+      </div>
+
+      <h1 id="main-heading">
+        Building Bridges.<br>
+        <span class="gradient-text">Connecting Opportunities.</span>
+      </h1>
+
+      <p class="intro">
+        We're building a modern digital marketplace designed to connect
+        businesses, brands, service providers and customers. Discover new
+        opportunities, showcase what you do, and grow your reach with Zerah-Nexus.
+        <strong>Our next chapter is coming soon.</strong>
+      </p>
+    </section>
+
+    <section class="construction-panel" aria-label="Website under construction">
+      <img
+        src="vids/Under Construction 90S GIF by Marcie LaCerte.gif"
+        alt="Animated under construction illustration"
+        fetchpriority="high"
+      >
+    </section>
+
+    <div class="coming-label">
+      <span class="construction-icon" aria-hidden="true">🚧</span>
+      <span>Under Construction</span>
+      <span class="blue-text">· Coming Soon</span>
+    </div>
+
+    <p class="coming-note" style="text-align:center;">
+      We're creating something worth waiting for.
+    </p>
+
+    <section class="benefits" aria-label="What EcoHub aims to offer">
+      <div class="benefit">
+        <span class="benefit-icon" aria-hidden="true">🌐</span>
+        <strong>Digital Visibility</strong>
+        <p>Showcase your brand online</p>
+      </div>
+
+      <div class="benefit">
+        <span class="benefit-icon" aria-hidden="true">🤝</span>
+        <strong>New Connections</strong>
+        <p>Reach potential customers</p>
+      </div>
+
+      <div class="benefit">
+        <span class="benefit-icon" aria-hidden="true">📈</span>
+        <strong>Business Growth</strong>
+        <p>Explore new opportunities</p>
+      </div>
+    </section>
+
+    <section class="advertise" id="advertise" aria-labelledby="advertise-heading">
+      <div class="advertise-content">
+        <div class="ad-tag">📣 Early advertising opportunities</div>
+
+        <h2 id="advertise-heading">
+          Your Brand Deserves<br>
+          <span>To Be Seen.</span>
+        </h2>
+
+        <p class="ad-description">
+          Get ahead of the crowd! We're preparing space for businesses,
+          entrepreneurs and organizations that want to showcase their brands
+          on Zerah-Nexus. Contact us to discuss advertising opportunities,
+          featured listings and promotional partnerships as our platform develops.
+        </p>
+
+        <div class="features">
+          <div class="feature">
+            <span class="feature-icon" aria-hidden="true">🛍️</span>
+            <div>
+              <strong>Shops & Retailers</strong>
+              <small>Showcase your products and services.</small>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span class="feature-icon" aria-hidden="true">📢</span>
+            <div>
+              <strong>Brand Advertising</strong>
+              <small>Put your brand in the spotlight.</small>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span class="feature-icon" aria-hidden="true">🏢</span>
+            <div>
+              <strong>Business Listings</strong>
+              <small>Help customers discover your business.</small>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span class="feature-icon" aria-hidden="true">🎯</span>
+            <div>
+              <strong>Featured Promotions</strong>
+              <small>Highlight offers, deals and campaigns.</small>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span class="feature-icon" aria-hidden="true">🎓</span>
+            <div>
+              <strong>Training & Workshops</strong>
+              <small>Promote your learning opportunities.</small>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span class="feature-icon" aria-hidden="true">💡</span>
+            <div>
+              <strong>Partnerships</strong>
+              <small>Explore opportunities to collaborate.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="early-access">
+          <span aria-hidden="true">✦</span>
+          Interested in advertising? Let's talk.
+        </div>
+
+        <div class="cta-wrap">
+          <a href="contact.html" class="cta">
+            <span aria-hidden="true">✉️</span>
+            <span>Contact Us to Advertise</span>
+            <span class="cta-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <p class="cta-note">
+          Get in touch to discuss your brand and advertising requirements.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-brand">🌿 Zerah-Nexus</div>
+      <p>Connecting businesses. Creating opportunities. Growing together.</p>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about_us.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <p>© <span id="year">2026</span> Zerah-Nexus. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script>
+    // Keep the copyright year current.
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
