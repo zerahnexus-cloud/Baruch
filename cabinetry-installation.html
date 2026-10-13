@@ -1,235 +1,1805 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <title>Cabinetry Installation | EcoHub Solution</title>
-    <style>
-        body {
-            background-color: #fdfdfd;
-        }
-        .navbar {
-            background-color: #071952;
-        }
-        .navbar-nav .nav-link {
-            color: #fff !important;
-        }
-        .navbar-toggler-icon {
-            filter: invert(1);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211b19">
 
-        /* Banner */
-        .banner {
-            background: url('imgs/cip.jpg') center/cover no-repeat;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            background-color: rgba(10,10,10,0.4);
-            background-blend-mode: multiply;
-        }
-        .banner h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-        .banner p {
-            font-size: 1.2rem;
-        }
+  <title>Cabinetry & Custom Storage | Zerah-Nexus</title>
+  <meta name="description" content="Premium custom cabinetry, kitchen installations, wardrobes and bespoke storage solutions by Zerah-Nexus.">
 
-        /* Sections */
-        .section-light {
-            background: #ffffff;
-            padding: 50px 0;
-        }
-        .section-soft {
-            background: #f8f9ff;
-            padding: 50px 0;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        /* Service Cards */
-        .service-card {
-            background: #fff;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-6px);
-        }
-        .service-card i {
-            font-size: 2.3rem;
-            color: #ff6f00;
-            margin-bottom: 12px;
-        }
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-        .img-fluid {
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.08);
-        }
+  <style>
+    :root {
+      --ink: #211b19;
+      --ink-soft: #302724;
+      --cream: #f6f3ed;
+      --white: #fffefa;
+      --gold: #c5a477;
+      --muted: #77716b;
+      --line: rgba(33, 27, 25, .12);
+      --green: #18794e;
+      --radius: 5px;
+      --max-width: 1320px;
+    }
 
-        /* WhatsApp CTA */
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            background: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .cta-btn img {
-            margin-right: 8px;
-        }
-        .cta-btn:hover {
-            background: #218838;
-            color: white;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .footer {
-            background-color: #071952;
-            color: #fff;
-            padding: 50px 0;
-        }
-        .footer a {
-            color: #fff;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.15;
+      letter-spacing: -.045em;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 600;
+      margin-top: 16px;
+    }
+
+    .section-heading p {
+      margin-top: 17px;
+      color: var(--muted);
+      max-width: 550px;
+    }
+
+    .btn {
+      min-height: 51px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 13px 23px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      font-size: .85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .btn-gold:hover {
+      background: #d8bc94;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,.55);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--ink);
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(33, 27, 25, .97);
+      color: white;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand img {
+      width: auto;
+      height: 57px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 31px;
+      list-style: none;
+    }
+
+    .nav-links > li > a,
+    .nav-trigger {
+      color: #eee7df;
+      font-size: .82rem;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .nav-links > li > a:hover,
+    .nav-trigger:hover {
+      color: var(--gold);
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-trigger {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 0;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 3px);
+      left: -18px;
+      width: 245px;
+      padding: 10px;
+      background: #fffefa;
+      color: var(--ink);
+      box-shadow: 0 15px 45px rgba(0,0,0,.2);
+      border: 1px solid var(--line);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: .2s ease;
+    }
+
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu,
+    .nav-dropdown.open .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 12px;
+      font-size: .8rem;
+    }
+
+    .dropdown-menu a:hover {
+      background: var(--cream);
+    }
+
+    .nav-cta {
+      padding: 11px 16px;
+      border: 1px solid rgba(197,164,119,.8);
+      color: var(--gold);
+      font-size: .8rem;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 43px;
+      height: 43px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.2);
+      color: white;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      display: grid;
+      grid-template-columns: 1fr 1.12fr;
+      background: var(--ink);
+      color: white;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 85px 7vw 85px max(32px, calc((100vw - var(--max-width))/2));
+    }
+
+    .hero h1 {
+      margin-top: 25px;
+      max-width: 620px;
+      font-size: clamp(3rem, 5.7vw, 5.6rem);
+      font-weight: 500;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    .hero-copy > p {
+      margin-top: 24px;
+      max-width: 420px;
+      color: #c6bdb6;
+      font-size: .98rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .hero-note {
+      margin-top: 42px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.16);
+      width: min(100%, 390px);
+      display: flex;
+      gap: 26px;
+      color: #d6cec7;
+      font-size: .75rem;
+    }
+
+    .hero-note strong {
+      display: block;
+      color: white;
+      font-size: .85rem;
+      font-weight: 600;
+    }
+
+    .hero-image {
+      min-height: 650px;
+      position: relative;
+      overflow: hidden;
+      background: #51443b;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      object-position: center;
+      animation: reveal 1s ease both;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(20,15,13,.4), transparent 45%);
+      pointer-events: none;
+    }
+
+    .image-label {
+      position: absolute;
+      bottom: 28px;
+      left: 30px;
+      z-index: 2;
+      color: white;
+      font-size: .72rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    @keyframes reveal {
+      from { opacity: .5; transform: scale(1.04); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* VALUE STRIP */
+
+    .value-strip {
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .value-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .value-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 105px;
+      padding: 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .value-item:first-child {
+      padding-left: 0;
+    }
+
+    .value-item:last-child {
+      border: 0;
+    }
+
+    .value-item i {
+      color: #a58355;
+      font-size: 1.45rem;
+    }
+
+    .value-item span {
+      font-size: .83rem;
+      font-weight: 700;
+    }
+
+    .value-item small {
+      display: block;
+      color: var(--muted);
+      font-size: .73rem;
+      font-weight: 400;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 110px 0;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr .9fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .intro-visual {
+      position: relative;
+      min-height: 490px;
+      background: var(--cream);
+    }
+
+    .intro-visual img {
+      width: 100%;
+      height: 490px;
+      object-fit: cover;
+    }
+
+    .visual-tag {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--gold);
+      padding: 22px 26px;
+      color: var(--ink);
+    }
+
+    .visual-tag strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.2rem;
+    }
+
+    .visual-tag span {
+      font-size: .72rem;
+    }
+
+    .intro-copy h2 {
+      margin-top: 20px;
+      font-size: clamp(2.1rem, 3.5vw, 3.5rem);
+      font-weight: 600;
+    }
+
+    .intro-copy > p {
+      margin-top: 23px;
+      color: var(--muted);
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 27px 0 30px;
+      display: grid;
+      gap: 13px;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: .9rem;
+    }
+
+    .feature-list i {
+      color: #a58355;
+    }
+
+    /* SERVICES */
+
+    .services {
+      padding: 105px 0;
+      background: var(--cream);
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 35px;
+      margin-bottom: 42px;
+    }
+
+    .services-header .section-heading {
+      margin: 0;
+    }
+
+    .services-header > p {
+      max-width: 300px;
+      color: var(--muted);
+      font-size: .88rem;
+      padding-bottom: 5px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid rgba(33,27,25,.07);
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(33,27,25,.09);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 265px;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+
+    .service-image {
+      overflow: hidden;
+    }
+
+    .service-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .service-content {
+      padding: 25px;
+    }
+
+    .service-number {
+      color: #a58355;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      font-weight: 700;
+    }
+
+    .service-content h3 {
+      margin-top: 10px;
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+
+    .service-content p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 20px;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .service-link:hover {
+      color: #a58355;
+    }
+
+    /* PROCESS */
+
+    .process {
+      padding: 105px 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 48px;
+      border-top: 1px solid var(--line);
+    }
+
+    .process-step {
+      padding: 30px 23px 0 0;
+    }
+
+    .process-step + .process-step {
+      padding-left: 24px;
+      border-left: 1px solid var(--line);
+    }
+
+    .process-step .number {
+      color: #a58355;
+      font-family: "Manrope", sans-serif;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .process-step h3 {
+      margin-top: 15px;
+      font-size: 1.15rem;
+    }
+
+    .process-step p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    /* GALLERY */
+
+    .gallery {
+      padding: 95px 0;
+      background: var(--ink);
+      color: white;
+    }
+
+    .gallery .section-heading p {
+      color: #c5bcb4;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr 1fr;
+      grid-template-rows: 230px 230px;
+      gap: 15px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: #40352e;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 40% 0 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.55));
+      pointer-events: none;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 17px;
+      left: 19px;
+      z-index: 2;
+      color: white;
+      font-size: .8rem;
+      font-weight: 600;
+    }
+
+    /* PROJECT ENQUIRY */
+
+    .enquiry {
+      padding: 110px 0;
+      background: #e9e2d7;
+    }
+
+    .enquiry-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .enquiry-copy h2 {
+      margin-top: 20px;
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      font-weight: 600;
+    }
+
+    .enquiry-copy > p {
+      margin-top: 22px;
+      max-width: 400px;
+      color: #69615a;
+    }
+
+    .enquiry-contact {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: 35px;
+      font-size: .85rem;
+    }
+
+    .enquiry-contact i {
+      font-size: 1.3rem;
+      color: #927147;
+    }
+
+    .enquiry-form {
+      background: var(--white);
+      padding: clamp(25px, 4vw, 45px);
+      box-shadow: 0 12px 35px rgba(33,27,25,.05);
+    }
+
+    .enquiry-form h3 {
+      font-size: 1.5rem;
+      margin-bottom: 26px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 19px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: .76rem;
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 13px 14px;
+      color: var(--ink);
+      background: #fffefa;
+      border: 1px solid #ddd5ca;
+      border-radius: 2px;
+      outline: none;
+      font-size: .85rem;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: #a58355;
+      box-shadow: 0 0 0 2px rgba(197,164,119,.15);
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .enquiry-form .btn {
+      width: 100%;
+      margin-top: 23px;
+    }
+
+    .form-note {
+      margin-top: 12px;
+      color: var(--muted);
+      text-align: center;
+      font-size: .73rem;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 65px 0 25px;
+      background: #191412;
+      color: white;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 55px;
+      padding-bottom: 45px;
+    }
+
+    .footer-brand img {
+      width: auto;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .footer-brand p {
+      max-width: 320px;
+      margin-top: 20px;
+      color: #bdb3ab;
+      font-size: .85rem;
+    }
+
+    .footer h3 {
+      margin-bottom: 19px;
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+
+    .footer ul {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+    }
+
+    .footer li,
+    .footer a,
+    .footer-contact p {
+      color: #c6bdb6;
+      font-size: .82rem;
+    }
+
+    .footer a:hover {
+      color: var(--gold);
+    }
+
+    .footer-contact p {
+      display: flex;
+      gap: 11px;
+      margin-bottom: 12px;
+    }
+
+    .footer-contact i {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: #a99f97;
+      font-size: .74rem;
+    }
+
+    /* FLOATING WHATSAPP */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 23px;
+      bottom: 22px;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #20b96a;
+      color: white;
+      font-size: 1.7rem;
+      box-shadow: 0 6px 22px rgba(0,0,0,.2);
+      transition: .2s;
+    }
+
+    .whatsapp-float:hover {
+      background: #169653;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* RESPONSIVE */
+
+    @media (min-width: 1500px) {
+      .hero-copy {
+        padding-left: max(32px, calc((100vw - var(--max-width))/2));
+      }
+    }
+
+    @media (max-width: 1050px) {
+      .container {
+        width: calc(100% - 44px);
+      }
+
+      .nav-links {
+        gap: 17px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-copy {
+        padding: 70px 35px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 6vw, 4.5rem);
+      }
+
+      .intro-grid,
+      .enquiry-grid {
+        gap: 45px;
+      }
+
+      .value-item {
+        padding: 18px 12px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      html {
+        scroll-padding-top: 72px;
+      }
+
+      .container {
+        width: calc(100% - 38px);
+      }
+
+      .nav-inner {
+        min-height: 72px;
+      }
+
+      .brand img {
+        height: 49px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 20px 22px;
+        background: var(--ink);
+        border-top: 1px solid rgba(255,255,255,.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links > li > a,
+      .nav-trigger {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 13px 4px;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: static;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: #302724;
+        color: white;
+      }
+
+      .nav-dropdown.open .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-menu a {
+        color: #eee7df;
+      }
+
+      .dropdown-menu a:hover {
+        background: #40352e;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 75px 24px 55px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 12vw, 4.8rem);
+      }
+
+      .hero-image {
+        min-height: 390px;
+      }
+
+      .hero-note {
+        margin-top: 32px;
+      }
+
+      .value-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .value-item {
+        min-height: 88px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .value-item:first-child {
+        padding-left: 12px;
+      }
+
+      .value-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .value-item:nth-child(3),
+      .value-item:nth-child(4) {
+        border-bottom: 0;
+      }
+
+      .intro,
+      .services,
+      .process,
+      .gallery,
+      .enquiry {
+        padding: 75px 0;
+      }
+
+      .intro-grid,
+      .enquiry-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .intro-visual {
+        min-height: 350px;
+        margin-right: 12px;
+        margin-bottom: 15px;
+      }
+
+      .intro-visual img {
+        height: 350px;
+      }
+
+      .visual-tag {
+        right: -12px;
+      }
+
+      .services-header {
+        display: block;
+      }
+
+      .services-header > p {
+        margin-top: 20px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .service-card img {
+        height: 210px;
+      }
+
+      .service-content {
+        padding: 19px;
+      }
+
+      .service-content h3 {
+        font-size: 1.1rem;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 35px;
+      }
+
+      .process-step {
+        padding-top: 22px;
+      }
+
+      .process-step + .process-step {
+        padding-left: 18px;
+      }
+
+      .process-step:nth-child(3) {
+        padding-left: 0;
+        border-left: 0;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 290px 190px 190px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: 1 / -1;
+        grid-row: auto;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      .hero-copy {
+        padding: 62px 20px 45px;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+        width: 100%;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-image {
+        min-height: 310px;
+      }
+
+      .value-item {
+        gap: 9px;
+        padding: 15px 8px;
+      }
+
+      .value-item:first-child {
+        padding-left: 8px;
+      }
+
+      .value-item i {
+        font-size: 1.2rem;
+      }
+
+      .value-item span {
+        font-size: .75rem;
+      }
+
+      .value-item small {
+        font-size: .67rem;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card img {
+        height: 245px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-step,
+      .process-step + .process-step,
+      .process-step:nth-child(3) {
+        padding: 20px 0 0;
+        border-left: 0;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 250px 155px 155px;
+        gap: 10px;
+      }
+
+      .gallery-caption {
+        left: 10px;
+        bottom: 10px;
+        font-size: .7rem;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .enquiry-form {
+        padding: 23px 18px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- NAVIGATION -->
-    <nav class="navbar navbar-expand-lg py-3">
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <img src="imgs/ecoeco.png" height="70" alt="EcoSolution Hub Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-inner">
+
+      <a class="brand" href="index.html" aria-label="Zerah-Nexus home">
+        <img src="imgs/Zerah Nexus logo.png" alt="Zerah-Nexus">
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+              aria-label="Open navigation" aria-expanded="false"
+              aria-controls="navLinks">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="navLinks">
+
+          <li class="nav-dropdown" id="servicesDropdown">
+            <button class="nav-trigger" aria-expanded="false"
+                    aria-controls="servicesMenu">
+              Engineering <i class="bi bi-chevron-down"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Construction Engineering</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding & Fabrication</a>
-                            <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom & Plumbing</a>
-                            <a class="dropdown-item" href="painting-and-interior-design.html">Painting & Interior Design</a>
-                            <a class="dropdown-item" href="cabinetry-installation.html">Cabinetry Installation</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="about_us.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- BANNER -->
-    <div class="banner">
-        <div>
-            <h1 data-aos="fade-down">Cabinetry Installation</h1>
-            <p data-aos="fade-up">Elegant storage solutions with unmatched craftsmanship</p>
-        </div>
+            <div class="dropdown-menu" id="servicesMenu">
+              <a href="engineering.html">Engineering Overview</a>
+              <a href="precision-welding-and-fabrication.html">Welding & Fabrication</a>
+              <a href="bathroom-and-plumbing.html">Bathroom & Plumbing</a>
+              <a href="painting-and-interior-design.html">Painting & Interior Design</a>
+              <a href="cabinetry-installation.html">Cabinetry Installation</a>
+            </div>
+          </li>
+
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#project-enquiry" class="nav-cta">Start a Project <i class="bi bi-arrow-up-right"></i></a>
+
     </div>
+  </header>
 
-    <!-- INTRO -->
-    <section class="section-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="text-warning">Custom Cabinetry for Modern Living</h2>
-                    <p class="text-muted">
-                        We specialize in designing and installing premium cabinetry that transforms kitchens, bathrooms, and living spaces into stylish and functional masterpieces. 
-                        From sleek minimalism to classic wooden finishes, our expert craftsmen bring your dream storage solutions to life.
-                    </p>
-                    <a href="https://wa.me/254742082219" target="_blank" class="cta-btn mt-3">
-                        <img src="imgs/wappicon.png" width="22" alt="WhatsApp"> Request a Consultation
-                    </a>
-                </div>
-                <div class="col-lg-6 text-center" data-aos="fade-left">
-                    <img src="imgs/Kitchen set Minimalis.jpeg" class="img-fluid" alt="Modern Cabinetry">
-                </div>
-            </div>
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-copy">
+        <span class="eyebrow">Bespoke Interiors · Craftsmanship</span>
+
+        <h1>Designed to fit.<br><span>Built to belong.</span></h1>
+
+        <p>
+          Custom cabinetry that brings architecture, function
+          and fine finishes together.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#project-enquiry" class="btn btn-gold">
+            Design Your Space <i class="bi bi-arrow-up-right"></i>
+          </a>
+
+          <a href="#our-work" class="btn btn-outline">
+            Explore Our Work
+          </a>
         </div>
+
+        <div class="hero-note">
+          <div>
+            <strong>Made for you</strong>
+            Tailored dimensions
+          </div>
+          <div>
+            <strong>Made to last</strong>
+            Quality finishes
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="imgs/Kitchen%20set%20Minimalis.jpeg"
+          alt="Contemporary custom kitchen cabinetry"
+          fetchpriority="high"
+          onerror="this.onerror=null;this.src='imgs/ci3.jpeg';">
+        <div class="image-label">01 / Custom cabinetry</div>
+      </div>
+
+    </section>
+
+    <!-- VALUE STRIP -->
+    <section class="value-strip" aria-label="Our approach">
+      <div class="container value-inner">
+
+        <div class="value-item">
+          <i class="bi bi-rulers"></i>
+          <span>Made to Measure<small>Designed around your space</small></span>
+        </div>
+
+        <div class="value-item">
+          <i class="bi bi-layers"></i>
+          <span>Refined Finishes<small>Materials that elevate</small></span>
+        </div>
+
+        <div class="value-item">
+          <i class="bi bi-house-check"></i>
+          <span>Smart Storage<small>Function without clutter</small></span>
+        </div>
+
+        <div class="value-item">
+          <i class="bi bi-tools"></i>
+          <span>Expert Installation<small>Attention to every detail</small></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="intro">
+      <div class="container intro-grid">
+
+        <div class="intro-visual">
+          <img
+            src="imgs/ch1.jpeg"
+            alt="Bespoke cabinetry and fitted storage"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='imgs/ci3.jpeg';">
+
+          <div class="visual-tag">
+            <strong>Every detail matters.</strong>
+            <span>Purposeful design. Exceptional finish.</span>
+          </div>
+        </div>
+
+        <div class="intro-copy">
+          <span class="eyebrow">The Zerah-Nexus Standard</span>
+
+          <h2>Beautiful spaces.<br>Intelligent storage.</h2>
+
+          <p>
+            We transform everyday spaces with cabinetry designed
+            around your needs, your style and the way you live.
+            From the first measurements to final installation,
+            every detail has a purpose.
+          </p>
+
+          <ul class="feature-list">
+            <li><i class="bi bi-check2-circle"></i> Custom dimensions and configurations</li>
+            <li><i class="bi bi-check2-circle"></i> Contemporary and timeless finishes</li>
+            <li><i class="bi bi-check2-circle"></i> Practical layouts with a refined look</li>
+          </ul>
+
+          <a href="#project-enquiry" class="btn btn-gold">
+            Discuss Your Project <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+
+      </div>
     </section>
 
     <!-- SERVICES -->
-    <section class="section-soft text-center">
-        <div class="container">
-            <h3 class="mb-5 text-warning" data-aos="fade-up">Our Expertise</h3>
-            <div class="row">
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="service-card">
-                        <i class="bi bi-house-door"></i>
-                        <h5>Kitchen Cabinetry</h5>
-                        <p>Smart, space-saving kitchen cabinets with luxury finishes.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="service-card">
-                        <i class="bi bi-box"></i>
-                        <h5>Wardrobe & Storage</h5>
-                        <p>Custom closets and wardrobes tailored to your lifestyle.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="service-card">
-                        <i class="bi bi-bricks"></i>
-                        <h5>Bathroom Vanities</h5>
-                        <p>Elegant vanity units designed for both style & convenience.</p>
-                    </div>
-                </div>
-            </div>
+    <section class="services" id="our-services">
+      <div class="container">
+
+        <div class="services-header">
+          <div class="section-heading">
+            <span class="eyebrow">What We Create</span>
+            <h2>Made for the way you live.</h2>
+          </div>
+
+          <p>
+            Thoughtful cabinetry for kitchens, bedrooms
+            and the spaces in between.
+          </p>
         </div>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <div class="service-image">
+              <img src="imgs/ci3.jpeg"
+                   alt="Modern fitted kitchen cabinets"
+                   loading="lazy"
+                   onerror="this.onerror=null;this.src='imgs/Kitchen%20set%20Minimalis.jpeg';">
+            </div>
+            <div class="service-content">
+              <span class="service-number">01 / KITCHEN</span>
+              <h3>Kitchen Cabinetry</h3>
+              <p>Clean lines, efficient layouts and finishes that bring the kitchen together.</p>
+              <a class="service-link" href="#project-enquiry"
+                 data-project="Kitchen cabinetry">
+                Plan Your Kitchen <i class="bi bi-arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image">
+              <img src="imgs/Kitchen%20set%20Minimalis.jpeg"
+                   alt="Bespoke fitted storage and cabinetry"
+                   loading="lazy">
+            </div>
+            <div class="service-content">
+              <span class="service-number">02 / BEDROOM</span>
+              <h3>Wardrobes & Storage</h3>
+              <p>Space-conscious wardrobes and storage built around your everyday routine.</p>
+              <a class="service-link" href="#project-enquiry"
+                 data-project="Wardrobes and storage">
+                Design Your Storage <i class="bi bi-arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="imgs/Small%20Vanity%20Units%20_Cloakroom%20Sink%20Cabinets%20_Slimline%20_QS%20Supplies.jpeg"
+                alt="Modern bathroom vanity cabinetry"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='imgs/ch1.jpeg';">
+            </div>
+            <div class="service-content">
+              <span class="service-number">03 / BATHROOM</span>
+              <h3>Bathroom Vanities</h3>
+              <p>Elegant vanity units that combine practical storage with a polished finish.</p>
+              <a class="service-link" href="#project-enquiry"
+                 data-project="Bathroom vanity">
+                Plan Your Vanity <i class="bi bi-arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">From Concept to Completion</span>
+          <h2>Your vision, carefully executed.</h2>
+          <p>A clear process keeps your project focused from the first conversation to installation.</p>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="process-step">
+            <span class="number">01</span>
+            <h3>Consultation</h3>
+            <p>Tell us about your space, needs and preferred style.</p>
+          </div>
+
+          <div class="process-step">
+            <span class="number">02</span>
+            <h3>Design & Planning</h3>
+            <p>Discuss dimensions, materials, finishes and budget.</p>
+          </div>
+
+          <div class="process-step">
+            <span class="number">03</span>
+            <h3>Craftsmanship</h3>
+            <p>Move from an agreed design into careful fabrication.</p>
+          </div>
+
+          <div class="process-step">
+            <span class="number">04</span>
+            <h3>Installation</h3>
+            <p>Bring the design to life with a considered final fit.</p>
+          </div>
+
+        </div>
+      </div>
     </section>
 
     <!-- GALLERY -->
-    <section class="section-light text-center">
-        <div class="container">
-            <h3 class="mb-4 text-warning" data-aos="fade-up">Recent Installations</h3>
-            <div class="row g-3">
-                <div class="col-md-4 mb-3" data-aos="zoom-in"><img src="imgs/ch1.jpeg" class="img-fluid" alt="Custom Cabinets"></div>
-                <div class="col-md-4 mb-3" data-aos="zoom-in"><img src="imgs/ci3.jpeg" class="img-fluid" alt="Modern Kitchen"></div>
-                <div class="col-md-4 mb-3" data-aos="zoom-in"><img src="imgs/Small Vanity Units _ Cloakroom Sink Cabinets _ Slimline _ QS Supplies.jpeg" class="img-fluid" alt="Bathroom Vanity"></div>
-            </div>
+    <section class="gallery" id="our-work">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Materials. Form. Finish.</span>
+          <h2>Details make the difference.</h2>
+          <p>Explore cabinetry inspiration for considered, functional interiors.</p>
         </div>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            <img src="imgs/Kitchen%20set%20Minimalis.jpeg"
+                 alt="Contemporary kitchen cabinetry inspiration"
+                 loading="lazy"
+                 onerror="this.onerror=null;this.src='imgs/ci3.jpeg';">
+            <span class="gallery-caption">Contemporary kitchens</span>
+          </div>
+
+          <div class="gallery-item">
+            <img src="imgs/ch1.jpeg"
+                 alt="Custom cabinetry detail"
+                 loading="lazy"
+                 onerror="this.onerror=null;this.src='imgs/ci3.jpeg';">
+            <span class="gallery-caption">Custom storage</span>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="imgs/Small%20Vanity%20Units%20_Cloakroom%20Sink%20Cabinets%20_Slimline%20_QS%20Supplies.jpeg"
+              alt="Bathroom vanity design"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='imgs/ch1.jpeg';">
+            <span class="gallery-caption">Bathroom vanities</span>
+          </div>
+
+          <div class="gallery-item">
+            <img src="imgs/ci3.jpeg"
+                 alt="Fitted cabinets and modern interior"
+                 loading="lazy">
+            <span class="gallery-caption">Modern finishes</span>
+          </div>
+
+          <div class="gallery-item">
+            <img src="imgs/ch1.jpeg"
+                 alt="Cabinetry craftsmanship inspiration"
+                 loading="lazy"
+                 onerror="this.onerror=null;this.src='imgs/ci3.jpeg';">
+            <span class="gallery-caption">Thoughtful details</span>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <h3>Contact</h3>
-                    <p><i class="bi bi-geo-alt-fill"></i> P.O Box 21075-00100 GPO, Nairobi</p>
-                    <p><i class="bi bi-envelope-fill"></i> info@ecosolutionhub.com</p>
-                    <p><i class="bi bi-telephone-fill"></i> +254 742082219</p>
-                </div>
-                <div class="col-md">
-                    <h3>Quick Links</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="about_us.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- PROJECT ENQUIRY -->
+    <section class="enquiry" id="project-enquiry">
+      <div class="container enquiry-grid">
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>AOS.init();</script>
+        <div class="enquiry-copy">
+          <span class="eyebrow">Let's Build Something Considered</span>
+
+          <h2>Tell us what<br>you have in mind.</h2>
+
+          <p>
+            Share your space, requirements and budget.
+            We'll use the details to start a conversation
+            about the right solution for you.
+          </p>
+
+          <div class="enquiry-contact">
+            <i class="bi bi-whatsapp"></i>
+            <div>
+              <strong>Prefer WhatsApp?</strong><br>
+              <a href="https://wa.me/254742082219" target="_blank" rel="noopener noreferrer">
+                +254 742 082 219
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <form class="enquiry-form" id="enquiryForm">
+          <h3>Project enquiry</h3>
+
+          <div class="form-grid">
+
+            <div class="field">
+              <label for="clientName">Your name *</label>
+              <input type="text" id="clientName" name="clientName"
+                     placeholder="Full name" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="clientPhone">Phone number *</label>
+              <input type="tel" id="clientPhone" name="clientPhone"
+                     placeholder="+254..." autocomplete="tel" required>
+            </div>
+
+            <div class="field">
+              <label for="projectType">What do you need? *</label>
+              <select id="projectType" name="projectType" required>
+                <option value="">Select a service</option>
+                <option>Kitchen cabinetry</option>
+                <option>Wardrobes and storage</option>
+                <option>Bathroom vanity</option>
+                <option>Office cabinetry</option>
+                <option>Custom cabinetry</option>
+                <option>Multiple spaces</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="projectBudget">Estimated budget (KSh)</label>
+              <select id="projectBudget" name="projectBudget">
+                <option value="">Select your budget</option>
+                <option>Below KSh 50,000</option>
+                <option>KSh 50,000 – 100,000</option>
+                <option>KSh 100,000 – 250,000</option>
+                <option>KSh 250,000 – 500,000</option>
+                <option>KSh 500,000+</option>
+                <option>Need guidance</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="projectDetails">Describe your project *</label>
+              <textarea id="projectDetails" name="projectDetails"
+                        placeholder="Space dimensions, preferred finish, location and what you would like us to create..."
+                        required></textarea>
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn btn-gold">
+            Send Project Enquiry <i class="bi bi-arrow-up-right"></i>
+          </button>
+
+          <p class="form-note">
+            Your enquiry opens in WhatsApp for you to review and send.
+          </p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <a href="index.html" aria-label="Zerah-Nexus home">
+            <img src="imgs/ecoeco.png" alt="Zerah-Nexus">
+          </a>
+          <p>
+            Thoughtful engineering and interior solutions,
+            designed around the way you live and work.
+          </p>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="engineering.html">Engineering</a></li>
+            <li><a href="painting-and-interior-design.html">Painting & Interior Design</a></li>
+            <li><a href="cabinetry-installation.html">Cabinetry Installation</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Get in Touch</h3>
+          <p><i class="bi bi-geo-alt"></i> P.O. Box 21075-00100 GPO, Nairobi</p>
+          <p><i class="bi bi-envelope"></i> <a href="mailto:info@ecosolutionhub.com">info@ecosolutionhub.com</a></p>
+          <p><i class="bi bi-telephone"></i> <a href="tel:+254742082219">+254 742 082 219</a></p>
+          <p><i class="bi bi-whatsapp"></i> <a href="https://wa.me/254742082219" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> Zerah-Nexus. All rights reserved.</span>
+        <span>Designed for better spaces.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/254742082219?text=Hello%20Zerah-Nexus%2C%20I%20would%20like%20to%20enquire%20about%20cabinetry%20installation."
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contact Zerah-Nexus on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const servicesDropdown = document.getElementById("servicesDropdown");
+    const dropdownTrigger = servicesDropdown.querySelector(".nav-trigger");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("active");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
+      menuToggle.innerHTML = isOpen
+        ? '<i class="bi bi-x-lg"></i>'
+        : '<i class="bi bi-list"></i>';
+    });
+
+    // Accessible dropdown on touch screens
+    dropdownTrigger.addEventListener("click", () => {
+      const isOpen = servicesDropdown.classList.toggle("open");
+      dropdownTrigger.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    // Close the mobile navigation after selecting a destination
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        menuToggle.innerHTML = '<i class="bi bi-list"></i>';
+      });
+    });
+
+    // Preselect the service chosen from a service card
+    document.querySelectorAll("[data-project]").forEach(link => {
+      link.addEventListener("click", () => {
+        const serviceSelect = document.getElementById("projectType");
+        const selectedService = link.dataset.project;
+        const matchingOption = Array.from(serviceSelect.options).find(
+          option => option.text.toLowerCase() === selectedService.toLowerCase()
+        );
+
+        if (matchingOption) {
+          serviceSelect.value = matchingOption.value;
+        }
+      });
+    });
+
+    // Send enquiry details through WhatsApp
+    document.getElementById("enquiryForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const name = document.getElementById("clientName").value.trim();
+      const phone = document.getElementById("clientPhone").value.trim();
+      const project = document.getElementById("projectType").value;
+      const budget = document.getElementById("projectBudget").value || "Not specified";
+      const details = document.getElementById("projectDetails").value.trim();
+
+      const message = [
+        "Hello Zerah-Nexus, I would like to enquire about a cabinetry project.",
+        "",
+        "Name: " + name,
+        "Phone: " + phone,
+        "Project: " + project,
+        "Budget: " + budget,
+        "Project details: " + details
+      ].join("\n");
+
+      const whatsappURL =
+        "https://wa.me/254742082219?text=" + encodeURIComponent(message);
+
+      window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    });
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
 </body>
 </html>

@@ -1,0 +1,1422 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sales & Marketing | Zerah-Nexus</title>
+  <meta name="description" content="Creative design, web development, cybersecurity, event management, accommodation and advertising services by Zerah-Nexus.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #171613;
+      --ink-soft: #28231d;
+      --gold: #c99a4b;
+      --gold-light: #f0cb82;
+      --cream: #faf6ef;
+      --cream-dark: #efe6d8;
+      --white: #fffdf9;
+      --muted: #6e685f;
+      --line: rgba(31, 26, 20, .10);
+      --shadow: 0 14px 38px rgba(44, 31, 16, .08);
+      --radius: 19px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(20, 19, 17, .97);
+      border-bottom: 1px solid rgba(255, 255, 255, .09);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 11px;
+      color: white;
+    }
+
+    .brand img {
+      width: auto;
+      height: 49px;
+      max-width: 190px;
+      object-fit: contain;
+    }
+
+    .brand-fallback {
+      font-family: "Manrope", sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .brand-fallback span {
+      color: var(--gold-light);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(16px, 2.5vw, 32px);
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: #eee8de;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold-light);
+    }
+
+    .nav-cta,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 22px;
+      border-radius: 100px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 700;
+      transition: transform .25s ease, background .25s ease;
+      cursor: pointer;
+    }
+
+    .nav-cta,
+    .btn-gold {
+      color: #20170b;
+      background: linear-gradient(135deg, #f4d38f, #d9a950);
+    }
+
+    .nav-cta:hover,
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, .38);
+      color: white;
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, .12);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 43px;
+      height: 43px;
+      color: white;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 12px;
+      background: transparent;
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      background: #211a13;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2200&q=85")
+        center 48% / cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg,
+          rgba(15, 13, 11, .96) 0%,
+          rgba(15, 13, 11, .83) 38%,
+          rgba(15, 13, 11, .32) 75%,
+          rgba(15, 13, 11, .18) 100%),
+        linear-gradient(0deg, rgba(15,13,11,.28), transparent 65%);
+    }
+
+    .hero-content {
+      max-width: 650px;
+      padding-block: 86px 95px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 20px;
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::after {
+      content: "";
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.15;
+    }
+
+    .hero h1 {
+      max-width: 620px;
+      margin-bottom: 21px;
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 800;
+      letter-spacing: -2.7px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      max-width: 465px;
+      color: rgba(255,255,255,.84);
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 36px;
+      color: rgba(255,255,255,.74);
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    .hero-note::before {
+      content: "";
+      width: 27px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* INTRO STRIP */
+
+    .intro-strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+      padding-block: 27px;
+    }
+
+    .intro-inner p {
+      max-width: 590px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .intro-stat {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .stat-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(201,154,75,.42);
+      border-radius: 50%;
+      color: #9e6c20;
+      font-size: 20px;
+    }
+
+    .intro-stat strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 13px;
+    }
+
+    .intro-stat span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* SERVICES */
+
+    .services-section {
+      padding: 84px 0 74px;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 14px;
+      color: #986a2b;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 14px;
+      font-size: clamp(29px, 4vw, 43px);
+      font-weight: 800;
+      letter-spacing: -1.4px;
+    }
+
+    .section-heading h2 span {
+      color: #b57e30;
+    }
+
+    .section-heading p {
+      max-width: 580px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      min-width: 0;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid rgba(43,31,17,.07);
+      border-radius: var(--radius);
+      box-shadow: 0 5px 20px rgba(40,29,16,.035);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-image {
+      position: relative;
+      height: 218px;
+      overflow: hidden;
+      background: var(--cream-dark);
+    }
+
+    .service-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.055);
+    }
+
+    .service-number {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 6px 10px;
+      color: white;
+      background: rgba(24,21,17,.65);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      backdrop-filter: blur(8px);
+    }
+
+    .service-icon {
+      position: absolute;
+      bottom: -21px;
+      left: 22px;
+      z-index: 2;
+      width: 49px;
+      height: 49px;
+      display: grid;
+      place-items: center;
+      border: 4px solid var(--white);
+      border-radius: 50%;
+      color: #4b3211;
+      background: linear-gradient(135deg, #f6d796, #c18a37);
+      font-size: 20px;
+    }
+
+    .service-body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 205px;
+      padding: 34px 22px 22px;
+    }
+
+    .service-body h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -.5px;
+    }
+
+    .service-body p {
+      margin-bottom: 19px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: auto;
+      color: #98621b;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .service-link span {
+      transition: transform .2s ease;
+    }
+
+    .service-link:hover span {
+      transform: translateX(4px);
+    }
+
+    /* ADVERTISING FEATURE */
+
+    .advertising-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      min-height: 330px;
+      margin-top: 24px;
+      overflow: hidden;
+      color: white;
+      background: #211a12;
+      border-radius: 22px;
+      isolation: isolate;
+    }
+
+    .advertising-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(21,17,12,.96), rgba(21,17,12,.83) 49%, rgba(21,17,12,.14)),
+        url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85")
+        center / cover no-repeat;
+    }
+
+    .advertising-content {
+      align-self: center;
+      padding: 42px clamp(24px, 5vw, 58px);
+    }
+
+    .advertising-content .eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .advertising-content h2 {
+      max-width: 530px;
+      margin-bottom: 16px;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -1px;
+    }
+
+    .advertising-content h2 span {
+      color: var(--gold-light);
+    }
+
+    .advertising-content p {
+      max-width: 420px;
+      margin-bottom: 25px;
+      color: rgba(255,255,255,.8);
+      font-size: 14px;
+    }
+
+    .advertising-side {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 28px;
+    }
+
+    .advertising-label {
+      max-width: 220px;
+      padding: 17px 20px;
+      color: var(--ink);
+      background: rgba(255,250,240,.93);
+      border-radius: 13px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.2);
+    }
+
+    .advertising-label span {
+      display: block;
+      margin-bottom: 5px;
+      color: #926422;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .advertising-label strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 17px;
+      line-height: 1.3;
+    }
+
+    /* CTA */
+
+    .cta-section {
+      padding: 0 0 82px;
+    }
+
+    .cta-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 34px clamp(24px, 5vw, 54px);
+      background: #eee3d1;
+      border: 1px solid #e4d5bf;
+      border-radius: 20px;
+    }
+
+    .cta-panel .eyebrow {
+      margin-bottom: 12px;
+      color: #906225;
+    }
+
+    .cta-panel h2 {
+      margin-bottom: 10px;
+      font-size: clamp(25px, 3vw, 34px);
+      letter-spacing: -.8px;
+    }
+
+    .cta-panel p {
+      max-width: 580px;
+      color: #655b4e;
+      font-size: 14px;
+    }
+
+    .cta-panel .btn {
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      color: #f8f2e8;
+      background: #151513;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.35fr .7fr 1fr;
+      gap: 45px;
+      padding-block: 48px 36px;
+    }
+
+    .footer-brand {
+      display: inline-block;
+      margin-bottom: 15px;
+      font-family: "Manrope", sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .footer-brand span {
+      color: var(--gold-light);
+    }
+
+    .footer-about p {
+      max-width: 300px;
+      color: #bcb5a9;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer h3 {
+      margin-bottom: 17px;
+      color: var(--gold-light);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-links a,
+    .footer-contact p {
+      color: #c9c1b5;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-contact p + p {
+      margin-top: 10px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding-block: 18px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: #a9a195;
+      font-size: 11px;
+    }
+
+    .footer-bottom span:last-child {
+      color: var(--gold-light);
+    }
+
+    /* FLOATING WHATSAPP */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 900;
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: #218b55;
+      border: 3px solid rgba(255,255,255,.85);
+      border-radius: 50%;
+      box-shadow: 0 8px 28px rgba(0,0,0,.2);
+      font-size: 25px;
+      transition: transform .2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-4px);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 980px) {
+      .nav-inner {
+        gap: 14px;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .nav-cta {
+        padding-inline: 15px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .service-image {
+        height: 210px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 30px, 560px);
+      }
+
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .brand img {
+        height: 43px;
+        max-width: 165px;
+      }
+
+      .brand-fallback {
+        font-size: 17px;
+      }
+
+      .menu-toggle {
+        display: block;
+        flex-shrink: 0;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 20px 18px;
+        background: #171613;
+        border-top: 1px solid rgba(255,255,255,.1);
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        padding: 12px 5px;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+        font-size: 14px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        min-height: 450px;
+      }
+
+      .hero::before {
+        background-position: 60% center;
+      }
+
+      .hero::after {
+        background: linear-gradient(90deg,
+          rgba(15,13,11,.92),
+          rgba(15,13,11,.72)),
+          linear-gradient(0deg, rgba(15,13,11,.4), transparent);
+      }
+
+      .hero-content {
+        padding-block: 67px 62px;
+      }
+
+      .hero h1 {
+        font-size: clamp(39px, 10vw, 57px);
+        letter-spacing: -1.8px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .intro-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding-block: 23px;
+      }
+
+      .services-section {
+        padding: 60px 0 55px;
+      }
+
+      .section-heading {
+        margin-bottom: 29px;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(27px, 7vw, 36px);
+      }
+
+      /* Keep service cards paired in two columns on phones. */
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .service-card {
+        border-radius: 14px;
+      }
+
+      .service-image {
+        height: auto;
+        aspect-ratio: 1.2 / 1;
+      }
+
+      .service-number {
+        top: 8px;
+        left: 8px;
+        padding: 4px 7px;
+        font-size: 8px;
+        letter-spacing: .5px;
+      }
+
+      .service-icon {
+        bottom: -16px;
+        left: 11px;
+        width: 39px;
+        height: 39px;
+        border-width: 3px;
+        font-size: 16px;
+      }
+
+      .service-body {
+        min-height: 190px;
+        padding: 27px 12px 14px;
+      }
+
+      .service-body h3 {
+        margin-bottom: 7px;
+        font-size: clamp(13px, 3.5vw, 16px);
+        letter-spacing: -.3px;
+        overflow-wrap: anywhere;
+      }
+
+      .service-body p {
+        margin-bottom: 14px;
+        font-size: 11px;
+        line-height: 1.6;
+      }
+
+      .service-link {
+        gap: 5px;
+        font-size: 11px;
+      }
+
+      .advertising-card {
+        grid-template-columns: 1fr;
+        min-height: 340px;
+        margin-top: 18px;
+        border-radius: 17px;
+      }
+
+      .advertising-card::before {
+        background:
+          linear-gradient(90deg, rgba(21,17,12,.91), rgba(21,17,12,.7)),
+          url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80")
+          center / cover no-repeat;
+      }
+
+      .advertising-content {
+        padding: 30px 23px 20px;
+      }
+
+      .advertising-side {
+        justify-content: flex-start;
+        padding: 0 23px 25px;
+      }
+
+      .advertising-label {
+        max-width: 250px;
+        padding: 12px 15px;
+      }
+
+      .advertising-label strong {
+        font-size: 15px;
+      }
+
+      .cta-section {
+        padding-bottom: 55px;
+      }
+
+      .cta-panel {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 27px 22px;
+        border-radius: 16px;
+      }
+
+      .cta-panel .btn {
+        width: 100%;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 27px 20px;
+        padding-block: 37px 28px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+        padding-block: 16px;
+      }
+
+      .whatsapp-float {
+        right: 13px;
+        bottom: 13px;
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .container {
+        width: calc(100% - 22px);
+      }
+
+      .service-grid {
+        gap: 9px;
+      }
+
+      .service-body {
+        min-height: 205px;
+        padding-inline: 10px;
+      }
+
+      .service-body p {
+        font-size: 10.5px;
+      }
+
+      .hero-actions .btn {
+        padding-inline: 16px;
+        font-size: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-inner">
+
+      <a href="index.html" class="brand" aria-label="Zerah-Nexus home">
+        <!-- Change this path to your actual logo file -->
+        <img
+          src="imgs/zerah-nexus.png"
+          alt="Zerah-Nexus"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block';"
+        >
+        <span class="brand-fallback" style="display:none">
+          ZERAH-<span>NEXUS</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="#services" class="active">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="nav-cta">Let's Talk <span>↗</span></a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >☰</button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Sales & Marketing</div>
+
+          <h1>
+            Ideas. Strategy.<br>
+            <span>Real Growth.</span>
+          </h1>
+
+          <p>
+            We bring brands to life through creative thinking,
+            digital innovation and experiences that move people.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-gold">
+              Explore Our Services <span>→</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              Start a Conversation
+            </a>
+          </div>
+
+          <div class="hero-note">
+            Creative solutions. Thoughtful execution. Lasting impact.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO STRIP -->
+    <section class="intro-strip">
+      <div class="container intro-inner">
+        <p>
+          From your first brand impression to your next big campaign,
+          we help turn ambitious ideas into meaningful connections.
+        </p>
+
+        <div class="intro-stat">
+          <div class="stat-mark">✦</div>
+          <div>
+            <strong>One creative partner</strong>
+            <span>Multiple ways to grow</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE CARDS -->
+    <section class="services-section" id="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">What We Do</div>
+          <h2>Comprehensive Solutions for <span>Your Brand</span></h2>
+          <p>
+            Creative, digital and business services designed around
+            your goals, your audience and your next move.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <!-- 01 GRAPHIC DESIGN -->
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=900&q=85"
+                alt="Creative graphic design workspace"
+                loading="lazy"
+              >
+              <span class="service-number">01 / CREATIVE</span>
+              <span class="service-icon" aria-hidden="true">✎</span>
+            </div>
+
+            <div class="service-body">
+              <h3>Graphic Design</h3>
+              <p>
+                Distinctive visual identities, logos, marketing materials
+                and brand assets that make your business memorable.
+              </p>
+              <a class="service-link" href="#contact" data-service="Graphic Design">
+                Discuss your project <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 02 WEB DESIGN -->
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=85"
+                alt="Website design displayed on a computer"
+                loading="lazy"
+              >
+              <span class="service-number">02 / DIGITAL</span>
+              <span class="service-icon" aria-hidden="true">⌘</span>
+            </div>
+
+            <div class="service-body">
+              <h3>Web Design & Development</h3>
+              <p>
+                Elegant, responsive websites built to communicate clearly,
+                showcase your work and support business growth.
+              </p>
+              <a class="service-link" href="#contact" data-service="Web Design and Development">
+                Build your website <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 03 CYBERSECURITY -->
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=85"
+                alt="Digital technology and cybersecurity concept"
+                loading="lazy"
+              >
+              <span class="service-number">03 / SECURITY</span>
+              <span class="service-icon" aria-hidden="true">◇</span>
+            </div>
+
+            <div class="service-body">
+              <h3>Cybersecurity</h3>
+              <p>
+                Practical digital security support to help protect your
+                systems, accounts, information and online operations.
+              </p>
+              <a class="service-link" href="#contact" data-service="Cybersecurity">
+                Secure your business <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 04 EVENT MANAGEMENT -->
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=900&q=85"
+                alt="Professionally arranged conference and event"
+                loading="lazy"
+              >
+              <span class="service-number">04 / EXPERIENCES</span>
+              <span class="service-icon" aria-hidden="true">✧</span>
+            </div>
+
+            <div class="service-body">
+              <h3>Event Management</h3>
+              <p>
+                Thoughtfully planned corporate functions, launches,
+                conferences and celebrations, from concept to delivery.
+              </p>
+              <a class="service-link" href="#contact" data-service="Event Management">
+                Plan your event <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 05 TOURIST ACCOMMODATION -->
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=85"
+                alt="Premium hotel accommodation and swimming pool"
+                loading="lazy"
+              >
+              <span class="service-number">05 / HOSPITALITY</span>
+              <span class="service-icon" aria-hidden="true">⌖</span>
+            </div>
+
+            <div class="service-body">
+              <h3>Tourist Accommodation</h3>
+              <p>
+                Discover comfortable stays and travel accommodation
+                options for holidays, business trips and group visits.
+              </p>
+              <a class="service-link" href="#contact" data-service="Tourist Accommodation">
+                Find your stay <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 06 ADVERTISING -->
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85"
+                alt="Modern city buildings and large-scale advertising opportunities"
+                loading="lazy"
+              >
+              <span class="service-number">06 / VISIBILITY</span>
+              <span class="service-icon" aria-hidden="true">↗</span>
+            </div>
+
+            <div class="service-body">
+              <h3>Advertise With Us</h3>
+              <p>
+                Give your business more visibility. Enquire about
+                advertising opportunities and brand placements on this platform.
+              </p>
+              <a class="service-link" href="#contact" data-service="Advertising Opportunities">
+                Advertise your brand <span>→</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- FEATURED ADVERTISING SPACE -->
+        <section class="advertising-card" aria-label="Advertising opportunities">
+          <div class="advertising-content">
+            <div class="eyebrow">Your Brand. More Visibility.</div>
+            <h2>Make Your Brand <span>Impossible to Ignore.</span></h2>
+            <p>
+              Put your business in front of a wider audience.
+              Contact us to discuss featured placements and advertising
+              opportunities on the Zerah-Nexus platform.
+            </p>
+            <a
+              href="#contact"
+              class="btn btn-gold"
+              data-service="Advertising Opportunities"
+            >
+              Enquire About Advertising <span>→</span>
+            </a>
+          </div>
+
+          <div class="advertising-side">
+            <div class="advertising-label">
+              <span>Featured placement</span>
+              <strong>Your next audience is waiting.</strong>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="cta-section" id="contact">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <div class="eyebrow">Let's Work Together</div>
+            <h2>Ready to Grow Your Brand?</h2>
+            <p>
+              Tell us what you have in mind. Let's discuss your goals
+              and find the right solution for your next project.
+            </p>
+          </div>
+
+          <a
+            href="https://wa.me/254742082219?text=Hello%20Zerah-Nexus%2C%20I%27d%20like%20to%20enquire%20about%20your%20Sales%20%26%20Marketing%20services."
+            class="btn btn-gold"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contact Us on WhatsApp <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-main">
+        <div class="footer-about">
+          <a href="index.html" class="footer-brand">
+            ZERAH-<span>NEXUS</span>
+          </a>
+          <p>
+            Connecting ideas, innovation and opportunity through
+            thoughtful solutions for businesses and communities.
+          </p>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="#services">Our Services</a>
+            <a href="portfolio.html">Portfolio</a>
+          </div>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>Nairobi, Kenya</p>
+          <p>
+            <a href="mailto:info@ecoclub254.com">info@ecoclub254.com</a>
+          </p>
+          <p>
+            <a href="tel:+254742082219">+254 742 082 219</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Zerah-Nexus. All rights reserved.</span>
+        <span>Build Smarter. Grow Faster.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/254742082219?text=Hello%20Zerah-Nexus%2C%20I%27d%20like%20to%20make%20an%20enquiry."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Zerah-Nexus on WhatsApp"
+    title="Chat on WhatsApp"
+  >☏</a>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    // Close mobile menu after choosing a link
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Add the selected service to the WhatsApp enquiry
+    document.querySelectorAll("[data-service]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        const service = link.dataset.service;
+
+        if (!service) return;
+
+        event.preventDefault();
+
+        const message =
+          "Hello Zerah-Nexus, I would like to enquire about " +
+          service +
+          ". Please share more information.";
+
+        const whatsappURL =
+          "https://wa.me/254742082219?text=" +
+          encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank", "noopener,noreferrer");
+      });
+    });
+
+    // Automatically update copyright year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
