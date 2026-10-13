@@ -1,265 +1,1603 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <title>Painting & Interior Design</title>
-    <style>
-        body {
-            background-color: #fdfdfd;
-        }
-        .navbar {
-            background-color: #071952;
-        }
-        .navbar-nav .nav-link {
-            color: #fff !important;
-        }
-        .navbar-nav .nav-item.dropdown .dropdown-menu {
-            background-color: #ebeef5;
-        }
-        .navbar-toggler-icon {
-            filter: invert(1);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101820">
+  <meta name="description" content="Zerah-Nexus Engineering — refined painting, interior design and finishing solutions for contemporary spaces.">
+  <title>Engineering & Interior Design | Zerah-Nexus</title>
 
-        /* Banner */
-        .banner {
-            background: url('imgs/paintbg.jpg') center/cover no-repeat;
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
-            background-color: rgba(20,20,20,0.5);
-            background-blend-mode: multiply;
-        }
-        .banner h1 {
-            font-weight: bold;
-            font-size: 2.5rem;
-        }
-        .banner p {
-            font-size: 1.1rem;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-        /* Sections */
-        .section-light {
-            background: #ffffff;
-            padding: 50px 0;
-        }
-        .section-soft {
-            background: #f8f9ff;
-            padding: 50px 0;
-        }
-        .section-cream {
-            background: #fff7f0;
-            padding: 50px 0;
-        }
+  <style>
+    :root {
+      --ink: #101820;
+      --ink-soft: #1a2730;
+      --gold: #c9a66b;
+      --gold-light: #e5cc9e;
+      --cream: #f7f5f0;
+      --white: #ffffff;
+      --muted: #72777b;
+      --line: rgba(16, 24, 32, .12);
+      --radius: 18px;
+      --shadow: 0 18px 50px rgba(16, 24, 32, .09);
+      --max-width: 1240px;
+    }
 
-        /* Cards */
-        .service-card {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-            padding: 25px;
-            transition: transform 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-6px);
-        }
-        .service-card i {
-            font-size: 2.3rem;
-            color: #ff6f00;
-            margin-bottom: 12px;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Images */
-        .img-fluid {
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.08);
-        }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-        /* WhatsApp CTA */
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            background: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .cta-btn img {
-            margin-right: 8px;
-        }
-        .cta-btn:hover {
-            background: #218838;
-            color: white;
-        }
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
 
-        .footer {
-            background-color: #071952;
-            color: #fff;
-            padding: 50px 0;
-        }
-        .footer a {
-            color: #fff;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, textarea, select {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .section-heading {
+      max-width: 660px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      font: 700 clamp(2rem, 4vw, 3.35rem)/1.12 "Manrope", sans-serif;
+      letter-spacing: -1.8px;
+      margin: 15px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      min-height: 50px;
+      padding: 13px 22px;
+      border: 1px solid transparent;
+      font-size: .88rem;
+      font-weight: 700;
+      transition: .25s ease;
+      cursor: pointer;
+    }
+
+    .btn-gold {
+      color: var(--ink);
+      background: var(--gold-light);
+    }
+
+    .btn-gold:hover {
+      color: var(--ink);
+      background: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--white);
+      border-color: rgba(255,255,255,.55);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      color: var(--ink);
+      background: var(--white);
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(16, 24, 32, .97);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      color: var(--white);
+      font: 800 1.3rem/1.1 "Manrope", sans-serif;
+      letter-spacing: 1.2px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--gold-light);
+    }
+
+    .brand small {
+      margin-top: 5px;
+      color: rgba(255,255,255,.58);
+      font: 500 .56rem/1.2 "DM Sans", sans-serif;
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 29px;
+      list-style: none;
+    }
+
+    .nav-links > li > a {
+      color: rgba(255,255,255,.78);
+      font-size: .84rem;
+      transition: color .2s;
+    }
+
+    .nav-links > li > a:hover,
+    .nav-links > li > a.active {
+      color: var(--gold-light);
+    }
+
+    .nav-links .nav-cta {
+      padding: 11px 17px;
+      background: var(--gold-light);
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 45px;
+      height: 45px;
+      color: white;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.25);
+      font-size: 1.45rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(9,16,21,.91) 0%, rgba(9,16,21,.69) 45%, rgba(9,16,21,.18) 100%),
+        url("imgs/paintbg.jpg") center 48% / cover no-repeat,
+        #182229;
+      isolation: isolate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(8,14,18,.35), transparent 55%);
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 100px 0 112px;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .hero h1 {
+      margin: 25px 0 22px;
+      font: 700 clamp(2.8rem, 6.3vw, 5.5rem)/1.04 "Manrope", sans-serif;
+      letter-spacing: -3.4px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      max-width: 490px;
+      color: rgba(255,255,255,.79);
+      font-size: clamp(.98rem, 1.6vw, 1.1rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 32px;
+    }
+
+    .hero-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 45px;
+      color: rgba(255,255,255,.72);
+      font-size: .8rem;
+    }
+
+    .hero-note span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-note i {
+      color: var(--gold-light);
+    }
+
+    /* Trust strip */
+    .trust-strip {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .trust-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 27px 24px;
+      border-right: 1px solid rgba(255,255,255,.12);
+    }
+
+    .trust-item:first-child {
+      padding-left: 0;
+    }
+
+    .trust-item:last-child {
+      border: 0;
+    }
+
+    .trust-item i {
+      font-size: 1.65rem;
+      color: var(--gold-light);
+    }
+
+    .trust-item strong {
+      display: block;
+      font: 700 .95rem "Manrope", sans-serif;
+    }
+
+    .trust-item small {
+      display: block;
+      margin-top: 3px;
+      color: rgba(255,255,255,.58);
+      font-size: .78rem;
+    }
+
+    /* Intro */
+    .intro {
+      padding: 110px 0;
+      overflow: hidden;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: clamp(40px, 7vw, 90px);
+    }
+
+    .intro-copy h2 {
+      margin: 17px 0 22px;
+      font: 700 clamp(2.2rem, 4vw, 3.7rem)/1.12 "Manrope", sans-serif;
+      letter-spacing: -2px;
+    }
+
+    .intro-copy h2 span {
+      color: #a27b42;
+    }
+
+    .intro-copy > p {
+      color: var(--muted);
+      margin-bottom: 25px;
+      max-width: 500px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--gold);
+      font-weight: 700;
+      font-size: .88rem;
+    }
+
+    .intro-visual {
+      position: relative;
+      padding: 0 0 35px 35px;
+    }
+
+    .intro-visual img {
+      width: 100%;
+      height: 490px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200px;
+      padding: 21px;
+      background: var(--gold-light);
+      color: var(--ink);
+    }
+
+    .image-caption strong {
+      display: block;
+      font: 700 1.1rem "Manrope", sans-serif;
+    }
+
+    .image-caption span {
+      font-size: .78rem;
+    }
+
+    /* Services */
+    .services {
+      padding: 105px 0;
+      background: var(--cream);
+    }
+
+    .services .section-heading {
+      max-width: 700px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid rgba(16,24,32,.06);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-image {
+      position: relative;
+      height: 255px;
+      overflow: hidden;
+      background: #e8e3db;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.06);
+    }
+
+    .service-number {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: grid;
+      place-items: center;
+      width: 39px;
+      height: 39px;
+      background: var(--gold-light);
+      color: var(--ink);
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .service-body {
+      padding: 26px;
+    }
+
+    .service-body h3 {
+      font: 700 1.22rem "Manrope", sans-serif;
+      margin-bottom: 9px;
+    }
+
+    .service-body p {
+      min-height: 51px;
+      margin-bottom: 19px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .service-body a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .83rem;
+      font-weight: 700;
+    }
+
+    .service-body a i {
+      color: #a27b42;
+      transition: transform .2s;
+    }
+
+    .service-body a:hover i {
+      transform: translateX(4px);
+    }
+
+    /* Interior feature */
+    .feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 570px;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .feature-image {
+      min-height: 480px;
+      background: url("imgs/id1.jpg") center / cover no-repeat;
+    }
+
+    .feature-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: clamp(45px, 7vw, 105px);
+    }
+
+    .feature-copy h2 {
+      margin: 18px 0 21px;
+      font: 700 clamp(2.2rem, 4vw, 3.7rem)/1.12 "Manrope", sans-serif;
+      letter-spacing: -2px;
+    }
+
+    .feature-copy p {
+      max-width: 450px;
+      color: rgba(255,255,255,.65);
+      margin-bottom: 27px;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 13px;
+      margin-bottom: 30px;
+      list-style: none;
+      color: rgba(255,255,255,.85);
+      font-size: .9rem;
+    }
+
+    .feature-list i {
+      color: var(--gold-light);
+      margin-right: 10px;
+    }
+
+    /* Gallery */
+    .gallery {
+      padding: 105px 0;
+    }
+
+    .gallery-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 38px;
+    }
+
+    .gallery-head .section-heading {
+      margin: 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr 1fr;
+      grid-template-rows: 250px 250px;
+      gap: 16px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: #e8e3db;
+      isolation: isolate;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.055);
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 35% 0 0;
+      z-index: 1;
+      background: linear-gradient(transparent, rgba(8,14,18,.78));
+      pointer-events: none;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      z-index: 2;
+      left: 20px;
+      right: 15px;
+      bottom: 18px;
+      color: var(--white);
+    }
+
+    .gallery-caption small {
+      display: block;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .65rem;
+      margin-bottom: 4px;
+    }
+
+    .gallery-caption strong {
+      font: 700 1rem "Manrope", sans-serif;
+    }
+
+    /* Process */
+    .process {
+      padding: 90px 0;
+      background: var(--cream);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .process-step {
+      padding-top: 22px;
+      border-top: 1px solid #d9c7a8;
+    }
+
+    .process-step span {
+      color: #a27b42;
+      font: 700 .78rem "Manrope", sans-serif;
+    }
+
+    .process-step h3 {
+      margin: 12px 0 8px;
+      font: 700 1.08rem "Manrope", sans-serif;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    /* Enquiry */
+    .enquiry {
+      padding: 100px 0;
+    }
+
+    .enquiry-panel {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      background: var(--ink);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .enquiry-intro {
+      padding: clamp(30px, 5vw, 65px);
+      background:
+        linear-gradient(rgba(12,20,25,.87), rgba(12,20,25,.93)),
+        url("imgs/id2.jpg") center / cover no-repeat;
+    }
+
+    .enquiry-intro h2 {
+      margin: 17px 0;
+      font: 700 clamp(2rem, 3.5vw, 3rem)/1.12 "Manrope", sans-serif;
+      letter-spacing: -1.5px;
+    }
+
+    .enquiry-intro p {
+      color: rgba(255,255,255,.68);
+      font-size: .92rem;
+    }
+
+    .enquiry-intro .contact-note {
+      margin-top: 35px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .88rem;
+    }
+
+    .contact-note i {
+      color: var(--gold-light);
+      font-size: 1.4rem;
+    }
+
+    .enquiry-form {
+      padding: clamp(28px, 5vw, 60px);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 19px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      color: rgba(255,255,255,.83);
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      min-width: 0;
+      padding: 13px 14px;
+      color: var(--white);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 0;
+      outline: none;
+      font-size: .87rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold-light);
+    }
+
+    .form-group select option {
+      color: var(--ink);
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      margin-top: 22px;
+      width: 100%;
+    }
+
+    .form-hint {
+      margin-top: 12px;
+      color: rgba(255,255,255,.5);
+      font-size: .75rem;
+    }
+
+    /* CTA */
+    .closing-cta {
+      padding: 65px 0;
+      background: var(--gold-light);
+    }
+
+    .closing-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .closing-inner h2 {
+      font: 700 clamp(1.7rem, 3.5vw, 2.7rem)/1.2 "Manrope", sans-serif;
+      letter-spacing: -1px;
+    }
+
+    .closing-inner p {
+      margin-top: 8px;
+      color: #4f4a40;
+      font-size: .9rem;
+    }
+
+    .btn-dark {
+      flex-shrink: 0;
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .btn-dark:hover {
+      color: var(--ink);
+      background: var(--white);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 65px 0 25px;
+      background: #0b1116;
+      color: var(--white);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 55px;
+      padding-bottom: 45px;
+    }
+
+    .footer-about p {
+      max-width: 330px;
+      margin-top: 18px;
+      color: rgba(255,255,255,.57);
+      font-size: .86rem;
+    }
+
+    .footer h3 {
+      margin-bottom: 18px;
+      font: 700 .95rem "Manrope", sans-serif;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .footer-links a,
+    .footer-contact p {
+      color: rgba(255,255,255,.62);
+      font-size: .84rem;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-contact p {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .footer-contact i {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.43);
+      font-size: .76rem;
+    }
+
+    .footer-bottom span:last-child {
+      color: var(--gold-light);
+    }
+
+    /* Floating WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      display: grid;
+      place-items: center;
+      width: 57px;
+      height: 57px;
+      border-radius: 50%;
+      color: var(--white);
+      background: #168c55;
+      box-shadow: 0 8px 28px rgba(0,0,0,.23);
+      font-size: 1.7rem;
+      transition: transform .2s;
+    }
+
+    .whatsapp-float:hover {
+      color: var(--white);
+      transform: translateY(-4px);
+    }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .nav-links { gap: 18px; }
+      .nav-links > li > a { font-size: .79rem; }
+
+      .hero { min-height: 590px; }
+
+      .intro { padding: 80px 0; }
+      .intro-visual img { height: 420px; }
+
+      .services-grid { gap: 15px; }
+      .service-image { height: 215px; }
+      .service-body { padding: 21px; }
+
+      .gallery-grid {
+        grid-template-rows: 210px 210px;
+      }
+
+      .enquiry-panel { grid-template-columns: .8fr 1.2fr; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(100% - 34px, var(--max-width)); }
+
+      .nav-inner { min-height: 72px; }
+      .menu-toggle { display: grid; place-items: center; }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 20px 20px;
+        background: var(--ink);
+        border-top: 1px solid rgba(255,255,255,.1);
+      }
+
+      .nav-links.open { display: flex; flex-direction: column; }
+      .nav-links > li > a {
+        display: block;
+        padding: 13px 5px;
+        font-size: .9rem;
+      }
+
+      .nav-links .nav-cta {
+        margin-top: 7px;
+        padding: 12px 15px;
+        text-align: center;
+      }
+
+      .hero {
+        min-height: 590px;
+        background-position: center, 58% center, center;
+      }
+
+      .hero-content { padding: 85px 0; }
+      .hero h1 {
+        font-size: clamp(2.7rem, 11vw, 4.4rem);
+        letter-spacing: -2px;
+      }
+
+      .hero-note { gap: 13px 19px; margin-top: 32px; }
+
+      .trust-inner { grid-template-columns: 1fr; }
+      .trust-item,
+      .trust-item:first-child {
+        padding: 17px 0;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.12);
+      }
+
+      .trust-item:last-child { border-bottom: 0; }
+
+      .intro-grid { grid-template-columns: 1fr; gap: 36px; }
+      .intro { padding: 72px 0; }
+      .intro-visual { padding-left: 22px; }
+      .intro-visual img { height: min(105vw, 440px); }
+
+      .services { padding: 72px 0; }
+      .services-grid { grid-template-columns: 1fr; gap: 20px; }
+      .service-image { height: 270px; }
+      .service-body p { min-height: 0; }
+
+      .feature { grid-template-columns: 1fr; }
+      .feature-image { min-height: 360px; }
+      .feature-copy { padding: 55px 25px 65px; }
+
+      .gallery { padding: 72px 0; }
+      .gallery-head { align-items: flex-start; flex-direction: column; }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 280px 190px 190px;
+        gap: 10px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: 1 / -1;
+        grid-row: auto;
+      }
+
+      .gallery-caption { left: 13px; bottom: 13px; }
+      .gallery-caption strong { font-size: .88rem; }
+
+      .process { padding: 70px 0; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 25px 20px; }
+
+      .enquiry { padding: 70px 0; }
+      .enquiry-panel { grid-template-columns: 1fr; }
+      .enquiry-intro { padding: 40px 27px; }
+      .enquiry-form { padding: 30px 23px; }
+
+      .closing-inner { align-items: flex-start; flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 35px 25px; }
+      .footer-about { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 430px) {
+      .container { width: calc(100% - 28px); }
+      .brand { font-size: 1.15rem; }
+      .brand small { letter-spacing: 2.2px; }
+
+      .hero { min-height: 560px; }
+      .hero h1 { font-size: 2.65rem; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .hero-note { flex-direction: column; gap: 10px; }
+
+      .section-heading h2,
+      .intro-copy h2 { letter-spacing: -1px; }
+
+      .service-image { height: 225px; }
+
+      .gallery-grid {
+        grid-template-rows: 245px 160px 160px;
+      }
+
+      .gallery-caption small { font-size: .58rem; letter-spacing: 1px; }
+      .gallery-caption strong { font-size: .78rem; }
+
+      .process-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: auto; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-about { grid-column: auto; }
+
+      .footer-bottom { flex-direction: column; gap: 8px; }
+      .whatsapp-float { width: 51px; height: 51px; right: 15px; bottom: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- NAVIGATION -->
-    <nav class="navbar navbar-expand-lg py-3">
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <img src="imgs/ecoeco.png" height="70" alt="EcoSolution Hub Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown">
-                            Construction Engineering
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding & Fabrication</a>
-                            <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom & Plumbing</a>
-                            <a class="dropdown-item" href="painting-and-interior-design.html">Painting & Interior Design</a>
-                            <a class="dropdown-item" href="cabinetry-installation.html">Cabinetry Installation</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="about_us.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Zerah-Nexus home">
+        ZERAH<span>-NEXUS</span>
+        <small>ENGINEERING & DESIGN</small>
+      </a>
 
-    <!-- BANNER -->
-    <div class="banner">
-        <div>
-            <h1 data-aos="fade-down">Painting & Interior Design</h1>
-            <p data-aos="fade-up">Transforming spaces with color, creativity & elegance</p>
-        </div>
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation" aria-expanded="false"
+        aria-controls="navLinks">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#interiors">Interior Design</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="about_us.html">About</a></li>
+          <li>
+            <a class="nav-cta" href="#enquiry">Discuss Your Project <i class="bi bi-arrow-up-right"></i></a>
+          </li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- INTRO -->
-    <section class="section-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="text-warning">Premium Painting Services</h2>
-                    <p class="text-muted">
-                        Our professional painters deliver flawless finishes for both residential and commercial projects. From soft interior shades to bold exterior coats, we use high-quality eco-friendly paints to give your walls a stunning and durable look.
-                    </p>
-                    <a href="https://wa.me/254742082219" target="_blank" class="cta-btn mt-3">
-                        <img src="imgs/wappicon.png" width="22" alt="WhatsApp"> Request a Painter
-                    </a>
-                </div>
-                <div class="col-lg-6 text-center" data-aos="fade-left">
-                    <img src="imgs/interiorpaint.jpeg" class="img-fluid" alt="Painting work">
-                </div>
-            </div>
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Craftsmanship meets design</span>
+          <h1>Spaces that<br>make a <span>statement.</span></h1>
+          <p>
+            Premium painting, interior design and finishing solutions
+            tailored to the way you live and work.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-gold">
+              Explore Our Work <i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a href="#enquiry" class="btn btn-outline">
+              Start a Project <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <span><i class="bi bi-check2-circle"></i> Thoughtful design</span>
+            <span><i class="bi bi-check2-circle"></i> Refined finishes</span>
+            <span><i class="bi bi-check2-circle"></i> Built around you</span>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- VALUE STRIP -->
+    <section class="trust-strip" aria-label="Our approach">
+      <div class="container trust-inner">
+        <div class="trust-item">
+          <i class="bi bi-brush"></i>
+          <div>
+            <strong>Precision Finishing</strong>
+            <small>Attention to every detail</small>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="bi bi-layers"></i>
+          <div>
+            <strong>Considered Design</strong>
+            <small>Beauty with purpose</small>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="bi bi-house-check"></i>
+          <div>
+            <strong>Residential & Commercial</strong>
+            <small>Spaces shaped around your needs</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="intro" id="about">
+      <div class="container intro-grid">
+        <div class="intro-copy">
+          <span class="eyebrow">The Zerah-Nexus approach</span>
+          <h2>Good design is felt.<br><span>Great design lasts.</span></h2>
+          <p>
+            We bring colour, texture and thoughtful detailing together
+            to create spaces that feel considered, comfortable and distinctive.
+          </p>
+          <a href="#enquiry" class="text-link">
+            Tell us what you have in mind <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="intro-visual">
+          <img
+            src="imgs/interiorpaint.jpeg"
+            alt="Interior painting and refined wall finishes"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85';"
+          >
+          <div class="image-caption">
+            <strong>Made for living.</strong>
+            <span>Designed with intention.</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SERVICES -->
-    <section class="section-soft text-center">
-        <div class="container">
-            <h3 class="mb-5 text-warning" data-aos="fade-up">Our Painting Expertise</h3>
-            <div class="row">
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="service-card">
-                        <i class="bi bi-brush"></i>
-                        <h5>Interior Painting</h5>
-                        <p>Flawless wall finishes & modern textures to elevate your living spaces.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="service-card">
-                        <i class="bi bi-building"></i>
-                        <h5>Exterior Painting</h5>
-                        <p>Weatherproof and vibrant coatings to protect and beautify your building.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="service-card">
-                        <i class="bi bi-palette"></i>
-                        <h5>Custom Designs</h5>
-                        <p>Artistic wall patterns, feature walls, and luxury paint effects.</p>
-                    </div>
-                </div>
-            </div>
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">What we do</span>
+          <h2>Finishing touches.<br>Lasting impressions.</h2>
+          <p>Focused services. Clean execution. Spaces that work beautifully.</p>
         </div>
+
+        <div class="services-grid">
+
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="imgs/interiorpaint.jpeg"
+                alt="Professional interior painting"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=900&q=85';"
+              >
+              <span class="service-number">01</span>
+            </div>
+            <div class="service-body">
+              <h3>Painting & Finishes</h3>
+              <p>Interior and exterior painting, feature walls and considered colour choices.</p>
+              <a href="#enquiry" data-service="Painting & Finishes">
+                Explore service <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card" id="interiors">
+            <div class="service-image">
+              <img
+                src="imgs/id1.jpg"
+                alt="Contemporary interior design"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85';"
+              >
+              <span class="service-number">02</span>
+            </div>
+            <div class="service-body">
+              <h3>Interior Design</h3>
+              <p>Thoughtful layouts, elegant palettes and cohesive interior styling.</p>
+              <a href="#enquiry" data-service="Interior Design">
+                Explore service <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="imgs/id2.jpg"
+                alt="Custom interior details and decor"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85';"
+              >
+              <span class="service-number">03</span>
+            </div>
+            <div class="service-body">
+              <h3>Custom Finishes</h3>
+              <p>Distinctive details, decorative treatments and tailored finishing touches.</p>
+              <a href="#enquiry" data-service="Custom Finishes">
+                Explore service <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
     </section>
 
-    <!-- INTERIOR DESIGN -->
-    <section class="section-cream">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 order-lg-2" data-aos="fade-left">
-                    <h2 class="text-warning">Interior Design Consultation</h2>
-                    <p class="text-muted">
-                        Our interior designers craft spaces that blend functionality with beauty. Whether you need a cozy living room, a modern kitchen, or a luxury office, we design environments that reflect your personality and lifestyle.
-                    </p>
-                    <a href="https://wa.me/254742082219" target="_blank" class="cta-btn mt-3">
-                        <img src="imgs/wappicon.png" width="22" alt="WhatsApp"> Book a Consultation
-                    </a>
-                </div>
-                <div class="col-lg-6 order-lg-1 text-center" data-aos="fade-right">
-                    <img src="imgs/id1.jpg" class="img-fluid mb-3" alt="Interior Design">
-                    <img src="imgs/id2.jpg" class="img-fluid" alt="Luxury Interiors">
-                </div>
-            </div>
-        </div>
+    <!-- INTERIOR FEATURE -->
+    <section class="feature">
+      <div class="feature-image" role="img" aria-label="Contemporary interior design"></div>
+      <div class="feature-copy">
+        <span class="eyebrow">Interiors with intention</span>
+        <h2>Less clutter.<br>More character.</h2>
+        <p>
+          From the first colour choice to the final detail, create an
+          interior that reflects your taste and makes better use of your space.
+        </p>
+        <ul class="feature-list">
+          <li><i class="bi bi-check2"></i> Residential spaces</li>
+          <li><i class="bi bi-check2"></i> Offices and workspaces</li>
+          <li><i class="bi bi-check2"></i> Kitchens and living areas</li>
+          <li><i class="bi bi-check2"></i> Colour and finish consultation</li>
+        </ul>
+        <a href="#enquiry" class="btn btn-gold">
+          Plan Your Interior <i class="bi bi-arrow-up-right"></i>
+        </a>
+      </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="section-light text-center">
-        <div class="container">
-            <h3 class="mb-4 text-warning" data-aos="fade-up">Recent Projects</h3>
-            <div class="row g-3">
-                <div class="col-md-4" data-aos="zoom-in"><img src="imgs/home.jpeg" class="img-fluid" alt="Home Painting"></div>
-                <div class="col-md-4" data-aos="zoom-in"><img src="imgs/painting apartment.jpg" class="img-fluid" alt="Apartment Painting"></div>
-                <div class="col-md-4" data-aos="zoom-in"><img src="imgs/painting-living-room.jpg" class="img-fluid" alt="Living Room"></div>
-            </div>
+    <!-- PROJECT GALLERY -->
+    <section class="gallery" id="projects">
+      <div class="container">
+        <div class="gallery-head">
+          <div class="section-heading">
+            <span class="eyebrow">Visual inspiration</span>
+            <h2>Details define<br>the difference.</h2>
+            <p>A glimpse of the finishes, spaces and styles that inspire our work.</p>
+          </div>
+          <a href="#enquiry" class="text-link">
+            Discuss your project <i class="bi bi-arrow-up-right"></i>
+          </a>
         </div>
+
+        <div class="gallery-grid">
+          <a href="#enquiry" class="gallery-item" aria-label="Discuss a contemporary living room project">
+            <img
+              src="imgs/painting-living-room.jpg"
+              alt="Contemporary living room and wall finishes"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85';"
+            >
+            <span class="gallery-caption">
+              <small>Interior styling</small>
+              <strong>Living, refined</strong>
+            </span>
+          </a>
+
+          <a href="#enquiry" class="gallery-item" aria-label="Discuss an apartment painting project">
+            <img
+              src="imgs/painting apartment.jpg"
+              alt="Apartment painting and finishing"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85';"
+            >
+            <span class="gallery-caption">
+              <small>Painting</small>
+              <strong>Clean finishes</strong>
+            </span>
+          </a>
+
+          <a href="#enquiry" class="gallery-item" aria-label="Discuss a luxury interior project">
+            <img
+              src="imgs/home.jpeg"
+              alt="Home interior design inspiration"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=85';"
+            >
+            <span class="gallery-caption">
+              <small>Residential</small>
+              <strong>Modern comfort</strong>
+            </span>
+          </a>
+
+          <a href="#enquiry" class="gallery-item" aria-label="Discuss a contemporary interior project">
+            <img
+              src="imgs/id1.jpg"
+              alt="Modern interior textures and furnishings"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=85';"
+            >
+            <span class="gallery-caption">
+              <small>Interior design</small>
+              <strong>Balanced spaces</strong>
+            </span>
+          </a>
+
+          <a href="#enquiry" class="gallery-item" aria-label="Discuss a custom interior finish">
+            <img
+              src="imgs/id2.jpg"
+              alt="Elegant interior design detail"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=85';"
+            >
+            <span class="gallery-caption">
+              <small>Finishing details</small>
+              <strong>Made distinctive</strong>
+            </span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <h3>Contact</h3>
-                    <p><i class="bi bi-geo-alt-fill"></i> P.O Box 21075-00100 GPO, Nairobi</p>
-                    <p><i class="bi bi-envelope-fill"></i> info@ecosolutionhub.com</p>
-                    <p><i class="bi bi-telephone-fill"></i> +254 742082219</p>
-                </div>
-                <div class="col-md">
-                    <h3>Quick Links</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="about_us.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+    <!-- HOW WE WORK -->
+    <section class="process">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">A clear process</span>
+          <h2>From idea to finish.</h2>
+          <p>A straightforward approach that keeps your vision at the centre.</p>
         </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>AOS.init();</script>
+        <div class="process-grid">
+          <div class="process-step">
+            <span>STEP 01</span>
+            <h3>Consult</h3>
+            <p>Share your ideas, space and priorities.</p>
+          </div>
+          <div class="process-step">
+            <span>STEP 02</span>
+            <h3>Plan</h3>
+            <p>Discuss the direction, finishes and budget.</p>
+          </div>
+          <div class="process-step">
+            <span>STEP 03</span>
+            <h3>Create</h3>
+            <p>Bring the agreed design to life.</p>
+          </div>
+          <div class="process-step">
+            <span>STEP 04</span>
+            <h3>Refine</h3>
+            <p>Focus on the finishing details that matter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENQUIRY FORM -->
+    <section class="enquiry" id="enquiry">
+      <div class="container">
+        <div class="enquiry-panel">
+          <div class="enquiry-intro">
+            <span class="eyebrow">Let's create</span>
+            <h2>Your space.<br>Your vision.</h2>
+            <p>
+              Tell us a little about your project. We'll help you take
+              the next step.
+            </p>
+
+            <div class="contact-note">
+              <i class="bi bi-whatsapp"></i>
+              <span>Direct project enquiries on WhatsApp</span>
+            </div>
+          </div>
+
+          <form class="enquiry-form" id="projectForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="clientName">Your name *</label>
+                <input type="text" id="clientName" name="name"
+                  placeholder="Full name" autocomplete="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="clientPhone">Phone number *</label>
+                <input type="tel" id="clientPhone" name="phone"
+                  placeholder="+254..." autocomplete="tel" required>
+              </div>
+
+              <div class="form-group">
+                <label for="projectService">Service *</label>
+                <select id="projectService" name="service" required>
+                  <option value="">Choose a service</option>
+                  <option>Painting & Finishes</option>
+                  <option>Interior Design</option>
+                  <option>Custom Finishes</option>
+                  <option>Full Interior Project</option>
+                  <option>Other Enquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="projectBudget">Estimated budget</label>
+                <select id="projectBudget" name="budget">
+                  <option value="">Select budget (KES)</option>
+                  <option>Below KES 50,000</option>
+                  <option>KES 50,000 – 150,000</option>
+                  <option>KES 150,000 – 500,000</option>
+                  <option>KES 500,000+</option>
+                  <option>To be discussed</option>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label for="projectLocation">Project location</label>
+                <input type="text" id="projectLocation" name="location"
+                  placeholder="Town or area">
+              </div>
+
+              <div class="form-group full">
+                <label for="projectDetails">What do you have in mind? *</label>
+                <textarea id="projectDetails" name="details"
+                  placeholder="Describe the space and the finish you want..."
+                  required></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-gold form-submit">
+              Send Enquiry via WhatsApp <i class="bi bi-whatsapp"></i>
+            </button>
+            <p class="form-hint">
+              Your details will be placed in a WhatsApp message for you to review and send.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="closing-cta">
+      <div class="container closing-inner">
+        <div>
+          <h2>Ready to transform your space?</h2>
+          <p>Let's turn your ideas into a well-finished reality.</p>
+        </div>
+        <a href="https://wa.me/254742082219?text=Hello%20Zerah-Nexus%2C%20I%27d%20like%20to%20discuss%20a%20project."
+          target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+          Talk to Our Team <i class="bi bi-arrow-up-right"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="brand">
+            ZERAH<span>-NEXUS</span>
+            <small>ENGINEERING & DESIGN</small>
+          </a>
+          <p>
+            Thoughtful design. Refined finishes. Practical solutions
+            for spaces that deserve more.
+          </p>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#interiors">Interior Design</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Get in Touch</h3>
+          <p><i class="bi bi-whatsapp"></i> +254 742 082219</p>
+          <p><i class="bi bi-chat-dots"></i> Project enquiries welcome</p>
+          <a class="text-link" style="margin-top:8px;color:#e5cc9e"
+            href="https://wa.me/254742082219?text=Hello%20Zerah-Nexus%2C%20I%20have%20a%20project%20enquiry."
+            target="_blank" rel="noopener noreferrer">
+            Message us <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Zerah-Nexus. All rights reserved.</span>
+        <span>Designed with purpose.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="whatsapp-float"
+     href="https://wa.me/254742082219?text=Hello%20Zerah-Nexus%2C%20I%27d%20like%20to%20make%20an%20enquiry."
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contact Zerah-Nexus on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
+
+      menuToggle.innerHTML = isOpen
+        ? '<i class="bi bi-x-lg"></i>'
+        : '<i class="bi bi-list"></i>';
+    });
+
+    // Close mobile navigation after selecting a link
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        menuToggle.innerHTML = '<i class="bi bi-list"></i>';
+      });
+    });
+
+    // Automatically add the current year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Preselect the service when a service card is clicked
+    document.querySelectorAll("[data-service]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        document.getElementById("projectService").value =
+          link.getAttribute("data-service");
+      });
+    });
+
+    // Send the enquiry through WhatsApp
+    document.getElementById("projectForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("clientName").value.trim();
+      const phone = document.getElementById("clientPhone").value.trim();
+      const service = document.getElementById("projectService").value;
+      const budget = document.getElementById("projectBudget").value || "Not specified";
+      const location = document.getElementById("projectLocation").value.trim() || "Not specified";
+      const details = document.getElementById("projectDetails").value.trim();
+
+      const message = [
+        "Hello Zerah-Nexus, I would like to discuss a project.",
+        "",
+        "Name: " + name,
+        "Phone: " + phone,
+        "Service: " + service,
+        "Budget: " + budget,
+        "Location: " + location,
+        "Project details: " + details
+      ].join("\n");
+
+      const whatsappUrl =
+        "https://wa.me/254742082219?text=" + encodeURIComponent(message);
+
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    });
+  </script>
+
 </body>
 </html>
