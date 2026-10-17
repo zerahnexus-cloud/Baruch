@@ -1,738 +1,1476 @@
 
+
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="theme-color" content="#123c2b">
+
   <meta name="description" content="Explore construction engineering, welding, plumbing, interior design, cabinetry and furniture solutions from EcoHub.">
+
+
 
   <title>Engineering & Furniture | Zerah Nexus</title>
 
+
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+
+
   <style>
+
     :root {
+
   --primary: #263746;
+
   --secondary: #647789;
+
   --accent: #8FA7BB;
+
   --background: #E9EDF1;
+
   --surface: #FFFFFF;
+
   --text: #263746;
+
   --muted: #6B7785;
+
 }
+
+
 
     * { box-sizing: border-box; }
 
+
+
     html {
+
       scroll-behavior: smooth;
+
       scroll-padding-top: 25px;
+
     }
 
+
+
     body {
+
       margin: 0;
+
       font-family: 'Montserrat', sans-serif;
+
       color: #24362b;
+
       background: var(--cream);
+
       overflow-x: hidden;
+
     }
+
+
 
     a { transition: all .3s ease; }
 
+
+
     /* NAVIGATION */
+
     .navbar {
+
       background: #f7f6ee;
+
       padding: 10px 0;
+
       position: relative;
+
       z-index: 1000;
+
       box-shadow: 0 3px 20px rgba(0,0,0,.05);
+
     }
+
+
 
     .navbar-brand img {
+
       width: auto;
+
       max-height: 75px;
+
       object-fit: contain;
+
     }
+
+
 
     .navbar-nav .nav-link {
+
       color: #17251d !important;
+
       font-size: 12px;
+
       font-weight: 700;
+
       padding: 12px 15px !important;
+
     }
+
+
 
     .navbar-nav .nav-link:hover {
+
       color: var(--green) !important;
+
     }
+
+
 
     .dropdown-menu {
+
       border: 0;
+
       border-radius: 12px;
+
       padding: 10px;
+
       box-shadow: 0 15px 35px rgba(0,0,0,.12);
+
     }
+
+
 
     .dropdown-item {
+
       padding: 10px 13px;
+
       border-radius: 6px;
+
       font-size: 12px;
+
       white-space: normal;
+
     }
+
+
 
     .dropdown-item:hover {
+
       background: #eaf4e7;
+
       color: var(--forest);
+
     }
+
+
 
     .navbar-toggler {
+
       border: 0;
+
       outline: none !important;
+
     }
+
+
 
     /* HERO */
+
     .engineering-hero {
+
       min-height: 480px;
+
       position: relative;
+
       display: flex;
+
       align-items: center;
+
       color: white;
+
       background:
+
         linear-gradient(90deg,
+
           rgba(5,25,17,.94) 0%,
+
           rgba(8,40,27,.78) 48%,
+
           rgba(8,30,20,.20) 100%),
+
         url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85")
+
         center 52% / cover no-repeat;
+
     }
+
+
 
     .hero-content {
+
       padding-top: 80px;
+
       padding-bottom: 90px;
+
       animation: reveal .8s ease both;
+
     }
 
+
+
     .eyebrow {
+
       display: inline-block;
+
       color: var(--lime);
+
       font-size: 11px;
+
       font-weight: 800;
+
       letter-spacing: 3px;
+
       text-transform: uppercase;
+
       margin-bottom: 20px;
+
     }
+
+
 
     .eyebrow i { margin-right: 8px; }
 
+
+
     .engineering-hero h1 {
+
       font-size: clamp(2.7rem, 5vw, 4.8rem);
+
       line-height: 1.06;
+
       letter-spacing: -2px;
+
       font-weight: 800;
+
       margin: 0 0 22px;
+
     }
+
+
 
     .engineering-hero h1 span { color: var(--lime); }
 
+
+
     .hero-description {
+
       max-width: 500px;
+
       color: rgba(255,255,255,.88);
+
       font-size: 14px;
+
       line-height: 1.9;
+
       margin-bottom: 30px;
+
     }
+
+
 
     .hero-button {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 12px;
+
       padding: 14px 23px;
+
       background: var(--lime);
+
       border: 1px solid var(--lime);
+
       border-radius: 40px;
+
       color: var(--forest);
+
       font-size: 11px;
+
       font-weight: 800;
+
       text-decoration: none !important;
+
     }
+
+
 
     .hero-button:hover {
+
       background: white;
+
       border-color: white;
+
       color: var(--forest);
+
       transform: translateY(-3px);
+
     }
+
+
 
     /* SECTION HEADINGS */
+
     .portfolio-section {
+
       padding: 80px 0;
+
       background: #f3f6ed;
+
     }
+
+
 
     .portfolio-section.furniture-section {
+
       background: #e8eee4;
+
     }
+
+
 
     .section-heading {
+
       text-align: center;
+
       max-width: 700px;
+
       margin: 0 auto 38px;
+
     }
+
+
 
     .section-kicker {
+
       display: block;
+
       color: var(--green);
+
       font-size: 10px;
+
       font-weight: 800;
+
       letter-spacing: 3px;
+
       text-transform: uppercase;
+
       margin-bottom: 12px;
+
     }
+
+
 
     .section-heading h2 {
+
       color: var(--forest);
+
       font-size: clamp(2rem, 4vw, 3rem);
+
       font-weight: 800;
+
       letter-spacing: -1.5px;
+
       margin-bottom: 12px;
+
     }
+
+
 
     .section-heading p {
+
       color: #607064;
+
       font-size: 13px;
+
       line-height: 1.8;
+
       margin: 0;
+
     }
+
+
 
     /* IMAGE CARDS */
+
     .portfolio-grid {
+
       display: grid;
+
       grid-template-columns: repeat(3, minmax(0, 1fr));
+
       gap: 22px;
+
     }
+
+
 
     .portfolio-card {
+
       position: relative;
+
       display: block;
+
       min-height: 330px;
+
       height: 100%;
+
       overflow: hidden;
+
       border-radius: 17px;
+
       isolation: isolate;
+
       background: #203c2b;
+
       box-shadow: 0 8px 25px rgba(16,46,28,.09);
+
       text-decoration: none !important;
+
       color: white !important;
+
     }
+
+
 
     .portfolio-card::before {
+
       content: "";
+
       position: absolute;
+
       inset: 0;
+
       z-index: -2;
+
       background-image: var(--card-image);
+
       background-position: center;
+
       background-size: cover;
+
       transition: transform .65s ease;
+
     }
+
+
 
     .portfolio-card::after {
+
       content: "";
+
       position: absolute;
+
       inset: 0;
+
       z-index: -1;
+
       background: linear-gradient(
+
         180deg,
+
         rgba(5,20,12,.02) 15%,
+
         rgba(5,20,12,.20) 42%,
+
         rgba(5,20,12,.91) 100%
+
       );
+
       transition: background .35s ease;
+
     }
+
+
 
     .portfolio-card:hover::before,
+
     .portfolio-card:focus-visible::before {
+
       transform: scale(1.07);
+
     }
+
+
 
     .portfolio-card:hover {
+
       box-shadow: 0 18px 40px rgba(16,46,28,.20);
+
       transform: translateY(-4px);
+
     }
+
+
 
     .card-number {
+
       position: absolute;
+
       top: 19px;
+
       left: 19px;
+
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
+
       width: 42px;
+
       height: 42px;
+
       border: 1px solid rgba(255,255,255,.55);
+
       border-radius: 50%;
+
       background: rgba(10,35,22,.35);
+
       backdrop-filter: blur(8px);
+
       color: white;
+
       font-size: 10px;
+
       font-weight: 700;
+
     }
+
+
 
     .card-content {
+
       position: absolute;
+
       left: 0;
+
       right: 0;
+
       bottom: 0;
+
       padding: 25px;
+
     }
+
+
 
     .card-category {
+
       display: block;
+
       color: var(--lime);
+
       font-size: 9px;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
+
       font-weight: 800;
+
       margin-bottom: 9px;
+
     }
+
+
 
     .card-content h3 {
+
       color: white;
+
       font-size: 19px;
+
       line-height: 1.35;
+
       font-weight: 800;
+
       margin: 0 0 12px;
+
     }
+
+
 
     .card-action {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 10px;
+
       font-size: 10px;
+
       font-weight: 700;
+
       color: white;
+
     }
+
+
 
     .card-action i {
+
       color: var(--lime);
+
       transition: transform .3s ease;
+
     }
+
+
 
     .portfolio-card:hover .card-action i {
+
       transform: translateX(5px);
+
     }
+
+
 
     /* WIDE FEATURE CARD */
+
     .feature-card {
+
       grid-column: span 2;
+
       min-height: 350px;
+
     }
+
+
 
     /* CONTACT STRIP */
+
     .contact-strip {
+
       padding: 65px 0;
+
       text-align: center;
+
       color: white;
+
       background:
+
         linear-gradient(rgba(7,39,25,.92), rgba(7,39,25,.92)),
+
         url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80")
+
         center / cover;
+
     }
 
+
+
     .contact-strip h2 {
+
       font-size: clamp(1.8rem, 4vw, 2.7rem);
+
       font-weight: 800;
+
       margin-bottom: 12px;
+
     }
+
+
 
     .contact-strip h2 span { color: var(--lime); }
 
+
+
     .contact-strip p {
+
       color: rgba(255,255,255,.8);
+
       font-size: 13px;
+
       margin-bottom: 25px;
+
     }
+
+
 
     .contact-button {
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 10px;
+
       padding: 14px 23px;
+
       border-radius: 40px;
+
       background: white;
+
       color: var(--forest);
+
       font-size: 11px;
+
       font-weight: 800;
+
       text-decoration: none !important;
+
     }
+
+
 
     .contact-button:hover {
+
       background: var(--lime);
+
       color: var(--forest);
+
       transform: translateY(-3px);
+
     }
+
+
 
     /* FOOTER */
+
     .site-footer {
+
       padding: 23px 12px;
+
       background: #102b22;
+
       color: #d1d5db;
+
       text-align: center;
+
     }
 
+
+
     .site-footer p {
+
       margin: 0;
+
       font-size: 11px;
+
       letter-spacing: .3px;
+
     }
+
+
 
     .site-footer strong { color: white; }
 
+
+
     @keyframes reveal {
+
       from { opacity: 0; transform: translateY(20px); }
+
       to { opacity: 1; transform: translateY(0); }
+
     }
+
+
 
     /* RESPONSIVE */
+
     @media (max-width: 991px) {
+
       .portfolio-grid {
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
       }
 
+
+
       .portfolio-card { min-height: 310px; }
+
       .feature-card { grid-column: span 2; }
+
     }
 
+
+
     @media (max-width: 767px) {
+
       .navbar-brand img { max-height: 60px; }
+
       .navbar-collapse { padding: 12px 0; }
+
+
 
       .engineering-hero { min-height: 460px; }
 
+
+
       .hero-content {
+
         padding-top: 65px;
+
         padding-bottom: 70px;
+
       }
 
+
+
       .engineering-hero h1 {
+
         font-size: clamp(2.5rem, 10vw, 3.6rem);
+
         letter-spacing: -1.4px;
+
       }
+
+
 
       .hero-description { font-size: 13px; }
 
+
+
       .portfolio-section { padding: 58px 0; }
 
+
+
       .portfolio-grid {
+
         grid-template-columns: 1fr;
+
         gap: 17px;
+
       }
 
+
+
       .portfolio-card,
+
       .feature-card {
+
         grid-column: auto;
+
         min-height: 330px;
+
       }
+
+
 
       .card-content { padding: 23px; }
 
+
+
       .card-content h3 { font-size: 18px; }
 
+
+
       .contact-strip { padding: 55px 0; }
+
     }
+
+
 
     @media (prefers-reduced-motion: reduce) {
+
       html { scroll-behavior: auto; }
 
+
+
       *, *::before, *::after {
+
         transition-duration: .01ms !important;
+
         animation-duration: .01ms !important;
+
       }
+
     }
+
   </style>
+
 </head>
+
+
 
 <body>
 
+
+
   <!-- NAVIGATION -->
+
   <nav class="navbar navbar-expand-lg navbar-light">
+
     <div class="container">
 
+
+
       <a href="index.html" class="navbar-brand" aria-label="Zerah Nexus Home">
+
         <img src="imgs/Zerah Nexus logo.png" alt="Zerah Nexus Logo">
+
       </a>
 
+
+
       <button class="navbar-toggler" type="button"
+
         data-toggle="collapse" data-target="#mainNav"
+
         aria-controls="mainNav" aria-expanded="false"
+
         aria-label="Toggle navigation">
+
         <span class="navbar-toggler-icon"></span>
+
       </button>
 
+
+
       <div class="collapse navbar-collapse" id="mainNav">
+
         <ul class="navbar-nav ml-auto">
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#"
-              id="servicesMenu" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Services
-            </a>
-            <div class="dropdown-menu" aria-labelledby="servicesMenu">
-              <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding and Fabrication</a>
-              <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom &amp; Plumbing</a>
-              <a class="dropdown-item" href="painting-and-interior-design.html">Painting &amp; Interior Design</a>
-              <a class="dropdown-item" href="cabinetry-installation.html">Cabinetry Installation</a>
-            </div>
-          </li>
+
 
           <li class="nav-item dropdown">
+
             <a class="nav-link dropdown-toggle" href="#"
-              id="shopMenu" data-toggle="dropdown"
+
+              id="servicesMenu" data-toggle="dropdown"
+
               aria-haspopup="true" aria-expanded="false">
-              Shop
+
+              Services
+
             </a>
-            <div class="dropdown-menu" aria-labelledby="shopMenu">
-              <a class="dropdown-item" href="home-furniture.html">Home Furniture</a>
-              <a class="dropdown-item" href="office-furniture.html">Office Furniture</a>
-              <a class="dropdown-item" href="school-furniture.html">School Furniture</a>
-              <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Bar &amp; Restaurant Furniture</a>
-              <a class="dropdown-item" href="outdoor-furniture.html">Outdoor Furniture</a>
-              <a class="dropdown-item" href="hospital-supplies.html">Hospital Supplies</a>
+
+            <div class="dropdown-menu" aria-labelledby="servicesMenu">
+
+              <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding and Fabrication</a>
+
+              <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom &amp; Plumbing</a>
+
+              <a class="dropdown-item" href="painting-and-interior-design.html">Painting &amp; Interior Design</a>
+
+              <a class="dropdown-item" href="cabinetry-installation.html">Cabinetry Installation</a>
+
             </div>
+
           </li>
+
+
+
+          <li class="nav-item dropdown">
+
+            <a class="nav-link dropdown-toggle" href="#"
+
+              id="shopMenu" data-toggle="dropdown"
+
+              aria-haspopup="true" aria-expanded="false">
+
+              Shop
+
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="shopMenu">
+
+              <a class="dropdown-item" href="home-furniture.html">Home Furniture</a>
+
+              <a class="dropdown-item" href="office-furniture.html">Office Furniture</a>
+
+              <a class="dropdown-item" href="school-furniture.html">School Furniture</a>
+
+              <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Bar &amp; Restaurant Furniture</a>
+
+              <a class="dropdown-item" href="outdoor-furniture.html">Outdoor Furniture</a>
+
+              <a class="dropdown-item" href="hospital-supplies.html">Hospital Supplies</a>
+
+            </div>
+
+          </li>
+
+
 
           <li class="nav-item">
+
             <a class="nav-link" href="contact.html">Contact</a>
+
           </li>
 
+
+
         </ul>
+
       </div>
+
     </div>
+
   </nav>
 
 
+
+
+
   <!-- HERO -->
+
   <header class="engineering-hero">
+
     <div class="container hero-content">
 
+
+
       <span class="eyebrow">
+
         <i class="fas fa-drafting-compass"></i>
+
         Engineering &amp; Furniture
+
       </span>
 
+
+
       <h1>
+
         Built with Purpose.<br>
+
         <span>Designed to Last.</span>
+
       </h1>
 
+
+
       <p class="hero-description">
+
         Practical engineering, refined craftsmanship,
+
         and furniture solutions for modern spaces.
+
       </p>
 
+
+
       <a href="#engineering" class="hero-button">
+
         Explore Our Work
+
         <i class="fas fa-arrow-down"></i>
+
       </a>
 
+
+
     </div>
+
   </header>
 
 
+
+
+
   <!-- CONSTRUCTION ENGINEERING -->
+
   <main>
 
+
+
     <section class="portfolio-section" id="engineering">
+
       <div class="container">
 
+
+
         <div class="section-heading">
+
           <span class="section-kicker">01 / Construction</span>
+
           <h2>Engineering &amp; Design</h2>
+
           <p>Precision, functionality, and craftsmanship.</p>
+
         </div>
+
+
 
         <div class="portfolio-grid">
 
+
+
           <a href="precision-welding-and-fabrication.html"
+
              class="portfolio-card feature-card"
-             style="--card-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1400&q=85');">
+
+             style="--card-image: url('imgs/welding.jpg');">
+
+
 
             <span class="card-number">01</span>
 
+
+
             <div class="card-content">
+
               <span class="card-category">Metalwork &amp; Fabrication</span>
+
               <h3>Precision Welding &amp; Fabrication</h3>
+
               <span class="card-action">View Projects <i class="fas fa-arrow-right"></i></span>
+
             </div>
+
           </a>
 
+
+
           <a href="bathroom-and-plumbing.html"
+
              class="portfolio-card"
+
              style="--card-image: url('https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85');">
+
+
 
             <span class="card-number">02</span>
 
+
+
             <div class="card-content">
+
               <span class="card-category">Water &amp; Interiors</span>
+
               <h3>Bathroom &amp; Plumbing</h3>
+
               <span class="card-action">Explore <i class="fas fa-arrow-right"></i></span>
+
             </div>
+
           </a>
 
+
+
           <a href="painting-and-interior-design.html"
+
              class="portfolio-card"
+
              style="--card-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85');">
+
+
 
             <span class="card-number">03</span>
 
+
+
             <div class="card-content">
+
               <span class="card-category">Finishes &amp; Spaces</span>
+
               <h3>Painting &amp; Interior Design</h3>
+
               <span class="card-action">Explore <i class="fas fa-arrow-right"></i></span>
+
             </div>
+
           </a>
 
+
+
           <a href="cabinetry-installation.html"
+
              class="portfolio-card feature-card"
+
              style="--card-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85');">
+
+
 
             <span class="card-number">04</span>
 
+
+
             <div class="card-content">
+
               <span class="card-category">Custom Craftsmanship</span>
+
               <h3>Cabinetry Installation</h3>
+
               <span class="card-action">Discover More <i class="fas fa-arrow-right"></i></span>
+
             </div>
+
           </a>
 
+
+
         </div>
+
       </div>
+
     </section>
+
+
+
 
 
     <!-- FURNITURE -->
+
     <section class="portfolio-section furniture-section" id="furniture">
+
       <div class="container">
 
+
+
         <div class="section-heading">
+
           <span class="section-kicker">02 / Furniture Place</span>
+
           <h2>Spaces That Inspire</h2>
+
           <p>Thoughtful furniture for living, working, learning, and hospitality.</p>
+
         </div>
+
+
 
         <div class="portfolio-grid">
 
+
+
           <a href="home-furniture.html"
+
              class="portfolio-card"
+
              style="--card-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85');">
 
+
+
             <span class="card-number">01</span>
+
             <div class="card-content">
+
               <span class="card-category">Living Spaces</span>
+
               <h3>Home Furniture</h3>
+
               <span class="card-action">View Collection <i class="fas fa-arrow-right"></i></span>
+
             </div>
+
           </a>
+
+
 
           <a href="office-furniture.html"
+
              class="portfolio-card"
+
              style="--card-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85');">
 
+
+
             <span class="card-number">02</span>
+
             <div class="card-content">
+
               <span class="card-category">Professional Spaces</span>
+
               <h3>Office Furniture</h3>
+
               <span class="card-action">View Collection <i class="fas fa-arrow-right"></i></span>
+
             </div>
+
           </a>
+
+
 
           <a href="school-furniture.html"
+
              class="portfolio-card"
+
              style="--card-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=85');">
 
+
+
             <span class="card-number">03</span>
+
             <div class="card-content">
+
               <span class="card-category">Learning Environments</span>
+
               <h3>School Furniture</h3>
+
               <span class="card-action">View Collection <i class="fas fa-arrow-right"></i></span>
+
             </div>
+
           </a>
+
+
 
           <a href="bar-and-restaurant-furniture.html"
+
              class="portfolio-card"
+
              style="--card-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85');">
 
+
+
             <span class="card-number">04</span>
+
             <div class="card-content">
+
               <span class="card-category">Hospitality</span>
+
               <h3>Bar &amp; Restaurant Furniture</h3>
+
               <span class="card-action">View Collection <i class="fas fa-arrow-right"></i></span>
+
             </div>
+
           </a>
+
+
 
           <a href="outdoor-furniture.html"
+
              class="portfolio-card"
+
              style="--card-image: url('https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1000&q=85');">
 
+
+
             <span class="card-number">05</span>
+
             <div class="card-content">
+
               <span class="card-category">Outdoor Living</span>
+
               <h3>Outdoor Furniture</h3>
+
               <span class="card-action">View Collection <i class="fas fa-arrow-right"></i></span>
+
             </div>
+
           </a>
+
+
 
           <a href="hospital-supplies.html"
+
              class="portfolio-card"
+
              style="--card-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=85');">
 
+
+
             <span class="card-number">06</span>
+
             <div class="card-content">
+
               <span class="card-category">Healthcare Spaces</span>
+
               <h3>Hospital Supplies</h3>
+
               <span class="card-action">View Collection <i class="fas fa-arrow-right"></i></span>
+
             </div>
+
           </a>
 
+
+
         </div>
+
       </div>
+
     </section>
+
+
+
 
 
     <!-- CONTACT -->
+
     <section class="contact-strip">
+
       <div class="container">
+
+
 
         <h2>Have a Project in <span>Mind?</span></h2>
 
+
+
         <p>Let's discuss your next build, installation, or furniture order.</p>
 
+
+
         <a href="contact.html" class="contact-button">
+
           Get in Touch
+
           <i class="fas fa-arrow-right"></i>
+
         </a>
 
+
+
       </div>
+
     </section>
+
+
 
   </main>
 
 
+
+
+
   <!-- FOOTER -->
+
   <footer class="site-footer">
+
     <div class="container">
+
       <p>&copy; 2026 <strong>Zerah-Nexus</strong>. All rights reserved.</p>
+
     </div>
+
   </footer>
 
 
+
+
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 
+
+
 </body>
+
 </html>
