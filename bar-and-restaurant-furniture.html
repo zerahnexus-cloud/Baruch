@@ -1,205 +1,1966 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bar and Restaurant Furniture</title>
+    <meta name="theme-color" content="#32012F">
 
-    <!-- Bootstrap & Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <title>Bar & Restaurant Furniture | EcoHub Solution</title>
+    <meta name="description" content="Discover stylish, durable and customizable bar, restaurant, hotel and café furniture from EcoHub Solution in Nairobi, Kenya.">
+
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
+    <!-- Premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        .navbar {
-            background-color: #32012F;
-        }
-        .navbar-nav .nav-link {
-            color: #fff !important;
+        :root {
+            --purple: #32012F;
+            --purple-deep: #20001E;
+            --purple-soft: #4a1945;
+            --gold: #d5ad63;
+            --gold-light: #f0d9a8;
+            --cream: #f8f5ef;
+            --white: #ffffff;
+            --text: #27222a;
+            --muted: #746c76;
+            --border: rgba(50, 1, 47, 0.11);
+            --shadow: 0 18px 55px rgba(37, 10, 34, 0.09);
+            --radius: 20px;
         }
 
-        .section-title {
-            color: #ffcc00;
-            font-weight: bold;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 95px;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body, button, input, textarea, select {
+            font-family: "DM Sans", sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        button, a, input, textarea, select {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 44px));
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 26px;
+            height: 1px;
+            background: currentColor;
+        }
+
+        h1, h2, h3 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-weight: 600;
+            line-height: 1.17;
+        }
+
+        .section-heading {
+            max-width: 660px;
+            margin: 0 auto 44px;
             text-align: center;
-            margin: 40px 0 20px;
-        }
-        .section-title i {
-            margin-right: 8px;
         }
 
-        .card {
-            border: none;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            margin-bottom: 20px;
-        }
-        .card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .card img {
-            height: 220px;
-            object-fit: cover;
-        }
-        .card-body {
-            background: #f8f9fa;
+        .section-heading .eyebrow {
+            margin-bottom: 14px;
         }
 
-        .btn-quote {
-            background-color: #ffcc00;
-            border: none;
-            color: #000;
-            font-weight: bold;
+        .section-heading h2 {
+            font-size: clamp(30px, 4vw, 45px);
+            color: var(--purple);
+            margin-bottom: 14px;
+            letter-spacing: -0.8px;
         }
 
-        .footer {
-            background-color: #32012F;
-            color: #fff;
-            padding: 40px 0;
-            margin-top: 40px;
-        }
-        .footer h3 {
-            color: #ffcc00;
-        }
-        .footer a {
-            color: #fff;
-        }
-        .footer a:hover {
-            text-decoration: underline;
+        .section-heading p {
+            color: var(--muted);
+            max-width: 580px;
+            margin: 0 auto;
+            font-size: 14px;
         }
 
-        .whatsapp-button {
+        .btn {
+            min-height: 49px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 22px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .3px;
+            transition: .3s ease;
+            cursor: pointer;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--purple-deep);
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            color: var(--purple-deep);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light {
+            border-color: rgba(255,255,255,.5);
+            color: white;
+            background: rgba(255,255,255,.04);
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--purple);
+        }
+
+        .btn-purple {
+            background: var(--purple);
+            color: white;
+        }
+
+        .btn-purple:hover {
+            background: var(--purple-soft);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            width: 100%;
+            border-bottom: 1px solid rgba(255,255,255,.15);
+            background: rgba(29, 0, 27, .38);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .nav-inner {
+            min-height: 88px;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            margin: 20px;
+            justify-content: space-between;
+            gap: 28px;
         }
-        .whatsapp-button img {
-            margin-right: 8px;
+
+        .brand {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .brand img {
+            width: auto;
+            height: 62px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+            list-style: none;
+        }
+
+        .nav-links > li {
+            position: relative;
+        }
+
+        .nav-links > li > a {
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            transition: color .25s ease;
+        }
+
+        .nav-links > li > a:hover,
+        .nav-links > li > a.active {
+            color: var(--gold-light);
+        }
+
+        .nav-cta {
+            padding: 11px 17px;
+            border: 1px solid rgba(213,173,99,.8);
+            color: var(--gold-light) !important;
+            border-radius: 4px;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--purple-deep) !important;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 18px);
+            left: 0;
+            min-width: 245px;
+            padding: 9px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: .22s ease;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 12px;
+            border-radius: 5px;
+            color: var(--text);
+            font-size: 12px;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--cream);
+            color: var(--purple);
+        }
+
+        .dropdown:hover .dropdown-menu,
+        .dropdown:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 43px;
+            height: 43px;
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 5px;
+            color: white;
+            background: transparent;
+            font-size: 23px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 680px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--purple-deep);
+            color: white;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(26,0,24,.95) 0%, rgba(35,0,32,.82) 43%, rgba(35,0,32,.25) 100%),
+                linear-gradient(0deg, rgba(24,0,22,.45), transparent 55%),
+                url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2200&q=85")
+                center 54% / cover no-repeat;
+            transform: scale(1.025);
+            animation: heroReveal 1.3s ease both;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            right: -190px;
+            bottom: -260px;
+            border: 1px solid rgba(213,173,99,.32);
+            border-radius: 50%;
+            box-shadow: 0 0 0 45px rgba(213,173,99,.035),
+                        0 0 0 90px rgba(213,173,99,.025);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+            padding: 155px 0 105px;
+            animation: contentReveal .9s .15s ease both;
+        }
+
+        .hero .eyebrow {
+            margin-bottom: 23px;
+        }
+
+        .hero h1 {
+            max-width: 720px;
+            margin-bottom: 25px;
+            font-size: clamp(43px, 6.5vw, 76px);
+            letter-spacing: -1.8px;
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 540px;
+            color: rgba(255,255,255,.79);
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 32px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 42px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,.18);
+        }
+
+        .hero-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: rgba(255,255,255,.76);
+            font-size: 11px;
+        }
+
+        .hero-meta i {
+            color: var(--gold);
+            font-size: 15px;
+        }
+
+        /* TRUST STRIP */
+        .trust-strip {
+            background: var(--cream);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 24px 0;
+        }
+
+        .trust-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 15px;
+            border-right: 1px solid var(--border);
+        }
+
+        .trust-item:last-child {
+            border-right: 0;
+        }
+
+        .trust-item i {
+            color: var(--gold);
+            font-size: 23px;
+        }
+
+        .trust-item strong {
+            display: block;
+            color: var(--purple);
+            font-size: 12px;
+        }
+
+        .trust-item small {
+            display: block;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        /* PRODUCT COLLECTIONS */
+        .collections {
+            padding: 105px 0 100px;
+        }
+
+        .collection-section {
+            margin-bottom: 68px;
+        }
+
+        .collection-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .collection-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 23px;
+        }
+
+        .collection-heading .eyebrow {
+            margin-bottom: 9px;
+        }
+
+        .collection-heading h3 {
+            font-size: clamp(25px, 3vw, 34px);
+            color: var(--purple);
+        }
+
+        .collection-heading > p {
+            max-width: 360px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 23px;
+        }
+
+        .product-card {
+            min-width: 0;
+            overflow: hidden;
+            background: white;
+            border: 1px solid rgba(50,1,47,.09);
+            border-radius: 13px;
+            box-shadow: 0 8px 28px rgba(37,10,34,.045);
+            transition: transform .35s ease, box-shadow .35s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+        }
+
+        .product-image {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+            background: var(--cream);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .65s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.06);
+        }
+
+        .product-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 35px;
+            height: 35px;
+            display: grid;
+            place-items: center;
+            color: white;
+            background: rgba(32,0,30,.76);
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 700;
+            backdrop-filter: blur(8px);
+        }
+
+        .product-body {
+            padding: 22px 22px 24px;
+        }
+
+        .product-category {
+            color: #a17a37;
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            margin-bottom: 8px;
+        }
+
+        .product-body h4 {
+            margin: 0 0 10px;
+            color: var(--purple);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .product-body p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+            margin-bottom: 17px;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--purple);
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .product-link i {
+            color: #b88b43;
+            transition: transform .25s ease;
+        }
+
+        .product-link:hover {
+            color: #8b6329;
+        }
+
+        .product-link:hover i {
+            transform: translateX(4px);
+        }
+
+        /* MID-PAGE BRAND STATEMENT */
+        .brand-statement {
+            position: relative;
+            overflow: hidden;
+            padding: 83px 0;
+            background:
+                radial-gradient(circle at 95% 15%, rgba(213,173,99,.15), transparent 27%),
+                var(--purple);
+            color: white;
+        }
+
+        .statement-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .statement-copy .eyebrow {
+            margin-bottom: 18px;
+        }
+
+        .statement-copy h2 {
+            max-width: 540px;
+            font-size: clamp(33px, 4vw, 48px);
+            margin-bottom: 19px;
+        }
+
+        .statement-copy h2 span {
+            color: var(--gold-light);
+            font-style: italic;
+        }
+
+        .statement-copy p {
+            max-width: 500px;
+            color: rgba(255,255,255,.72);
+            font-size: 13px;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .statement-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px 24px;
+        }
+
+        .statement-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .statement-feature i {
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            width: 35px;
+            height: 35px;
+            color: var(--gold-light);
+            border: 1px solid rgba(213,173,99,.4);
+            border-radius: 8px;
+        }
+
+        .statement-feature strong {
+            display: block;
+            margin-bottom: 4px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .statement-feature span {
+            display: block;
+            color: rgba(255,255,255,.63);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        .statement-visual {
+            position: relative;
+            min-height: 390px;
+        }
+
+        .statement-visual img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,.17);
+        }
+
+        .statement-visual::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(32,0,30,.46), transparent 65%);
+            border-radius: 12px;
+        }
+
+        .visual-caption {
+            position: absolute;
+            z-index: 2;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 16px 18px;
+            background: rgba(32,0,30,.7);
+            border: 1px solid rgba(255,255,255,.17);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .visual-caption strong {
+            display: block;
+            color: white;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 19px;
+            font-weight: 500;
+        }
+
+        .visual-caption span {
+            color: var(--gold-light);
+            font-size: 10px;
+        }
+
+        /* WHY CHOOSE US */
+        .why-us {
+            padding: 100px 0;
+            background: var(--cream);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .why-card {
+            padding: 27px 23px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            transition: transform .3s ease, border-color .3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(213,173,99,.75);
+        }
+
+        .why-icon {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 19px;
+            color: var(--purple);
+            background: #f6ecda;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        .why-card h3 {
+            margin-bottom: 9px;
+            color: var(--purple);
+            font-size: 19px;
+        }
+
+        .why-card p {
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        /* CUSTOMER REQUEST */
+        .request-section {
+            padding: 105px 0;
+            background: white;
+        }
+
+        .request-grid {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 65px;
+            align-items: start;
+        }
+
+        .request-copy {
+            padding-top: 10px;
+        }
+
+        .request-copy .eyebrow {
+            margin-bottom: 17px;
+        }
+
+        .request-copy h2 {
+            margin-bottom: 18px;
+            color: var(--purple);
+            font-size: clamp(34px, 4vw, 47px);
+        }
+
+        .request-copy > p {
+            margin-bottom: 26px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .request-points {
+            list-style: none;
+            display: grid;
+            gap: 15px;
+            margin-bottom: 27px;
+        }
+
+        .request-points li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #514852;
+            font-size: 12px;
+        }
+
+        .request-points i {
+            margin-top: 2px;
+            color: #a67d39;
+            font-size: 17px;
+        }
+
+        .contact-note {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 23px;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-note > i {
+            width: 43px;
+            height: 43px;
+            display: grid;
+            place-items: center;
+            color: white;
+            background: var(--purple);
+            border-radius: 50%;
+            font-size: 18px;
+        }
+
+        .contact-note strong {
+            display: block;
+            color: var(--purple);
+            font-size: 12px;
+        }
+
+        .contact-note span {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .request-form {
+            padding: 35px;
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            box-shadow: 0 14px 45px rgba(37,10,34,.055);
+        }
+
+        .request-form h3 {
+            margin-bottom: 7px;
+            color: var(--purple);
+            font-size: 26px;
+        }
+
+        .request-form > p {
+            margin-bottom: 25px;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+            min-width: 0;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #403641;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            min-width: 0;
+            padding: 13px 14px;
+            color: var(--text);
+            background: white;
+            border: 1px solid #e5dfe5;
+            border-radius: 6px;
+            outline: none;
+            font-size: 12px;
+            transition: border-color .2s ease, box-shadow .2s ease;
+        }
+
+        .form-group input,
+        .form-group select {
+            min-height: 47px;
+        }
+
+        .form-group textarea {
+            min-height: 115px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(213,173,99,.15);
+        }
+
+        .form-submit {
+            width: 100%;
+            margin-top: 2px;
+        }
+
+        .form-disclaimer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            margin-top: 13px;
+            color: var(--muted);
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .form-disclaimer i {
+            color: #238b55;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            position: relative;
+            overflow: hidden;
+            padding: 74px 0;
+            background:
+                linear-gradient(90deg, rgba(32,0,30,.96), rgba(50,1,47,.83)),
+                url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=80")
+                center 52% / cover no-repeat;
+            color: white;
+        }
+
+        .cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+        }
+
+        .cta-inner .eyebrow {
+            margin-bottom: 13px;
+        }
+
+        .cta-inner h2 {
+            max-width: 680px;
+            font-size: clamp(30px, 4vw, 43px);
+            margin-bottom: 12px;
+        }
+
+        .cta-inner p {
+            color: rgba(255,255,255,.72);
+            font-size: 12px;
+        }
+
+        .cta-inner .btn {
+            flex-shrink: 0;
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 64px 0 0;
+            background: #1c001a;
+            color: white;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.25fr .85fr 1fr;
+            gap: 55px;
+            padding-bottom: 45px;
+        }
+
+        .footer-brand img {
+            width: auto;
+            height: 65px;
+            max-width: 190px;
+            object-fit: contain;
+            object-position: left center;
+            margin-bottom: 19px;
+        }
+
+        .footer-brand p {
+            max-width: 310px;
+            color: rgba(255,255,255,.62);
+            font-size: 11px;
+            line-height: 1.9;
+        }
+
+        .footer h3 {
+            margin-bottom: 20px;
+            color: var(--gold-light);
+            font-family: "DM Sans", sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .7px;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: grid;
+            gap: 11px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,.7);
+            font-size: 11px;
+            transition: color .2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-contact {
+            display: grid;
+            gap: 15px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            color: rgba(255,255,255,.7);
+            font-size: 11px;
+            overflow-wrap: anywhere;
+        }
+
+        .footer-contact i {
+            color: var(--gold);
+            font-size: 15px;
+        }
+
+        .footer-bottom {
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,.11);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,.48);
+            font-size: 10px;
+        }
+
+        .footer-bottom span {
+            color: var(--gold-light);
+        }
+
+        /* FLOATING WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            z-index: 900;
+            right: 22px;
+            bottom: 22px;
+            width: 56px;
+            height: 56px;
+            display: grid;
+            place-items: center;
+            color: white;
+            background: #20b968;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 8px 25px rgba(0,0,0,.2);
+            font-size: 28px;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .whatsapp-float:hover {
+            color: white;
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 12px 30px rgba(0,0,0,.25);
+        }
+
+        /* SCROLL REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes heroReveal {
+            from { opacity: .65; transform: scale(1.07); }
+            to { opacity: 1; transform: scale(1.025); }
+        }
+
+        @keyframes contentReveal {
+            from { opacity: 0; transform: translateY(22px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* TABLET */
+        @media (max-width: 1000px) {
+            .nav-links { gap: 17px; }
+            .nav-links > li > a { font-size: 11px; }
+            .brand img { height: 55px; }
+            .hero { min-height: 640px; }
+            .product-grid { gap: 16px; }
+            .product-image { height: 225px; }
+            .product-body { padding: 19px; }
+            .statement-grid { gap: 38px; }
+            .statement-visual { min-height: 340px; }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .request-grid { gap: 35px; }
+            .request-form { padding: 27px; }
+            .footer-grid { gap: 30px; }
+        }
+
+        @media (max-width: 760px) {
+            .container { width: min(100% - 34px, 600px); }
+
+            .nav-inner { min-height: 76px; }
+            .brand img { height: 51px; }
+            .nav-toggle { display: grid; place-items: center; }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                display: none;
+                align-items: stretch;
+                gap: 0;
+                padding: 12px 20px 20px;
+                background: rgba(32,0,30,.98);
+                border-top: 1px solid rgba(255,255,255,.12);
+                box-shadow: 0 20px 30px rgba(0,0,0,.15);
+            }
+
+            .nav-links.open { display: flex; flex-direction: column; }
+
+            .nav-links > li > a {
+                display: block;
+                padding: 13px 5px;
+                font-size: 13px;
+            }
+
+            .nav-cta {
+                display: inline-block !important;
+                width: fit-content;
+                margin-top: 8px;
+                padding: 10px 15px !important;
+            }
+
+            .dropdown-menu {
+                position: static;
+                display: none;
+                min-width: 0;
+                padding: 5px 8px;
+                background: rgba(255,255,255,.07);
+                border: 0;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                transition: none;
+            }
+
+            .dropdown.open .dropdown-menu { display: block; }
+
+            .dropdown-menu a {
+                padding: 10px;
+                color: rgba(255,255,255,.82);
+            }
+
+            .dropdown-menu a:hover {
+                color: white;
+                background: rgba(255,255,255,.1);
+            }
+
+            .hero { min-height: 640px; }
+            .hero::before {
+                background:
+                    linear-gradient(90deg, rgba(26,0,24,.92), rgba(35,0,32,.67)),
+                    linear-gradient(0deg, rgba(24,0,22,.5), transparent),
+                    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80")
+                    center / cover no-repeat;
+            }
+
+            .hero-content { padding: 135px 0 72px; }
+            .hero h1 { font-size: clamp(42px, 9vw, 61px); }
+            .hero p { font-size: 13px; }
+            .hero-meta { gap: 14px 20px; margin-top: 30px; }
+            .hero-meta span { font-size: 10px; }
+
+            .trust-grid { grid-template-columns: 1fr 1fr; padding: 12px 0; }
+            .trust-item { justify-content: flex-start; padding: 14px 10px; }
+            .trust-item:nth-child(2) { border-right: 0; }
+            .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+
+            .collections { padding: 75px 0; }
+            .section-heading { margin-bottom: 35px; }
+            .collection-section { margin-bottom: 50px; }
+            .collection-heading { display: block; }
+            .collection-heading > p { margin-top: 9px; }
+            .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+            .product-image { height: 205px; }
+            .product-body { padding: 16px; }
+            .product-body h4 { font-size: 18px; }
+            .product-body p { font-size: 11px; }
+
+            .brand-statement { padding: 70px 0; }
+            .statement-grid { grid-template-columns: 1fr; gap: 34px; }
+            .statement-visual { min-height: 340px; }
+
+            .why-us { padding: 75px 0; }
+            .why-grid { gap: 13px; }
+            .why-card { padding: 21px 17px; }
+
+            .request-section { padding: 75px 0; }
+            .request-grid { grid-template-columns: 1fr; gap: 30px; }
+            .request-form { padding: 24px; }
+
+            .cta-inner { align-items: flex-start; flex-direction: column; gap: 23px; }
+            .final-cta { padding: 60px 0; }
+
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 35px 24px; }
+            .footer-brand { grid-column: 1 / -1; }
+        }
+
+        @media (max-width: 460px) {
+            .container { width: calc(100% - 30px); }
+            .hero { min-height: 615px; }
+            .hero h1 { font-size: 42px; letter-spacing: -1px; }
+            .hero-actions { align-items: stretch; flex-direction: column; max-width: 260px; }
+            .hero-actions .btn { width: 100%; }
+            .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+            .trust-item { gap: 9px; padding: 13px 5px; }
+            .trust-item i { font-size: 19px; }
+            .trust-item strong { font-size: 10px; }
+            .trust-item small { font-size: 9px; }
+
+            .product-grid { grid-template-columns: 1fr; gap: 18px; }
+            .product-image { height: 250px; }
+            .product-body { padding: 20px; }
+
+            .statement-features { gap: 19px 12px; }
+            .statement-feature { gap: 9px; }
+            .statement-feature strong { font-size: 11px; }
+            .statement-feature span { font-size: 10px; }
+            .statement-visual { min-height: 285px; }
+
+            .why-grid { grid-template-columns: 1fr 1fr; }
+            .why-card { padding: 18px 14px; }
+            .why-card h3 { font-size: 17px; }
+
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            .request-form { padding: 21px 17px; }
+            .request-form h3 { font-size: 23px; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .footer-brand { grid-column: auto; }
+            .footer-bottom { align-items: flex-start; flex-direction: column; gap: 7px; }
+
+            .whatsapp-float { right: 14px; bottom: 14px; width: 51px; height: 51px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+
+            .reveal { opacity: 1; transform: none; }
         }
     </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg py-3">
-    <div class="container">
-        <a href="index.html" class="navbar-brand">
-            <img src="imgs/ecoeco.png" height="70" alt="EcoSolution Hub Logo">
+<!-- NAVIGATION -->
+<header class="navbar">
+    <div class="container nav-inner">
+        <a href="index.html" class="brand" aria-label="EcoHub Solution home">
+            <img src="imgs/Zerah.png" alt="EcoHub Solution Logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu"
+                aria-expanded="false" aria-controls="navLinks">
+            <i class="bi bi-list"></i>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" data-toggle="dropdown">Construction Engineering</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding & Fabrication</a>
-                        <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom & Plumbing</a>
-                        <a class="dropdown-item" href="painting-and-interior-design.html">Painting & Interior Design</a>
-                        <a class="dropdown-item" href="cabinetry-installation.html">Cabinetry Installation</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">Furniture Place</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="home-furniture.html">Home Furniture</a>
-                        <a class="dropdown-item" href="office-furniture.html">Office Furniture</a>
-                        <a class="dropdown-item" href="school-furniture.html">School Furniture</a>
-                        <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Bar & Restaurant Furniture</a>
-                        <a class="dropdown-item" href="outdoor-furniture.html">Outdoor Furniture</a>
-                        <a class="dropdown-item" href="hospital-supplies.html">Hospital Supplies</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="about_us.html">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
+        <ul class="nav-links" id="navLinks">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" aria-expanded="false">Construction Engineering <i class="bi bi-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="precision-welding-and-fabrication.html">Precision Welding &amp; Fabrication</a>
+                    <a href="bathroom-and-plumbing.html">Bathroom &amp; Plumbing</a>
+                    <a href="painting-and-interior-design.html">Painting &amp; Interior Design</a>
+                    <a href="cabinetry-installation.html">Cabinetry Installation</a>
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle active" aria-expanded="false">Furniture Place <i class="bi bi-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="home-furniture.html">Home Furniture</a>
+                    <a href="office-furniture.html">Office Furniture</a>
+                    <a href="school-furniture.html">School Furniture</a>
+                    <a href="bar-and-restaurant-furniture.html">Bar &amp; Restaurant Furniture</a>
+                    <a href="outdoor-furniture.html">Outdoor Furniture</a>
+                    <a href="hospital-supplies.html">Hospital Supplies</a>
+                </div>
+            </li>
+
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="contact.html" class="nav-cta">Contact Us <i class="bi bi-arrow-up-right"></i></a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="eyebrow">EcoHub Solution · Hospitality Collection</span>
+
+                <h1>Furniture that makes every <span>moment memorable.</span></h1>
+
+                <p>
+                    We design and supply high-quality furniture that elevates dining experiences —
+                    from casual cafés to luxury restaurants and bars. Create a space that brings
+                    people together and keeps them coming back.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#collections" class="btn btn-gold">
+                        Explore Our Collection <i class="bi bi-arrow-down-right"></i>
+                    </a>
+                    <a href="#request" class="btn btn-outline-light">
+                        Request a Quote <i class="bi bi-arrow-up-right"></i>
+                    </a>
+                </div>
+
+                <div class="hero-meta">
+                    <span><i class="bi bi-check-circle"></i> Durable &amp; stylish</span>
+                    <span><i class="bi bi-palette"></i> Custom finishes</span>
+                    <span><i class="bi bi-currency-exchange"></i> Competitive pricing</span>
+                </div>
+            </div>
         </div>
-    </div>
-</nav>
+    </section>
 
-<!-- HERO -->
-<section class="bg-light p-5 text-center">
-    <h2>Elegant Bar & Restaurant Furniture for Memorable Dining</h2>
-    <p>We design and supply high-quality furniture that elevates dining experiences — from casual cafés to luxury restaurants and bars.</p>
-</section>
+    <!-- TRUST STRIP -->
+    <section class="trust-strip" aria-label="Our furniture benefits">
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <i class="bi bi-gem"></i>
+                <div>
+                    <strong>Contemporary Design</strong>
+                    <small>Made for modern spaces</small>
+                </div>
+            </div>
+            <div class="trust-item">
+                <i class="bi bi-shield-check"></i>
+                <div>
+                    <strong>Built for Everyday Use</strong>
+                    <small>Practical and durable</small>
+                </div>
+            </div>
+            <div class="trust-item">
+                <i class="bi bi-sliders"></i>
+                <div>
+                    <strong>Customizable Options</strong>
+                    <small>Finishes to suit your brand</small>
+                </div>
+            </div>
+            <div class="trust-item">
+                <i class="bi bi-chat-square-text"></i>
+                <div>
+                    <strong>Personalized Support</strong>
+                    <small>Tell us what you need</small>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- RESTAURANT FURNITURE -->
-<h3 class="section-title"><i class="bi bi-cup-hot"></i>Restaurant Dining Sets</h3>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4"><div class="card"><img src="imgs/resres.jpeg" class="card-img-top"><div class="card-body"><p>Vibrant orange four-seater perfect for modern eateries.</p></div></div></div>
-        <div class="col-md-4"><div class="card"><img src="imgs/res222.jpg" class="card-img-top"><div class="card-body"><p>Classic black four-seater for sleek restaurant interiors.</p></div></div></div>
-        <div class="col-md-4"><div class="card"><img src="imgs/resyellow.jpeg" class="card-img-top"><div class="card-body"><p>Bright yellow seating for casual and lively dining spaces.</p></div></div></div>
-    </div>
-</div>
+    <!-- PRODUCT COLLECTIONS -->
+    <section class="collections" id="collections">
+        <div class="container">
 
-<!-- BAR STOOLS & HIGH TABLES -->
-<h3 class="section-title"><i class="bi bi-glass"></i>Bar Stools & High Tables</h3>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4"><div class="card"><img src="imgs/dining1.jpeg" class="card-img-top"><div class="card-body"><p>Minimalist high bar stools with round table — ideal for bistros.</p></div></div></div>
-        <div class="col-md-4"><div class="card"><img src="imgs/brzzz.jpeg" class="card-img-top"><div class="card-body"><p>Industrial-style square table with four cushioned bar stools.</p></div></div></div>
-        <div class="col-md-4"><div class="card"><img src="imgs/Awesome Wood Project Ides.jpeg" class="card-img-top"><div class="card-body"><p>Metal bar stools with wooden seats for rustic vibes.</p></div></div></div>
-    </div>
-</div>
+            <div class="section-heading reveal">
+                <span class="eyebrow">Explore the collection</span>
+                <h2>Spaces designed to bring people together</h2>
+                <p>
+                    From welcoming dining rooms to stylish bar counters, find furniture
+                    that complements your atmosphere, service and brand.
+                </p>
+            </div>
 
-<!-- HOTEL & CAFE FURNITURE -->
-<h3 class="section-title"><i class="bi bi-house-door"></i>Hotel & Café Furniture</h3>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4"><div class="card"><img src="imgs/res4.jpeg" class="card-img-top"><div class="card-body"><p>Elegant wooden dining set designed for hotel lounges.</p></div></div></div>
-        <div class="col-md-4"><div class="card"><img src="imgs/ca4492c8-061b-4710-a2f3-704075988e61.jpeg" class="card-img-top"><div class="card-body"><p>Compact café tables with comfortable seating.</p></div></div></div>
-        <div class="col-md-4"><div class="card"><img src="imgs/res6.jpeg" class="card-img-top"><div class="card-body"><p>Stylish high-back chairs for luxury dining areas.</p></div></div></div>
-    </div>
-</div>
+            <!-- RESTAURANT FURNITURE -->
+            <section class="collection-section">
+                <div class="collection-heading reveal">
+                    <div>
+                        <span class="eyebrow">01 / Dining</span>
+                        <h3>Restaurant Dining Sets</h3>
+                    </div>
+                    <p>Comfortable, attractive seating for everyday dining and special occasions.</p>
+                </div>
 
-<!-- WHY CHOOSE US -->
-<div class="container my-4">
-    <h3 class="section-title"><i class="bi bi-check-circle"></i>Why Choose Our Bar & Restaurant Furniture?</h3>
-    <ul>
-        <li><strong>Durable & Stylish:</strong> Made to last with contemporary designs.</li>
-        <li><strong>Customizable:</strong> Colors, materials, and sizes to match your brand.</li>
-        <li><strong>Comfort-Focused:</strong> Designed for customer satisfaction.</li>
-        <li><strong>Affordable:</strong> Competitive pricing without compromising quality.</li>
-    </ul>
-</div>
+                <div class="product-grid">
+                    <article class="product-card reveal">
+                        <div class="product-image">
+                            <img src="imgs/resres.jpeg" alt="Vibrant orange four-seater restaurant furniture" loading="lazy">
+                            <span class="product-number">01</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-category">Restaurant collection</div>
+                            <h4>Vibrant Dining Sets</h4>
+                            <p>Vibrant orange four-seater perfect for modern eateries.</p>
+                            <a href="#request" class="product-link" data-product="Vibrant Dining Sets">Enquire about this style <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-<!-- WHATSAPP -->
-<div class="whatsapp-button">
-    <a href="https://wa.me/742082219" target="_blank">
-        <img src="imgs/wappicon.png" alt="WhatsApp Icon" width="44" height="44"> Chat on WhatsApp
-    </a>
-</div>
+                    <article class="product-card reveal">
+                        <div class="product-image">
+                            <img src="imgs/res222.jpg" alt="Classic black four-seater restaurant furniture" loading="lazy">
+                            <span class="product-number">02</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-category">Restaurant collection</div>
+                            <h4>Classic Black Dining</h4>
+                            <p>Classic black four-seater for sleek restaurant interiors.</p>
+                            <a href="#request" class="product-link" data-product="Classic Black Dining">Enquire about this style <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="product-card reveal">
+                        <div class="product-image">
+                            <img src="imgs/resyellow.jpeg" alt="Bright yellow restaurant dining furniture" loading="lazy">
+                            <span class="product-number">03</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-category">Restaurant collection</div>
+                            <h4>Bright Casual Seating</h4>
+                            <p>Bright yellow seating for casual and lively dining spaces.</p>
+                            <a href="#request" class="product-link" data-product="Bright Casual Seating">Enquire about this style <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- BAR STOOLS -->
+            <section class="collection-section">
+                <div class="collection-heading reveal">
+                    <div>
+                        <span class="eyebrow">02 / Bar &amp; Bistro</span>
+                        <h3>Bar Stools &amp; High Tables</h3>
+                    </div>
+                    <p>Give bar counters, social corners and bistro spaces a distinctive look.</p>
+                </div>
+
+                <div class="product-grid">
+                    <article class="product-card reveal">
+                        <div class="product-image">
+                            <img src="imgs/dining1.jpeg" alt="Minimalist high bar stools and round table" loading="lazy">
+                            <span class="product-number">04</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-category">Bar collection</div>
+                            <h4>Minimalist Bar Sets</h4>
+                            <p>Minimalist high bar stools with round table — ideal for bistros.</p>
+                            <a href="#request" class="product-link" data-product="Minimalist Bar Sets">Enquire about this style <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="product-card reveal">
+                        <div class="product-image">
+                            <img src="imgs/brzzz.jpeg" alt="Industrial square high table with cushioned stools" loading="lazy">
+                            <span class="product-number">05</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-category">Bar collection</div>
+                            <h4>Industrial Bar Seating</h4>
+                            <p>Industrial-style square table with four cushioned bar stools.</p>
+                            <a href="#request" class="product-link" data-product="Industrial Bar Seating">Enquire about this style <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="product-card reveal">
+                        <div class="product-image">
+                            <img src="imgs/Awesome Wood Project Ides.jpeg" alt="Metal bar stools with wooden seats" loading="lazy">
+                            <span class="product-number">06</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-category">Bar collection</div>
+                            <h4>Wood &amp; Metal Stools</h4>
+                            <p>Metal bar stools with wooden seats for rustic vibes.</p>
+                            <a href="#request" class="product-link" data-product="Wood and Metal Stools">Enquire about this style <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- HOTEL AND CAFE -->
+            <section class="collection-section">
+                <div class="collection-heading reveal">
+                    <div>
+                        <span class="eyebrow">03 / Hospitality</span>
+                        <h3>Hotel &amp; Café Furniture</h3>
+                    </div>
+                    <p>Thoughtful furniture for hotel lounges, café corners and premium dining areas.</p>
+                </div>
+
+                <div class="product-grid">
+                    <article class="product-card reveal">
+                        <div class="product-image">
+                            <img src="imgs/res4.jpeg" alt="Elegant wooden hotel lounge dining furniture" loading="lazy">
+                            <span class="product-number">07</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-category">Hotel collection</div>
+                            <h4>Hotel Lounge Dining</h4>
+                            <p>Elegant wooden dining set designed for hotel lounges.</p>
+                            <a href="#request" class="product-link" data-product="Hotel Lounge Dining">Enquire about this style <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="product-card reveal">
+                        <div class="product-image">
+                            <img src="imgs/ca4492c8-061b-4710-a2f3-704075988e61.jpeg" alt="Compact café tables and comfortable seating" loading="lazy">
+                            <span class="product-number">08</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-category">Café collection</div>
+                            <h4>Compact Café Sets</h4>
+                            <p>Compact café tables with comfortable seating.</p>
+                            <a href="#request" class="product-link" data-product="Compact Café Sets">Enquire about this style <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="product-card reveal">
+                        <div class="product-image">
+                            <img src="imgs/res6.jpeg" alt="Stylish high-back chairs for luxury dining areas" loading="lazy">
+                            <span class="product-number">09</span>
+                        </div>
+                        <div class="product-body">
+                            <div class="product-category">Premium dining</div>
+                            <h4>High-Back Dining Chairs</h4>
+                            <p>Stylish high-back chairs for luxury dining areas.</p>
+                            <a href="#request" class="product-link" data-product="High-Back Dining Chairs">Enquire about this style <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+    <!-- BRAND STATEMENT -->
+    <section class="brand-statement">
+        <div class="container statement-grid">
+            <div class="statement-copy reveal">
+                <span class="eyebrow">More than furniture</span>
+                <h2>Make your space feel as good as the <span>experience you serve.</span></h2>
+                <p>
+                    The right furniture helps define the character of your establishment.
+                    Choose designs that reflect your brand, support your guests and make
+                    the most of your available space.
+                </p>
+
+                <div class="statement-features">
+                    <div class="statement-feature">
+                        <i class="bi bi-palette"></i>
+                        <div>
+                            <strong>Customizable</strong>
+                            <span>Colors, materials and sizes to match your brand.</span>
+                        </div>
+                    </div>
+                    <div class="statement-feature">
+                        <i class="bi bi-heart"></i>
+                        <div>
+                            <strong>Comfort-focused</strong>
+                            <span>Designed with the guest experience in mind.</span>
+                        </div>
+                    </div>
+                    <div class="statement-feature">
+                        <i class="bi bi-shield-check"></i>
+                        <div>
+                            <strong>Durable &amp; stylish</strong>
+                            <span>Contemporary designs made for everyday use.</span>
+                        </div>
+                    </div>
+                    <div class="statement-feature">
+                        <i class="bi bi-wallet2"></i>
+                        <div>
+                            <strong>Affordable</strong>
+                            <span>Competitive pricing without compromising quality.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="statement-visual reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=85"
+                    alt="Elegant restaurant interior with thoughtfully arranged dining furniture"
+                    loading="lazy">
+                <div class="visual-caption">
+                    <strong>Designed around your vision.</strong>
+                    <span>Furniture for restaurants, bars, hotels and cafés.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span class="eyebrow">The EcoHub difference</span>
+                <h2>Made for the way hospitality works</h2>
+                <p>Practical choices, thoughtful design and furniture solutions shaped around your establishment.</p>
+            </div>
+
+            <div class="why-grid">
+                <article class="why-card reveal">
+                    <div class="why-icon"><i class="bi bi-gem"></i></div>
+                    <h3>Built to Impress</h3>
+                    <p>Contemporary designs that help create a distinctive and welcoming atmosphere.</p>
+                </article>
+
+                <article class="why-card reveal">
+                    <div class="why-icon"><i class="bi bi-rulers"></i></div>
+                    <h3>Made to Fit</h3>
+                    <p>Discuss sizes, layouts, colors and materials that complement your space.</p>
+                </article>
+
+                <article class="why-card reveal">
+                    <div class="why-icon"><i class="bi bi-people"></i></div>
+                    <h3>Guest Comfort</h3>
+                    <p>Furniture choices that support a comfortable and enjoyable dining experience.</p>
+                </article>
+
+                <article class="why-card reveal">
+                    <div class="why-icon"><i class="bi bi-wallet2"></i></div>
+                    <h3>Value for Money</h3>
+                    <p>Share your budget and requirements so we can discuss suitable options.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER REQUEST FORM -->
+    <section class="request-section" id="request">
+        <div class="container request-grid">
+            <div class="request-copy reveal">
+                <span class="eyebrow">Let's plan your space</span>
+                <h2>Your space. Your style. Your budget.</h2>
+                <p>
+                    Tell us what you have in mind. Whether you're furnishing a new restaurant,
+                    refreshing a café or fitting out a bar, share your requirements and we'll
+                    discuss furniture options suited to your project.
+                </p>
+
+                <ul class="request-points">
+                    <li><i class="bi bi-check-circle-fill"></i><span>Describe the furniture and style you want.</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span>Share your preferred quantity, colors and materials.</span></li>
+                    <li><i class="bi bi-check-circle-fill"></i><span>Set your budget so we can discuss suitable options.</span></li>
+                </ul>
+
+                <div class="contact-note">
+                    <i class="bi bi-whatsapp"></i>
+                    <div>
+                        <strong>Prefer a direct conversation?</strong>
+                        <span>Send your requirements to us on WhatsApp.</span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="request-form reveal" id="furnitureRequest">
+                <h3>Request a Furniture Quote</h3>
+                <p>Complete the details below to start your enquiry.</p>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customerName">Your name *</label>
+                        <input id="customerName" name="customerName" type="text" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerPhone">Phone number *</label>
+                        <input id="customerPhone" name="customerPhone" type="tel" placeholder="+254..." required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="businessType">Type of establishment *</label>
+                        <select id="businessType" name="businessType" required>
+                            <option value="">Select a category</option>
+                            <option>Restaurant</option>
+                            <option>Bar or lounge</option>
+                            <option>Café or bistro</option>
+                            <option>Hotel</option>
+                            <option>Other hospitality business</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productInterest">Furniture required *</label>
+                        <select id="productInterest" name="productInterest" required>
+                            <option value="">Select furniture</option>
+                            <option>Restaurant dining sets</option>
+                            <option>Bar stools and high tables</option>
+                            <option>Hotel and café furniture</option>
+                            <option>Complete establishment fit-out</option>
+                            <option>Custom furniture</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quantity">Estimated quantity</label>
+                        <input id="quantity" name="quantity" type="text" placeholder="e.g. 20 chairs, 10 tables">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Estimated budget (KSh) *</label>
+                        <input id="budget" name="budget" type="text" placeholder="e.g. 100,000" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="requirements">Describe what you want *</label>
+                    <textarea id="requirements" name="requirements" placeholder="Tell us about your space, preferred style, colors, materials and any special requirements..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-purple form-submit">
+                    Send Request on WhatsApp <i class="bi bi-whatsapp"></i>
+                </button>
+
+                <div class="form-disclaimer">
+                    <i class="bi bi-lock-fill"></i>
+                    Your request opens WhatsApp for you to review and send.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="container cta-inner reveal">
+            <div>
+                <span class="eyebrow">Start your project</span>
+                <h2>Ready to transform your hospitality space?</h2>
+                <p>Let's discuss furniture that brings your vision to life.</p>
+            </div>
+            <a href="contact.html" class="btn btn-gold">
+                Contact EcoHub <i class="bi bi-arrow-up-right"></i>
+            </a>
+        </div>
+    </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">
     <div class="container">
-        <div class="row">
-            <div class="col-md">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" aria-label="EcoHub Solution home">
+                    <img src="imgs/ecoeco.png" alt="EcoHub Solution Logo" loading="lazy">
+                </a>
+                <p>
+                    Furniture and practical solutions for spaces where people live,
+                    work, learn, dine and connect. Tell us what you need and let us
+                    help you explore the possibilities.
+                </p>
+            </div>
+
+            <div>
                 <h3>Quick Links</h3>
-                <ul>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about_us.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="https://daily-matters-matter.blogspot.com/">Blog</a></li>
+                    <li><a href="home-furniture.html">Home Furniture</a></li>
+                    <li><a href="office-furniture.html">Office Furniture</a></li>
+                    <li><a href="school-furniture.html">School Furniture</a></li>
+                    <li><a href="outdoor-furniture.html">Outdoor Furniture</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="https://daily-matters-matter.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li>
                 </ul>
             </div>
-            <div class="col-md">
+
+            <div>
                 <h3>Contact</h3>
-                <p><i class="bi bi-geo-alt-fill"></i> P.O Box 21075-00100 GPO, Nairobi, Kenya</p>
-                <p><i class="bi bi-envelope-fill"></i> info@ecosolutionhub.com</p>
-                <p><i class="bi bi-telephone-fill"></i> +254 742082219</p>
+                <div class="footer-contact">
+                    <p><i class="bi bi-geo-alt-fill"></i><span>P.O Box 21075-00100 GPO, Nairobi, Kenya</span></p>
+                    <p><i class="bi bi-envelope-fill"></i><a href="mailto:info@ecosolutionhub.com">info@ecosolutionhub.com</a></p>
+                    <p><i class="bi bi-telephone-fill"></i><a href="tel:+254742082219">+254 742082219</a></p>
+                    <p><i class="bi bi-whatsapp"></i><a href="https://wa.me/254742082219" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></p>
+                </div>
             </div>
         </div>
-        <div class="text-center mt-3">
-            <p>&copy; 2025 EcoHub Solutions. All rights reserved.</p>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> EcoHub Solutions. All rights reserved.</p>
+            <p>Thoughtful spaces. <span>Better experiences.</span></p>
         </div>
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- FLOATING WHATSAPP BUTTON -->
+<a class="whatsapp-float"
+   href="https://wa.me/254742082219?text=Hello%20EcoHub%20Solution%2C%20I%20would%20like%20to%20enquire%20about%20bar%20and%20restaurant%20furniture."
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with EcoHub Solution on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+<script>
+    // Current year in the footer
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // Mobile navigation
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    navToggle.addEventListener("click", function () {
+        const isOpen = navLinks.classList.toggle("open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+        navToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+        navToggle.innerHTML = isOpen
+            ? '<i class="bi bi-x-lg"></i>'
+            : '<i class="bi bi-list"></i>';
+    });
+
+    // Mobile dropdowns; desktop uses hover and keyboard focus
+    document.querySelectorAll(".dropdown-toggle").forEach(function (toggle) {
+        toggle.addEventListener("click", function (event) {
+            if (window.matchMedia("(max-width: 760px)").matches) {
+                event.preventDefault();
+                const dropdown = toggle.closest(".dropdown");
+                const isOpen = dropdown.classList.toggle("open");
+                toggle.setAttribute("aria-expanded", String(isOpen));
+            } else {
+                event.preventDefault();
+            }
+        });
+    });
+
+    // Close mobile menu after selecting a destination
+    navLinks.querySelectorAll("a:not(.dropdown-toggle)").forEach(function (link) {
+        link.addEventListener("click", function () {
+            if (window.matchMedia("(max-width: 760px)").matches) {
+                navLinks.classList.remove("open");
+                navToggle.setAttribute("aria-expanded", "false");
+                navToggle.setAttribute("aria-label", "Open navigation menu");
+                navToggle.innerHTML = '<i class="bi bi-list"></i>';
+            }
+        });
+    });
+
+    // Close menu when returning to desktop layout
+    window.addEventListener("resize", function () {
+        if (!window.matchMedia("(max-width: 760px)").matches) {
+            navLinks.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+            navToggle.innerHTML = '<i class="bi bi-list"></i>';
+
+            document.querySelectorAll(".dropdown").forEach(function (dropdown) {
+                dropdown.classList.remove("open");
+                const toggle = dropdown.querySelector(".dropdown-toggle");
+                if (toggle) toggle.setAttribute("aria-expanded", "false");
+            });
+        }
+    });
+
+    // Smooth scroll reveal, with a fallback for browsers without IntersectionObserver
+    const revealItems = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealItems.forEach(function (item) {
+            revealObserver.observe(item);
+        });
+    } else {
+        revealItems.forEach(function (item) {
+            item.classList.add("visible");
+        });
+    }
+
+    // Product cards can preselect the item in the enquiry form
+    document.querySelectorAll("[data-product]").forEach(function (link) {
+        link.addEventListener("click", function () {
+            const product = link.getAttribute("data-product");
+            const productSelect = document.getElementById("productInterest");
+            const requirements = document.getElementById("requirements");
+
+            const matchingOption = Array.from(productSelect.options).find(function (option) {
+                return option.text.toLowerCase() === product.toLowerCase();
+            });
+
+            if (matchingOption) {
+                productSelect.value = matchingOption.value;
+            } else if (productSelect.querySelector('option[value="Other"]')) {
+                productSelect.value = "Other";
+            }
+
+            requirements.value = "I am interested in: " + product + ". ";
+        });
+    });
+
+    // Prepare a customer request in WhatsApp
+    document.getElementById("furnitureRequest").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("customerName").value.trim();
+        const phone = document.getElementById("customerPhone").value.trim();
+        const business = document.getElementById("businessType").value;
+        const product = document.getElementById("productInterest").value;
+        const quantity = document.getElementById("quantity").value.trim() || "Not specified";
+        const budget = document.getElementById("budget").value.trim();
+        const requirements = document.getElementById("requirements").value.trim();
+
+        const message = [
+            "Hello EcoHub Solution, I would like to request a bar and restaurant furniture quote.",
+            "",
+            "Name: " + name,
+            "Phone: " + phone,
+            "Establishment: " + business,
+            "Furniture required: " + product,
+            "Estimated quantity: " + quantity,
+            "Estimated budget (KSh): " + budget,
+            "",
+            "Requirements:",
+            requirements
+        ].join("\n");
+
+        const whatsappUrl = "https://wa.me/254742082219?text=" + encodeURIComponent(message);
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    });
+</script>
+
 </body>
 </html>
+```

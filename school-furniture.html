@@ -1,1557 +1,1369 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#241039">
-
-    <title>School Furniture | EcoSolution Hub</title>
-    <meta name="description" content="Explore school desks, lecture chairs, kindergarten furniture, storage solutions and boarding school beds from EcoSolution Hub. Request a quotation today.">
-
-    <!-- Bootstrap & Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-    <style>
-        :root {
-            --navy: #241039;
-            --purple: #6d28d9;
-            --bright: #a855f7;
-            --gold: #f5c451;
-            --light: #f7f5fb;
-            --muted: #6b6475;
-            --white: #ffffff;
-            --border: #e9e3f1;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 90px;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            color: var(--navy);
-            background: #fff;
-            line-height: 1.65;
-        }
-
-        a {
-            transition: color .2s ease;
-        }
-
-        .navbar {
-            background: var(--navy);
-            padding: 10px 0;
-            box-shadow: 0 4px 22px rgba(20, 8, 35, .13);
-        }
-
-        .navbar-brand img {
-            max-height: 62px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .navbar-nav .nav-link {
-            color: rgba(255,255,255,.9) !important;
-            font-size: .93rem;
-            font-weight: 600;
-            padding: 12px 14px !important;
-        }
-
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link:focus {
-            color: var(--gold) !important;
-        }
-
-        .navbar-toggler {
-            border: 1px solid rgba(255,255,255,.45);
-            padding: 7px 10px;
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        .dropdown-menu {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 12px 30px rgba(20, 8, 35, .15);
-            padding: 10px;
-        }
-
-        .dropdown-item {
-            padding: 9px 13px;
-            border-radius: 7px;
-            font-size: .9rem;
-        }
-
-        .dropdown-item:hover {
-            color: var(--purple);
-            background: #f4edff;
-        }
-
-        /* Hero */
-        .hero {
-            position: relative;
-            overflow: hidden;
-            color: var(--white);
-            padding: 95px 0 85px;
-            background:
-                radial-gradient(circle at 85% 20%, rgba(168,85,247,.25), transparent 30%),
-                linear-gradient(120deg, #241039 0%, #43206b 58%, #6d28d9 100%);
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 360px;
-            height: 360px;
-            border: 1px solid rgba(255,255,255,.12);
-            border-radius: 50%;
-            right: -110px;
-            bottom: -190px;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            color: var(--gold);
-            font-size: .78rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 17px;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 27px;
-            height: 2px;
-            background: var(--gold);
-        }
-
-        .hero h1 {
-            max-width: 700px;
-            font-size: clamp(2.4rem, 5vw, 4.4rem);
-            line-height: 1.08;
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            margin-bottom: 23px;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-
-        .hero p {
-            max-width: 580px;
-            color: rgba(255,255,255,.82);
-            font-size: 1.06rem;
-            margin-bottom: 29px;
-        }
-
-        .hero-image-wrap {
-            position: relative;
-            padding: 10px;
-            background: rgba(255,255,255,.1);
-            border: 1px solid rgba(255,255,255,.16);
-            border-radius: 22px;
-            box-shadow: 0 25px 60px rgba(0,0,0,.2);
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 350px;
-            display: block;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-
-        .hero-image-caption {
-            position: absolute;
-            left: 25px;
-            right: 25px;
-            bottom: 25px;
-            padding: 14px 17px;
-            border-radius: 12px;
-            background: rgba(36,16,57,.88);
-            backdrop-filter: blur(8px);
-            color: #fff;
-            font-weight: 700;
-        }
-
-        .hero-image-caption i {
-            color: var(--gold);
-            margin-right: 8px;
-        }
-
-        .btn-primary-custom,
-        .btn-outline-custom {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-            padding: 13px 23px;
-            border-radius: 9px;
-            font-weight: 750;
-            text-decoration: none !important;
-            transition: all .25s ease;
-        }
-
-        .btn-primary-custom {
-            color: var(--navy);
-            background: var(--gold);
-            border: 1px solid var(--gold);
-        }
-
-        .btn-primary-custom:hover {
-            color: var(--navy);
-            background: #ffda76;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline-custom {
-            color: #fff;
-            border: 1px solid rgba(255,255,255,.5);
-            background: transparent;
-        }
-
-        .btn-outline-custom:hover {
-            color: var(--navy);
-            background: #fff;
-        }
-
-        /* Highlights */
-        .highlights {
-            position: relative;
-            z-index: 2;
-            margin-top: -1px;
-            background: var(--light);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .highlight-item {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            padding: 23px 12px;
-        }
-
-        .highlight-icon {
-            flex: 0 0 45px;
-            width: 45px;
-            height: 45px;
-            display: grid;
-            place-items: center;
-            color: var(--purple);
-            background: #eee4ff;
-            border-radius: 13px;
-            font-size: 1.25rem;
-        }
-
-        .highlight-item strong {
-            display: block;
-            font-size: .96rem;
-        }
-
-        .highlight-item small {
-            color: var(--muted);
-            font-size: .82rem;
-        }
-
-        /* General sections */
-        .section {
-            padding: 78px 0;
-        }
-
-        .section-soft {
-            background: var(--light);
-        }
-
-        .section-heading {
-            max-width: 690px;
-            margin: 0 auto 35px;
-            text-align: center;
-        }
-
-        .section-heading .eyebrow {
-            color: var(--purple);
-            margin-bottom: 9px;
-        }
-
-        .section-heading .eyebrow::before {
-            background: var(--purple);
-        }
-
-        .section-heading h2 {
-            font-size: clamp(1.8rem, 3vw, 2.7rem);
-            font-weight: 800;
-            letter-spacing: -.7px;
-            line-height: 1.2;
-            margin-bottom: 13px;
-        }
-
-        .section-heading p {
-            color: var(--muted);
-            margin-bottom: 0;
-        }
-
-        /* Filters */
-        .filter-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 34px;
-        }
-
-        .filter-btn {
-            border: 1px solid var(--border);
-            background: #fff;
-            color: var(--navy);
-            border-radius: 30px;
-            padding: 9px 17px;
-            font-size: .88rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all .2s ease;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            color: #fff;
-            background: var(--purple);
-            border-color: var(--purple);
-        }
-
-        /* Product cards */
-        .product-card {
-            height: calc(100% - 24px);
-            margin-bottom: 24px;
-            overflow: hidden;
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            box-shadow: 0 7px 24px rgba(36,16,57,.045);
-            transition: transform .25s ease, box-shadow .25s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 36px rgba(36,16,57,.12);
-        }
-
-        .product-image-wrap {
-            position: relative;
-            overflow: hidden;
-            background: #f2eef7;
-        }
-
-        .product-image {
-            display: block;
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            transition: transform .4s ease;
-        }
-
-        .product-card:hover .product-image {
-            transform: scale(1.045);
-        }
-
-        .product-tag {
-            position: absolute;
-            left: 13px;
-            top: 13px;
-            padding: 5px 10px;
-            border-radius: 30px;
-            color: var(--purple);
-            background: rgba(255,255,255,.95);
-            font-size: .72rem;
-            font-weight: 800;
-        }
-
-        .product-body {
-            display: flex;
-            flex-direction: column;
-            padding: 19px;
-            min-height: 165px;
-        }
-
-        .product-body h3 {
-            font-size: 1.05rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .product-body p {
-            color: var(--muted);
-            font-size: .89rem;
-            line-height: 1.55;
-            margin-bottom: 15px;
-        }
-
-        .product-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            margin-top: auto;
-            color: var(--purple);
-            font-size: .88rem;
-            font-weight: 800;
-            text-decoration: none !important;
-        }
-
-        .product-link:hover {
-            color: var(--navy);
-        }
-
-        .no-products {
-            display: none;
-            width: 100%;
-            padding: 25px;
-            text-align: center;
-            color: var(--muted);
-        }
-
-        /* Benefits */
-        .benefit-card {
-            height: 100%;
-            padding: 25px;
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            background: #fff;
-        }
-
-        .benefit-icon {
-            display: grid;
-            place-items: center;
-            width: 48px;
-            height: 48px;
-            margin-bottom: 18px;
-            border-radius: 13px;
-            color: var(--purple);
-            background: #eee4ff;
-            font-size: 1.4rem;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.05rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .benefit-card p {
-            color: var(--muted);
-            font-size: .91rem;
-            margin-bottom: 0;
-        }
-
-        /* Video */
-        .video-section {
-            padding: 75px 0;
-            color: #fff;
-            background: linear-gradient(120deg, #241039, #43206b);
-        }
-
-        .video-section .section-heading h2 {
-            color: #fff;
-        }
-
-        .video-section .section-heading p {
-            color: rgba(255,255,255,.75);
-        }
-
-        .video-frame {
-            max-width: 900px;
-            margin: 0 auto;
-            overflow: hidden;
-            aspect-ratio: 16 / 9;
-            border: 5px solid rgba(255,255,255,.12);
-            border-radius: 17px;
-            background: #140a20;
-            box-shadow: 0 22px 55px rgba(0,0,0,.25);
-        }
-
-        .video-frame iframe {
-            width: 100%;
-            height: 100%;
-            display: block;
-            border: 0;
-        }
-
-        /* Enquiry form */
-        .enquiry-section {
-            padding: 80px 0;
-            background:
-                radial-gradient(circle at 0% 100%, rgba(168,85,247,.1), transparent 30%),
-                var(--light);
-        }
-
-        .enquiry-intro {
-            padding: 20px 15px 20px 0;
-        }
-
-        .enquiry-intro h2 {
-            font-size: clamp(2rem, 3.5vw, 2.8rem);
-            line-height: 1.2;
-            font-weight: 800;
-            margin-bottom: 18px;
-        }
-
-        .enquiry-intro p {
-            color: var(--muted);
-        }
-
-        .enquiry-point {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-top: 18px;
-            font-weight: 650;
-        }
-
-        .enquiry-point i {
-            color: var(--purple);
-            font-size: 1.2rem;
-        }
-
-        .enquiry-card {
-            padding: 30px;
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            box-shadow: 0 16px 45px rgba(36,16,57,.08);
-        }
-
-        .enquiry-card h3 {
-            font-size: 1.35rem;
-            font-weight: 800;
-            margin-bottom: 5px;
-        }
-
-        .form-subtitle {
-            color: var(--muted);
-            font-size: .9rem;
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            color: var(--navy);
-            font-size: .88rem;
-            font-weight: 750;
-            margin-bottom: 7px;
-        }
-
-        .form-control {
-            min-height: 46px;
-            border: 1px solid #ded6e9;
-            border-radius: 8px;
-            color: var(--navy);
-            font-size: .92rem;
-            box-shadow: none !important;
-        }
-
-        .form-control:focus {
-            border-color: var(--purple);
-            box-shadow: 0 0 0 3px rgba(109,40,217,.1) !important;
-        }
-
-        textarea.form-control {
-            min-height: 115px;
-            resize: vertical;
-        }
-
-        .btn-submit {
-            width: 100%;
-            padding: 14px 20px;
-            border: 0;
-            border-radius: 9px;
-            color: #fff;
-            background: var(--purple);
-            font-weight: 800;
-            transition: background .2s ease, transform .2s ease;
-        }
-
-        .btn-submit:hover {
-            background: var(--navy);
-            transform: translateY(-2px);
-        }
-
-        .form-note {
-            color: var(--muted);
-            font-size: .79rem;
-            text-align: center;
-            margin: 13px 0 0;
-        }
-
-        /* Contact banner */
-        .contact-strip {
-            padding: 35px 0;
-            background: #f0e8ff;
-        }
-
-        .contact-strip h3 {
-            font-size: 1.35rem;
-            font-weight: 800;
-            margin-bottom: 5px;
-        }
-
-        .contact-strip p {
-            color: var(--muted);
-            margin: 0;
-        }
-
-        /* Footer */
-        .footer {
-            padding: 55px 0 20px;
-            color: rgba(255,255,255,.75);
-            background: #1b0c2b;
-        }
-
-        .footer h3 {
-            color: #fff;
-            font-size: 1.08rem;
-            font-weight: 800;
-            margin-bottom: 18px;
-        }
-
-        .footer p {
-            font-size: .9rem;
-        }
-
-        .footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer li {
-            margin-bottom: 10px;
-        }
-
-        .footer a {
-            color: rgba(255,255,255,.75);
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            color: var(--gold);
-        }
-
-        .footer-brand {
-            display: inline-block;
-            color: #fff;
-            font-size: 1.25rem;
-            font-weight: 900;
-            margin-bottom: 13px;
-        }
-
-        .footer-brand span {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,.12);
-            padding-top: 19px;
-            margin-top: 35px;
-            font-size: .83rem;
-            text-align: center;
-        }
-
-        /* Floating WhatsApp */
-        .floating-whatsapp {
-            position: fixed;
-            z-index: 1000;
-            right: 22px;
-            bottom: 22px;
-            width: 57px;
-            height: 57px;
-            display: grid;
-            place-items: center;
-            border-radius: 50%;
-            color: #fff !important;
-            background: #25d366;
-            box-shadow: 0 7px 22px rgba(0,0,0,.2);
-            font-size: 1.8rem;
-            text-decoration: none !important;
-            transition: transform .2s ease;
-        }
-
-        .floating-whatsapp:hover {
-            transform: translateY(-4px);
-        }
-
-        @media (max-width: 991px) {
-            .hero {
-                padding: 65px 0;
-            }
-
-            .hero-image-wrap {
-                margin-top: 35px;
-            }
-
-            .hero-image {
-                height: 310px;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .enquiry-intro {
-                padding-right: 0;
-                margin-bottom: 25px;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .hero h1 {
-                letter-spacing: -.8px;
-            }
-
-            .hero-actions {
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 10px;
-            }
-
-            .hero-actions a {
-                width: 100%;
-            }
-
-            .hero-image {
-                height: 260px;
-            }
-
-            .highlight-item {
-                padding: 15px 5px;
-            }
-
-            .product-image {
-                height: 230px;
-            }
-
-            .enquiry-card {
-                padding: 22px 18px;
-            }
-
-            .video-section,
-            .enquiry-section {
-                padding: 55px 0;
-            }
-
-            .contact-strip .btn-primary-custom {
-                margin-top: 20px;
-            }
-
-            .floating-whatsapp {
-                right: 15px;
-                bottom: 15px;
-                width: 52px;
-                height: 52px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                transition-duration: .01ms !important;
-                animation-duration: .01ms !important;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>School Furniture | Zerah-Nexus</title>
+  <meta name="description" content="Explore school desks, classroom chairs, kindergarten furniture, library furniture and institutional furniture with Zerah-Nexus. Request a quote for your school.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --purple: #391333;
+      --purple-dark: #1c091b;
+      --purple-mid: #57234f;
+      --gold: #d9b46e;
+      --gold-light: #f0d8a4;
+      --green: #49684b;
+      --cream: #f7f4ed;
+      --white: #fff;
+      --text: #29242b;
+      --muted: #77717a;
+      --line: rgba(57, 19, 51, .12);
+      --shadow: 0 22px 60px rgba(28, 9, 27, .11);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 49px;
+      padding: 0 23px;
+      border: 1px solid transparent;
+      border-radius: 50px;
+      font-size: .85rem;
+      font-weight: 700;
+      transition: transform .3s ease, background .3s ease,
+                  color .3s ease, box-shadow .3s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-gold {
+      color: var(--purple-dark);
+      background: var(--gold);
+      box-shadow: 0 10px 25px rgba(217, 180, 110, .18);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+    }
+
+    .btn-outline {
+      color: white;
+      background: rgba(255, 255, 255, .05);
+      border-color: rgba(255, 255, 255, .4);
+    }
+
+    .btn-outline:hover {
+      color: var(--purple);
+      background: white;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: absolute;
+      z-index: 20;
+      inset: 0 0 auto;
+      background: rgba(28, 9, 27, .42);
+      border-bottom: 1px solid rgba(255, 255, 255, .13);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 155px;
+      max-height: 58px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links > a:not(.btn) {
+      color: rgba(255, 255, 255, .88);
+      font-size: .84rem;
+      font-weight: 600;
+      transition: color .25s ease;
+    }
+
+    .nav-links > a:not(.btn):hover {
+      color: var(--gold-light);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 43px;
+      height: 43px;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 12px;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      padding: 145px 0 100px;
+      color: white;
+      background: var(--purple-dark);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-image {
+      position: absolute;
+      z-index: -3;
+      inset: 0;
+      background:
+        url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=2200&q=90")
+        center 45% / cover no-repeat;
+      animation: heroZoom 18s ease-in-out infinite alternate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      background:
+        linear-gradient(90deg,
+          rgba(28, 9, 27, .96) 0%,
+          rgba(43, 14, 40, .86) 43%,
+          rgba(43, 14, 40, .42) 76%,
+          rgba(28, 9, 27, .22) 100%),
+        linear-gradient(0deg, rgba(28, 9, 27, .48), transparent 60%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: -190px;
+      bottom: -290px;
+      width: 530px;
+      height: 530px;
+      border: 1px solid rgba(217, 180, 110, .22);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 45px rgba(217, 180, 110, .035),
+        0 0 0 95px rgba(217, 180, 110, .02);
+    }
+
+    .hero-content {
+      max-width: 740px;
+      animation: fadeUp .9s ease both;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .hero h1 {
+      margin-top: 24px;
+      font: 800 clamp(3rem, 7vw, 6rem)/1.03 "Manrope", sans-serif;
+      letter-spacing: -3.5px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero-content > p {
+      max-width: 530px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, .8);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 32px;
+    }
+
+    .hero-caption {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: 43px;
+      color: rgba(255, 255, 255, .78);
+      font-size: .8rem;
+    }
+
+    .hero-caption-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      color: var(--gold-light);
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-radius: 50%;
+      font-size: 1.1rem;
+    }
+
+    /* VALUE STRIP */
+
+    .value-strip {
+      position: relative;
+      z-index: 2;
+      background: white;
+      box-shadow: 0 12px 38px rgba(28, 9, 27, .05);
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 26px 0;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 8px 18px;
+      border-right: 1px solid var(--line);
+    }
+
+    .value-item:last-child {
+      border-right: 0;
+    }
+
+    .value-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      color: var(--green);
+      background: #eaf0e5;
+      border-radius: 14px;
+      font-size: 1.2rem;
+    }
+
+    .value-item strong {
+      display: block;
+      color: var(--purple);
+      font-size: .9rem;
+    }
+
+    .value-item small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .76rem;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      padding: 105px 0;
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      margin-top: 15px;
+      color: var(--purple);
+      font: 800 clamp(2.1rem, 4vw, 3.35rem)/1.12 "Manrope", sans-serif;
+      letter-spacing: -1.7px;
+    }
+
+    .section-heading p {
+      max-width: 540px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: .96rem;
+      line-height: 1.8;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .category-card {
+      position: relative;
+      min-height: 355px;
+      overflow: hidden;
+      isolation: isolate;
+      border-radius: var(--radius);
+      background: #ded9d2;
+      box-shadow: 0 8px 25px rgba(28, 9, 27, .06);
+      transition: transform .4s ease, box-shadow .4s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .category-card > img {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      height: 100%;
+      transition: transform .7s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .category-card:hover > img {
+      transform: scale(1.08);
+    }
+
+    .category-card::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(28, 9, 27, .95) 0%,
+        rgba(28, 9, 27, .52) 45%,
+        rgba(28, 9, 27, .02) 100%
+      );
+    }
+
+    .category-content {
+      position: absolute;
+      left: 25px;
+      right: 25px;
+      bottom: 25px;
+      color: white;
+    }
+
+    .category-tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      color: var(--gold-light);
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 30px;
+      backdrop-filter: blur(8px);
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .9px;
+      text-transform: uppercase;
+    }
+
+    .category-content h3 {
+      font: 800 1.4rem/1.25 "Manrope", sans-serif;
+      letter-spacing: -.5px;
+    }
+
+    .category-content p {
+      max-width: 300px;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, .8);
+      font-size: .84rem;
+      line-height: 1.65;
+    }
+
+    .category-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 17px;
+      color: var(--gold-light);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .category-link span {
+      transition: transform .25s ease;
+    }
+
+    .category-link:hover span {
+      transform: translateX(5px);
+    }
+
+    /* TESTIMONIAL VIDEO */
+
+    .testimonial {
+      position: relative;
+      padding: 100px 0;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 10% 15%, rgba(217, 180, 110, .10), transparent 30%),
+        linear-gradient(135deg, #281027, #180817);
+    }
+
+    .testimonial::before {
+      content: "";
+      position: absolute;
+      top: -210px;
+      right: -180px;
+      width: 480px;
+      height: 480px;
+      border: 1px solid rgba(217, 180, 110, .16);
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px rgba(217, 180, 110, .025);
+      pointer-events: none;
+    }
+
+    .testimonial-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .testimonial-copy .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .testimonial-copy h2 {
+      margin-top: 18px;
+      color: white;
+      font: 800 clamp(2.2rem, 4.5vw, 3.6rem)/1.12 "Manrope", sans-serif;
+      letter-spacing: -1.8px;
+    }
+
+    .testimonial-copy > p {
+      margin-top: 19px;
+      color: rgba(255, 255, 255, .75);
+      font-size: .96rem;
+      line-height: 1.9;
+    }
+
+    .testimonial-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      margin-top: 28px;
+      padding-top: 23px;
+      border-top: 1px solid rgba(255, 255, 255, .16);
+    }
+
+    .quote-mark {
+      color: var(--gold);
+      font: 800 2.8rem/1 Georgia, serif;
+    }
+
+    .testimonial-label strong {
+      display: block;
+      color: white;
+      font-size: .9rem;
+    }
+
+    .testimonial-label small {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, .6);
+      font-size: .78rem;
+      line-height: 1.6;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .17);
+      border-radius: 22px;
+      background: #080708;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, .3);
+    }
+
+    .video-frame::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, .58);
+      font-size: .75rem;
+      line-height: 1.7;
+    }
+
+    /* FEATURE SECTION */
+
+    .feature-section {
+      padding: 95px 0;
+      background: #ebe8df;
+      overflow: hidden;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .feature-visual {
+      position: relative;
+      min-height: 460px;
+    }
+
+    .feature-main-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 85%;
+      height: 410px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-small-image {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 48%;
+      height: 200px;
+      border: 8px solid #ebe8df;
+      border-radius: 22px;
+      box-shadow: 0 14px 38px rgba(28, 9, 27, .13);
+    }
+
+    .feature-stamp {
+      position: absolute;
+      top: 25px;
+      right: 0;
+      width: 102px;
+      height: 102px;
+      display: grid;
+      place-items: center;
+      padding: 12px;
+      color: var(--purple-dark);
+      background: var(--gold);
+      border-radius: 50%;
+      text-align: center;
+      font-size: .72rem;
+      font-weight: 800;
+      line-height: 1.5;
+      transform: rotate(8deg);
+      box-shadow: 0 12px 30px rgba(217, 180, 110, .2);
+    }
+
+    .feature-copy h2 {
+      margin-top: 17px;
+      color: var(--purple);
+      font: 800 clamp(2.1rem, 4vw, 3.3rem)/1.13 "Manrope", sans-serif;
+      letter-spacing: -1.8px;
+    }
+
+    .feature-copy > p {
+      margin-top: 20px;
+      color: #706b71;
+      font-size: .96rem;
+      line-height: 1.9;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 16px;
+      margin: 27px 0 32px;
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #4c464d;
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+
+    .check {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      color: var(--green);
+      background: #dce7d7;
+      border-radius: 50%;
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    /* ENQUIRY BANNER */
+
+    .request-section {
+      padding: 90px 0;
+      background: var(--purple-dark);
+    }
+
+    .request-panel {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 35px;
+      padding: 52px 55px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 88% 15%, rgba(217, 180, 110, .14), transparent 32%),
+        linear-gradient(125deg, #4a1943, #2a1028 72%);
+    }
+
+    .request-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+    }
+
+    .request-copy .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .request-copy h2 {
+      margin-top: 15px;
+      color: white;
+      font: 800 clamp(2rem, 4vw, 3.1rem)/1.15 "Manrope", sans-serif;
+      letter-spacing: -1.5px;
+    }
+
+    .request-copy p {
+      max-width: 550px;
+      margin-top: 15px;
+      color: rgba(255, 255, 255, .74);
+      font-size: .94rem;
+      line-height: 1.85;
+    }
+
+    .request-action {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 34px 0;
+      color: rgba(255, 255, 255, .68);
+      background: #150715;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      color: white;
+      font: 800 1.05rem "Manrope", sans-serif;
+      letter-spacing: .5px;
+    }
+
+    .footer-brand span {
+      color: var(--gold);
+    }
+
+    .footer p {
+      font-size: .78rem;
+      line-height: 1.7;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: .8rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(27px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.07); }
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+      .nav-links { gap: 17px; }
+      .nav-links .btn { padding: 0 16px; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonial-grid { grid-template-columns: 1fr; gap: 32px; }
+      .testimonial-copy { max-width: 650px; }
+      .feature-grid { gap: 40px; }
+      .feature-visual { min-height: 400px; }
+      .feature-main-image { height: 355px; }
+      .feature-small-image { height: 165px; }
+      .request-panel { padding: 42px 35px; }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner { min-height: 72px; }
+      .brand img { width: 135px; max-height: 50px; }
+      .menu-toggle { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 5% 22px;
+        background: rgba(28, 9, 27, .98);
+        border-bottom: 1px solid rgba(255, 255, 255, .12);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links > a:not(.btn) {
+        padding: 14px 0;
+      }
+
+      .nav-links .btn {
+        align-self: flex-start;
+        margin-top: 12px;
+      }
+
+      .hero {
+        min-height: 650px;
+        padding: 125px 0 75px;
+      }
+
+      .hero-image { background-position: 60% center; }
+
+      .hero::before {
+        background: linear-gradient(
+          90deg,
+          rgba(28, 9, 27, .95),
+          rgba(43, 14, 40, .75)
+        );
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 11vw, 4.3rem);
+        letter-spacing: -2.4px;
+      }
+
+      .hero-content > p { font-size: .93rem; }
+
+      .value-grid {
+        grid-template-columns: 1fr;
+        padding: 12px 0;
+      }
+
+      .value-item {
+        justify-content: flex-start;
+        padding: 15px 8px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .value-item:last-child { border-bottom: 0; }
+
+      .categories { padding: 75px 0; }
+      .section-heading { margin-bottom: 30px; }
+      .category-grid { gap: 16px; }
+      .category-card { min-height: 320px; border-radius: 18px; }
+      .category-content { left: 18px; right: 18px; bottom: 20px; }
+      .category-content h3 { font-size: 1.25rem; }
+      .category-content p { font-size: .8rem; }
+
+      .testimonial { padding: 72px 0; }
+      .testimonial-copy h2 { letter-spacing: -1px; }
+      .video-frame { border-radius: 16px; }
+
+      .feature-section { padding: 72px 0; }
+      .feature-grid { grid-template-columns: 1fr; gap: 35px; }
+      .feature-visual { min-height: 385px; }
+      .feature-main-image { width: 88%; height: 340px; }
+      .feature-small-image { width: 46%; height: 155px; }
+      .feature-stamp { width: 88px; height: 88px; font-size: .65rem; }
+
+      .request-section { padding: 65px 0; }
+
+      .request-panel {
+        grid-template-columns: 1fr;
+        gap: 27px;
+        padding: 34px 25px;
+        border-radius: 22px;
+      }
+
+      .request-action { justify-self: start; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 430px) {
+      .hero { min-height: 630px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn { width: 100%; }
+      .hero-caption { margin-top: 30px; }
+      .category-grid { grid-template-columns: 1fr; }
+      .category-card { min-height: 340px; }
+      .section-heading h2 { letter-spacing: -1px; }
+      .feature-visual { min-height: 315px; }
+      .feature-main-image { height: 280px; }
+      .feature-small-image { height: 125px; border-width: 6px; }
+      .feature-stamp { top: 12px; }
+      .footer-links { gap: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-        <a href="index.html" class="navbar-brand" aria-label="EcoSolution Hub home">
-            <img src="imgs/Zerah Nexus logo.png" alt="EcoSolution Hub Logo">
-        </a>
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-inner">
 
-        <button class="navbar-toggler" type="button"
-                data-toggle="collapse" data-target="#mainNavigation"
-                aria-controls="mainNavigation" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <a href="index.html" class="brand" aria-label="Zerah-Nexus home">
+        <img src="imgs/Zerah Nexus logo.png" alt="Zerah-Nexus logo">
+      </a>
 
-        <div class="collapse navbar-collapse" id="mainNavigation">
-            <ul class="navbar-nav ml-auto">
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="navLinks">
+        ☰
+      </button>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#"
-                       id="constructionDropdown" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        Construction Engineering
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="constructionDropdown">
-                        <a class="dropdown-item" href="precision-welding-and-fabrication.html">Precision Welding &amp; Fabrication</a>
-                        <a class="dropdown-item" href="bathroom-and-plumbing.html">Bathroom &amp; Plumbing</a>
-                        <a class="dropdown-item" href="painting-and-interior-design.html">Painting &amp; Interior Design</a>
-                        <a class="dropdown-item" href="cabinetry-installation.html">Cabinetry Installation</a>
-                    </div>
-                </li>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about_us.html">About Us</a>
+        <a href="#categories">Categories</a>
+        <a href="#testimonial">Testimonial</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-gold">Request a Quote ↗</a>
+      </nav>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#"
-                       id="furnitureDropdown" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        Furniture Place
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="furnitureDropdown">
-                        <a class="dropdown-item" href="home-furniture.html">Home Furniture</a>
-                        <a class="dropdown-item" href="office-furniture.html">Office Furniture</a>
-                        <a class="dropdown-item" href="school-furniture.html">School Furniture</a>
-                        <a class="dropdown-item" href="bar-and-restaurant-furniture.html">Restaurant Furniture</a>
-                        <a class="dropdown-item" href="outdoor-furniture.html">Outdoor Furniture</a>
-                        <a class="dropdown-item" href="hospital-supplies.html">Hospital Supplies</a>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="about_us.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </div>
     </div>
-</nav>
+  </header>
 
-<!-- HERO -->
-<header class="hero">
-    <div class="container hero-content">
-        <div class="row align-items-center">
-            <div class="col-lg-7">
-                <span class="eyebrow">School Furniture Solutions</span>
+  <main>
 
-                <h1>Better Spaces.<br><span>Brighter Futures.</span></h1>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-image" aria-hidden="true"></div>
 
-                <p>
-                    From kindergarten classrooms to university lecture halls,
-                    discover practical furniture solutions designed to support
-                    learning, comfort and organised school environments.
-                </p>
+      <div class="container">
+        <div class="hero-content">
 
-                <div class="hero-actions d-flex flex-wrap" style="gap: 12px;">
-                    <a href="#school-products" class="btn-primary-custom">
-                        Explore Furniture <i class="bi bi-arrow-down"></i>
-                    </a>
-                    <a href="#school-enquiry" class="btn-outline-custom">
-                        Request a Quote <i class="bi bi-chat-dots"></i>
-                    </a>
-                </div>
-            </div>
+          <span class="eyebrow">Furnishing the Future of Learning</span>
 
-            <div class="col-lg-5">
-                <div class="hero-image-wrap">
-                    <img
-                        class="hero-image"
-                        src="imgs/uhuru_visits_the_artisans.jpg"
-                        alt="Furniture craftsmanship and school furniture production"
-                        fetchpriority="high"
-                    >
-                    <div class="hero-image-caption">
-                        <i class="bi bi-mortarboard-fill"></i>
-                        Furnishing the next generation of learners
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+          <h1>
+            Better Spaces.<br>
+            <span>Brighter Minds.</span>
+          </h1>
 
-<!-- HIGHLIGHTS -->
-<section class="highlights" aria-label="Our service highlights">
-    <div class="container">
-        <div class="row">
+          <p>
+            Discover school furniture for classrooms, libraries,
+            early learning spaces and institutions. Thoughtful
+            learning environments start with the right essentials.
+          </p>
 
-            <div class="col-6 col-lg-3">
-                <div class="highlight-item">
-                    <div class="highlight-icon"><i class="bi bi-shield-check"></i></div>
-                    <div>
-                        <strong>Built for Daily Use</strong>
-                        <small>Practical furniture options</small>
-                    </div>
-                </div>
-            </div>
+          <div class="hero-actions">
+            <a href="#categories" class="btn btn-gold">Explore Furniture ↘</a>
+            <a href="contact.html" class="btn btn-outline">Request a Quote</a>
+          </div>
 
-            <div class="col-6 col-lg-3">
-                <div class="highlight-item">
-                    <div class="highlight-icon"><i class="bi bi-people"></i></div>
-                    <div>
-                        <strong>All Learning Levels</strong>
-                        <small>From early years to college</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-3">
-                <div class="highlight-item">
-                    <div class="highlight-icon"><i class="bi bi-box-seam"></i></div>
-                    <div>
-                        <strong>Multiple Solutions</strong>
-                        <small>Furniture for different needs</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-3">
-                <div class="highlight-item">
-                    <div class="highlight-icon"><i class="bi bi-chat-square-text"></i></div>
-                    <div>
-                        <strong>Personalised Quotes</strong>
-                        <small>Based on your requirements</small>
-                    </div>
-                </div>
-            </div>
+          <div class="hero-caption">
+            <span class="hero-caption-icon">✳</span>
+            <span>Furniture solutions for spaces where learning happens.</span>
+          </div>
 
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- PRODUCT CATALOGUE -->
-<section class="section" id="school-products">
-    <div class="container">
+    <!-- VALUE STRIP -->
+    <section class="value-strip" aria-label="School furniture categories">
+      <div class="container value-grid">
 
-        <div class="section-heading">
-            <span class="eyebrow">Explore Our Collection</span>
-            <h2>Furniture for Every Learning Space</h2>
-            <p>
-                Browse our school furniture range and tell us what your
-                institution needs. We can discuss quantities, specifications
-                and pricing with you.
-            </p>
+        <div class="value-item">
+          <span class="value-icon">▤</span>
+          <div>
+            <strong>Classroom Furniture</strong>
+            <small>Desks, tables and chairs</small>
+          </div>
         </div>
 
-        <!-- Category filters -->
-        <div class="filter-list" role="group" aria-label="Filter furniture by category">
-            <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All Furniture</button>
-            <button class="filter-btn" type="button" data-filter="lecture" aria-pressed="false">Lecture Chairs</button>
-            <button class="filter-btn" type="button" data-filter="kindergarten" aria-pressed="false">Kindergarten</button>
-            <button class="filter-btn" type="button" data-filter="storage" aria-pressed="false">Storage</button>
-            <button class="filter-btn" type="button" data-filter="beds" aria-pressed="false">School Beds</button>
+        <div class="value-item">
+          <span class="value-icon">⌂</span>
+          <div>
+            <strong>Learning Environments</strong>
+            <small>Furniture for different age groups</small>
+          </div>
         </div>
 
-        <div class="row" id="productGrid">
-
-            <!-- LECTURE CHAIRS -->
-            <div class="col-sm-6 col-lg-3 product-item" data-category="lecture">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/h11.jpeg" class="product-image" alt="Lecture chair option one" loading="lazy">
-                        <span class="product-tag">Lecture Chairs</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Lecture Chair</h3>
-                        <p>A practical seating option for classrooms and lecture rooms.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Lecture Chair">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 product-item" data-category="lecture">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/h22.jpeg" class="product-image" alt="Steel frame lecture chair" loading="lazy">
-                        <span class="product-tag">Lecture Chairs</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Steel-Frame Chair</h3>
-                        <p>A chair option with a sturdy-looking frame for educational spaces.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Steel-Frame Lecture Chair">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 product-item" data-category="lecture">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/sss.jpeg" class="product-image" alt="Wooden base cushioned chair" loading="lazy">
-                        <span class="product-tag">Lecture Chairs</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Cushioned Chair</h3>
-                        <p>A seating option for learning and meeting environments.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Cushioned Lecture Chair">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 product-item" data-category="lecture">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/ss1s.jpeg" class="product-image" alt="Stackable chair option" loading="lazy">
-                        <span class="product-tag">Lecture Chairs</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Stackable Chair</h3>
-                        <p>A space-conscious option for flexible learning areas.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Stackable Lecture Chair">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <!-- KINDERGARTEN -->
-            <div class="col-sm-6 col-lg-3 product-item" data-category="kindergarten">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/Humble Crew Tot Tutors Kids Wood Table & 4 Chair .jpeg" class="product-image" alt="Children's wooden table and four chairs" loading="lazy">
-                        <span class="product-tag">Kindergarten</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Children's Table Set</h3>
-                        <p>A child-sized table and seating set for activities and play.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Children's Table and Chair Set">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 product-item" data-category="kindergarten">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/2sitlocker.jpeg" class="product-image" alt="Compact children's storage locker" loading="lazy">
-                        <span class="product-tag">Kindergarten</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Children's Lockers</h3>
-                        <p>Storage for keeping children's belongings organised.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Children's Lockers">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 product-item" data-category="kindergarten">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/kk1.jpeg" class="product-image" alt="Kindergarten furniture option one" loading="lazy">
-                        <span class="product-tag">Kindergarten</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Early Learning Furniture</h3>
-                        <p>Furniture options for creative and interactive classroom activities.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Early Learning Furniture">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 product-item" data-category="kindergarten">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/kk2.jpeg" class="product-image" alt="Kindergarten seating option two" loading="lazy">
-                        <span class="product-tag">Kindergarten</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Children's Chairs</h3>
-                        <p>Seating options for early-years learning spaces.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Children's Chairs">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <!-- STORAGE -->
-            <div class="col-sm-6 col-lg-3 product-item" data-category="storage">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/sh1.jpeg" class="product-image" alt="Metal school storage lockers" loading="lazy">
-                        <span class="product-tag">Storage</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Metal Storage Lockers</h3>
-                        <p>Locker options for storing school supplies and personal items.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Metal Storage Lockers">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 product-item" data-category="storage">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/sh2.jpeg" class="product-image" alt="Wooden school storage cabinet" loading="lazy">
-                        <span class="product-tag">Storage</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Storage Cabinets</h3>
-                        <p>Cabinet solutions for classroom resources and school materials.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="School Storage Cabinets">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 product-item" data-category="storage">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/sh3.jpeg" class="product-image" alt="Open shelf storage unit" loading="lazy">
-                        <span class="product-tag">Storage</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Open Shelving</h3>
-                        <p>Accessible shelving for books, learning materials and supplies.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Open School Shelving">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 product-item" data-category="storage">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/sh4.jpeg" class="product-image" alt="Compact storage solution" loading="lazy">
-                        <span class="product-tag">Storage</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Compact Storage</h3>
-                        <p>Space-saving storage options for learning resources and toys.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Compact School Storage">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <!-- SCHOOL BEDS -->
-            <div class="col-sm-6 col-lg-4 product-item" data-category="beds">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/bed2n.jpeg" class="product-image" alt="Bunk bed option for boarding schools" loading="lazy">
-                        <span class="product-tag">School Beds</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Boarding School Bunk Beds</h3>
-                        <p>A practical bed option for boarding facilities and dormitories.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Boarding School Bunk Beds">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-sm-6 col-lg-4 product-item" data-category="beds">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/bed2coverd.jpeg" class="product-image" alt="Covered school bed option" loading="lazy">
-                        <span class="product-tag">School Beds</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Covered Bed Option</h3>
-                        <p>A covered design option for selected boarding and sleeping spaces.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Covered School Bed">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-sm-6 col-lg-4 product-item" data-category="beds">
-                <article class="product-card">
-                    <div class="product-image-wrap">
-                        <img src="imgs/bed1study.jpeg" class="product-image" alt="Bed with integrated study desk" loading="lazy">
-                        <span class="product-tag">School Beds</span>
-                    </div>
-                    <div class="product-body">
-                        <h3>Bed with Study Desk</h3>
-                        <p>A combined bed and study-space option for compact rooms.</p>
-                        <a href="#school-enquiry" class="product-link" data-product="Bed with Integrated Study Desk">Enquire about this <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="no-products" id="noProducts">
-                No products found in this category.
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- WHY CHOOSE US -->
-<section class="section section-soft">
-    <div class="container">
-        <div class="section-heading">
-            <span class="eyebrow">Why EcoSolution Hub</span>
-            <h2>Furniture That Works for Your School</h2>
-            <p>
-                Practical options to help schools furnish classrooms,
-                learning areas and boarding facilities.
-            </p>
+        <div class="value-item">
+          <span class="value-icon">↗</span>
+          <div>
+            <strong>Institutional Enquiries</strong>
+            <small>Discuss your furniture requirements</small>
+          </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-6 col-lg-3 mb-4">
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="bi bi-shield-check"></i></div>
-                    <h3>Durability in Mind</h3>
-                    <p>Explore furniture options suited to the everyday demands of educational environments.</p>
-                </div>
-            </div>
+      </div>
+    </section>
 
-            <div class="col-sm-6 col-lg-3 mb-4">
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="bi bi-person-arms-up"></i></div>
-                    <h3>Comfort &amp; Function</h3>
-                    <p>Choose furniture with the intended users, activities and learning spaces in mind.</p>
-                </div>
-            </div>
+    <!-- SCHOOL FURNITURE CATEGORIES -->
+    <section class="categories" id="categories">
+      <div class="container">
 
-            <div class="col-sm-6 col-lg-3 mb-4">
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="bi bi-grid"></i></div>
-                    <h3>Variety of Options</h3>
-                    <p>Explore seating, children's furniture, storage and boarding-school beds.</p>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 mb-4">
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="bi bi-chat-square-text"></i></div>
-                    <h3>Request a Quote</h3>
-                    <p>Share your quantities, budget and specifications to start a conversation about your project.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- VIDEO -->
-<section class="video-section">
-    <div class="container">
-        <div class="section-heading">
-            <span class="eyebrow">See Our Work</span>
-            <h2>Craftsmanship in Action</h2>
-            <p>
-                Watch the video to learn more about furniture craftsmanship
-                and local furniture initiatives.
-            </p>
+        <div class="section-heading reveal">
+          <span class="eyebrow">Explore Our Collection</span>
+          <h2>Designed around<br>the learning experience.</h2>
+          <p>
+            From early learning to higher education, explore furniture
+            categories for different spaces and educational needs.
+          </p>
         </div>
 
-        <div class="video-frame">
+        <div class="category-grid">
+
+          <article class="category-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=85"
+              alt="Students learning together in a classroom"
+              loading="lazy">
+
+            <div class="category-content">
+              <span class="category-tag">Everyday Learning</span>
+              <h3>Classroom Desks</h3>
+              <p>Explore desks and tables for classroom learning spaces.</p>
+              <a href="contact.html" class="category-link">Enquire Now <span>↗</span></a>
+            </div>
+          </article>
+
+          <article class="category-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=85"
+              alt="A bright and welcoming school learning environment"
+              loading="lazy">
+
+            <div class="category-content">
+              <span class="category-tag">Student Seating</span>
+              <h3>Classroom Chairs</h3>
+              <p>Seating options for different classroom layouts.</p>
+              <a href="contact.html" class="category-link">Enquire Now <span>↗</span></a>
+            </div>
+          </article>
+
+          <article class="category-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=85"
+              alt="Young learners in an early childhood learning space"
+              loading="lazy">
+
+            <div class="category-content">
+              <span class="category-tag">Early Learning</span>
+              <h3>Kindergarten Furniture</h3>
+              <p>Furniture ideas for early childhood learning environments.</p>
+              <a href="contact.html" class="category-link">Enquire Now <span>↗</span></a>
+            </div>
+          </article>
+
+          <article class="category-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85"
+              alt="Bookshelves and study spaces in a library"
+              loading="lazy">
+
+            <div class="category-content">
+              <span class="category-tag">Quiet Study</span>
+              <h3>Library Furniture</h3>
+              <p>Tables, seating and furniture for reading and research areas.</p>
+              <a href="contact.html" class="category-link">Enquire Now <span>↗</span></a>
+            </div>
+          </article>
+
+          <article class="category-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=85"
+              alt="A modern university campus building"
+              loading="lazy">
+
+            <div class="category-content">
+              <span class="category-tag">Higher Education</span>
+              <h3>Lecture Hall Furniture</h3>
+              <p>Furniture options for colleges, training centres and lecture rooms.</p>
+              <a href="contact.html" class="category-link">Enquire Now <span>↗</span></a>
+            </div>
+          </article>
+
+          <article class="category-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85"
+              alt="A well-organised professional workspace"
+              loading="lazy">
+
+            <div class="category-content">
+              <span class="category-tag">School Administration</span>
+              <h3>Office & Staffroom</h3>
+              <p>Furniture for staffrooms, school offices and administration areas.</p>
+              <a href="contact.html" class="category-link">Request Supply <span>↗</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO TESTIMONIAL -->
+    <section class="testimonial" id="testimonial">
+      <div class="container testimonial-grid">
+
+        <div class="testimonial-copy reveal">
+          <span class="eyebrow">A Featured Testimonial</span>
+
+          <h2>Education deserves<br>to be invested in.</h2>
+
+          <p>
+            Watch this featured video highlighting the importance of
+            school furniture and the wider effort to create better
+            learning environments.
+          </p>
+
+          <div class="testimonial-label">
+            <span class="quote-mark">“</span>
+            <div>
+              <strong>Watch the full message</strong>
+              <small>
+                Video shared for educational and public-interest context.
+                View the original on YouTube for its full context.
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="video-frame">
             <iframe
-                src="https://www.youtube.com/embed/r-qoUQYgX8Y"
-                title="President Uhuru Launch Local Desk Project"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
+              src="https://www.youtube-nocookie.com/embed/r-qoUQYgX8Y"
+              title="Featured video testimonial about school furniture"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
             </iframe>
+          </div>
+
+          <p class="video-caption">
+            Video hosted by YouTube. Playback may depend on the video's
+            embedding permissions and availability.
+          </p>
         </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURE SECTION -->
+    <section class="feature-section">
+      <div class="container feature-grid">
+
+        <div class="feature-visual reveal">
+          <img
+            class="feature-main-image"
+            src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1100&q=85"
+            alt="A bright school learning environment"
+            loading="lazy">
+
+          <img
+            class="feature-small-image"
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=85"
+            alt="A classroom in use"
+            loading="lazy">
+
+          <div class="feature-stamp">
+            LEARN<br>GROW<br>ACHIEVE
+          </div>
+        </div>
+
+        <div class="feature-copy reveal">
+          <span class="eyebrow">For Schools & Institutions</span>
+
+          <h2>Let's furnish<br>better learning spaces.</h2>
+
+          <p>
+            Every institution has its own needs. Tell us about your
+            classrooms, student numbers, preferred furniture and
+            budget so you can discuss suitable options.
+          </p>
+
+          <ul class="feature-list">
+            <li>
+              <span class="check">✓</span>
+              <span>Furniture enquiries for schools and educational institutions.</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Options for classroom, library and administrative spaces.</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Share your quantities, specifications and budget.</span>
+            </li>
+          </ul>
+
+          <a href="contact.html" class="btn btn-gold">Discuss Your Requirements ↗</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL ENQUIRY -->
+    <section class="request-section">
+      <div class="container">
+
+        <div class="request-panel reveal">
+          <div class="request-copy">
+            <span class="eyebrow">Plan Your Next Project</span>
+
+            <h2>Ready to equip<br>your institution?</h2>
+
+            <p>
+              Send us your school furniture list, required quantities
+              and target budget. Let's start a conversation about
+              furnishing your learning spaces.
+            </p>
+          </div>
+
+          <div class="request-action">
+            <a href="contact.html" class="btn btn-gold">Request a Quote ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <a href="index.html" class="footer-brand">
+        ZERAH<span>-NEXUS</span>
+      </a>
+
+      <p>Creating spaces where learning can thrive.</p>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about_us.html">About Us</a>
+        <a href="#categories">Categories</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <p>© <span id="year"></span> Zerah-Nexus. All rights reserved.</p>
+
     </div>
-</section>
+  </footer>
 
-<!-- ENQUIRY FORM -->
-<section class="enquiry-section" id="school-enquiry">
-    <div class="container">
-        <div class="row align-items-center">
+  <script>
+    // Mobile navigation
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
-            <div class="col-lg-5">
-                <div class="enquiry-intro">
-                    <span class="eyebrow">Let's Furnish Your School</span>
-                    <h2>Tell Us What Your Institution Needs.</h2>
-                    <p>
-                        Planning a new classroom, upgrading a school or
-                        furnishing a boarding facility? Send us your
-                        requirements to begin discussing a suitable solution.
-                    </p>
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
 
-                    <div class="enquiry-point">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>Specify furniture types and quantities.</span>
-                    </div>
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
 
-                    <div class="enquiry-point">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>Share your budget and preferred specifications.</span>
-                    </div>
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
 
-                    <div class="enquiry-point">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>Send your enquiry directly to WhatsApp.</span>
-                    </div>
-                </div>
-            </div>
+    // Close mobile menu after selecting a link
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        menuToggle.textContent = "☰";
+      });
+    });
 
-            <div class="col-lg-7">
-                <div class="enquiry-card">
-                    <h3>Request a School Furniture Quote</h3>
-                    <p class="form-subtitle">
-                        Fill in the details below. Your enquiry will open in WhatsApp for you to send.
-                    </p>
+    // Reveal sections and cards when they enter the viewport
+    const revealElements = document.querySelectorAll(".reveal");
 
-                    <form id="schoolFurnitureForm">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="customerName">Your Name *</label>
-                                <input type="text" class="form-control" id="customerName"
-                                       name="customerName" placeholder="Enter your full name" required>
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label for="phoneNumber">Phone Number *</label>
-                                <input type="tel" class="form-control" id="phoneNumber"
-                                       name="phoneNumber" placeholder="e.g. 07XX XXX XXX" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="institution">School / Institution Name</label>
-                            <input type="text" class="form-control" id="institution"
-                                   name="institution" placeholder="Enter your institution's name">
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="furnitureType">Furniture Category *</label>
-                                <select class="form-control" id="furnitureType" name="furnitureType" required>
-                                    <option value="">Select a category</option>
-                                    <option value="Lecture Chairs">Lecture Chairs</option>
-                                    <option value="Kindergarten Furniture">Kindergarten Furniture</option>
-                                    <option value="School Storage">School Storage</option>
-                                    <option value="School Beds">School Beds</option>
-                                    <option value="Multiple Categories">Multiple Categories</option>
-                                    <option value="Other School Furniture">Other School Furniture</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label for="quantity">Estimated Quantity *</label>
-                                <input type="number" class="form-control" id="quantity"
-                                       name="quantity" min="1" step="1"
-                                       placeholder="e.g. 100" required>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="budget">Estimated Budget (KES)</label>
-                                <input type="number" class="form-control" id="budget"
-                                       name="budget" min="0" step="1"
-                                       placeholder="Enter your budget">
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label for="deliveryLocation">Delivery Location *</label>
-                                <input type="text" class="form-control" id="deliveryLocation"
-                                       name="deliveryLocation" placeholder="Town / County" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="requirements">Additional Requirements</label>
-                            <textarea class="form-control" id="requirements" name="requirements"
-                                      placeholder="Describe the furniture, sizes, materials, colours or other specifications you need."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-submit">
-                            <i class="bi bi-whatsapp"></i> Send Enquiry on WhatsApp
-                        </button>
-
-                        <p class="form-note">
-                            <i class="bi bi-lock"></i>
-                            Your message is prepared for WhatsApp. It is not sent until you press Send there.
-                        </p>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT STRIP -->
-<section class="contact-strip">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <h3>Need furniture for a school project?</h3>
-                <p>Contact EcoSolution Hub to discuss your requirements and request a quotation.</p>
-            </div>
-            <div class="col-lg-4 text-lg-right">
-                <a class="btn-primary-custom"
-                   href="https://wa.me/254742082219?text=Hello%20EcoSolution%20Hub%2C%20I%20would%20like%20to%20enquire%20about%20school%20furniture."
-                   target="_blank" rel="noopener noreferrer">
-                    <i class="bi bi-whatsapp"></i> Talk to Our Team
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <a href="index.html" class="footer-brand">
-                    Zerah <span>Nexus</span>
-                </a>
-                <p>
-                    Practical furniture and construction solutions
-                    for homes, workplaces and learning environments.
-                </p>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="office-furniture.html">Office Furniture</a></li>
-                    <li><a href="home-furniture.html">Home Furniture</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-12 mb-4">
-                <h3>Contact Us</h3>
-                <p><i class="bi bi-envelope-fill mr-2"></i><a href="mailto:zerahnexus@gmail.com">zerahnexus@gmail.com</a></p>
-                <p><i class="bi bi-telephone-fill mr-2"></i><a href="tel:+254742082219">+254 742 082 219</a></p>
-                <p>
-                    <i class="bi bi-whatsapp mr-2"></i>
-                    <a href="https://wa.me/254742082219" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a>
-                </p>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            &copy; <span id="currentYear"></span> EcoSolution Hub. All rights reserved.
-        </div>
-    </div>
-</footer>
-
-<!-- Floating WhatsApp -->
-<a class="floating-whatsapp"
-   href="https://wa.me/254742082219?text=Hello%20EcoSolution%20Hub%2C%20I%20would%20like%20to%20enquire%20about%20school%20furniture."
-   target="_blank" rel="noopener noreferrer"
-   aria-label="Chat with EcoSolution Hub on WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-</a>
-
-<!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-    // Product category filtering
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const productItems = document.querySelectorAll(".product-item");
-    const noProducts = document.getElementById("noProducts");
-
-    filterButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            const selectedCategory = button.dataset.filter;
-            let visibleCount = 0;
-
-            filterButtons.forEach(function(item) {
-                const isActive = item === button;
-                item.classList.toggle("active", isActive);
-                item.setAttribute("aria-pressed", String(isActive));
-            });
-
-            productItems.forEach(function(item) {
-                const matches =
-                    selectedCategory === "all" ||
-                    item.dataset.category === selectedCategory;
-
-                item.style.display = matches ? "" : "none";
-
-                if (matches) {
-                    visibleCount++;
-                }
-            });
-
-            noProducts.style.display = visibleCount === 0 ? "block" : "none";
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            currentObserver.unobserve(entry.target);
+          }
         });
-    });
+      }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -25px 0px"
+      });
 
-    // Product enquiry links prefill the form
-    document.querySelectorAll("[data-product]").forEach(function(link) {
-        link.addEventListener("click", function() {
-            const productName = link.dataset.product;
-            const categorySelect = document.getElementById("furnitureType");
-            const requirements = document.getElementById("requirements");
+      revealElements.forEach(element => observer.observe(element));
+    } else {
+      revealElements.forEach(element => element.classList.add("visible"));
+    }
 
-            const categoryMap = {
-                "Lecture Chair": "Lecture Chairs",
-                "Steel-Frame Lecture Chair": "Lecture Chairs",
-                "Cushioned Lecture Chair": "Lecture Chairs",
-                "Stackable Lecture Chair": "Lecture Chairs",
-                "Children's Table and Chair Set": "Kindergarten Furniture",
-                "Children's Lockers": "Kindergarten Furniture",
-                "Early Learning Furniture": "Kindergarten Furniture",
-                "Children's Chairs": "Kindergarten Furniture",
-                "Metal Storage Lockers": "School Storage",
-                "School Storage Cabinets": "School Storage",
-                "Open School Shelving": "School Storage",
-                "Compact School Storage": "School Storage",
-                "Boarding School Bunk Beds": "School Beds",
-                "Covered School Bed": "School Beds",
-                "Bed with Integrated Study Desk": "School Beds"
-            };
-
-            categorySelect.value = categoryMap[productName] || "Other School Furniture";
-            requirements.value = "I am interested in: " + productName + ". Please share available options and pricing.";
-        });
-    });
-
-    // Prepare enquiry and open WhatsApp
-    document.getElementById("schoolFurnitureForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const name = document.getElementById("customerName").value.trim();
-        const phone = document.getElementById("phoneNumber").value.trim();
-        const institution = document.getElementById("institution").value.trim();
-        const category = document.getElementById("furnitureType").value;
-        const quantity = document.getElementById("quantity").value;
-        const budget = document.getElementById("budget").value;
-        const location = document.getElementById("deliveryLocation").value.trim();
-        const requirements = document.getElementById("requirements").value.trim();
-
-        if (!this.reportValidity()) {
-            return;
-        }
-
-        const message = [
-            "Hello EcoSolution Hub!",
-            "",
-            "I would like to enquire about school furniture.",
-            "",
-            "Name: " + name,
-            "Phone: " + phone,
-            "School / Institution: " + (institution || "Not provided"),
-            "Furniture Category: " + category,
-            "Estimated Quantity: " + quantity,
-            "Estimated Budget: " + (budget ? "KES " + Number(budget).toLocaleString("en-KE") : "Not specified"),
-            "Delivery Location: " + location,
-            "Additional Requirements: " + (requirements || "None provided")
-        ].join("\n");
-
-        const whatsappURL =
-            "https://wa.me/254742082219?text=" + encodeURIComponent(message);
-
-        window.open(whatsappURL, "_blank", "noopener,noreferrer");
-    });
-
-    // Automatically update the footer year
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
-</script>
+    // Automatic copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
+```
