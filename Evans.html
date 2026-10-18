@@ -1,1346 +1,2839 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 
 <title>Evans Gitau | Communication Strategist</title>
 
+
+
 <style>
+
 /* =========================================================
+
    EVANS GITAU — PERSONAL PORTFOLIO
+
    Fully responsive / No Bootstrap required
-========================================================= */
+
+\========================================================= */
+
+
 
 :root{
+
   --navy:#0c0a85;
+
   --deep-navy:#101642;
+
   --blue:#1875cc;
+
   --green:#285c45;
+
   --gold:#d89b3d;
+
   --gold-light:#f1c875;
 
+
+
   --cream:#f7f6f1;
+
   --white:#ffffff;
+
   --text:#17202b;
+
   --muted:#3c4352;
+
+
 
   --border:rgba(16,22,66,.09);
 
+
+
   --shadow:0 15px 35px rgba(10,20,40,.07);
+
   --shadow-hover:
+
     0 22px 45px rgba(10,20,40,.11),
+
     0 0 26px rgba(216,155,61,.16);
+
 }
+
+
 
 /* =========================================================
-   RESET
-========================================================= */
 
-*{
+   RESET
+
+\========================================================= */
+
+
+
+\*{
+
   box-sizing:border-box;
+
   margin:0;
+
   padding:0;
+
 }
+
+
 
 html{
+
   scroll-behavior:smooth;
+
 }
+
+
 
 body{
+
   font-family:
+
     "Segoe UI",
+
     system-ui,
+
     -apple-system,
+
     BlinkMacSystemFont,
+
     sans-serif;
 
+
+
   background:var(--cream);
+
   color:var(--text);
+
   line-height:1.7;
+
   overflow-x:hidden;
+
 }
 
+
+
 a{
+
   color:inherit;
+
 }
+
+
 
 img{
+
   max-width:100%;
+
   display:block;
+
 }
+
+
 
 button,
+
 a{
+
   -webkit-tap-highlight-color:transparent;
+
 }
 
+
+
 /* =========================================================
+
    HOME BUTTON
-========================================================= */
+
+\========================================================= */
+
+
 
 .home-button{
+
   position:absolute;
+
   top:28px;
+
   left:28px;
+
   z-index:10;
 
+
+
   display:inline-flex;
+
   align-items:center;
+
   gap:8px;
+
+
 
   padding:10px 17px;
 
+
+
   border:1px solid rgba(255,255,255,.28);
+
   border-radius:999px;
 
+
+
   background:rgba(8,15,45,.45);
+
   color:#fff;
 
+
+
   text-decoration:none;
+
   font-size:.86rem;
+
   font-weight:600;
 
+
+
   backdrop-filter:blur(10px);
+
   -webkit-backdrop-filter:blur(10px);
+
+
 
   box-shadow:0 6px 20px rgba(0,0,0,.15);
 
+
+
   transition:
+
     background .25s ease,
+
     border-color .25s ease,
+
     transform .25s ease,
+
     box-shadow .25s ease;
+
 }
+
+
 
 .home-icon{
+
   font-size:1rem;
+
   line-height:1;
+
 }
+
+
 
 .home-button:hover,
+
 .home-button:focus-visible{
+
   color:#fff;
+
   background:rgba(216,155,61,.9);
+
   border-color:rgba(255,255,255,.55);
+
   transform:translateY(-2px);
 
+
+
   box-shadow:
+
     0 9px 25px rgba(0,0,0,.22),
+
     0 0 22px rgba(216,155,61,.25);
+
 }
 
+
+
 /* =========================================================
+
    HERO
-========================================================= */
+
+\========================================================= */
+
+
 
 .hero{
+
   position:relative;
+
+
 
   min-height:620px;
 
+
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
+
 
   padding:110px 20px 90px;
 
+
+
   text-align:center;
+
   color:#fff;
+
+
 
   overflow:hidden;
 
+
+
   background:
+
     radial-gradient(
+
       circle at 75% 20%,
+
       rgba(216,155,61,.16),
+
       transparent 30%
+
     ),
+
     linear-gradient(
+
       135deg,
+
       #0b0a70 0%,
+
       #101642 55%,
+
       #1875cc 100%
+
     );
+
 }
 
+
+
 .hero::before{
+
   content:"";
 
+
+
   position:absolute;
+
   width:420px;
+
   height:420px;
 
+
+
   right:-170px;
+
   bottom:-220px;
 
+
+
   border-radius:50%;
+
+
 
   border:1px solid rgba(216,155,61,.18);
 
+
+
   box-shadow:
+
     0 0 0 45px rgba(216,155,61,.035),
+
     0 0 0 90px rgba(216,155,61,.025);
 
+
+
   pointer-events:none;
+
 }
+
+
 
 .hero-content{
+
   position:relative;
+
   z-index:2;
 
+
+
   width:min(900px,100%);
+
 }
+
+
 
 /* Portrait */
 
+
+
 .hero-photo{
+
   width:clamp(125px,18vw,165px);
+
   aspect-ratio:1;
+
+
 
   margin:0 auto 25px;
 
+
+
   object-fit:cover;
 
+
+
   border-radius:50%;
+
+
 
   border:4px solid rgba(255,255,255,.9);
 
+
+
   box-shadow:
+
     0 12px 35px rgba(0,0,0,.25),
+
     0 0 28px rgba(216,155,61,.12);
+
 }
+
+
 
 /* Small hero label */
 
+
+
 .hero-kicker{
+
   margin-bottom:12px;
+
+
 
   color:var(--gold-light);
 
+
+
   font-size:.76rem;
+
   font-weight:800;
 
+
+
   letter-spacing:3px;
+
   text-transform:uppercase;
+
 }
+
+
 
 /* Name */
 
+
+
 .hero h1{
+
   margin:0;
+
+
 
   font-size:clamp(2.3rem,6vw,4.4rem);
 
+
+
   line-height:1.05;
+
+
 
   font-weight:800;
 
+
+
   letter-spacing:-1.5px;
+
 }
+
+
 
 /* Main statement */
 
+
+
 .hero-tagline{
+
   margin:20px auto 0;
+
+
 
   font-size:clamp(1.05rem,2vw,1.35rem);
 
+
+
   color:rgba(255,255,255,.92);
 
+
+
   font-weight:500;
+
 }
 
+
+
 .hero-description{
+
   max-width:680px;
+
+
 
   margin:18px auto 0;
 
+
+
   color:rgba(255,255,255,.78);
+
+
 
   font-size:.98rem;
 
+
+
   line-height:1.8;
+
 }
 
+
+
 /* =========================================================
+
    MAIN CONTAINER
-========================================================= */
+
+\========================================================= */
+
+
 
 .container{
+
   width:min(1120px,calc(100% - 40px));
+
   margin:0 auto;
+
 }
+
+
 
 /* =========================================================
+
    SECTIONS
-========================================================= */
+
+\========================================================= */
+
+
 
 .section{
+
   padding:95px 0;
+
 }
+
+
 
 .section:nth-child(even){
+
   background:#fff;
+
 }
+
+
 
 .section-header{
+
   margin-bottom:45px;
+
 }
 
+
+
 .section-label{
+
   display:block;
 
+
+
   margin-bottom:10px;
+
+
 
   color:var(--green);
 
+
+
   font-size:.75rem;
+
   font-weight:800;
 
+
+
   letter-spacing:2.5px;
+
   text-transform:uppercase;
+
 }
 
+
+
 .section-title{
+
   color:var(--deep-navy);
+
+
 
   font-size:clamp(1.8rem,4vw,2.65rem);
 
+
+
   line-height:1.15;
+
+
 
   font-weight:800;
 
+
+
   letter-spacing:-.6px;
+
 }
 
+
+
 .section-subtitle{
+
   max-width:650px;
+
+
 
   margin-top:13px;
 
+
+
   color:var(--muted);
+
+
 
   font-size:1rem;
 
+
+
   line-height:1.75;
+
 }
 
+
+
 /* =========================================================
+
    ABOUT
-========================================================= */
+
+\========================================================= */
+
+
 
 .about-layout{
+
   display:grid;
 
+
+
   grid-template-columns:
+
     minmax(0,1.1fr)
+
     minmax(280px,.9fr);
+
+
 
   gap:70px;
 
+
+
   align-items:center;
+
 }
 
+
+
 .about-copy p{
+
   color:#394454;
+
+
 
   font-size:1.02rem;
 
+
+
   line-height:1.85;
+
 }
+
+
 
 .about-copy strong{
+
   color:var(--deep-navy);
+
 }
 
+
+
 .about-highlight{
+
   position:relative;
+
+
 
   padding:34px;
 
+
+
   background:var(--deep-navy);
+
+
 
   border-radius:18px;
 
+
+
   color:#fff;
 
+
+
   overflow:hidden;
+
 }
 
+
+
 .about-highlight::after{
+
   content:"";
+
+
 
   position:absolute;
 
+
+
   width:180px;
+
   height:180px;
 
+
+
   right:-90px;
+
   bottom:-90px;
+
+
 
   border-radius:50%;
 
+
+
   background:rgba(216,155,61,.13);
+
 }
 
+
+
 .about-highlight span{
+
   position:relative;
+
   z-index:1;
+
+
 
   display:block;
 
+
+
   margin-bottom:10px;
 
+
+
   color:var(--gold-light);
+
+
 
   font-size:.75rem;
 
+
+
   font-weight:800;
+
+
 
   letter-spacing:2px;
 
+
+
   text-transform:uppercase;
+
 }
 
+
+
 .about-highlight h3{
+
   position:relative;
+
   z-index:1;
+
+
 
   margin-bottom:12px;
 
+
+
   font-size:1.35rem;
 
+
+
   line-height:1.3;
+
 }
 
+
+
 .about-highlight p{
+
   position:relative;
+
   z-index:1;
+
+
 
   color:rgba(255,255,255,.78);
 
+
+
   font-size:.92rem;
 
+
+
   line-height:1.7;
+
 }
 
+
+
 /* =========================================================
+
    WHAT I DO
-========================================================= */
+
+\========================================================= */
+
+
 
 .skills-grid{
+
   display:grid;
+
+
 
   grid-template-columns:repeat(3,1fr);
 
+
+
   gap:20px;
+
 }
 
+
+
 .skill-card{
+
   padding:30px 25px;
+
+
 
   background:#fff;
 
+
+
   border:1px solid var(--border);
+
+
 
   border-radius:16px;
 
+
+
   box-shadow:var(--shadow);
 
+
+
   transition:
+
     transform .3s ease,
+
     box-shadow .3s ease,
+
     border-color .3s ease;
+
 }
 
+
+
 .skill-card:hover{
+
   transform:translateY(-6px);
+
+
 
   border-color:rgba(216,155,61,.38);
 
+
+
   box-shadow:var(--shadow-hover);
+
 }
 
+
+
 .skill-number{
+
   display:block;
+
+
 
   margin-bottom:28px;
 
+
+
   color:var(--gold);
+
+
 
   font-size:.76rem;
 
+
+
   font-weight:800;
 
+
+
   letter-spacing:1.5px;
+
 }
 
+
+
 .skill-card h3{
+
   margin-bottom:10px;
 
+
+
   color:var(--deep-navy);
+
+
 
   font-size:1.1rem;
 
+
+
   line-height:1.35;
+
 }
 
+
+
 .skill-card p{
+
   color:var(--muted);
+
+
 
   font-size:.92rem;
 
+
+
   line-height:1.7;
+
 }
+
+
 
 /* =========================================================
+
    PROJECTS
-========================================================= */
+
+\========================================================= */
+
+
 
 .projects-section{
+
   background:var(--cream);
+
 }
 
+
+
 .projects-grid{
+
   display:grid;
+
+
 
   grid-template-columns:repeat(2,1fr);
 
+
+
   gap:22px;
+
 }
 
+
+
 .project-card{
+
   position:relative;
 
+
+
   display:flex;
+
   flex-direction:column;
+
+
 
   min-height:245px;
 
+
+
   padding:32px;
 
+
+
   background:#fff;
+
+
 
   border:1px solid var(--border);
 
+
+
   border-radius:18px;
+
+
 
   text-decoration:none;
 
+
+
   overflow:hidden;
+
+
 
   box-shadow:var(--shadow);
 
+
+
   transition:
+
     transform .3s cubic-bezier(.2,.75,.25,1),
+
     box-shadow .35s ease,
+
     border-color .3s ease;
+
 }
 
+
+
 .project-card::before{
+
   content:"";
+
+
 
   position:absolute;
 
+
+
   inset:12px;
+
+
 
   border-radius:18px;
 
+
+
   background:rgba(216,155,61,.22);
+
+
 
   filter:blur(25px);
 
+
+
   opacity:0;
+
+
 
   transform:scale(.94);
 
+
+
   transition:
+
     opacity .35s ease,
+
     transform .35s ease;
 
+
+
   pointer-events:none;
+
 }
 
+
+
 .project-card:hover,
+
 .project-card:focus-visible{
+
   transform:translateY(-7px);
+
+
 
   border-color:rgba(216,155,61,.38);
 
+
+
   box-shadow:var(--shadow-hover);
+
 }
+
+
 
 .project-card:hover::before,
+
 .project-card:focus-visible::before{
+
   opacity:1;
+
   transform:scale(1);
+
 }
+
+
 
 .project-content{
+
   position:relative;
+
   z-index:1;
 
+
+
   display:flex;
+
   flex-direction:column;
 
+
+
   height:100%;
+
 }
 
+
+
 .project-number{
+
   color:var(--gold);
+
+
 
   font-size:.76rem;
 
+
+
   font-weight:800;
+
+
 
   letter-spacing:1.5px;
 
+
+
   margin-bottom:25px;
+
 }
 
+
+
 .project-card h3{
+
   margin-bottom:10px;
+
+
 
   color:var(--deep-navy);
 
+
+
   font-size:1.18rem;
 
+
+
   line-height:1.35;
+
 }
 
+
+
 .project-card p{
+
   color:var(--muted);
+
+
 
   font-size:.92rem;
 
+
+
   line-height:1.7;
+
 }
 
+
+
 .project-link{
+
   display:inline-flex;
+
   align-items:center;
+
   gap:7px;
 
+
+
   margin-top:auto;
+
   padding-top:25px;
+
+
 
   color:var(--navy);
 
+
+
   font-size:.85rem;
+
+
 
   font-weight:700;
 
+
+
   transition:
+
     color .25s ease,
+
     transform .25s ease;
+
 }
+
+
 
 .project-card:hover .project-link{
+
   color:#a66b16;
+
   transform:translateX(4px);
+
 }
+
+
 
 /* =========================================================
+
    CONTACT
-========================================================= */
+
+\========================================================= */
+
+
 
 .contact-section{
+
   background:#fff;
+
 }
 
+
+
 .contact-box{
+
   position:relative;
+
+
 
   max-width:850px;
 
+
+
   margin:0 auto;
+
+
 
   padding:55px 35px;
 
+
+
   text-align:center;
 
+
+
   background:
+
     radial-gradient(
+
       circle at 90% 10%,
+
       rgba(216,155,61,.13),
+
       transparent 30%
+
     ),
+
     var(--deep-navy);
+
+
 
   border-radius:22px;
 
+
+
   color:#fff;
 
+
+
   overflow:hidden;
+
 }
 
+
+
 .contact-box h2{
+
   margin-bottom:15px;
+
+
 
   font-size:clamp(1.8rem,4vw,2.5rem);
 
+
+
   line-height:1.15;
+
 }
 
+
+
 .contact-box > p{
+
   max-width:570px;
+
+
 
   margin:0 auto 27px;
 
+
+
   color:rgba(255,255,255,.78);
 
+
+
   line-height:1.75;
+
 }
 
+
+
 .contact-details{
+
   margin-bottom:28px;
+
+
 
   color:rgba(255,255,255,.88);
 
+
+
   font-size:.95rem;
 
+
+
   line-height:2;
+
 }
+
+
 
 .contact-details strong{
+
   color:var(--gold-light);
+
 }
 
+
+
 .contact-actions{
+
   display:flex;
 
+
+
   justify-content:center;
+
+
 
   flex-wrap:wrap;
 
+
+
   gap:12px;
+
 }
 
+
+
 .btn{
+
   display:inline-flex;
 
+
+
   align-items:center;
+
   justify-content:center;
+
+
 
   min-height:48px;
 
+
+
   padding:11px 23px;
+
+
 
   border-radius:999px;
 
+
+
   text-decoration:none;
+
+
 
   font-size:.9rem;
 
+
+
   font-weight:700;
 
+
+
   transition:
+
     transform .25s ease,
+
     box-shadow .25s ease,
+
     background .25s ease;
+
 }
+
+
 
 .btn-whatsapp{
+
   background:#25D366;
 
+
+
   color:#fff;
+
+
 
   box-shadow:0 8px 20px rgba(37,211,102,.2);
+
 }
 
+
+
 .btn-whatsapp:hover,
+
 .btn-whatsapp:focus-visible{
+
   background:#1ebd5a;
 
+
+
   color:#fff;
+
+
 
   transform:translateY(-2px);
 
+
+
   box-shadow:0 10px 25px rgba(37,211,102,.28);
+
 }
 
+
+
 .btn-email{
+
   background:rgba(255,255,255,.1);
+
+
 
   border:1px solid rgba(255,255,255,.2);
 
+
+
   color:#fff;
+
 }
+
+
 
 .btn-email:hover,
+
 .btn-email:focus-visible{
+
   background:rgba(255,255,255,.17);
+
+
 
   color:#fff;
 
+
+
   transform:translateY(-2px);
+
 }
 
+
+
 /* =========================================================
+
    FOOTER
-========================================================= */
+
+\========================================================= */
+
+
 
 footer{
+
   padding:23px 15px;
+
+
 
   background:#0b1035;
 
+
+
   text-align:center;
+
+
 
   color:#cbd1df;
 
+
+
   font-size:.82rem;
 
+
+
   letter-spacing:.25px;
+
 }
+
+
 
 footer strong{
+
   color:#fff;
+
 }
 
+
+
 /* =========================================================
+
    RESPONSIVE — TABLET
-========================================================= */
+
+\========================================================= */
+
+
 
 @media (max-width:900px){
 
+
+
   .hero{
+
     min-height:570px;
+
   }
+
+
 
   .about-layout{
+
     grid-template-columns:1fr;
 
+
+
     gap:35px;
+
   }
+
+
 
   .skills-grid{
+
     grid-template-columns:repeat(2,1fr);
+
   }
+
 }
 
+
+
 /* =========================================================
+
    RESPONSIVE — MOBILE
-========================================================= */
+
+\========================================================= */
+
+
 
 @media (max-width:640px){
 
+
+
   .home-button{
+
     top:18px;
+
     left:18px;
+
+
 
     padding:9px 14px;
 
+
+
     font-size:.82rem;
+
   }
+
+
 
   .hero{
+
     min-height:600px;
 
+
+
     padding:
+
       100px
+
       18px
+
       75px;
+
   }
+
+
 
   .hero-photo{
+
     width:130px;
 
+
+
     margin-bottom:22px;
+
   }
+
+
 
   .hero h1{
+
     font-size:clamp(2.15rem,12vw,3.2rem);
+
   }
+
+
 
   .hero-tagline{
+
     font-size:1rem;
+
     line-height:1.6;
+
   }
+
+
 
   .hero-description{
+
     font-size:.9rem;
+
   }
+
+
 
   .container{
+
     width:calc(100% - 32px);
+
   }
+
+
 
   .section{
+
     padding:70px 0;
+
   }
+
+
 
   .section-header{
+
     margin-bottom:32px;
+
   }
+
+
 
   .skills-grid{
+
     grid-template-columns:1fr;
+
   }
+
+
 
   .projects-grid{
+
     grid-template-columns:1fr;
+
   }
+
+
 
   .project-card{
+
     min-height:220px;
 
+
+
     padding:27px 23px;
+
   }
+
+
 
   .about-highlight{
+
     padding:29px 25px;
+
   }
+
+
 
   .contact-box{
+
     padding:42px 22px;
 
+
+
     border-radius:18px;
+
   }
+
+
 
   .contact-actions{
+
     flex-direction:column;
+
   }
+
+
 
   .btn{
+
     width:100%;
+
   }
+
 }
 
+
+
 /* =========================================================
+
    REDUCED MOTION
-========================================================= */
+
+\========================================================= */
+
+
 
 @media (prefers-reduced-motion:reduce){
 
+
+
   html{
+
     scroll-behavior:auto;
+
   }
 
-  *,
-  *::before,
-  *::after{
+
+
+  \*,
+
+  \*::before,
+
+  \*::after{
+
     animation-duration:.01ms !important;
+
     animation-iteration-count:1 !important;
+
     transition-duration:.01ms !important;
+
   }
+
 }
+
 .skills-grid .skill-card {
+
   grid-column: 1 / -1;
+
 }
+
  portfolio cards */
 
+
+
 .image-project-card {
+
   display: flex;
+
   flex-direction: column;
+
   overflow: hidden;
+
   text-decoration: none;
+
 }
+
+
 
 .project-image {
+
   position: relative;
+
   width: 100%;
+
   height: 250px;
+
   overflow: hidden;
+
   background: #03142b;
+
 }
+
+
 
 .project-image img {
+
   width: 100%;
+
   height: 100%;
+
   display: block;
+
   object-fit: cover;
+
   transition: transform 0.6s ease;
+
 }
+
+
 
 .image-project-card:hover .project-image img {
+
   transform: scale(1.05);
+
 }
+
+
 
 .project-image::after {
+
   content: "";
+
   position: absolute;
+
   inset: 0;
+
   background: linear-gradient(
+
     to top,
+
     rgba(3, 20, 43, 0.85),
+
     transparent 65%
+
   );
+
   pointer-events: none;
+
 }
+
+
 
 .project-image .project-number {
+
   position: absolute;
+
   z-index: 1;
+
   left: 20px;
+
   bottom: 18px;
+
   color: #fff;
+
   font-size: 0.75rem;
+
   font-weight: 600;
+
   letter-spacing: 1.5px;
+
 }
+
+
 
 .image-project-card .project-content {
+
   padding: 24px;
+
 }
+
+
 
 .image-project-card .project-content h3 {
+
   margin-top: 0;
+
 }
+
+
 
 .image-project-card .project-link {
+
   display: inline-block;
+
   margin-top: 12px;
+
 }
+
+
 
 @media (max-width: 600px) {
+
   .project-image {
+
     height: 210px;
+
   }
 
+
+
   .image-project-card .project-content {
+
     padding: 20px;
+
   }
+
 }
+
+
+/* =========================================================
+   CORPORATE HERO UPGRADE — RESPONSIVE
+   ========================================================= */
+.hero{
+  min-height: min(760px, 100svh);
+  min-height: clamp(620px, 88svh, 820px);
+  justify-content: stretch;
+  text-align: left;
+  padding: 112px clamp(22px, 6vw, 88px) 82px;
+  background:
+    linear-gradient(90deg, rgba(7,15,43,.96) 0%, rgba(7,15,43,.88) 43%, rgba(7,15,43,.40) 100%),
+    linear-gradient(0deg, rgba(7,15,43,.38), rgba(7,15,43,.12)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2400&q=85") center/cover no-repeat;
+}
+.hero::before{
+  width:500px;
+  height:500px;
+  right:-190px;
+  bottom:-260px;
+  border-color:rgba(241,200,117,.24);
+  box-shadow:0 0 0 55px rgba(241,200,117,.045),0 0 0 110px rgba(241,200,117,.025);
+}
+.hero-content{
+  width:min(1180px,100%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);
+  grid-template-rows:auto auto auto 1fr;
+  column-gap:clamp(32px,6vw,90px);
+  align-items:center;
+}
+.hero-photo{
+  grid-column:2;
+  grid-row:1 / span 4;
+  width:clamp(250px,29vw,390px);
+  aspect-ratio:4/5;
+  margin:0 auto;
+  object-fit:cover;
+  object-position:center 30%;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:0 28px 75px rgba(0,0,0,.38),0 0 0 10px rgba(255,255,255,.055);
+}
+.hero-kicker{
+  grid-column:1;
+  grid-row:1;
+  margin-bottom:16px;
+  letter-spacing:3.2px;
+}
+.hero h1{
+  grid-column:1;
+  grid-row:2;
+  max-width:720px;
+  font-size:clamp(2.8rem,6.2vw,5.6rem);
+  letter-spacing:-2px;
+  text-wrap:balance;
+}
+.hero-tagline{
+  grid-column:1;
+  grid-row:3;
+  margin:24px 0 0;
+  color:#fff;
+  font-weight:650;
+  font-size:clamp(1.1rem,2vw,1.5rem);
+}
+.hero-description{
+  grid-column:1;
+  grid-row:4;
+  max-width:620px;
+  margin:17px 0 0;
+  color:rgba(255,255,255,.84);
+  font-size:1rem;
+}
+.home-button{
+  background:rgba(5,12,35,.48);
+  border-color:rgba(255,255,255,.36);
+}
+.home-button:hover,.home-button:focus-visible{
+  background:var(--gold);
+}
+@media (max-width:900px){
+  .hero{
+    min-height:unset;
+    padding:105px 28px 72px;
+    background-position:center;
+  }
+  .hero-content{
+    grid-template-columns:minmax(0,1fr) minmax(210px,.72fr);
+    column-gap:28px;
+  }
+  .hero-photo{
+    width:clamp(210px,30vw,290px);
+  }
+  .hero h1{font-size:clamp(2.5rem,6.5vw,4rem);}
+}
+@media (max-width:640px){
+  .hero{
+    min-height:unset;
+    padding:100px 20px 58px;
+    text-align:center;
+    background:
+      linear-gradient(180deg,rgba(7,15,43,.78),rgba(7,15,43,.94)),
+      url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80") center/cover no-repeat;
+  }
+  .hero-content{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0;
+  }
+  .hero-photo{
+    order:0;
+    width:clamp(155px,45vw,205px);
+    aspect-ratio:4/5;
+    margin:0 auto 25px;
+    border-radius:18px;
+    object-position:center 28%;
+  }
+  .hero-kicker{order:1;margin-bottom:10px;font-size:.7rem;}
+  .hero h1{
+    order:2;
+    font-size:clamp(2.35rem,11vw,3.5rem);
+    letter-spacing:-1.2px;
+    line-height:1.04;
+  }
+  .hero-tagline{
+    order:3;
+    margin:17px auto 0;
+    font-size:1.02rem;
+  }
+  .hero-description{
+    order:4;
+    margin:13px auto 0;
+    max-width:480px;
+    font-size:.91rem;
+    line-height:1.75;
+  }
+  .home-button{top:16px;left:16px;padding:8px 13px;}
+}
+@media (max-width:380px){
+  .hero{padding-left:16px;padding-right:16px;}
+  .hero-photo{width:150px;}
+  .hero h1{font-size:2.25rem;}
+}
+
 </style>
+
 </head>
+
+
 
 <body>
 
+
+
 <!-- =======================================================
+
      HERO
-======================================================= -->
+
+\======================================================= -->
+
+
 
 <section class="hero">
 
+
+
   <!-- Home Button -->
+
   <a
+
     href="index.html"
+
     class="home-button"
+
     aria-label="Return to home page"
+
   >
+
     <span class="home-icon">⌂</span>
+
     <span>Home</span>
+
   </a>
+
+
 
   <div class="hero-content">
 
+
+
     <img
-      src="imgs/Resh.jpg"
+
+      src="imgs/Zerah Evans.jpg"
+
       alt="Evans Gitau"
+
       class="hero-photo"
+
     >
 
+
+
     <p class="hero-kicker">
+
       Personal Portfolio
+
     </p>
+
+
 
     <h1>
+
       Evans Gitau
+
     </h1>
 
+
+
     <p class="hero-tagline">
+
       Strategy. Communication. Action.
+
     </p>
+
+
 
     <p class="hero-description">
+
       Communication strategist and diverce connectivity expart in water, environment, youth and National development
+
     </p>
 
+
+
   </div>
+
+
 
 </section>
 
 
+
+
+
 <!-- =======================================================
+
      ABOUT ME
-======================================================= -->
+
+\======================================================= -->
+
+
 
 <section class="section">
 
+
+
   <div class="container">
 
+
+
     <div class="section-header">
+
       <span class="section-label">
+
         Who I Am
+
       </span>
 
+
+
       <h2 class="section-title">
+
         Connecting people, ideas and purpose.
+
       </h2>
+
     </div>
+
+
 
     <div class="about-layout">
 
+
+
       <div class="about-copy">
 
+
+
         <p>
+
           I am a
+
           <strong>communication strategist</strong>
+
           and
+
           <strong>digital assistant</strong>
+
           with a background in water, engineering and environmental sustainability.
+
         </p>
+
+
 
         <br>
 
+
+
         <p>
+
           My experience spans technical work, communication,
+
           digital platforms and community-focused initiatives.
+
           I use these different perspectives to turn ideas into
+
           clear documentaries, useful platforms and meaningful action.
+
         </p>
+
+
 
         <br>
 
+
+
         <p>
+
           Through projects such as
+
           <strong>Vision Tommorow</strong>
+
           and
+
           <strong>Zerah-Nexus</strong>,
+
           I explore the connection between people, technology,
+
           sustainability and positive social impact.
+
         </p>
+
+
 
       </div>
+
+
+
 
 
       <div class="about-highlight">
 
+
+
         <span>
+
           My Focus
+
         </span>
 
+
+
         <h3>
+
           Communication that creates connection.
+
         </h3>
 
+
+
         <p>
+
           I work at the intersection of communication,
+
           sustainability, technology and community —
+
           translating complex ideas into documentaries and
+
           experiences people can understand and engage with.
+
         </p>
+
+
 
       </div>
 
+
+
     </div>
 
+
+
   </div>
+
+
 
 </section>
 
 
+
+
+
 <!-- =======================================================
+
      WHAT I DO
-======================================================= -->
+
+\======================================================= -->
+
+
 
 <section class="section">
 
+
+
   <div class="container">
+
+
 
     <div class="section-header">
 
+
+
       <span class="section-label">
+
         What I Do
+
       </span>
 
+
+
       <h2 class="section-title">
+
         Skill with purpose.
+
       </h2>
 
+
+
       <p class="section-subtitle">
+
         Combining communication, digital creativity and
+
         environmental knowledge to build useful and engaging work.
+
       </p>
 
+
+
     </div>
+
+
 
 <div class="skills-grid">
 
+
+
   <article class="skill-card">
+
     <span class="skill-number">01</span>
+
+
 
     <h3>Communication, Digital Innovation & Advocacy</h3>
 
+
+
     <p>
+
       Connecting communication, engineering strategy, digital
+
       tools with environmental advocacy to shape narratives,
+
       engage audiences and inspire meaningful action in climate,
+
       water security and community development.
+
     </p>
+
+
 
   </article>
 
+
+
 </div>
+
+
 
 </section>
 
 
+
+
+
 <!-- =======================================================
+
      SELECTED WORK
-======================================================= -->
+
+\======================================================= -->
+
+
 
 <section class="section projects-section">
 
+
+
   <div class="container">
+
+
 
     <div class="section-header">
 
+
+
       <span class="section-label">
+
         Selected Work
+
       </span>
 
+
+
       <h2 class="section-title">
+
         Projects at the intersection of experience and impact.
+
       </h2>
 
+
+
       <p class="section-subtitle">
+
         A selection of initiatives exploring water,
+
         sustainability, youth, community and national development.
+
       </p>
+
 <div class="projects-grid">
 
+
+
   <!-- Water Security Project -->
+
   <a href="water-project.html"
+
      class="project-card image-project-card">
 
+
+
     <div class="project-image">
+
       <img
+
         src="imgs/Engineer.png"
+
         alt="Clean water flowing, representing water security and sustainable access"
+
         loading="lazy"
+
       >
+
       <span class="project-number">01 / WATER SECURITY</span>
+
     </div>
+
+
 
     <div class="project-content">
+
       <h3>Kenya's Water Future</h3>
 
+
+
       <p>
+
         Building on my experience with Nairobi Water, I expanded into communication, documentation, and sustainability—turning experience into meaningful impact.
+
       </p>
 
+
+
       <span class="project-link">Explore project →</span>
+
     </div>
 
+
+
   </a>
+
+
+
 
 
   <!-- Vision Tomorrow Ecosystem -->
-  <a href="https://visiontomorrow254.github.io/Zerah-Nexus/"
+
+  <a href="https\://visiontomorrow254.github.io/Zerah-Nexus/"
+
      target="_blank"
+
      rel="noopener noreferrer"
+
      class="project-card image-project-card">
 
+
+
     <div class="project-image">
+
       <img
-        src="imgs/Vision Tomorrow.png"
+
+        src="imgs/Vision Tomorrow\.png"
+
         alt="Planet Earth and connected technology, representing the Vision Tomorrow ecosystem"
+
         loading="lazy"
+
       >
+
       <span class="project-number">02 / THE ECOSYSTEM</span>
+
     </div>
+
+
 
     <div class="project-content">
+
       <h3>Vision Tomorrow</h3>
 
+
+
       <p>
+
         Connecting national identity, environmental action,
+
         child and youth wellbeing, creative industries and
+
         digital skills through research, communication and innovation.
+
       </p>
 
+
+
       <span class="project-link">Explore the ecosystem →</span>
+
     </div>
+
+
 
   </a>
 
+
+
 </div>
 
+
+
   </div>
+
+
 
 </section>
 
 
+
+
+
 <!-- =======================================================
+
      CONTACT
-======================================================= -->
+
+\======================================================= -->
+
+
 
 <section class="section contact-section">
 
+
+
   <div class="container">
+
+
 
     <div class="contact-box">
 
+
+
       <h2>
+
         Let's connect.
+
       </h2>
 
+
+
       <p>
+
         Thank you for taking the time to explore my work.
+
         For correspondence, collaboration or further engagement,
+
         feel free to get in touch.
+
       </p>
+
+
+
 
 
       <div class="contact-details">
 
-        <div>
-          <strong>Email:</strong>
-          evansgitau254@gmail.com
-        </div>
+
 
         <div>
-          <strong>Phone:</strong>
-          +254 742 082 219
+
+          <strong>Email:</strong>
+
+          evansgitau254@gmail.com
+
         </div>
+
+
+
+        <div>
+
+          <strong>Phone:</strong>
+
+          +254 742 082 219
+
+        </div>
+
+
 
       </div>
+
+
+
 
 
       <div class="contact-actions">
 
-        <a
-          href="mailto:evansgitau254@gmail.com"
-          class="btn btn-email"
-        >
-          Send Email
-        </a>
+
 
         <a
-          href="https://wa.me/254742082219"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-whatsapp"
+
+          href="mailto:evansgitau254@gmail.com"
+
+          class="btn btn-email"
+
         >
-          WhatsApp
+
+          Send Email
+
         </a>
+
+
+
+        <a
+
+          href="https\://wa.me/254742082219"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+          class="btn btn-whatsapp"
+
+        >
+
+          WhatsApp
+
+        </a>
+
+
 
       </div>
 
+
+
     </div>
 
+
+
   </div>
+
+
 
 </section>
 
 
+
+
+
 <!-- =======================================================
+
      FOOTER
-======================================================= -->
+
+\======================================================= -->
+
+
 
 <footer>
 
+
+
   <p>
+
     © 2026
+
     <strong>Evans Gitau</strong>
+
     | All Rights Reserved
+
   </p>
+
+
 
 </footer>
 
 
+
+
+
 </body>
+
 </html>
